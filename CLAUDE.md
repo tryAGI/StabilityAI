@@ -42,7 +42,6 @@ The upstream spec uses `apiKey` type auth with `Authorization` header name, whic
 |---------|---------|
 | `src/libs/StabilityAI/` | Main SDK library (`StabilityAIClient`) |
 | `src/tests/IntegrationTests/` | Integration tests against real Stability AI API |
-| `src/helpers/TrimmingHelper/` | NativeAOT/trimming compatibility validator |
 
 ### Build Configuration
 
