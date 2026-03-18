@@ -24,6 +24,24 @@ jobs:
     secrets:
       nuget-key: ${{ secrets.NUGET_KEY }}
   
+  trim-check:
+    name: Trim Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '10.0.x'
+
+      - name: Install AutoSDK CLI
+        run: dotnet tool install --global autosdk.cli --prerelease
+
+      - name: Run trimming check
+        run: autosdk trim src/libs/StabilityAI/StabilityAI.csproj --rid linux-x64
+
   release:
     name: Release
     runs-on: ubuntu-latest
