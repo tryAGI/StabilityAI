@@ -19,6 +19,9 @@ using StabilityAI;
 using var client = new StabilityAIClient(apiKey);
 ```
 
+<!-- EXAMPLES:START -->
+<!-- EXAMPLES:END -->
+
 ## Support
 
 Priority place for bugs: https://github.com/tryAGI/StabilityAI/issues  
