@@ -23,7 +23,7 @@ foreach (var image in images)
 {
     Console.WriteLine($"Seed: {image.Seed}, Finish reason: {image.FinishReason}");
 
-    var bytes = Convert.FromBase64String(image.Base64);
+    var bytes = Convert.FromBase64String(image.Base64!);
     await File.WriteAllBytesAsync("upscaled.png", bytes);
 }
 ```

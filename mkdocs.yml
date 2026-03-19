@@ -5,7 +5,8 @@ nav:
 - Examples:
   - Text to Image: examples/text-to-image.md
   - Image to Image: examples/image-to-image.md
-  - Upscale Image: examples/upscale.md
+  - Upscale Image: examples/upscale-image.md
+  - Masking: examples/masking.md
 # EXAMPLES:END
         
 theme:

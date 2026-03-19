@@ -17,30 +17,145 @@
 using StabilityAI;
 
 using var client = new StabilityAIClient(apiKey);
+```
+
+<!-- EXAMPLES:START -->
+### Text to Image
+
+
+```csharp
+using var client = new StabilityAIClient(apiKey);
 
 var images = await client.V1Generation.TextToImageAsync(
     engineId: "stable-diffusion-v1-6",
-    textToImageRequestBody: new TextToImageRequestBody
+    request: new TextToImageRequestBody(
+        value1: new TextToImageRequestBodyVariant1
+        {
+            TextPrompts =
+            [
+                new TextPrompt
+                {
+                    Text = "A beautiful sunset over mountains, digital art",
+                    Weight = 1.0f,
+                },
+            ],
+            Height = 512,
+            Width = 512,
+        },
+        value2: new GenerationRequestOptionalParams
+        {
+            Samples = 1,
+        }));
+
+foreach (var image in images)
+{
+    Console.WriteLine($"Seed: {image.Seed}, Finish reason: {image.FinishReason}");
+
+    // image.Base64 contains the generated image data
+    var bytes = Convert.FromBase64String(image.Base64!);
+    await File.WriteAllBytesAsync($"output_{image.Seed}.png", bytes);
+}
+```
+
+### Image to Image
+
+
+```csharp
+using var client = new StabilityAIClient(apiKey);
+
+// Load the source image
+var initImageBytes = await File.ReadAllBytesAsync("input.png");
+
+var images = await client.V1Generation.ImageToImageAsync(
+    engineId: "stable-diffusion-v1-6",
+    request: new ImageToImageRequestBody
     {
         TextPrompts =
         [
             new TextPrompt
             {
-                Text = "A beautiful sunset over mountains, digital art",
-                Weight = 1.0,
+                Text = "A fantasy castle on a cliff, dramatic lighting",
+                Weight = 1.0f,
             },
         ],
-        Height = 512,
-        Width = 512,
-        Samples = 1,
+        InitImage = initImageBytes,
+        InitImagename = "input.png",
+        ImageStrength = 0.35f, // Lower = closer to original, higher = more creative
     });
 
 foreach (var image in images)
 {
-    var bytes = Convert.FromBase64String(image.Base64);
+    Console.WriteLine($"Seed: {image.Seed}, Finish reason: {image.FinishReason}");
+
+    var bytes = Convert.FromBase64String(image.Base64!);
     await File.WriteAllBytesAsync($"output_{image.Seed}.png", bytes);
 }
 ```
+
+### Upscale Image
+
+
+```csharp
+using var client = new StabilityAIClient(apiKey);
+
+// Load the image to upscale
+var imageBytes = await File.ReadAllBytesAsync("low-res.png");
+
+var images = await client.V1Generation.UpscaleImageAsync(
+    engineId: "esrgan-v1-x2plus",
+    request: new UpscaleImageRequestBody
+    {
+        Image = imageBytes,
+        Imagename = "low-res.png",
+        Width = 2048, // Only specify width OR height, not both
+    });
+
+foreach (var image in images)
+{
+    Console.WriteLine($"Seed: {image.Seed}, Finish reason: {image.FinishReason}");
+
+    var bytes = Convert.FromBase64String(image.Base64!);
+    await File.WriteAllBytesAsync("upscaled.png", bytes);
+}
+```
+
+### Masking
+
+
+```csharp
+using var client = new StabilityAIClient(apiKey);
+
+// Load the source image and mask image (must be same dimensions)
+var initImageBytes = await File.ReadAllBytesAsync("input.png");
+var maskImageBytes = await File.ReadAllBytesAsync("mask.png");
+
+var images = await client.V1Generation.MaskingAsync(
+    engineId: "stable-diffusion-v1-6",
+    request: new MaskingRequestBody
+    {
+        TextPrompts =
+        [
+            new TextPrompt
+            {
+                Text = "A bright blue sky with fluffy clouds",
+                Weight = 1.0f,
+            },
+        ],
+        InitImage = initImageBytes,
+        InitImagename = "input.png",
+        MaskImage = maskImageBytes,
+        MaskImagename = "mask.png",
+    });
+
+foreach (var image in images)
+{
+    Console.WriteLine($"Seed: {image.Seed}, Finish reason: {image.FinishReason}");
+
+    var bytes = Convert.FromBase64String(image.Base64!);
+    await File.WriteAllBytesAsync($"masked_{image.Seed}.png", bytes);
+}
+```
+<!-- EXAMPLES:END -->
 
 ## Support
 
