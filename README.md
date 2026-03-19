@@ -20,6 +20,22 @@ using var client = new StabilityAIClient(apiKey);
 ```
 
 <!-- EXAMPLES:START -->
+### List Engines
+
+
+```csharp
+using var client = new StabilityAIClient(apiKey);
+
+// Discover available engines before generating images
+var engines = await client.V1Engines.ListEnginesAsync();
+
+foreach (var engine in engines)
+{
+    Console.WriteLine($"{engine.Id}: {engine.Name} ({engine.Type})");
+    Console.WriteLine($"  {engine.Description}");
+}
+```
+
 ### Text to Image
 
 

@@ -3,6 +3,7 @@ nav:
 - Overview: index.md
 # EXAMPLES:START
 - Examples:
+  - List Engines: examples/list-engines.md
   - Text to Image: examples/text-to-image.md
   - Image to Image: examples/image-to-image.md
   - Upscale Image: examples/upscale-image.md
