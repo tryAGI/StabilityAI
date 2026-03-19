@@ -50,7 +50,7 @@ The upstream spec uses `apiKey` type auth with `Authorization` header name, whic
 - **Signing:** Strong-named assemblies via `src/key.snk`
 - **Versioning:** Semantic versioning from git tags (`v` prefix) via MinVer
 - **Analysis:** All .NET analyzers enabled, AOT/trimming compatibility enforced
-- **Testing:** MSTest + FluentAssertions
+- **Testing:** MSTest + AwesomeAssertions
 
 ### CI/CD
 
