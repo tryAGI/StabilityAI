@@ -3,7 +3,9 @@ nav:
 - Overview: index.md
 # EXAMPLES:START
 - Examples:
-  - Text to Image: examples/test.md
+  - Text to Image: examples/text-to-image.md
+  - Image to Image: examples/image-to-image.md
+  - Upscale Image: examples/upscale.md
 # EXAMPLES:END
         
 theme:
