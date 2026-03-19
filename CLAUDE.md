@@ -45,7 +45,7 @@ The upstream spec uses `apiKey` type auth with `Authorization` header name, whic
 
 ### Build Configuration
 
-- **Target:** `netstandard2.0`, `net4.6.2`, `net8.0`, `net9.0`, `net10.0`
+- **Target:** `net10.0`
 - **Language:** C# preview with nullable reference types
 - **Signing:** Strong-named assemblies via `src/key.snk`
 - **Versioning:** Semantic versioning from git tags (`v` prefix) via MinVer
