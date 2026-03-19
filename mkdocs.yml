@@ -2,6 +2,8 @@ site_name: StabilityAI .NET Documentation
 nav:
 - Overview: index.md
 # EXAMPLES:START
+- Examples:
+  - Test: examples/test.md
 # EXAMPLES:END
         
 theme:
