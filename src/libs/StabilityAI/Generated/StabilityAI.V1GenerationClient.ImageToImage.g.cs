@@ -41,6 +41,28 @@ namespace StabilityAI
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::StabilityAI.ApiException"></exception>
+        /// <remarks>
+        /// if [ -z "$STABILITY_API_KEY" ]; then<br/>
+        ///     echo "STABILITY_API_KEY environment variable is not set"<br/>
+        ///     exit 1<br/>
+        /// fi<br/>
+        /// OUTPUT_FILE=./out/v1_img2img.png<br/>
+        /// BASE_URL=${API_HOST:-https://api.stability.ai}<br/>
+        /// URL="$BASE_URL/v1/generation/stable-diffusion-v1-5/image-to-image"<br/>
+        /// curl -f -sS -X POST "$URL" \<br/>
+        ///   -H 'Content-Type: multipart/form-data' \<br/>
+        ///   -H 'Accept: image/png' \<br/>
+        ///   -H "Authorization: Bearer $STABILITY_API_KEY" \<br/>
+        ///   -F 'init_image=@"../init_image.png"' \<br/>
+        ///   -F 'init_image_mode=IMAGE_STRENGTH' \<br/>
+        ///   -F 'image_strength=0.35' \<br/>
+        ///   -F 'text_prompts[0][text]=A galactic dog in space' \<br/>
+        ///   -F 'cfg_scale=7' \<br/>
+        ///   -F 'clip_guidance_preset=FAST_BLUE' \<br/>
+        ///   -F 'samples=1' \<br/>
+        ///   -F 'steps=30' \<br/>
+        ///   -o "$OUTPUT_FILE"
+        /// </remarks>
         public async global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::StabilityAI.Image>> ImageToImageAsync(
             string engineId,
 
@@ -490,7 +512,6 @@ namespace StabilityAI
                 }
             }
         }
-
         /// <summary>
         /// image-to-image<br/>
         /// Modify an image based on a text prompt

@@ -18,6 +18,22 @@ namespace StabilityAI
         /// <param name="request"></param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::StabilityAI.ApiException"></exception>
+        /// <remarks>
+        /// if [ -z "$STABILITY_API_KEY" ]; then<br/>
+        ///     echo "STABILITY_API_KEY environment variable is not set"<br/>
+        ///     exit 1<br/>
+        /// fi<br/>
+        /// OUTPUT_FILE=./out/v1_upscaled_image.png<br/>
+        /// BASE_URL=${API_HOST:-https://api.stability.ai}<br/>
+        /// URL="$BASE_URL/v1/generation/esrgan-v1-x2plus/image-to-image/upscale"<br/>
+        /// curl -f -sS -X POST "$URL" \<br/>
+        ///   -H 'Content-Type: multipart/form-data' \<br/>
+        ///   -H 'Accept: image/png' \<br/>
+        ///   -H "Authorization: Bearer $STABILITY_API_KEY" \<br/>
+        ///   -F 'image=@"../init_image.png"' \<br/>
+        ///   -F 'width=1024' \<br/>
+        ///   -o "$OUTPUT_FILE"
+        /// </remarks>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::StabilityAI.Image>> UpscaleImageAsync(
             string engineId,
 
@@ -25,7 +41,6 @@ namespace StabilityAI
             global::StabilityAI.UpscaleImageAccept? accept = default,
             string? organization = default,
             global::System.Threading.CancellationToken cancellationToken = default);
-
         /// <summary>
         /// image-to-image/upscale<br/>
         /// Create a higher resolution version of an input image.<br/>
