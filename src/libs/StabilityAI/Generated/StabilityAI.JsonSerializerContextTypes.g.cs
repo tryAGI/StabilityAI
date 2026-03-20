@@ -168,27 +168,27 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
-        public bool? Type35 { get; set; }
+        public global::StabilityAI.BalanceResponseBody? Type35 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::StabilityAI.BalanceResponseBody? Type36 { get; set; }
+        public global::System.Collections.Generic.IList<global::StabilityAI.Engine>? Type36 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::System.Collections.Generic.IList<global::StabilityAI.Engine>? Type37 { get; set; }
+        public global::StabilityAI.FinishReason? Type37 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::StabilityAI.FinishReason? Type38 { get; set; }
+        public global::StabilityAI.Image? Type38 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::StabilityAI.Image? Type39 { get; set; }
+        public global::StabilityAI.ImageFinishReason? Type39 { get; set; }
         /// <summary>
         /// 
         /// </summary>
-        public global::StabilityAI.ImageFinishReason? Type40 { get; set; }
+        public bool? Type40 { get; set; }
         /// <summary>
         /// 
         /// </summary>
