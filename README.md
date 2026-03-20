@@ -21,8 +21,6 @@ using var client = new StabilityAIClient(apiKey);
 
 <!-- EXAMPLES:START -->
 ### List Engines
-
-
 ```csharp
 using var client = new StabilityAIClient(apiKey);
 
@@ -37,8 +35,6 @@ foreach (var engine in engines)
 ```
 
 ### Text to Image
-
-
 ```csharp
 using var client = new StabilityAIClient(apiKey);
 
@@ -74,8 +70,6 @@ foreach (var image in images)
 ```
 
 ### Image to Image
-
-
 ```csharp
 using var client = new StabilityAIClient(apiKey);
 
@@ -109,8 +103,6 @@ foreach (var image in images)
 ```
 
 ### Upscale Image
-
-
 ```csharp
 using var client = new StabilityAIClient(apiKey);
 
@@ -136,8 +128,6 @@ foreach (var image in images)
 ```
 
 ### Masking
-
-
 ```csharp
 using var client = new StabilityAIClient(apiKey);
 
@@ -184,7 +174,3 @@ Discord: https://discord.gg/Ca2xhfBf3v
 ![JetBrains logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.png)
 
 This project is supported by JetBrains through the [Open Source Support Program](https://jb.gg/OpenSourceSupport).
-
-![CodeRabbit logo](https://opengraph.githubassets.com/1c51002d7d0bbe0c4fd72ff8f2e58192702f73a7037102f77e4dbb98ac00ea8f/marketplace/coderabbitai)
-
-This project is supported by CodeRabbit through the [Open Source Support Program](https://github.com/marketplace/coderabbitai).
