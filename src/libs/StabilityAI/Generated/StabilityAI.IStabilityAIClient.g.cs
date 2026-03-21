@@ -51,11 +51,6 @@ namespace StabilityAI
 
 
         /// <summary>
-        /// Manage your Stability.ai account, and view account/organization balances
-        /// </summary>
-        public V1UserClient V1User { get; }
-
-        /// <summary>
         /// Enumerate available engines
         /// </summary>
         public V1EnginesClient V1Engines { get; }
@@ -64,6 +59,11 @@ namespace StabilityAI
         /// Generate images from text, existing images, or both
         /// </summary>
         public V1GenerationClient V1Generation { get; }
+
+        /// <summary>
+        /// Manage your Stability.ai account, and view account/organization balances
+        /// </summary>
+        public V1UserClient V1User { get; }
 
     }
 }

@@ -48,15 +48,6 @@ namespace StabilityAI
 
 
         /// <summary>
-        /// Manage your Stability.ai account, and view account/organization balances
-        /// </summary>
-        public V1UserClient V1User => new V1UserClient(HttpClient, authorizations: Authorizations)
-        {
-            ReadResponseAsString = ReadResponseAsString,
-            JsonSerializerContext = JsonSerializerContext,
-        };
-
-        /// <summary>
         /// Enumerate available engines
         /// </summary>
         public V1EnginesClient V1Engines => new V1EnginesClient(HttpClient, authorizations: Authorizations)
@@ -69,6 +60,15 @@ namespace StabilityAI
         /// Generate images from text, existing images, or both
         /// </summary>
         public V1GenerationClient V1Generation => new V1GenerationClient(HttpClient, authorizations: Authorizations)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Manage your Stability.ai account, and view account/organization balances
+        /// </summary>
+        public V1UserClient V1User => new V1UserClient(HttpClient, authorizations: Authorizations)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
