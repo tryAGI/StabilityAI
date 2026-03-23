@@ -28,8 +28,8 @@ namespace StabilityAI.JsonConverters
 
             var __score0 = 0;
             if (__jsonProps.Contains("height")) __score0++;
-            if (__jsonProps.Contains("width")) __score0++;
             if (__jsonProps.Contains("text_prompts")) __score0++;
+            if (__jsonProps.Contains("width")) __score0++;
             var __score1 = 0;
             if (__jsonProps.Contains("cfg_scale")) __score1++;
             if (__jsonProps.Contains("clip_guidance_preset")) __score1++;

@@ -10,9 +10,9 @@ namespace StabilityAI
         TypeDiscriminatorPropertyName = "mask_source",
         IgnoreUnrecognizedTypeDiscriminators = true,
         UnknownDerivedTypeHandling = global::System.Text.Json.Serialization.JsonUnknownDerivedTypeHandling.FallBackToBaseType)]
+    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(StabilityAI.MaskingUsingInitImageAlphaRequestBody), typeDiscriminator: "INIT_IMAGE_ALPHA")]
     [global::System.Text.Json.Serialization.JsonDerivedType(typeof(StabilityAI.MaskingUsingMaskImageRequestBody), typeDiscriminator: "MASK_IMAGE_BLACK")]
     [global::System.Text.Json.Serialization.JsonDerivedType(typeof(StabilityAI.MaskingUsingMaskImageRequestBody), typeDiscriminator: "MASK_IMAGE_WHITE")]
-    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(StabilityAI.MaskingUsingInitImageAlphaRequestBody), typeDiscriminator: "INIT_IMAGE_ALPHA")]
     public partial class MaskingRequestBody
     {
         /// <summary>

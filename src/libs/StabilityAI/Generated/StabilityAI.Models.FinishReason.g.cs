@@ -15,7 +15,7 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
-        Success,
+        ContentFiltered,
         /// <summary>
         /// 
         /// </summary>
@@ -23,7 +23,7 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
-        ContentFiltered,
+        Success,
     }
 
     /// <summary>
@@ -38,9 +38,9 @@ namespace StabilityAI
         {
             return value switch
             {
-                FinishReason.Success => "SUCCESS",
-                FinishReason.Error => "ERROR",
                 FinishReason.ContentFiltered => "CONTENT_FILTERED",
+                FinishReason.Error => "ERROR",
+                FinishReason.Success => "SUCCESS",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -51,9 +51,9 @@ namespace StabilityAI
         {
             return value switch
             {
-                "SUCCESS" => FinishReason.Success,
-                "ERROR" => FinishReason.Error,
                 "CONTENT_FILTERED" => FinishReason.ContentFiltered,
+                "ERROR" => FinishReason.Error,
+                "SUCCESS" => FinishReason.Success,
                 _ => null,
             };
         }

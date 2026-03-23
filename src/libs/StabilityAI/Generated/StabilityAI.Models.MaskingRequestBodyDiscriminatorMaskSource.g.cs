@@ -11,15 +11,15 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
+        InitImageAlpha,
+        /// <summary>
+        /// 
+        /// </summary>
         MaskImageBlack,
         /// <summary>
         /// 
         /// </summary>
         MaskImageWhite,
-        /// <summary>
-        /// 
-        /// </summary>
-        InitImageAlpha,
     }
 
     /// <summary>
@@ -34,9 +34,9 @@ namespace StabilityAI
         {
             return value switch
             {
+                MaskingRequestBodyDiscriminatorMaskSource.InitImageAlpha => "INIT_IMAGE_ALPHA",
                 MaskingRequestBodyDiscriminatorMaskSource.MaskImageBlack => "MASK_IMAGE_BLACK",
                 MaskingRequestBodyDiscriminatorMaskSource.MaskImageWhite => "MASK_IMAGE_WHITE",
-                MaskingRequestBodyDiscriminatorMaskSource.InitImageAlpha => "INIT_IMAGE_ALPHA",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -47,9 +47,9 @@ namespace StabilityAI
         {
             return value switch
             {
+                "INIT_IMAGE_ALPHA" => MaskingRequestBodyDiscriminatorMaskSource.InitImageAlpha,
                 "MASK_IMAGE_BLACK" => MaskingRequestBodyDiscriminatorMaskSource.MaskImageBlack,
                 "MASK_IMAGE_WHITE" => MaskingRequestBodyDiscriminatorMaskSource.MaskImageWhite,
-                "INIT_IMAGE_ALPHA" => MaskingRequestBodyDiscriminatorMaskSource.InitImageAlpha,
                 _ => null,
             };
         }
