@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# OpenAPI spec: https://raw.githubusercontent.com/Stability-AI/rest-api-support/main/generated/spec/merged.json
+
 readonly openapi_url="https://raw.githubusercontent.com/Stability-AI/rest-api-support/main/generated/spec/merged.json"
 
 dotnet tool install --global autosdk.cli --prerelease
