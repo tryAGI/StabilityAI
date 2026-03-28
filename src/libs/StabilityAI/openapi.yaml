@@ -1654,15 +1654,10 @@
     },
     "securitySchemes": {
       "STABILITY_API_KEY": {
-        "type": "http",
-        "scheme": "bearer",
-        "x-default": "$STABILITY_API_KEY"
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
       }
     }
-  },
-  "security": [
-    {
-      "STABILITY_API_KEY": []
-    }
-  ]
+  }
 }
