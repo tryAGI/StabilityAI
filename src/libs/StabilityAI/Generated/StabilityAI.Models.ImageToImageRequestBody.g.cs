@@ -10,8 +10,8 @@ namespace StabilityAI
         TypeDiscriminatorPropertyName = "init_image_mode",
         IgnoreUnrecognizedTypeDiscriminators = true,
         UnknownDerivedTypeHandling = global::System.Text.Json.Serialization.JsonUnknownDerivedTypeHandling.FallBackToBaseType)]
-    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(StabilityAI.ImageToImageUsingImageStrengthRequestBody), typeDiscriminator: "IMAGE_STRENGTH")]
-    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(StabilityAI.ImageToImageUsingStepScheduleRequestBody), typeDiscriminator: "STEP_SCHEDULE")]
+    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(global::StabilityAI.ImageToImageUsingImageStrengthRequestBody), typeDiscriminator: "IMAGE_STRENGTH")]
+    [global::System.Text.Json.Serialization.JsonDerivedType(typeof(global::StabilityAI.ImageToImageUsingStepScheduleRequestBody), typeDiscriminator: "STEP_SCHEDULE")]
     public partial class ImageToImageRequestBody
     {
         /// <summary>
