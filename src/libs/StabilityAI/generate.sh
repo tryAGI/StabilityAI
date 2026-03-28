@@ -7,17 +7,11 @@ dotnet tool update --global autosdk.cli --prerelease || dotnet tool install --gl
 rm -rf Generated
 curl --fail --silent --show-error --location "$openapi_url" -o openapi.yaml
 
-# Fix upstream security scheme: 'Authorization' as apiKey header name is invalid for AutoSDK.
-# Replace with standard HTTP bearer auth and add top-level security requirement.
-jq '
-  .components.securitySchemes.STABILITY_API_KEY = {"type": "http", "scheme": "bearer", "x-default": "$STABILITY_API_KEY"} |
-  .security = [{"STABILITY_API_KEY": []}]
-' openapi.yaml > openapi_fixed.yaml
-mv openapi_fixed.yaml openapi.yaml
-
+# Auth: --security-scheme overrides the spec's apiKey auth with standard HTTP bearer.
 autosdk generate openapi.yaml \
   --namespace StabilityAI \
   --clientClassName StabilityAIClient \
   --targetFramework net10.0 \
   --output Generated \
-  --exclude-deprecated-operations
+  --exclude-deprecated-operations \
+  --security-scheme Http:Header:Bearer

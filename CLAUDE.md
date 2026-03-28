@@ -34,7 +34,7 @@ The SDK code is **entirely auto-generated** -- do not manually edit files in `sr
 
 ### Auth Scheme Fix
 
-The upstream spec uses `apiKey` type auth with `Authorization` header name, which is non-standard. `generate.sh` applies a `jq` fix to convert it to standard HTTP bearer auth before code generation.
+The upstream spec uses `apiKey` type auth with `Authorization` header name, which is non-standard. `generate.sh` uses `--security-scheme Http:Header:Bearer` to override this at generation time (no jq/yq spec patching needed).
 
 ### Project Layout
 
