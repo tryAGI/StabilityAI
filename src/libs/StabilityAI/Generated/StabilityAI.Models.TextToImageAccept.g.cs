@@ -11,11 +11,11 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
-        ApplicationJson,
+        ApplicationDividejson,
         /// <summary>
         /// 
         /// </summary>
-        ImagePng,
+        ImageDividepng,
     }
 
     /// <summary>
@@ -30,8 +30,8 @@ namespace StabilityAI
         {
             return value switch
             {
-                TextToImageAccept.ApplicationJson => "application/json",
-                TextToImageAccept.ImagePng => "image/png",
+                TextToImageAccept.ApplicationDividejson => "application/json",
+                TextToImageAccept.ImageDividepng => "image/png",
                 _ => throw new global::System.ArgumentOutOfRangeException(nameof(value), value, null),
             };
         }
@@ -42,8 +42,8 @@ namespace StabilityAI
         {
             return value switch
             {
-                "application/json" => TextToImageAccept.ApplicationJson,
-                "image/png" => TextToImageAccept.ImagePng,
+                "application/json" => TextToImageAccept.ApplicationDividejson,
+                "image/png" => TextToImageAccept.ImageDividepng,
                 _ => null,
             };
         }

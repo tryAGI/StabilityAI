@@ -55,6 +55,18 @@ namespace StabilityAI
         /// <summary>
         /// Initializes a new instance of the <see cref="TextToImageRequestBodyVariant1" /> class.
         /// </summary>
+        /// <param name="textPrompts">
+        /// An array of text prompts to use for generation.<br/>
+        /// Given a text prompt with the text `A lighthouse on a cliff` and a weight of `0.5`, it would be represented as:<br/>
+        /// &lt;pre&gt;<br/>
+        /// "text_prompts": [<br/>
+        ///   {<br/>
+        ///     "text": "A lighthouse on a cliff",<br/>
+        ///     "weight": 0.5<br/>
+        ///   }<br/>
+        /// ]<br/>
+        /// &lt;/pre&gt;
+        /// </param>
         /// <param name="height">
         /// Height of the image in pixels.  Must be in increments of 64 and pass the following validation:<br/>
         /// - For 768 engines: &lt;span style='display: flex; justify-content: flex-start; gap:8px'&gt;589,824 &lt;span&gt;≤&lt;/span&gt; `height * width` &lt;span&gt;≤&lt;/span&gt; 1,048,576&lt;/span&gt;<br/>
@@ -69,18 +81,6 @@ namespace StabilityAI
         /// Default Value: 512<br/>
         /// Example: 512
         /// </param>
-        /// <param name="textPrompts">
-        /// An array of text prompts to use for generation.<br/>
-        /// Given a text prompt with the text `A lighthouse on a cliff` and a weight of `0.5`, it would be represented as:<br/>
-        /// &lt;pre&gt;<br/>
-        /// "text_prompts": [<br/>
-        ///   {<br/>
-        ///     "text": "A lighthouse on a cliff",<br/>
-        ///     "weight": 0.5<br/>
-        ///   }<br/>
-        /// ]<br/>
-        /// &lt;/pre&gt;
-        /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
@@ -89,9 +89,9 @@ namespace StabilityAI
             int? height,
             int? width)
         {
-            this.TextPrompts = textPrompts ?? throw new global::System.ArgumentNullException(nameof(textPrompts));
             this.Height = height;
             this.Width = width;
+            this.TextPrompts = textPrompts ?? throw new global::System.ArgumentNullException(nameof(textPrompts));
         }
 
         /// <summary>
