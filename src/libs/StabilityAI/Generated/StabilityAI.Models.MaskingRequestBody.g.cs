@@ -142,14 +142,6 @@ namespace StabilityAI
         /// Image used to initialize the diffusion process, in lieu of random noise.<br/>
         /// Example: &lt;image binary&gt;
         /// </param>
-        /// <param name="maskImage">
-        /// Optional grayscale mask that allows for influence over which pixels are eligible for diffusion and at what strength. Must be the same dimensions as the `init_image`. Use the `mask_source` option to specify whether the white or black pixels should be inpainted.<br/>
-        /// Example: &lt;image binary&gt;
-        /// </param>
-        /// <param name="maskImagename">
-        /// Optional grayscale mask that allows for influence over which pixels are eligible for diffusion and at what strength. Must be the same dimensions as the `init_image`. Use the `mask_source` option to specify whether the white or black pixels should be inpainted.<br/>
-        /// Example: &lt;image binary&gt;
-        /// </param>
         /// <param name="textPrompts">
         /// An array of text prompts to use for generation.<br/>
         /// Due to how arrays are represented in `multipart/form-data` requests, prompts must adhear to the format `text_prompts[index][text|weight]`,<br/>
@@ -167,6 +159,14 @@ namespace StabilityAI
         /// text_prompts[1][text]: "land, ground, dirt, grass"<br/>
         /// text_prompts[1][weight]: -0.9<br/>
         /// ```
+        /// </param>
+        /// <param name="maskImage">
+        /// Optional grayscale mask that allows for influence over which pixels are eligible for diffusion and at what strength. Must be the same dimensions as the `init_image`. Use the `mask_source` option to specify whether the white or black pixels should be inpainted.<br/>
+        /// Example: &lt;image binary&gt;
+        /// </param>
+        /// <param name="maskImagename">
+        /// Optional grayscale mask that allows for influence over which pixels are eligible for diffusion and at what strength. Must be the same dimensions as the `init_image`. Use the `mask_source` option to specify whether the white or black pixels should be inpainted.<br/>
+        /// Example: &lt;image binary&gt;
         /// </param>
         /// <param name="cfgScale">
         /// How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to your prompt)<br/>
@@ -214,9 +214,9 @@ namespace StabilityAI
         {
             this.InitImage = initImage ?? throw new global::System.ArgumentNullException(nameof(initImage));
             this.InitImagename = initImagename ?? throw new global::System.ArgumentNullException(nameof(initImagename));
-            this.TextPrompts = textPrompts ?? throw new global::System.ArgumentNullException(nameof(textPrompts));
             this.MaskImage = maskImage;
             this.MaskImagename = maskImagename;
+            this.TextPrompts = textPrompts ?? throw new global::System.ArgumentNullException(nameof(textPrompts));
             this.CfgScale = cfgScale;
             this.ClipGuidancePreset = clipGuidancePreset;
             this.Sampler = sampler;
