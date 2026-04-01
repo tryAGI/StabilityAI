@@ -446,7 +446,6 @@ namespace StabilityAI
             string? organization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
-
             var __request = new global::StabilityAI.TextToImageRequestBody
             {
             };
