@@ -71,6 +71,61 @@ namespace StabilityAI
             string? organization = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
+            var __response = await ImageToImageAsResponseAsync(
+                engineId: engineId,
+
+                request: request,
+                accept: accept,
+                organization: organization,
+                cancellationToken: cancellationToken
+            ).ConfigureAwait(false);
+
+            return __response.Body;
+        }
+        /// <summary>
+        /// image-to-image<br/>
+        /// Modify an image based on a text prompt
+        /// </summary>
+        /// <param name="engineId">
+        /// Example: stable-diffusion-v1-5
+        /// </param>
+        /// <param name="accept">
+        /// Default Value: application/json
+        /// </param>
+        /// <param name="organization"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::StabilityAI.ApiException"></exception>
+        /// <remarks>
+        /// if [ -z "$STABILITY_API_KEY" ]; then<br/>
+        ///     echo "STABILITY_API_KEY environment variable is not set"<br/>
+        ///     exit 1<br/>
+        /// fi<br/>
+        /// OUTPUT_FILE=./out/v1_img2img.png<br/>
+        /// BASE_URL=${API_HOST:-https://api.stability.ai}<br/>
+        /// URL="$BASE_URL/v1/generation/stable-diffusion-v1-5/image-to-image"<br/>
+        /// curl -f -sS -X POST "$URL" \<br/>
+        ///   -H 'Content-Type: multipart/form-data' \<br/>
+        ///   -H 'Accept: image/png' \<br/>
+        ///   -H "Authorization: Bearer $STABILITY_API_KEY" \<br/>
+        ///   -F 'init_image=@"../init_image.png"' \<br/>
+        ///   -F 'init_image_mode=IMAGE_STRENGTH' \<br/>
+        ///   -F 'image_strength=0.35' \<br/>
+        ///   -F 'text_prompts[0][text]=A galactic dog in space' \<br/>
+        ///   -F 'cfg_scale=7' \<br/>
+        ///   -F 'clip_guidance_preset=FAST_BLUE' \<br/>
+        ///   -F 'samples=1' \<br/>
+        ///   -F 'steps=30' \<br/>
+        ///   -o "$OUTPUT_FILE"
+        /// </remarks>
+        public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::StabilityAI.Image>>> ImageToImageAsResponseAsync(
+            string engineId,
+
+            global::StabilityAI.ImageToImageRequestBody request,
+            global::StabilityAI.ImageToImageAccept? accept = default,
+            string? organization = default,
+            global::System.Threading.CancellationToken cancellationToken = default)
+        {
             request = request ?? throw new global::System.ArgumentNullException(nameof(request));
 
             PrepareArguments(
@@ -448,9 +503,12 @@ namespace StabilityAI
                 {
                     __response.EnsureSuccessStatusCode();
 
-                    return
-                        (global::System.Collections.Generic.IList<global::StabilityAI.Image>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::StabilityAI.Image>), JsonSerializerContext) ??
+                    var __value = (global::System.Collections.Generic.IList<global::StabilityAI.Image>?)global::System.Text.Json.JsonSerializer.Deserialize(__content, typeof(global::System.Collections.Generic.IList<global::StabilityAI.Image>), JsonSerializerContext) ??
                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
+                    return new global::StabilityAI.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::StabilityAI.Image>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
@@ -479,9 +537,12 @@ namespace StabilityAI
 #endif
                     ).ConfigureAwait(false);
 
-                    return
-                        (global::System.Collections.Generic.IList<global::StabilityAI.Image>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::StabilityAI.Image>), JsonSerializerContext).ConfigureAwait(false) ??
+                    var __value = (global::System.Collections.Generic.IList<global::StabilityAI.Image>?)await global::System.Text.Json.JsonSerializer.DeserializeAsync(__content, typeof(global::System.Collections.Generic.IList<global::StabilityAI.Image>), JsonSerializerContext).ConfigureAwait(false) ??
                         throw new global::System.InvalidOperationException("Response deserialization failed.");
+                    return new global::StabilityAI.AutoSDKHttpResponse<global::System.Collections.Generic.IList<global::StabilityAI.Image>>(
+                        statusCode: __response.StatusCode,
+                        headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                        body: __value);
                 }
                 catch (global::System.Exception __ex)
                 {
