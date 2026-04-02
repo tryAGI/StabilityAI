@@ -13,35 +13,35 @@ namespace StabilityAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1? Value1 { get; init; }
+        public global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1? ImageToImageUsingImageStrengthRequestBodyVariant1 { get; init; }
 #else
-        public global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1? Value1 { get; }
+        public global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1? ImageToImageUsingImageStrengthRequestBodyVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ImageToImageUsingImageStrengthRequestBodyVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsImageToImageUsingImageStrengthRequestBodyVariant1 => ImageToImageUsingImageStrengthRequestBodyVariant1 != null;
 
         /// <summary>
         /// Represents the optional parameters that can be passed to any generation request.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::StabilityAI.GenerationRequestOptionalParams? Value2 { get; init; }
+        public global::StabilityAI.GenerationRequestOptionalParams? GenerationOptionalParams { get; init; }
 #else
-        public global::StabilityAI.GenerationRequestOptionalParams? Value2 { get; }
+        public global::StabilityAI.GenerationRequestOptionalParams? GenerationOptionalParams { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationOptionalParams))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsGenerationOptionalParams => GenerationOptionalParams != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1?(ImageToImageUsingImageStrengthRequestBody @this) => @this.Value1;
+        public static implicit operator global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1?(ImageToImageUsingImageStrengthRequestBody @this) => @this.ImageToImageUsingImageStrengthRequestBodyVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public ImageToImageUsingImageStrengthRequestBody(global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1? value)
         {
-            Value1 = value;
+            ImageToImageUsingImageStrengthRequestBodyVariant1 = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::StabilityAI.GenerationRequestOptionalParams?(ImageToImageUsingImageStrengthRequestBody @this) => @this.Value2;
+        public static implicit operator global::StabilityAI.GenerationRequestOptionalParams?(ImageToImageUsingImageStrengthRequestBody @this) => @this.GenerationOptionalParams;
 
         /// <summary>
         /// 
         /// </summary>
         public ImageToImageUsingImageStrengthRequestBody(global::StabilityAI.GenerationRequestOptionalParams? value)
         {
-            Value2 = value;
+            GenerationOptionalParams = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public ImageToImageUsingImageStrengthRequestBody(
-            global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1? value1,
-            global::StabilityAI.GenerationRequestOptionalParams? value2
+            global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1? imageToImageUsingImageStrengthRequestBodyVariant1,
+            global::StabilityAI.GenerationRequestOptionalParams? generationOptionalParams
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            ImageToImageUsingImageStrengthRequestBodyVariant1 = imageToImageUsingImageStrengthRequestBodyVariant1;
+            GenerationOptionalParams = generationOptionalParams;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            GenerationOptionalParams as object ??
+            ImageToImageUsingImageStrengthRequestBodyVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            ImageToImageUsingImageStrengthRequestBodyVariant1?.ToString() ??
+            GenerationOptionalParams?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace StabilityAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsImageToImageUsingImageStrengthRequestBodyVariant1 && IsGenerationOptionalParams;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1?, TResult>? value1 = null,
-            global::System.Func<global::StabilityAI.GenerationRequestOptionalParams?, TResult>? value2 = null,
+            global::System.Func<global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1?, TResult>? imageToImageUsingImageStrengthRequestBodyVariant1 = null,
+            global::System.Func<global::StabilityAI.GenerationRequestOptionalParams?, TResult>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace StabilityAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsImageToImageUsingImageStrengthRequestBodyVariant1 && imageToImageUsingImageStrengthRequestBodyVariant1 != null)
             {
-                return value1(Value1!);
+                return imageToImageUsingImageStrengthRequestBodyVariant1(ImageToImageUsingImageStrengthRequestBodyVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsGenerationOptionalParams && generationOptionalParams != null)
             {
-                return value2(Value2!);
+                return generationOptionalParams(GenerationOptionalParams!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace StabilityAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1?>? value1 = null,
-            global::System.Action<global::StabilityAI.GenerationRequestOptionalParams?>? value2 = null,
+            global::System.Action<global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1?>? imageToImageUsingImageStrengthRequestBodyVariant1 = null,
+            global::System.Action<global::StabilityAI.GenerationRequestOptionalParams?>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace StabilityAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsImageToImageUsingImageStrengthRequestBodyVariant1)
             {
-                value1?.Invoke(Value1!);
+                imageToImageUsingImageStrengthRequestBodyVariant1?.Invoke(ImageToImageUsingImageStrengthRequestBodyVariant1!);
             }
-            else if (IsValue2)
+            else if (IsGenerationOptionalParams)
             {
-                value2?.Invoke(Value2!);
+                generationOptionalParams?.Invoke(GenerationOptionalParams!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace StabilityAI
         {
             var fields = new object?[]
             {
-                Value1,
+                ImageToImageUsingImageStrengthRequestBodyVariant1,
                 typeof(global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1),
-                Value2,
+                GenerationOptionalParams,
                 typeof(global::StabilityAI.GenerationRequestOptionalParams),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace StabilityAI
         public bool Equals(ImageToImageUsingImageStrengthRequestBody other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.GenerationRequestOptionalParams?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1?>.Default.Equals(ImageToImageUsingImageStrengthRequestBodyVariant1, other.ImageToImageUsingImageStrengthRequestBodyVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.GenerationRequestOptionalParams?>.Default.Equals(GenerationOptionalParams, other.GenerationOptionalParams) 
                 ;
         }
 
