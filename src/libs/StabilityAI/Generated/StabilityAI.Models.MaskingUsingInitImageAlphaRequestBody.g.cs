@@ -13,35 +13,35 @@ namespace StabilityAI
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1? Value1 { get; init; }
+        public global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1? MaskingUsingInitImageAlphaRequestBodyVariant1 { get; init; }
 #else
-        public global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1? Value1 { get; }
+        public global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1? MaskingUsingInitImageAlphaRequestBodyVariant1 { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value1))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaskingUsingInitImageAlphaRequestBodyVariant1))]
 #endif
-        public bool IsValue1 => Value1 != null;
+        public bool IsMaskingUsingInitImageAlphaRequestBodyVariant1 => MaskingUsingInitImageAlphaRequestBodyVariant1 != null;
 
         /// <summary>
         /// Represents the optional parameters that can be passed to any generation request.
         /// </summary>
 #if NET6_0_OR_GREATER
-        public global::StabilityAI.GenerationRequestOptionalParams? Value2 { get; init; }
+        public global::StabilityAI.GenerationRequestOptionalParams? GenerationOptionalParams { get; init; }
 #else
-        public global::StabilityAI.GenerationRequestOptionalParams? Value2 { get; }
+        public global::StabilityAI.GenerationRequestOptionalParams? GenerationOptionalParams { get; }
 #endif
 
         /// <summary>
         /// 
         /// </summary>
 #if NET6_0_OR_GREATER
-        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Value2))]
+        [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationOptionalParams))]
 #endif
-        public bool IsValue2 => Value2 != null;
+        public bool IsGenerationOptionalParams => GenerationOptionalParams != null;
         /// <summary>
         /// 
         /// </summary>
@@ -50,14 +50,14 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1?(MaskingUsingInitImageAlphaRequestBody @this) => @this.Value1;
+        public static implicit operator global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1?(MaskingUsingInitImageAlphaRequestBody @this) => @this.MaskingUsingInitImageAlphaRequestBodyVariant1;
 
         /// <summary>
         /// 
         /// </summary>
         public MaskingUsingInitImageAlphaRequestBody(global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1? value)
         {
-            Value1 = value;
+            MaskingUsingInitImageAlphaRequestBodyVariant1 = value;
         }
 
         /// <summary>
@@ -68,42 +68,42 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
-        public static implicit operator global::StabilityAI.GenerationRequestOptionalParams?(MaskingUsingInitImageAlphaRequestBody @this) => @this.Value2;
+        public static implicit operator global::StabilityAI.GenerationRequestOptionalParams?(MaskingUsingInitImageAlphaRequestBody @this) => @this.GenerationOptionalParams;
 
         /// <summary>
         /// 
         /// </summary>
         public MaskingUsingInitImageAlphaRequestBody(global::StabilityAI.GenerationRequestOptionalParams? value)
         {
-            Value2 = value;
+            GenerationOptionalParams = value;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public MaskingUsingInitImageAlphaRequestBody(
-            global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1? value1,
-            global::StabilityAI.GenerationRequestOptionalParams? value2
+            global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1? maskingUsingInitImageAlphaRequestBodyVariant1,
+            global::StabilityAI.GenerationRequestOptionalParams? generationOptionalParams
             )
         {
-            Value1 = value1;
-            Value2 = value2;
+            MaskingUsingInitImageAlphaRequestBodyVariant1 = maskingUsingInitImageAlphaRequestBodyVariant1;
+            GenerationOptionalParams = generationOptionalParams;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public object? Object =>
-            Value2 as object ??
-            Value1 as object 
+            GenerationOptionalParams as object ??
+            MaskingUsingInitImageAlphaRequestBodyVariant1 as object 
             ;
 
         /// <summary>
         /// 
         /// </summary>
         public override string? ToString() =>
-            Value1?.ToString() ??
-            Value2?.ToString() 
+            MaskingUsingInitImageAlphaRequestBodyVariant1?.ToString() ??
+            GenerationOptionalParams?.ToString() 
             ;
 
         /// <summary>
@@ -111,15 +111,15 @@ namespace StabilityAI
         /// </summary>
         public bool Validate()
         {
-            return IsValue1 && IsValue2;
+            return IsMaskingUsingInitImageAlphaRequestBodyVariant1 && IsGenerationOptionalParams;
         }
 
         /// <summary>
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1?, TResult>? value1 = null,
-            global::System.Func<global::StabilityAI.GenerationRequestOptionalParams?, TResult>? value2 = null,
+            global::System.Func<global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1?, TResult>? maskingUsingInitImageAlphaRequestBodyVariant1 = null,
+            global::System.Func<global::StabilityAI.GenerationRequestOptionalParams?, TResult>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)
@@ -127,13 +127,13 @@ namespace StabilityAI
                 Validate();
             }
 
-            if (IsValue1 && value1 != null)
+            if (IsMaskingUsingInitImageAlphaRequestBodyVariant1 && maskingUsingInitImageAlphaRequestBodyVariant1 != null)
             {
-                return value1(Value1!);
+                return maskingUsingInitImageAlphaRequestBodyVariant1(MaskingUsingInitImageAlphaRequestBodyVariant1!);
             }
-            else if (IsValue2 && value2 != null)
+            else if (IsGenerationOptionalParams && generationOptionalParams != null)
             {
-                return value2(Value2!);
+                return generationOptionalParams(GenerationOptionalParams!);
             }
 
             return default(TResult);
@@ -143,8 +143,8 @@ namespace StabilityAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1?>? value1 = null,
-            global::System.Action<global::StabilityAI.GenerationRequestOptionalParams?>? value2 = null,
+            global::System.Action<global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1?>? maskingUsingInitImageAlphaRequestBodyVariant1 = null,
+            global::System.Action<global::StabilityAI.GenerationRequestOptionalParams?>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)
@@ -152,13 +152,13 @@ namespace StabilityAI
                 Validate();
             }
 
-            if (IsValue1)
+            if (IsMaskingUsingInitImageAlphaRequestBodyVariant1)
             {
-                value1?.Invoke(Value1!);
+                maskingUsingInitImageAlphaRequestBodyVariant1?.Invoke(MaskingUsingInitImageAlphaRequestBodyVariant1!);
             }
-            else if (IsValue2)
+            else if (IsGenerationOptionalParams)
             {
-                value2?.Invoke(Value2!);
+                generationOptionalParams?.Invoke(GenerationOptionalParams!);
             }
         }
 
@@ -169,9 +169,9 @@ namespace StabilityAI
         {
             var fields = new object?[]
             {
-                Value1,
+                MaskingUsingInitImageAlphaRequestBodyVariant1,
                 typeof(global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1),
-                Value2,
+                GenerationOptionalParams,
                 typeof(global::StabilityAI.GenerationRequestOptionalParams),
             };
             const int offset = unchecked((int)2166136261);
@@ -189,8 +189,8 @@ namespace StabilityAI
         public bool Equals(MaskingUsingInitImageAlphaRequestBody other)
         {
             return
-                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1?>.Default.Equals(Value1, other.Value1) &&
-                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.GenerationRequestOptionalParams?>.Default.Equals(Value2, other.Value2) 
+                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1?>.Default.Equals(MaskingUsingInitImageAlphaRequestBodyVariant1, other.MaskingUsingInitImageAlphaRequestBodyVariant1) &&
+                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.GenerationRequestOptionalParams?>.Default.Equals(GenerationOptionalParams, other.GenerationOptionalParams) 
                 ;
         }
 

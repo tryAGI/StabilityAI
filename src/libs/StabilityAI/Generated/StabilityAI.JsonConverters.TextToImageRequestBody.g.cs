@@ -42,8 +42,8 @@ namespace StabilityAI.JsonConverters
             if (__score0 > __bestScore) { __bestScore = __score0; __bestIndex = 0; }
             if (__score1 > __bestScore) { __bestScore = __score1; __bestIndex = 1; }
 
-            global::StabilityAI.TextToImageRequestBodyVariant1? value1 = default;
-            global::StabilityAI.GenerationRequestOptionalParams? value2 = default;
+            global::StabilityAI.TextToImageRequestBodyVariant1? textToImageRequestBodyVariant1 = default;
+            global::StabilityAI.GenerationRequestOptionalParams? generationOptionalParams = default;
             if (__bestIndex >= 0)
             {
                 if (__bestIndex == 0)
@@ -52,7 +52,7 @@ namespace StabilityAI.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::StabilityAI.TextToImageRequestBodyVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::StabilityAI.TextToImageRequestBodyVariant1> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::StabilityAI.TextToImageRequestBodyVariant1).Name}");
-                        value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        textToImageRequestBodyVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -67,7 +67,7 @@ namespace StabilityAI.JsonConverters
                     {
                         var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::StabilityAI.GenerationRequestOptionalParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::StabilityAI.GenerationRequestOptionalParams> ??
                                        throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::StabilityAI.GenerationRequestOptionalParams).Name}");
-                        value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                        generationOptionalParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                     }
                     catch (global::System.Text.Json.JsonException)
                     {
@@ -78,13 +78,13 @@ namespace StabilityAI.JsonConverters
                 }
             }
 
-            if (value1 == null && value2 == null)
+            if (textToImageRequestBodyVariant1 == null && generationOptionalParams == null)
             {
                 try
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::StabilityAI.TextToImageRequestBodyVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::StabilityAI.TextToImageRequestBodyVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::StabilityAI.TextToImageRequestBodyVariant1).Name}");
-                    value1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    textToImageRequestBodyVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -97,7 +97,7 @@ namespace StabilityAI.JsonConverters
                 {
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::StabilityAI.GenerationRequestOptionalParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::StabilityAI.GenerationRequestOptionalParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::StabilityAI.GenerationRequestOptionalParams).Name}");
-                    value2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
+                    generationOptionalParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
                 }
                 catch (global::System.Text.Json.JsonException)
                 {
@@ -108,9 +108,9 @@ namespace StabilityAI.JsonConverters
             }
 
             var __value = new global::StabilityAI.TextToImageRequestBody(
-                value1,
+                textToImageRequestBodyVariant1,
 
-                value2
+                generationOptionalParams
                 );
 
             return __value;
@@ -125,17 +125,17 @@ namespace StabilityAI.JsonConverters
             options = options ?? throw new global::System.ArgumentNullException(nameof(options));
             var typeInfoResolver = options.TypeInfoResolver ?? throw new global::System.InvalidOperationException("TypeInfoResolver is not set.");
 
-            if (value.IsValue1)
+            if (value.IsTextToImageRequestBodyVariant1)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::StabilityAI.TextToImageRequestBodyVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::StabilityAI.TextToImageRequestBodyVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::StabilityAI.TextToImageRequestBodyVariant1).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.TextToImageRequestBodyVariant1!, typeInfo);
             }
-            else if (value.IsValue2)
+            else if (value.IsGenerationOptionalParams)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::StabilityAI.GenerationRequestOptionalParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::StabilityAI.GenerationRequestOptionalParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::StabilityAI.GenerationRequestOptionalParams).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Value2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.GenerationOptionalParams!, typeInfo);
             }
         }
     }
