@@ -4,7 +4,7 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// Generate images from text, existing images, or both<br/>
+    /// Generate images from text, existing images, or both.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
@@ -13,7 +13,7 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
-        public const string DefaultBaseUrl = "https://api.stability.ai";
+        public const string DefaultBaseUrl = "https://api.stability.ai/";
 
         private bool _disposeHttpClient = true;
 
