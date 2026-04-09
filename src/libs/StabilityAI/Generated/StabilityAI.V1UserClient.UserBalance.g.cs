@@ -5,6 +5,25 @@ namespace StabilityAI
 {
     public partial class V1UserClient
     {
+
+
+        private static readonly global::StabilityAI.EndPointSecurityRequirement s_UserBalanceSecurityRequirement0 =
+            new global::StabilityAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::StabilityAI.EndPointAuthorizationRequirement[]
+                {                    new global::StabilityAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::StabilityAI.EndPointSecurityRequirement[] s_UserBalanceSecurityRequirements =
+            new global::StabilityAI.EndPointSecurityRequirement[]
+            {                s_UserBalanceSecurityRequirement0,
+            };
         partial void PrepareUserBalanceArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string? organization);
@@ -50,9 +69,15 @@ namespace StabilityAI
                 httpClient: HttpClient,
                 organization: ref organization);
 
+
+            var __authorizations = global::StabilityAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UserBalanceSecurityRequirements,
+                operationName: "UserBalanceAsync");
+
             var __pathBuilder = new global::StabilityAI.PathBuilder(
                 path: "/v1/user/balance",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Get,
@@ -62,7 +87,7 @@ namespace StabilityAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")

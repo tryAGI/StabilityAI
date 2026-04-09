@@ -5,6 +5,25 @@ namespace StabilityAI
 {
     public partial class V1GenerationClient
     {
+
+
+        private static readonly global::StabilityAI.EndPointSecurityRequirement s_UpscaleImageSecurityRequirement0 =
+            new global::StabilityAI.EndPointSecurityRequirement
+            {
+                Authorizations = new global::StabilityAI.EndPointAuthorizationRequirement[]
+                {                    new global::StabilityAI.EndPointAuthorizationRequirement
+                    {
+                        Type = "Http",
+                        Location = "Header",
+                        Name = "Bearer",
+                        FriendlyName = "Bearer",
+                    },
+                },
+            };
+        private static readonly global::StabilityAI.EndPointSecurityRequirement[] s_UpscaleImageSecurityRequirements =
+            new global::StabilityAI.EndPointSecurityRequirement[]
+            {                s_UpscaleImageSecurityRequirement0,
+            };
         partial void PrepareUpscaleImageArguments(
             global::System.Net.Http.HttpClient httpClient,
             ref string engineId,
@@ -125,9 +144,15 @@ namespace StabilityAI
                 organization: ref organization,
                 request: request);
 
+
+            var __authorizations = global::StabilityAI.EndPointSecurityResolver.ResolveAuthorizations(
+                availableAuthorizations: Authorizations,
+                securityRequirements: s_UpscaleImageSecurityRequirements,
+                operationName: "UpscaleImageAsync");
+
             var __pathBuilder = new global::StabilityAI.PathBuilder(
                 path: $"/v1/generation/{engineId}/image-to-image/upscale",
-                baseUri: HttpClient.BaseAddress); 
+                baseUri: HttpClient.BaseAddress);
             var __path = __pathBuilder.ToString();
             using var __httpRequest = new global::System.Net.Http.HttpRequestMessage(
                 method: global::System.Net.Http.HttpMethod.Post,
@@ -137,7 +162,7 @@ namespace StabilityAI
             __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
-            foreach (var __authorization in Authorizations)
+            foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
                     __authorization.Type == "OAuth2")
