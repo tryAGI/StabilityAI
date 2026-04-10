@@ -25,6 +25,7 @@ namespace StabilityAI
             Authorizations.Add(new global::StabilityAI.EndPointAuthorization
             {
                 Type = "Http",
+                SchemeId = "HttpBearer",
                 Location = "Header",
                 Name = "Bearer",
                 Value = apiKey,

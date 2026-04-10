@@ -8,6 +8,7 @@ namespace StabilityAI
         /// account<br/>
         /// Get information about the account associated with the provided API key
         /// </summary>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::StabilityAI.ApiException"></exception>
         /// <remarks>
@@ -23,6 +24,7 @@ namespace StabilityAI
         ///   -H "Authorization: Bearer $STABILITY_API_KEY"
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AccountResponseBody> UserAccountAsync(
+            global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }

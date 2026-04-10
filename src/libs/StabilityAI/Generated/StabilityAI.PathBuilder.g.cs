@@ -278,6 +278,11 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
+        public string SchemeId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 
+        /// </summary>
         public string Location { get; set; } = string.Empty;
 
         /// <summary>

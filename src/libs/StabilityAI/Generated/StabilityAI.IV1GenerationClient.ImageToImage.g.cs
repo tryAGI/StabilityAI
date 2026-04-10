@@ -16,6 +16,7 @@ namespace StabilityAI
         /// </param>
         /// <param name="organization"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::StabilityAI.ApiException"></exception>
         /// <remarks>
@@ -46,6 +47,7 @@ namespace StabilityAI
             global::StabilityAI.ImageToImageRequestBody request,
             global::StabilityAI.ImageToImageAccept? accept = default,
             string? organization = default,
+            global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// image-to-image<br/>
@@ -59,6 +61,7 @@ namespace StabilityAI
         /// </param>
         /// <param name="organization"></param>
         /// <param name="request"></param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::StabilityAI.ApiException"></exception>
         /// <remarks>
@@ -89,6 +92,7 @@ namespace StabilityAI
             global::StabilityAI.ImageToImageRequestBody request,
             global::StabilityAI.ImageToImageAccept? accept = default,
             string? organization = default,
+            global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
         /// image-to-image<br/>
@@ -169,6 +173,7 @@ namespace StabilityAI
         /// Default Value: 50<br/>
         /// Example: 75
         /// </param>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::System.Collections.Generic.IList<global::StabilityAI.Image>> ImageToImageAsync(
@@ -187,6 +192,7 @@ namespace StabilityAI
             int? samples = default,
             long? seed = default,
             int? steps = default,
+            global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
 }
