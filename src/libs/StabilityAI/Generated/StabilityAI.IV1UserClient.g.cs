@@ -4,7 +4,7 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// Manage your Stability.ai account, and view account/organization balances.<br/>
+    /// Manage your Stability.ai account, and view account/organization balances<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
     /// </summary>
