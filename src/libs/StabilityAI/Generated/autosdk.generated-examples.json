@@ -1,0 +1,81 @@
+{
+  "Examples": [
+    {
+      "Order": 1,
+      "Title": "list",
+      "Slug": "listengines",
+      "Description": "List all engines available to your organization/user",
+      "Language": "csharp",
+      "Code": "using var client = new StabilityAIClient(apiKey);\n\nvar response = await client.V1Engines.ListEnginesAsync(\n    organization: \u0022org-123456\u0022\n);\n\n// Example response:\n// [\n//   {\n//     \u0022description\u0022: \u0022Stability-AI Stable Diffusion v1.5\u0022,\n//     \u0022id\u0022: \u0022stable-diffusion-v1-5\u0022,\n//     \u0022name\u0022: \u0022Stable Diffusion v1.5\u0022,\n//     \u0022type\u0022: \u0022PICTURE\u0022\n//   },\n//   {\n//     \u0022description\u0022: \u0022Stability-AI Stable Diffusion v2.1\u0022,\n//     \u0022id\u0022: \u0022stable-diffusion-512-v2-1\u0022,\n//     \u0022name\u0022: \u0022Stable Diffusion v2.1\u0022,\n//     \u0022type\u0022: \u0022PICTURE\u0022\n//   },\n//   {\n//     \u0022description\u0022: \u0022Stability-AI Stable Diffusion 768 v2.1\u0022,\n//     \u0022id\u0022: \u0022stable-diffusion-768-v2-1\u0022,\n//     \u0022name\u0022: \u0022Stable Diffusion v2.1-768\u0022,\n//     \u0022type\u0022: \u0022PICTURE\u0022\n//   }\n// ]",
+      "Format": "sdk",
+      "OperationId": "listEngines",
+      "Setup": "This example assumes \u0060using StabilityAI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 2,
+      "Title": "image-to-image",
+      "Slug": "imagetoimage",
+      "Description": "Modify an image based on a text prompt",
+      "Language": "http",
+      "Code": "### image-to-image\n# @name imageToImage\nPOST {{host}}/v1/generation/{{engine_id}}/image-to-image\nAuthorization: Bearer {{token}}\nAccept: application/json\nOrganization: org-123456\nContent-Type: multipart/form-data\nAccept: application/json, image/png\n\n{\u0022image_strength\u0022:0.35,\u0022init_image_mode\u0022:\u0022IMAGE_STRENGTH\u0022,\u0022init_image\u0022:\u0022\\u003Cimage binary\\u003E\u0022,\u0022text_prompts[0][text]\u0022:\u0022A dog space commander\u0022,\u0022text_prompts[0][weight]\u0022:1,\u0022cfg_scale\u0022:7,\u0022clip_guidance_preset\u0022:\u0022FAST_BLUE\u0022,\u0022sampler\u0022:\u0022K_DPM_2_ANCESTRAL\u0022,\u0022samples\u0022:3,\u0022steps\u0022:20}\n\n## Responses\n# 200\n# Description: OK response.\n# Content-Type: application/json, image/png\n# 400\n# Description: bad_request: general error for invalid parameters \u003Cbr/\u003E\u003Cbr/\u003E\n\n\u003Cp style=\u0022display: flex; margin-top: -20px; margin-bottom: 0\u0022\u003EMore specific errors:\u003C/p\u003E\n\n  - invalid_samples: Sample count may only be greater than 1 when the accept header is set to \u0060application/json\u0060\n  - invalid_height_or_width: Height and width must be specified in increments of 64\n  - invalid_file_size: The file size of one or more of the provided files is invalid\n  - invalid_mime_type: The mime type of one or more of the provided files is invalid\n  - invalid_image_dimensions: The dimensions of the provided \u0060init_image\u0060 and \u0060mask_image\u0060 do not match\n  - invalid_mask_image: The parameter \u0060mask_source\u0060 was set to \u0060MASK_IMAGE_WHITE\u0060 or \u0060MASK_IMAGE_BLACK\u0060 but no \u0060mask_image\u0060 was provided\n  - invalid_prompts: One or more of the prompts contains filtered words\n  - invalid_pixel_count: Incorrect number of pixels specified. Requirements:\n    - For 768 engines : \u003Cspan style=\u0027display: inline-flex; justify-content: flex-start; gap:8px\u0027\u003E589,824 \u003Cspan\u003E\u2264\u003C/span\u003E \u0060height * width\u0060 \u003Cspan\u003E\u2264\u003C/span\u003E 1,048,576\u003C/span\u003E\n    - All other engines: \u003Cspan style=\u0027display: inline-flex; justify-content: flex-start; gap:8px\u0027\u003E262,144 \u003Cspan\u003E\u2264\u003C/span\u003E \u0060height * width\u0060 \u003Cspan\u003E\u2264\u003C/span\u003E 1,048,576\u003C/span\u003E\n# Content-Type: application/json\n# 401\n# Description: unauthorized: API key missing or invalid\n# Content-Type: application/json\n# 403\n# Description: permission_denied: You lack the necessary permissions to perform this action\n# Content-Type: application/json\n# 404\n# Description: not_found: The requested resource was not found (e.g. specifing a model that does not exist)\n# Content-Type: application/json\n# 500\n# Description: server_error: Some unexpected server error occurred\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "imageToImage",
+      "Setup": null
+    },
+    {
+      "Order": 3,
+      "Title": "image-to-image/masking",
+      "Slug": "masking",
+      "Description": "Selectively modify portions of an image using a mask",
+      "Language": "http",
+      "Code": "### image-to-image/masking\n# @name masking\nPOST {{host}}/v1/generation/{{engine_id}}/image-to-image/masking\nAuthorization: Bearer {{token}}\nAccept: application/json\nOrganization: org-123456\nContent-Type: multipart/form-data\nAccept: application/json, image/png\n\n{\u0022mask_source\u0022:\u0022INIT_IMAGE_ALPHA\u0022,\u0022init_image\u0022:\u0022\\u003Cimage binary\\u003E\u0022,\u0022text_prompts[0][text]\u0022:\u0022A dog space commander\u0022,\u0022text_prompts[0][weight]\u0022:1,\u0022cfg_scale\u0022:7,\u0022clip_guidance_preset\u0022:\u0022FAST_BLUE\u0022,\u0022sampler\u0022:\u0022K_DPM_2_ANCESTRAL\u0022,\u0022samples\u0022:3,\u0022steps\u0022:20}\n\n## Responses\n# 200\n# Description: OK response.\n# Content-Type: application/json, image/png\n# 400\n# Description: bad_request: general error for invalid parameters \u003Cbr/\u003E\u003Cbr/\u003E\n\n\u003Cp style=\u0022display: flex; margin-top: -20px; margin-bottom: 0\u0022\u003EMore specific errors:\u003C/p\u003E\n\n  - invalid_samples: Sample count may only be greater than 1 when the accept header is set to \u0060application/json\u0060\n  - invalid_height_or_width: Height and width must be specified in increments of 64\n  - invalid_file_size: The file size of one or more of the provided files is invalid\n  - invalid_mime_type: The mime type of one or more of the provided files is invalid\n  - invalid_image_dimensions: The dimensions of the provided \u0060init_image\u0060 and \u0060mask_image\u0060 do not match\n  - invalid_mask_image: The parameter \u0060mask_source\u0060 was set to \u0060MASK_IMAGE_WHITE\u0060 or \u0060MASK_IMAGE_BLACK\u0060 but no \u0060mask_image\u0060 was provided\n  - invalid_prompts: One or more of the prompts contains filtered words\n  - invalid_pixel_count: Incorrect number of pixels specified. Requirements:\n    - For 768 engines : \u003Cspan style=\u0027display: inline-flex; justify-content: flex-start; gap:8px\u0027\u003E589,824 \u003Cspan\u003E\u2264\u003C/span\u003E \u0060height * width\u0060 \u003Cspan\u003E\u2264\u003C/span\u003E 1,048,576\u003C/span\u003E\n    - All other engines: \u003Cspan style=\u0027display: inline-flex; justify-content: flex-start; gap:8px\u0027\u003E262,144 \u003Cspan\u003E\u2264\u003C/span\u003E \u0060height * width\u0060 \u003Cspan\u003E\u2264\u003C/span\u003E 1,048,576\u003C/span\u003E\n# Content-Type: application/json\n# 401\n# Description: unauthorized: API key missing or invalid\n# Content-Type: application/json\n# 403\n# Description: permission_denied: You lack the necessary permissions to perform this action\n# Content-Type: application/json\n# 404\n# Description: not_found: The requested resource was not found (e.g. specifing a model that does not exist)\n# Content-Type: application/json\n# 500\n# Description: server_error: Some unexpected server error occurred\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "masking",
+      "Setup": null
+    },
+    {
+      "Order": 4,
+      "Title": "text-to-image",
+      "Slug": "texttoimage",
+      "Description": "Generate a new image from a text prompt",
+      "Language": "csharp",
+      "Code": "using var client = new StabilityAIClient(apiKey);\n\nvar request = global::System.Text.Json.JsonSerializer.Deserialize\u003Cglobal::StabilityAI.TextToImageRequestBody\u003E(\n    @\u0022{\n  \u0022\u0022cfg_scale\u0022\u0022: 7,\n  \u0022\u0022clip_guidance_preset\u0022\u0022: \u0022\u0022FAST_BLUE\u0022\u0022,\n  \u0022\u0022height\u0022\u0022: 512,\n  \u0022\u0022width\u0022\u0022: 512,\n  \u0022\u0022sampler\u0022\u0022: \u0022\u0022K_DPM_2_ANCESTRAL\u0022\u0022,\n  \u0022\u0022samples\u0022\u0022: 1,\n  \u0022\u0022steps\u0022\u0022: 75,\n  \u0022\u0022text_prompts\u0022\u0022: [\n    {\n      \u0022\u0022text\u0022\u0022: \u0022\u0022A lighthouse on a cliff\u0022\u0022,\n      \u0022\u0022weight\u0022\u0022: 1\n    }\n  ]\n}\u0022)!;\n\nvar response = await client.V1Generation.TextToImageAsync(\n    engineId: \u0022stable-diffusion-v1-5\u0022,\n    request: request,\n    organization: \u0022org-123456\u0022\n);\n\n// Example response:\n// PNG bytes, what did you expect?",
+      "Format": "sdk",
+      "OperationId": "textToImage",
+      "Setup": "This example assumes \u0060using StabilityAI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 5,
+      "Title": "image-to-image/upscale",
+      "Slug": "upscaleimage",
+      "Description": "Create a higher resolution version of an input image.\n\nThis operation outputs an image with a maximum pixel count of **4,194,304**. This is equivalent to dimensions such as \u00602048x2048\u0060 and \u00604096x1024\u0060.\n\nBy default, the input image will be upscaled by a factor of 2.  For additional control over the output dimensions, a \u0060width\u0060 or \u0060height\u0060 parameter may be specified.",
+      "Language": "http",
+      "Code": "### image-to-image/upscale\n# @name upscaleImage\nPOST {{host}}/v1/generation/{{engine_id}}/image-to-image/upscale\nAuthorization: Bearer {{token}}\nAccept: application/json\nOrganization: org-123456\nContent-Type: multipart/form-data\nAccept: application/json, image/png\n\n{\u0022image\u0022:\u0022\\u003Cimage binary\\u003E\u0022}\n\n## Responses\n# 200\n# Description: OK response.\n# Content-Type: application/json, image/png\n# 400\n# Description: bad_request: general error for invalid parameters \u003Cbr/\u003E\u003Cbr/\u003E\n\n\u003Cp style=\u0022display: flex; margin-top: -20px; margin-bottom: 0\u0022\u003EMore specific errors:\u003C/p\u003E\n\n  - invalid_file_size: The file size of one or more of the provided files is invalid\n  - invalid_mime_type: The mime type of one or more of the provided files is invalid\n  - invalid_pixel_count: The requested image would exceed the maximum pixel count of 4,194,304\n# Content-Type: application/json\n# 401\n# Description: unauthorized: API key missing or invalid\n# Content-Type: application/json\n# 403\n# Description: permission_denied: You lack the necessary permissions to perform this action\n# Content-Type: application/json\n# 404\n# Description: not_found: The requested resource was not found (e.g. specifing a model that does not exist)\n# Content-Type: application/json\n# 500\n# Description: server_error: Some unexpected server error occurred\n# Content-Type: application/json",
+      "Format": "http",
+      "OperationId": "upscaleImage",
+      "Setup": null
+    },
+    {
+      "Order": 6,
+      "Title": "account",
+      "Slug": "useraccount",
+      "Description": "Get information about the account associated with the provided API key",
+      "Language": "csharp",
+      "Code": "using var client = new StabilityAIClient(apiKey);\nvar response = await client.V1User.UserAccountAsync();",
+      "Format": "sdk",
+      "OperationId": "userAccount",
+      "Setup": "This example assumes \u0060using StabilityAI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    },
+    {
+      "Order": 7,
+      "Title": "balance",
+      "Slug": "userbalance",
+      "Description": "Get the credit balance of the account/organization associated with the API key",
+      "Language": "csharp",
+      "Code": "using var client = new StabilityAIClient(apiKey);\n\nvar response = await client.V1User.UserBalanceAsync(\n    organization: \u0022org-123456\u0022\n);\n\n// Example response:\n// {\n//   \u0022credits\u0022: 0.6336833840314097\n// }",
+      "Format": "sdk",
+      "OperationId": "userBalance",
+      "Setup": "This example assumes \u0060using StabilityAI;\u0060 is in scope and \u0060apiKey\u0060 contains the required credential."
+    }
+  ]
+}
