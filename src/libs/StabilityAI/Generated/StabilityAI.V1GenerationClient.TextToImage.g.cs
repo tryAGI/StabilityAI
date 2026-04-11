@@ -225,14 +225,14 @@ namespace StabilityAI
                 } 
             }
 
-                if (accept != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Accept", accept?.ToValueString() ?? string.Empty);
-                }
-                if (organization != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Organization", organization.ToString());
-                }
+            if (accept != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Accept", accept?.ToValueString() ?? string.Empty);
+            }
+            if (organization != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Organization", organization.ToString());
+            }
 
                             var __httpRequestContentBody = request.ToJson(JsonSerializerContext);
                             var __httpRequestContent = new global::System.Net.Http.StringContent(

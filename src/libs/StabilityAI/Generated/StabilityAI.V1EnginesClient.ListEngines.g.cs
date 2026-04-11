@@ -126,10 +126,10 @@ namespace StabilityAI
                 } 
             }
 
-                if (organization != default)
-                {
-                    __httpRequest.Headers.TryAddWithoutValidation("Organization", organization.ToString());
-                }
+            if (organization != default)
+            {
+                __httpRequest.Headers.TryAddWithoutValidation("Organization", organization.ToString());
+            }
 
                 global::StabilityAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
