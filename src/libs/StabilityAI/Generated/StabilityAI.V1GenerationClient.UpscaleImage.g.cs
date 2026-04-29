@@ -216,23 +216,51 @@ namespace StabilityAI
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{engineId}"),
+                                content: new global::System.Net.Http.StringContent(engineId ?? string.Empty),
                                 name: "\"engine_id\"");
                             if (accept != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{accept?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((accept).HasValue ? (accept).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"Accept\"");
                             } 
                             if (organization != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{organization}"),
+                                    content: new global::System.Net.Http.StringContent(organization ?? string.Empty),
                                     name: "\"Organization\"");
                             }
                             var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
+                            __contentImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.Imagename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.Imagename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentImage,
                                 name: "\"image\"",
@@ -245,14 +273,14 @@ namespace StabilityAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Width}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Width, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"width\"");
                             } 
                             if (request.Height != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Height}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Height, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"height\"");
                             }
                             __httpRequest.Content = __httpRequestContent;
@@ -267,7 +295,7 @@ namespace StabilityAI
                 PrepareUpscaleImageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    engineId: engineId,
+                    engineId: engineId!,
                     accept: accept,
                     organization: organization,
                     request: request);
