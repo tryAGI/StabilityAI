@@ -228,23 +228,51 @@ namespace StabilityAI
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"{engineId}"),
+                                content: new global::System.Net.Http.StringContent(engineId ?? string.Empty),
                                 name: "\"engine_id\"");
                             if (accept != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{accept?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((accept).HasValue ? (accept).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"Accept\"");
                             } 
                             if (organization != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{organization}"),
+                                    content: new global::System.Net.Http.StringContent(organization ?? string.Empty),
                                     name: "\"Organization\"");
                             }
                             var __contentInitImage = new global::System.Net.Http.ByteArrayContent(request.InitImage ?? global::System.Array.Empty<byte>());
+                            __contentInitImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                request.InitImagename is null
+                                    ? "application/octet-stream"
+                                    : (global::System.IO.Path.GetExtension(request.InitImagename) ?? string.Empty).ToLowerInvariant() switch
+                                    {
+                                        ".aac" => "audio/aac",
+                                        ".flac" => "audio/flac",
+                                        ".gif" => "image/gif",
+                                        ".jpeg" => "image/jpeg",
+                                        ".jpg" => "image/jpeg",
+                                        ".json" => "application/json",
+                                        ".m4a" => "audio/mp4",
+                                        ".mp3" => "audio/mpeg",
+                                        ".mp4" => "video/mp4",
+                                        ".mpeg" => "audio/mpeg",
+                                        ".mpga" => "audio/mpeg",
+                                        ".oga" => "audio/ogg",
+                                        ".ogg" => "audio/ogg",
+                                        ".opus" => "audio/ogg",
+                                        ".pdf" => "application/pdf",
+                                        ".png" => "image/png",
+                                        ".txt" => "text/plain",
+                                        ".wav" => "audio/wav",
+                                        ".weba" => "audio/webm",
+                                        ".webm" => "video/webm",
+                                        ".webp" => "image/webp",
+                                        _ => "application/octet-stream",
+                                    });
                             __httpRequestContent.Add(
                                 content: __contentInitImage,
                                 name: "\"init_image\"",
@@ -257,6 +285,34 @@ namespace StabilityAI
                             {
 
                                 var __contentMaskImage = new global::System.Net.Http.ByteArrayContent(request.MaskImage ?? global::System.Array.Empty<byte>());
+                                __contentMaskImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
+                                    request.MaskImagename is null
+                                        ? "application/octet-stream"
+                                        : (global::System.IO.Path.GetExtension(request.MaskImagename) ?? string.Empty).ToLowerInvariant() switch
+                                        {
+                                            ".aac" => "audio/aac",
+                                            ".flac" => "audio/flac",
+                                            ".gif" => "image/gif",
+                                            ".jpeg" => "image/jpeg",
+                                            ".jpg" => "image/jpeg",
+                                            ".json" => "application/json",
+                                            ".m4a" => "audio/mp4",
+                                            ".mp3" => "audio/mpeg",
+                                            ".mp4" => "video/mp4",
+                                            ".mpeg" => "audio/mpeg",
+                                            ".mpga" => "audio/mpeg",
+                                            ".oga" => "audio/ogg",
+                                            ".ogg" => "audio/ogg",
+                                            ".opus" => "audio/ogg",
+                                            ".pdf" => "application/pdf",
+                                            ".png" => "image/png",
+                                            ".txt" => "text/plain",
+                                            ".wav" => "audio/wav",
+                                            ".weba" => "audio/webm",
+                                            ".webm" => "video/webm",
+                                            ".webp" => "image/webp",
+                                            _ => "application/octet-stream",
+                                        });
                                 __httpRequestContent.Add(
                                     content: __contentMaskImage,
                                     name: "\"mask_image\"",
@@ -267,48 +323,48 @@ namespace StabilityAI
                                 }
                             }
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TextPrompts, x => x))}]"),
+                                content: new global::System.Net.Http.StringContent($"[{string.Join(",", global::System.Linq.Enumerable.Select(request.TextPrompts, x => x.ToJson(JsonSerializerContext)))}]"),
                                 name: "\"text_prompts\"");
                             if (request.CfgScale != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.CfgScale}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.CfgScale, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"cfg_scale\"");
                             } 
                             if (request.ClipGuidancePreset != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.ClipGuidancePreset?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.ClipGuidancePreset).HasValue ? (request.ClipGuidancePreset).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"clip_guidance_preset\"");
                             } 
                             if (request.Sampler != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Sampler?.ToValueString()}"),
+                                    content: new global::System.Net.Http.StringContent((request.Sampler).HasValue ? (request.Sampler).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"sampler\"");
                             } 
                             if (request.Samples != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Samples}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Samples, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"samples\"");
                             } 
                             if (request.Seed != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Seed}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Seed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"seed\"");
                             } 
                             if (request.Steps != default)
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent($"{request.Steps}"),
+                                    content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Steps, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"steps\"");
                             }
                             __httpRequest.Content = __httpRequestContent;
@@ -323,7 +379,7 @@ namespace StabilityAI
                 PrepareMaskingRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    engineId: engineId,
+                    engineId: engineId!,
                     accept: accept,
                     organization: organization,
                     request: request);

@@ -251,7 +251,7 @@ namespace StabilityAI
                 PrepareTextToImageRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    engineId: engineId,
+                    engineId: engineId!,
                     accept: accept,
                     organization: organization,
                     request: request);
