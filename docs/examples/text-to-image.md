@@ -10,7 +10,7 @@ using var client = new StabilityAIClient(apiKey);
 var images = await client.V1Generation.TextToImageAsync(
     engineId: "stable-diffusion-v1-6",
     request: new TextToImageRequestBody(
-        value1: new TextToImageRequestBodyVariant1
+        textToImageRequestBodyVariant1: new TextToImageRequestBodyVariant1
         {
             TextPrompts =
             [
@@ -23,7 +23,7 @@ var images = await client.V1Generation.TextToImageAsync(
             Height = 512,
             Width = 512,
         },
-        value2: new GenerationRequestOptionalParams
+        generationOptionalParams: new GenerationRequestOptionalParams
         {
             Samples = 1,
         }));

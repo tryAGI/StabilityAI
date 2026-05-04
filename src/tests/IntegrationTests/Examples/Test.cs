@@ -16,7 +16,7 @@ public partial class Tests
         var images = await client.V1Generation.TextToImageAsync(
             engineId: "stable-diffusion-v1-6",
             request: new TextToImageRequestBody(
-                value1: new TextToImageRequestBodyVariant1
+                textToImageRequestBodyVariant1: new TextToImageRequestBodyVariant1
                 {
                     TextPrompts =
                     [
@@ -29,7 +29,7 @@ public partial class Tests
                     Height = 512,
                     Width = 512,
                 },
-                value2: new GenerationRequestOptionalParams
+                generationOptionalParams: new GenerationRequestOptionalParams
                 {
                     Samples = 1,
                 }));

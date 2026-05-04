@@ -21,6 +21,8 @@ using var client = new StabilityAIClient(apiKey);
 
 <!-- EXAMPLES:START -->
 ### List Engines
+
+
 ```csharp
 using var client = new StabilityAIClient(apiKey);
 
@@ -35,13 +37,15 @@ foreach (var engine in engines)
 ```
 
 ### Text to Image
+
+
 ```csharp
 using var client = new StabilityAIClient(apiKey);
 
 var images = await client.V1Generation.TextToImageAsync(
     engineId: "stable-diffusion-v1-6",
     request: new TextToImageRequestBody(
-        value1: new TextToImageRequestBodyVariant1
+        textToImageRequestBodyVariant1: new TextToImageRequestBodyVariant1
         {
             TextPrompts =
             [
@@ -54,7 +58,7 @@ var images = await client.V1Generation.TextToImageAsync(
             Height = 512,
             Width = 512,
         },
-        value2: new GenerationRequestOptionalParams
+        generationOptionalParams: new GenerationRequestOptionalParams
         {
             Samples = 1,
         }));
@@ -69,7 +73,30 @@ foreach (var image in images)
 }
 ```
 
+### Generate with Stable Diffusion 3.5
+
+
+```csharp
+using var client = new StabilityAIClient(apiKey);
+
+var response = await client.Generate.CreateStableImageGenerateSd3Async(
+    contentType: "multipart/form-data",
+    accept: CreateStableImageGenerateSd3Accept.ApplicationJson,
+    request: new CreateStableImageGenerateSd3Request
+    {
+        Prompt = "A crisp studio product photo of a ceramic espresso cup on a slate table",
+        Model = CreateStableImageGenerateSd3RequestModel.Sd35Large,
+        AspectRatio = CreateStableImageGenerateSd3RequestAspectRatio.x1_1,
+        OutputFormat = CreateStableImageGenerateSd3RequestOutputFormat.Png,
+    });
+
+Console.WriteLine($"Seed: {response.Seed}");
+Console.WriteLine($"Base64 bytes: {response.Image.Length}");
+```
+
 ### Image to Image
+
+
 ```csharp
 using var client = new StabilityAIClient(apiKey);
 
@@ -103,6 +130,8 @@ foreach (var image in images)
 ```
 
 ### Upscale Image
+
+
 ```csharp
 using var client = new StabilityAIClient(apiKey);
 
@@ -128,6 +157,8 @@ foreach (var image in images)
 ```
 
 ### Masking
+
+
 ```csharp
 using var client = new StabilityAIClient(apiKey);
 
