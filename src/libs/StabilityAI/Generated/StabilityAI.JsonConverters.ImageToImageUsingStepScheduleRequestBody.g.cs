@@ -85,6 +85,7 @@ namespace StabilityAI.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::StabilityAI.ImageToImageUsingStepScheduleRequestBodyVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::StabilityAI.ImageToImageUsingStepScheduleRequestBodyVariant1> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::StabilityAI.ImageToImageUsingStepScheduleRequestBodyVariant1).Name}");
                     imageToImageUsingStepScheduleRequestBodyVariant1 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -95,9 +96,13 @@ namespace StabilityAI.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (imageToImageUsingStepScheduleRequestBodyVariant1 == null && generationOptionalParams == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::StabilityAI.GenerationRequestOptionalParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::StabilityAI.GenerationRequestOptionalParams> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::StabilityAI.GenerationRequestOptionalParams).Name}");
                     generationOptionalParams = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
