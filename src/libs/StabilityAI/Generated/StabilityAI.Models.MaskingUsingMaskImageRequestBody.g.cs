@@ -89,6 +89,11 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
+        public static MaskingUsingMaskImageRequestBody FromMaskingUsingMaskImageRequestBodyVariant1(global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1? value) => new MaskingUsingMaskImageRequestBody(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MaskingUsingMaskImageRequestBody(global::StabilityAI.GenerationRequestOptionalParams value) => new MaskingUsingMaskImageRequestBody((global::StabilityAI.GenerationRequestOptionalParams?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace StabilityAI
         {
             GenerationOptionalParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MaskingUsingMaskImageRequestBody FromGenerationOptionalParams(global::StabilityAI.GenerationRequestOptionalParams? value) => new MaskingUsingMaskImageRequestBody(value);
 
         /// <summary>
         /// 

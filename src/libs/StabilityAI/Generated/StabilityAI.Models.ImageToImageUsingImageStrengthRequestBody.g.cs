@@ -89,6 +89,11 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
+        public static ImageToImageUsingImageStrengthRequestBody FromImageToImageUsingImageStrengthRequestBodyVariant1(global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1? value) => new ImageToImageUsingImageStrengthRequestBody(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ImageToImageUsingImageStrengthRequestBody(global::StabilityAI.GenerationRequestOptionalParams value) => new ImageToImageUsingImageStrengthRequestBody((global::StabilityAI.GenerationRequestOptionalParams?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace StabilityAI
         {
             GenerationOptionalParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageToImageUsingImageStrengthRequestBody FromGenerationOptionalParams(global::StabilityAI.GenerationRequestOptionalParams? value) => new ImageToImageUsingImageStrengthRequestBody(value);
 
         /// <summary>
         /// 
