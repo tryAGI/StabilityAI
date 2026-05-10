@@ -89,6 +89,11 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
+        public static TextToImageRequestBody FromTextToImageRequestBodyVariant1(global::StabilityAI.TextToImageRequestBodyVariant1? value) => new TextToImageRequestBody(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator TextToImageRequestBody(global::StabilityAI.GenerationRequestOptionalParams value) => new TextToImageRequestBody((global::StabilityAI.GenerationRequestOptionalParams?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace StabilityAI
         {
             GenerationOptionalParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static TextToImageRequestBody FromGenerationOptionalParams(global::StabilityAI.GenerationRequestOptionalParams? value) => new TextToImageRequestBody(value);
 
         /// <summary>
         /// 

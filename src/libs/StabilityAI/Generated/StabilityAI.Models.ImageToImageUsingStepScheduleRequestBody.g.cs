@@ -89,6 +89,11 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
+        public static ImageToImageUsingStepScheduleRequestBody FromImageToImageUsingStepScheduleRequestBodyVariant1(global::StabilityAI.ImageToImageUsingStepScheduleRequestBodyVariant1? value) => new ImageToImageUsingStepScheduleRequestBody(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ImageToImageUsingStepScheduleRequestBody(global::StabilityAI.GenerationRequestOptionalParams value) => new ImageToImageUsingStepScheduleRequestBody((global::StabilityAI.GenerationRequestOptionalParams?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace StabilityAI
         {
             GenerationOptionalParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageToImageUsingStepScheduleRequestBody FromGenerationOptionalParams(global::StabilityAI.GenerationRequestOptionalParams? value) => new ImageToImageUsingStepScheduleRequestBody(value);
 
         /// <summary>
         /// 

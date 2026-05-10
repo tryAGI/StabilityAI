@@ -94,6 +94,11 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
+        public static CreateV2alphaGenerationStableImageInpaintRequest FromSearch(global::StabilityAI.InpaintingSearchModeRequestBody? value) => new CreateV2alphaGenerationStableImageInpaintRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateV2alphaGenerationStableImageInpaintRequest(global::StabilityAI.InpaintingMaskingModeRequestBody value) => new CreateV2alphaGenerationStableImageInpaintRequest((global::StabilityAI.InpaintingMaskingModeRequestBody?)value);
 
         /// <summary>
@@ -108,6 +113,11 @@ namespace StabilityAI
         {
             Mask = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateV2alphaGenerationStableImageInpaintRequest FromMask(global::StabilityAI.InpaintingMaskingModeRequestBody? value) => new CreateV2alphaGenerationStableImageInpaintRequest(value);
 
         /// <summary>
         /// 
