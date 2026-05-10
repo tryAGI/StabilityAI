@@ -248,5 +248,6 @@ namespace StabilityAI
         public ImageToImageRequestBody()
         {
         }
+
     }
 }

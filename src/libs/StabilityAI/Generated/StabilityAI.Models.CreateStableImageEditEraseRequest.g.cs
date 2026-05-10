@@ -204,5 +204,6 @@ namespace StabilityAI
         public CreateStableImageEditEraseRequest()
         {
         }
+
     }
 }

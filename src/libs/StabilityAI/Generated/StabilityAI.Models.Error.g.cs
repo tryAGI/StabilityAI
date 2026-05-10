@@ -75,5 +75,6 @@ namespace StabilityAI
         public Error()
         {
         }
+
     }
 }

@@ -106,5 +106,6 @@ namespace StabilityAI
         public CreateStableImageUpscaleFastRequest()
         {
         }
+
     }
 }

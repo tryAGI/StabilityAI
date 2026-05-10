@@ -59,5 +59,6 @@ namespace StabilityAI
         public TextPrompt()
         {
         }
+
     }
 }

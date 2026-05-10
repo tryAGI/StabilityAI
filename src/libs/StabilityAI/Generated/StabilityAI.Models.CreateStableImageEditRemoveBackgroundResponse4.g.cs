@@ -77,5 +77,6 @@ namespace StabilityAI
         public CreateStableImageEditRemoveBackgroundResponse4()
         {
         }
+
     }
 }

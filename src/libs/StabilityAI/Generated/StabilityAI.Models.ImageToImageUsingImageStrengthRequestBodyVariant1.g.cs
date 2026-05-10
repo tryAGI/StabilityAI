@@ -132,5 +132,6 @@ namespace StabilityAI
         public ImageToImageUsingImageStrengthRequestBodyVariant1()
         {
         }
+
     }
 }

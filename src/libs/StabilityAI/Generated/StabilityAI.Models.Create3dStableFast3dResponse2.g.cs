@@ -77,5 +77,6 @@ namespace StabilityAI
         public Create3dStableFast3dResponse2()
         {
         }
+
     }
 }

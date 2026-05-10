@@ -100,5 +100,6 @@ namespace StabilityAI
         public TextToImageRequestBodyVariant1()
         {
         }
+
     }
 }

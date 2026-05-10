@@ -179,5 +179,6 @@ namespace StabilityAI
         public CreateStableImageControlStructureRequest()
         {
         }
+
     }
 }

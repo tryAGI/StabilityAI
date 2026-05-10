@@ -150,5 +150,6 @@ namespace StabilityAI
         public MaskingUsingMaskImageRequestBodyVariant1()
         {
         }
+
     }
 }

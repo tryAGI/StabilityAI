@@ -45,5 +45,6 @@ namespace StabilityAI
         public CreateV2alphaGenerationStableImageUpscaleResponse()
         {
         }
+
     }
 }

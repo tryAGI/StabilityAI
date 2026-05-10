@@ -40,5 +40,6 @@ namespace StabilityAI
         public ImageToImageRequestBodyDiscriminator()
         {
         }
+
     }
 }

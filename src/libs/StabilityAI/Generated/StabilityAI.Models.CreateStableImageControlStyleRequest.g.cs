@@ -193,5 +193,6 @@ namespace StabilityAI
         public CreateStableImageControlStyleRequest()
         {
         }
+
     }
 }

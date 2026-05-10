@@ -57,5 +57,6 @@ namespace StabilityAI
         public GetResultsResponse4()
         {
         }
+
     }
 }
