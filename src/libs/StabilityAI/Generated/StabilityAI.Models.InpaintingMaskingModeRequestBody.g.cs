@@ -244,5 +244,6 @@ namespace StabilityAI
         public InpaintingMaskingModeRequestBody()
         {
         }
+
     }
 }

@@ -198,5 +198,6 @@ namespace StabilityAI
         public CreateStableImageEditSearchAndRecolorRequest()
         {
         }
+
     }
 }

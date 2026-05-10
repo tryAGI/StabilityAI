@@ -77,5 +77,6 @@ namespace StabilityAI
         public CreateAudioStableAudio2InpaintResponse4()
         {
         }
+
     }
 }

@@ -363,5 +363,6 @@ namespace StabilityAI
         public CreateStableImageEditReplaceBackgroundAndRelightRequest()
         {
         }
+
     }
 }

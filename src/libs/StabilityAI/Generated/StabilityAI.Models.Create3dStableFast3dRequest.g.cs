@@ -180,5 +180,6 @@ namespace StabilityAI
         public Create3dStableFast3dRequest()
         {
         }
+
     }
 }

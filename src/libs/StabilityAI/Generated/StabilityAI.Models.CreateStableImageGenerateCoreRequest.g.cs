@@ -118,5 +118,6 @@ namespace StabilityAI
         public CreateStableImageGenerateCoreRequest()
         {
         }
+
     }
 }

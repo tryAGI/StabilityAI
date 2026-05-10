@@ -77,5 +77,6 @@ namespace StabilityAI
         public Create3dStablePointAware3dResponse4()
         {
         }
+
     }
 }

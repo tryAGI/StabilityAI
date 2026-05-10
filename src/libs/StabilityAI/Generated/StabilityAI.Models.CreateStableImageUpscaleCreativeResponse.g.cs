@@ -45,5 +45,6 @@ namespace StabilityAI
         public CreateStableImageUpscaleCreativeResponse()
         {
         }
+
     }
 }

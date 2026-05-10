@@ -199,5 +199,6 @@ namespace StabilityAI
         public CreateStableImageGenerateUltraRequest()
         {
         }
+
     }
 }

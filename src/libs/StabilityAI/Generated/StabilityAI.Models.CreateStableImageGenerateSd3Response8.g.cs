@@ -77,5 +77,6 @@ namespace StabilityAI
         public CreateStableImageGenerateSd3Response8()
         {
         }
+
     }
 }

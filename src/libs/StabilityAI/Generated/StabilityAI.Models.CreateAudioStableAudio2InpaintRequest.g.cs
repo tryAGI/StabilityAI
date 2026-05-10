@@ -173,5 +173,6 @@ namespace StabilityAI
         public CreateAudioStableAudio2InpaintRequest()
         {
         }
+
     }
 }

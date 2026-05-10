@@ -214,5 +214,6 @@ namespace StabilityAI
         public CreateStableImageEditOutpaintRequest()
         {
         }
+
     }
 }

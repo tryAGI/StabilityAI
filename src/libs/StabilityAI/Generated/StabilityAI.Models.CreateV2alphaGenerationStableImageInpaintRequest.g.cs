@@ -47,6 +47,13 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
+        public global::StabilityAI.InpaintingSearchModeRequestBody PickSearch() => IsSearch
+            ? Search!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::StabilityAI.InpaintingMaskingModeRequestBody? Mask { get; init; }
 #else
@@ -73,6 +80,13 @@ namespace StabilityAI
             value = Mask;
             return IsMask;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::StabilityAI.InpaintingMaskingModeRequestBody PickMask() => IsMask
+            ? Mask!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mask' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -231,5 +231,6 @@ namespace StabilityAI
         public MaskingRequestBody()
         {
         }
+
     }
 }

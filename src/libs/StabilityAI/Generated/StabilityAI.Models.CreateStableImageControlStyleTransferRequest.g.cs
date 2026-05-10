@@ -262,5 +262,6 @@ namespace StabilityAI
         public CreateStableImageControlStyleTransferRequest()
         {
         }
+
     }
 }
