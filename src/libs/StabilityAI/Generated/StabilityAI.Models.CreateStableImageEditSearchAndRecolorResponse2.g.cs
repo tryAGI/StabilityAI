@@ -83,5 +83,6 @@ namespace StabilityAI
         public CreateStableImageEditSearchAndRecolorResponse2()
         {
         }
+
     }
 }

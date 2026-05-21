@@ -266,10 +266,11 @@ namespace StabilityAI
             var __maxAttempts = global::StabilityAI.AutoSDKRequestOptionsSupport.GetMaxAttempts(
                 clientOptions: Options,
                 requestOptions: requestOptions,
-                supportsRetry: true);
+                supportsRetry: false);
 
             global::System.Net.Http.HttpRequestMessage __CreateHttpRequest()
             {
+
                             var __pathBuilder = new global::StabilityAI.PathBuilder(
                                 path: "/v2beta/stable-image/generate/ultra",
                                 baseUri: HttpClient.BaseAddress);
@@ -321,69 +322,80 @@ namespace StabilityAI
                 __httpRequest.Headers.TryAddWithoutValidation("stability-client-version", stabilityClientVersion.ToString());
             }
 
+
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(contentType ?? string.Empty),
                                 name: "\"content-type\"");
+
                             if (accept != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((accept).HasValue ? (accept).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"accept\"");
-                            } 
+
+                            }
                             if (stabilityClientId != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(stabilityClientId ?? string.Empty),
                                     name: "\"stability-client-id\"");
-                            } 
+
+                            }
                             if (stabilityClientUserId != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(stabilityClientUserId ?? string.Empty),
                                     name: "\"stability-client-user-id\"");
-                            } 
+
+                            }
                             if (stabilityClientVersion != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(stabilityClientVersion ?? string.Empty),
                                     name: "\"stability-client-version\"");
+
                             }
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
                                 name: "\"prompt\"");
+
                             if (request.NegativePrompt != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(request.NegativePrompt ?? string.Empty),
                                     name: "\"negative_prompt\"");
-                            } 
+
+                            }
                             if (request.AspectRatio != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((request.AspectRatio).HasValue ? (request.AspectRatio).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"aspect_ratio\"");
-                            } 
+
+                            }
                             if (request.Seed != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Seed, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"seed\"");
-                            } 
+
+                            }
                             if (request.OutputFormat != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((request.OutputFormat).HasValue ? (request.OutputFormat).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"output_format\"");
-                            } 
+
+                            }
                             if (request.Image != default)
                             {
 
@@ -424,22 +436,27 @@ namespace StabilityAI
                                 {
                                     __contentImage.Headers.ContentDisposition.FileNameStar = null;
                                 }
-                            } 
+
+                            }
                             if (request.StylePreset != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent((request.StylePreset).HasValue ? (request.StylePreset).GetValueOrDefault().ToValueString() : string.Empty),
                                     name: "\"style_preset\"");
-                            } 
+
+                            }
                             if (request.Strength != default)
                             {
 
                                 __httpRequestContent.Add(
                                     content: new global::System.Net.Http.StringContent(global::System.Convert.ToString(request.Strength, global::System.Globalization.CultureInfo.InvariantCulture) ?? string.Empty),
                                     name: "\"strength\"");
+
                             }
+
                             __httpRequest.Content = __httpRequestContent;
+
                 global::StabilityAI.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,
                     clientHeaders: Options.Headers,
@@ -486,6 +503,8 @@ namespace StabilityAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                     try
                     {
@@ -496,6 +515,11 @@ namespace StabilityAI
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
                     {
+                        var __retryDelay = global::StabilityAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: null,
+                            attempt: __attempt);
                         var __willRetry = __attempt < __maxAttempts && !__effectiveCancellationToken.IsCancellationRequested;
                         await global::StabilityAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
@@ -513,6 +537,8 @@ namespace StabilityAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: __willRetry,
+                                retryDelay: __willRetry ? __retryDelay : (global::System.TimeSpan?)null,
+                                retryReason: "exception",
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         if (!__willRetry)
                         {
@@ -522,8 +548,7 @@ namespace StabilityAI
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::StabilityAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -532,6 +557,11 @@ namespace StabilityAI
                         __attempt < __maxAttempts &&
                         global::StabilityAI.AutoSDKRequestOptionsSupport.ShouldRetryStatusCode(__response.StatusCode))
                     {
+                        var __retryDelay = global::StabilityAI.AutoSDKRequestOptionsSupport.GetRetryDelay(
+                            clientOptions: Options,
+                            requestOptions: requestOptions,
+                            response: __response,
+                            attempt: __attempt);
                         await global::StabilityAI.AutoSDKRequestOptionsSupport.OnAfterErrorAsync(
                             clientOptions: Options,
                             context: global::StabilityAI.AutoSDKRequestOptionsSupport.CreateHookContext(
@@ -548,14 +578,15 @@ namespace StabilityAI
                                 attempt: __attempt,
                                 maxAttempts: __maxAttempts,
                                 willRetry: true,
+                                retryDelay: __retryDelay,
+                                retryReason: "status:" + ((int)__response.StatusCode).ToString(global::System.Globalization.CultureInfo.InvariantCulture),
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                         __response.Dispose();
                         __response = null;
                         __httpRequest.Dispose();
                         __httpRequest = null;
                         await global::StabilityAI.AutoSDKRequestOptionsSupport.DelayBeforeRetryAsync(
-                            clientOptions: Options,
-                            requestOptions: requestOptions,
+                            retryDelay: __retryDelay,
                             cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                         continue;
                     }
@@ -595,6 +626,8 @@ namespace StabilityAI
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                 else
@@ -615,6 +648,8 @@ namespace StabilityAI
                                 attempt: __attemptNumber,
                                 maxAttempts: __maxAttempts,
                                 willRetry: false,
+                                retryDelay: null,
+                                retryReason: global::System.String.Empty,
                                 cancellationToken: __effectiveCancellationToken)).ConfigureAwait(false);
                 }
                             // Invalid parameter(s), see the `errors` field for details.
@@ -872,6 +907,7 @@ namespace StabilityAI
                                     return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageGenerateUltraResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
                                         body: __value);
                                 }
                                 catch (global::System.Exception __ex)
@@ -905,6 +941,7 @@ namespace StabilityAI
                                     return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageGenerateUltraResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                        requestUri: __response.RequestMessage?.RequestUri,
                                         body: __value);
                                 }
                                 catch (global::System.Exception __ex)

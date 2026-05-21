@@ -146,5 +146,6 @@ namespace StabilityAI
         public ImageToImageUsingStepScheduleRequestBodyVariant1()
         {
         }
+
     }
 }

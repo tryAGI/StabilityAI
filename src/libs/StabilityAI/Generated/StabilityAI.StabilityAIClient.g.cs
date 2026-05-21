@@ -52,6 +52,15 @@ namespace StabilityAI
 
 
         /// <summary>
+        /// 
+        /// </summary>
+        public AudioResultsClient AudioResults => new AudioResultsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
         /// Tools for generating precise, controlled variations of existing images or sketches.<br/>
         /// **[Sketch](/docs/api-reference#tag/Control/paths/~1v2beta~1stable-image~1control~1sketch/post)**<br/>
         /// This service upgrades sketches to refined outputs with precise control. For non-sketch images, it allows detailed manipulation of the final appearance by leveraging the contour lines and edges within the image.<br/>
@@ -60,7 +69,7 @@ namespace StabilityAI
         /// **[Style](/docs/api-reference#tag/Control/paths/~1v2beta~1stable-image~1control~1style/post)**<br/>
         /// This service extracts stylistic elements from an input image (control image) and uses it to guide the creation of an output image based on the prompt. The result is a new image in the same style as the control image.
         /// </summary>
-        public ControlClient Control => new ControlClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ControlClient Control => new ControlClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -81,7 +90,7 @@ namespace StabilityAI
         /// **[Remove Background](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1remove-background/post)**<br/>
         /// The Remove Background service accurately segments the foreground from an image to removes the background.
         /// </summary>
-        public EditClient Edit => new EditClient(HttpClient, authorizations: Authorizations, options: Options)
+        public EditClient Edit => new EditClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -96,7 +105,7 @@ namespace StabilityAI
         /// **[Stable Diffusion 3.5 Model Suite](/docs/api-reference#tag/Generate/paths/~1v2beta~1stable-image~1generate~1sd3/post)**: Stability AI's latest base models<br/>
         /// The different versions of our open models are available via API, letting you test and adjust speed and quality based on your use case. All model versions strike a balance between generation speed and output quality and are ideal for creating high-volume, high-quality digital assets like websites, newsletters, and marketing materials.
         /// </summary>
-        public GenerateClient Generate => new GenerateClient(HttpClient, authorizations: Authorizations, options: Options)
+        public GenerateClient Generate => new GenerateClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -105,7 +114,19 @@ namespace StabilityAI
         /// <summary>
         /// Tools for fetching the results of your async generations.
         /// </summary>
-        public ResultsClient Results => new ResultsClient(HttpClient, authorizations: Authorizations, options: Options)
+        public ResultsClient Results => new ResultsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
+        {
+            ReadResponseAsString = ReadResponseAsString,
+            JsonSerializerContext = JsonSerializerContext,
+        };
+
+        /// <summary>
+        /// Stable Audio 3.0. Tools to generate music and sound from text or audio, or transform existing audio clips into new compositions. Our different services include:<br/>
+        /// **Stable Audio 3.0**: Fast, Best-Quality, Long-Form Music &amp; Audio Generation<br/>
+        /// Our most advanced audio generation model, capable of generating up to 6-minute, 44.1 kHz stereo compositions. Stable Audio 3.0 supports text-to-audio, audio-to-audio, and audio-inpaint workflows - allowing creators to upload a sound and transform it into new instruments, styles, or genres using natural language prompts. Ideal for music production, cinematic sound design, and remixing.<br/>
+        /// Stable Audio models were exclusively trained on licensed data from the [AudioSparx](https://www.audiosparx.com/) music library, honoring opt-out requests and ensuring fair compensation for creators. Additionally, Stable Audio 3.0 was pre-trained on licensed data from [Freesound](https://freesound.org/). Read more about the model capabilities [here](https://stability.ai/news/stable-audio-3-0).
+        /// </summary>
+        public StableAudioClient StableAudio => new StableAudioClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -119,7 +140,7 @@ namespace StabilityAI
         /// Built for text-to-audio and audio-to-audio generation, also capable of generating up to 3-minute, 44.1 kHz stereo. Stable Audio 2.0 is great for ideation, music demos, and ambient soundscapes. It's optimized for creative professionals seeking detailed and extended outputs from simple prompts.<br/>
         /// Stable Audio models were exclusively trained on licensed data from the [AudioSparx](https://www.audiosparx.com/) music library, honoring opt-out requests and ensuring fair compensation for creators. Additionally, Stable Audio 2.5 was pre-trained on licensed data from [Freesound](https://freesound.org/). Read more about the model capabilities [here](https://stability.ai/news/stable-audio-2-0).
         /// </summary>
-        public StableAudio2Client StableAudio2 => new StableAudio2Client(HttpClient, authorizations: Authorizations, options: Options)
+        public StableAudio2Client StableAudio2 => new StableAudio2Client(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -134,7 +155,7 @@ namespace StabilityAI
         /// **[Creative Upscaler](/docs/api-reference#tag/Upscale/paths/~1v2beta~1stable-image~1upscale~1creative/post)**<br/>
         /// The service can upscale highly degraded images (lower than 1 megapixel) with a creative twist to provide high resolution results.
         /// </summary>
-        public UpscaleClient Upscale => new UpscaleClient(HttpClient, authorizations: Authorizations, options: Options)
+        public UpscaleClient Upscale => new UpscaleClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -143,7 +164,7 @@ namespace StabilityAI
         /// <summary>
         /// Enumerate available engines.
         /// </summary>
-        public V1EnginesClient V1Engines => new V1EnginesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public V1EnginesClient V1Engines => new V1EnginesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -152,7 +173,7 @@ namespace StabilityAI
         /// <summary>
         /// Generate images from text, existing images, or both.
         /// </summary>
-        public V1GenerationClient V1Generation => new V1GenerationClient(HttpClient, authorizations: Authorizations, options: Options)
+        public V1GenerationClient V1Generation => new V1GenerationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -161,7 +182,7 @@ namespace StabilityAI
         /// <summary>
         /// Manage your Stability.ai account, and view account/organization balances.
         /// </summary>
-        public V1UserClient V1User => new V1UserClient(HttpClient, authorizations: Authorizations, options: Options)
+        public V1UserClient V1User => new V1UserClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -170,7 +191,7 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
-        public V2alphaGenerationClient V2alphaGeneration => new V2alphaGenerationClient(HttpClient, authorizations: Authorizations, options: Options)
+        public V2alphaGenerationClient V2alphaGeneration => new V2alphaGenerationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -179,7 +200,7 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
-        public x3dClient x3d => new x3dClient(HttpClient, authorizations: Authorizations, options: Options)
+        public x3dClient x3d => new x3dClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -208,6 +229,27 @@ namespace StabilityAI
         }
 
         /// <summary>
+        /// Creates a new instance of the StabilityAIClient with explicit options but no base URL override.
+        /// Skips passing <c>baseUri</c> so the default base URL from the OpenAPI spec applies.
+        /// </summary>
+        /// <param name="httpClient">The HttpClient instance. If not provided, a new one will be created.</param>
+        /// <param name="authorizations">The authorizations to use for the requests.</param>
+        /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
+        /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
+        public StabilityAIClient(
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Collections.Generic.List<global::StabilityAI.EndPointAuthorization>? authorizations,
+            global::StabilityAI.AutoSDKClientOptions? options,
+            bool disposeHttpClient = true) : this(
+                httpClient,
+                baseUri: null,
+                authorizations,
+                options,
+                disposeHttpClient: disposeHttpClient)
+        {
+        }
+
+        /// <summary>
         /// Creates a new instance of the StabilityAIClient.
         /// If no httpClient is provided, a new one will be created.
         /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
@@ -218,10 +260,10 @@ namespace StabilityAI
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public StabilityAIClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::StabilityAI.EndPointAuthorization>? authorizations = null,
-            global::StabilityAI.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::StabilityAI.EndPointAuthorization>? authorizations,
+            global::StabilityAI.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 

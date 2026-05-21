@@ -187,5 +187,6 @@ namespace StabilityAI
         public InpaintingSearchModeRequestBody()
         {
         }
+
     }
 }

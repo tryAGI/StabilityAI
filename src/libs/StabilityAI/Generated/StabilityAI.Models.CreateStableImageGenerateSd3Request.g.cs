@@ -236,5 +236,6 @@ namespace StabilityAI
         public CreateStableImageGenerateSd3Request()
         {
         }
+
     }
 }

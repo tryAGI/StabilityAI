@@ -220,5 +220,6 @@ namespace StabilityAI
         public Create3dStablePointAware3dRequest()
         {
         }
+
     }
 }

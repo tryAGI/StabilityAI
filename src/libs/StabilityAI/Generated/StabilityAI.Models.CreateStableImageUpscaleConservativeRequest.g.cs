@@ -167,5 +167,6 @@ namespace StabilityAI
         public CreateStableImageUpscaleConservativeRequest()
         {
         }
+
     }
 }

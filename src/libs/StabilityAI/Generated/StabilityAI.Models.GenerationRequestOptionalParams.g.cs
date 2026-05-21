@@ -124,5 +124,6 @@ namespace StabilityAI
         public GenerationRequestOptionalParams()
         {
         }
+
     }
 }

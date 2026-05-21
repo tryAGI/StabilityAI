@@ -57,6 +57,11 @@ namespace StabilityAI
 
 
         /// <summary>
+        /// 
+        /// </summary>
+        public AudioResultsClient AudioResults { get; }
+
+        /// <summary>
         /// Tools for generating precise, controlled variations of existing images or sketches.<br/>
         /// **[Sketch](/docs/api-reference#tag/Control/paths/~1v2beta~1stable-image~1control~1sketch/post)**<br/>
         /// This service upgrades sketches to refined outputs with precise control. For non-sketch images, it allows detailed manipulation of the final appearance by leveraging the contour lines and edges within the image.<br/>
@@ -99,6 +104,14 @@ namespace StabilityAI
         /// Tools for fetching the results of your async generations.
         /// </summary>
         public ResultsClient Results { get; }
+
+        /// <summary>
+        /// Stable Audio 3.0. Tools to generate music and sound from text or audio, or transform existing audio clips into new compositions. Our different services include:<br/>
+        /// **Stable Audio 3.0**: Fast, Best-Quality, Long-Form Music &amp; Audio Generation<br/>
+        /// Our most advanced audio generation model, capable of generating up to 6-minute, 44.1 kHz stereo compositions. Stable Audio 3.0 supports text-to-audio, audio-to-audio, and audio-inpaint workflows - allowing creators to upload a sound and transform it into new instruments, styles, or genres using natural language prompts. Ideal for music production, cinematic sound design, and remixing.<br/>
+        /// Stable Audio models were exclusively trained on licensed data from the [AudioSparx](https://www.audiosparx.com/) music library, honoring opt-out requests and ensuring fair compensation for creators. Additionally, Stable Audio 3.0 was pre-trained on licensed data from [Freesound](https://freesound.org/). Read more about the model capabilities [here](https://stability.ai/news/stable-audio-3-0).
+        /// </summary>
+        public StableAudioClient StableAudio { get; }
 
         /// <summary>
         /// Stable Audio 2.5. Tools to generate music and sound from text or audio, or transform existing audio clips into new compositions. Our different services include:<br/>

@@ -89,5 +89,6 @@ namespace StabilityAI
         public AccountResponseBody()
         {
         }
+
     }
 }

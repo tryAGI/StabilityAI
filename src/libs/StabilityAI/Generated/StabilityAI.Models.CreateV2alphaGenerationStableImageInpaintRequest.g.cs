@@ -34,6 +34,26 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickSearch(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::StabilityAI.InpaintingSearchModeRequestBody? value)
+        {
+            value = Search;
+            return IsSearch;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::StabilityAI.InpaintingSearchModeRequestBody PickSearch() => IsSearch
+            ? Search!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::StabilityAI.InpaintingMaskingModeRequestBody? Mask { get; init; }
 #else
@@ -47,6 +67,26 @@ namespace StabilityAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mask))]
 #endif
         public bool IsMask => Mask != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMask(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::StabilityAI.InpaintingMaskingModeRequestBody? value)
+        {
+            value = Mask;
+            return IsMask;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::StabilityAI.InpaintingMaskingModeRequestBody PickMask() => IsMask
+            ? Mask!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Mask' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -68,6 +108,11 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
+        public static CreateV2alphaGenerationStableImageInpaintRequest FromSearch(global::StabilityAI.InpaintingSearchModeRequestBody? value) => new CreateV2alphaGenerationStableImageInpaintRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator CreateV2alphaGenerationStableImageInpaintRequest(global::StabilityAI.InpaintingMaskingModeRequestBody value) => new CreateV2alphaGenerationStableImageInpaintRequest((global::StabilityAI.InpaintingMaskingModeRequestBody?)value);
 
         /// <summary>
@@ -82,6 +127,11 @@ namespace StabilityAI
         {
             Mask = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CreateV2alphaGenerationStableImageInpaintRequest FromMask(global::StabilityAI.InpaintingMaskingModeRequestBody? value) => new CreateV2alphaGenerationStableImageInpaintRequest(value);
 
         /// <summary>
         /// 
@@ -126,8 +176,8 @@ namespace StabilityAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::StabilityAI.InpaintingSearchModeRequestBody?, TResult>? search = null,
-            global::System.Func<global::StabilityAI.InpaintingMaskingModeRequestBody?, TResult>? mask = null,
+            global::System.Func<global::StabilityAI.InpaintingSearchModeRequestBody, TResult>? search = null,
+            global::System.Func<global::StabilityAI.InpaintingMaskingModeRequestBody, TResult>? mask = null,
             bool validate = true)
         {
             if (validate)
@@ -151,8 +201,32 @@ namespace StabilityAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::StabilityAI.InpaintingSearchModeRequestBody?>? search = null,
-            global::System.Action<global::StabilityAI.InpaintingMaskingModeRequestBody?>? mask = null,
+            global::System.Action<global::StabilityAI.InpaintingSearchModeRequestBody>? search = null,
+
+            global::System.Action<global::StabilityAI.InpaintingMaskingModeRequestBody>? mask = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsSearch)
+            {
+                search?.Invoke(Search!);
+            }
+            else if (IsMask)
+            {
+                mask?.Invoke(Mask!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::StabilityAI.InpaintingSearchModeRequestBody>? search = null,
+            global::System.Action<global::StabilityAI.InpaintingMaskingModeRequestBody>? mask = null,
             bool validate = true)
         {
             if (validate)

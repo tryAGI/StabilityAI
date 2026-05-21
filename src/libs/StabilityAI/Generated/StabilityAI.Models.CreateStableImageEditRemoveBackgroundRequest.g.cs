@@ -102,5 +102,6 @@ namespace StabilityAI
         public CreateStableImageEditRemoveBackgroundRequest()
         {
         }
+
     }
 }

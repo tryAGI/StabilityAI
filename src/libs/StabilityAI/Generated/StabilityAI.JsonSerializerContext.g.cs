@@ -117,6 +117,30 @@ namespace StabilityAI
 
             typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudio2InpaintRequestOutputFormatNullableJsonConverter),
 
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioTextToAudioRequestModelJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioTextToAudioRequestModelNullableJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioTextToAudioRequestOutputFormatJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioTextToAudioRequestOutputFormatNullableJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioAudioToAudioRequestModelJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioAudioToAudioRequestModelNullableJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioAudioToAudioRequestOutputFormatJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioAudioToAudioRequestOutputFormatNullableJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioInpaintRequestModelJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioInpaintRequestModelNullableJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioInpaintRequestOutputFormatJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioInpaintRequestOutputFormatNullableJsonConverter),
+
             typeof(global::StabilityAI.JsonConverters.CreateStableImageUpscaleConservativeRequestOutputFormatJsonConverter),
 
             typeof(global::StabilityAI.JsonConverters.CreateStableImageUpscaleConservativeRequestOutputFormatNullableJsonConverter),
@@ -301,6 +325,22 @@ namespace StabilityAI
 
             typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudio2InpaintAcceptNullableJsonConverter),
 
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioTextToAudioAcceptJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioTextToAudioAcceptNullableJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioAudioToAudioAcceptJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioAudioToAudioAcceptNullableJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioInpaintAcceptJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudioInpaintAcceptNullableJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.FetchAudioResultAcceptJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.FetchAudioResultAcceptNullableJsonConverter),
+
             typeof(global::StabilityAI.JsonConverters.CreateStableImageUpscaleConservativeAcceptJsonConverter),
 
             typeof(global::StabilityAI.JsonConverters.CreateStableImageUpscaleConservativeAcceptNullableJsonConverter),
@@ -432,6 +472,18 @@ namespace StabilityAI
             typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudio2InpaintResponseFinishReason2JsonConverter),
 
             typeof(global::StabilityAI.JsonConverters.CreateAudioStableAudio2InpaintResponseFinishReason2NullableJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.FetchAudioResultResponseFinishReasonJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.FetchAudioResultResponseFinishReasonNullableJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.FetchAudioResultResponseFinishReason2JsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.FetchAudioResultResponseFinishReason2NullableJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.FetchAudioResultResponseStatusJsonConverter),
+
+            typeof(global::StabilityAI.JsonConverters.FetchAudioResultResponseStatusNullableJsonConverter),
 
             typeof(global::StabilityAI.JsonConverters.CreateStableImageUpscaleConservativeResponseFinishReasonJsonConverter),
 
@@ -713,6 +765,15 @@ namespace StabilityAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudio2AudioToAudioRequestOutputFormat), TypeInfoPropertyName = "CreateAudioStableAudio2AudioToAudioRequestOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudio2InpaintRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudio2InpaintRequestOutputFormat), TypeInfoPropertyName = "CreateAudioStableAudio2InpaintRequestOutputFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioTextToAudioRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioTextToAudioRequestModel), TypeInfoPropertyName = "CreateAudioStableAudioTextToAudioRequestModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioTextToAudioRequestOutputFormat), TypeInfoPropertyName = "CreateAudioStableAudioTextToAudioRequestOutputFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioAudioToAudioRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioAudioToAudioRequestModel), TypeInfoPropertyName = "CreateAudioStableAudioAudioToAudioRequestModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioAudioToAudioRequestOutputFormat), TypeInfoPropertyName = "CreateAudioStableAudioAudioToAudioRequestOutputFormat2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioInpaintRequest))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioInpaintRequestModel), TypeInfoPropertyName = "CreateAudioStableAudioInpaintRequestModel2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioInpaintRequestOutputFormat), TypeInfoPropertyName = "CreateAudioStableAudioInpaintRequestOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateStableImageUpscaleConservativeRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateStableImageUpscaleConservativeRequestOutputFormat), TypeInfoPropertyName = "CreateStableImageUpscaleConservativeRequestOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateStableImageUpscaleCreativeRequest))]
@@ -778,6 +839,10 @@ namespace StabilityAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudio2TextToAudioAccept), TypeInfoPropertyName = "CreateAudioStableAudio2TextToAudioAccept2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudio2AudioToAudioAccept), TypeInfoPropertyName = "CreateAudioStableAudio2AudioToAudioAccept2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudio2InpaintAccept), TypeInfoPropertyName = "CreateAudioStableAudio2InpaintAccept2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioTextToAudioAccept), TypeInfoPropertyName = "CreateAudioStableAudioTextToAudioAccept2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioAudioToAudioAccept), TypeInfoPropertyName = "CreateAudioStableAudioAudioToAudioAccept2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioInpaintAccept), TypeInfoPropertyName = "CreateAudioStableAudioInpaintAccept2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultAccept), TypeInfoPropertyName = "FetchAudioResultAccept2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateStableImageUpscaleConservativeAccept), TypeInfoPropertyName = "CreateStableImageUpscaleConservativeAccept2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetStableImageUpscaleCreativeResultAccept), TypeInfoPropertyName = "GetStableImageUpscaleCreativeResultAccept2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateStableImageUpscaleFastAccept), TypeInfoPropertyName = "CreateStableImageUpscaleFastAccept2")]
@@ -860,6 +925,30 @@ namespace StabilityAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudio2InpaintResponse4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudio2InpaintResponse5))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudio2InpaintResponse6))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioTextToAudioResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioTextToAudioResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioTextToAudioResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioTextToAudioResponse4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioTextToAudioResponse5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioAudioToAudioResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioAudioToAudioResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioAudioToAudioResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioAudioToAudioResponse4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioAudioToAudioResponse5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioInpaintResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioInpaintResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioInpaintResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioInpaintResponse4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateAudioStableAudioInpaintResponse5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponseFinishReason), TypeInfoPropertyName = "FetchAudioResultResponseFinishReason2_3")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponse2))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponseFinishReason2), TypeInfoPropertyName = "FetchAudioResultResponseFinishReason22")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponse3))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponseStatus), TypeInfoPropertyName = "FetchAudioResultResponseStatus2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponse4))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponse5))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponse6))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateStableImageUpscaleConservativeResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateStableImageUpscaleConservativeResponseFinishReason), TypeInfoPropertyName = "CreateStableImageUpscaleConservativeResponseFinishReason2_3")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateStableImageUpscaleConservativeResponse2))]

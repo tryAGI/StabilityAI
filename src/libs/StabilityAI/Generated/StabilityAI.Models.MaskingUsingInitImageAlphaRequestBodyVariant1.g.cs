@@ -120,5 +120,6 @@ namespace StabilityAI
         public MaskingUsingInitImageAlphaRequestBodyVariant1()
         {
         }
+
     }
 }

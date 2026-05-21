@@ -177,5 +177,6 @@ namespace StabilityAI
         public CreateV2alphaGenerationStableImageUpscaleRequest()
         {
         }
+
     }
 }

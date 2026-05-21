@@ -27,6 +27,26 @@ namespace StabilityAI
         public bool IsImageToImageUsingImageStrengthRequestBodyVariant1 => ImageToImageUsingImageStrengthRequestBodyVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickImageToImageUsingImageStrengthRequestBodyVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1? value)
+        {
+            value = ImageToImageUsingImageStrengthRequestBodyVariant1;
+            return IsImageToImageUsingImageStrengthRequestBodyVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1 PickImageToImageUsingImageStrengthRequestBodyVariant1() => IsImageToImageUsingImageStrengthRequestBodyVariant1
+            ? ImageToImageUsingImageStrengthRequestBodyVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ImageToImageUsingImageStrengthRequestBodyVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents the optional parameters that can be passed to any generation request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace StabilityAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationOptionalParams))]
 #endif
         public bool IsGenerationOptionalParams => GenerationOptionalParams != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGenerationOptionalParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::StabilityAI.GenerationRequestOptionalParams? value)
+        {
+            value = GenerationOptionalParams;
+            return IsGenerationOptionalParams;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::StabilityAI.GenerationRequestOptionalParams PickGenerationOptionalParams() => IsGenerationOptionalParams
+            ? GenerationOptionalParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationOptionalParams' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
+        public static ImageToImageUsingImageStrengthRequestBody FromImageToImageUsingImageStrengthRequestBodyVariant1(global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1? value) => new ImageToImageUsingImageStrengthRequestBody(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator ImageToImageUsingImageStrengthRequestBody(global::StabilityAI.GenerationRequestOptionalParams value) => new ImageToImageUsingImageStrengthRequestBody((global::StabilityAI.GenerationRequestOptionalParams?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace StabilityAI
         {
             GenerationOptionalParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static ImageToImageUsingImageStrengthRequestBody FromGenerationOptionalParams(global::StabilityAI.GenerationRequestOptionalParams? value) => new ImageToImageUsingImageStrengthRequestBody(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace StabilityAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1?, TResult>? imageToImageUsingImageStrengthRequestBodyVariant1 = null,
-            global::System.Func<global::StabilityAI.GenerationRequestOptionalParams?, TResult>? generationOptionalParams = null,
+            global::System.Func<global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1, TResult>? imageToImageUsingImageStrengthRequestBodyVariant1 = null,
+            global::System.Func<global::StabilityAI.GenerationRequestOptionalParams, TResult>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace StabilityAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1?>? imageToImageUsingImageStrengthRequestBodyVariant1 = null,
-            global::System.Action<global::StabilityAI.GenerationRequestOptionalParams?>? generationOptionalParams = null,
+            global::System.Action<global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1>? imageToImageUsingImageStrengthRequestBodyVariant1 = null,
+
+            global::System.Action<global::StabilityAI.GenerationRequestOptionalParams>? generationOptionalParams = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsImageToImageUsingImageStrengthRequestBodyVariant1)
+            {
+                imageToImageUsingImageStrengthRequestBodyVariant1?.Invoke(ImageToImageUsingImageStrengthRequestBodyVariant1!);
+            }
+            else if (IsGenerationOptionalParams)
+            {
+                generationOptionalParams?.Invoke(GenerationOptionalParams!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1>? imageToImageUsingImageStrengthRequestBodyVariant1 = null,
+            global::System.Action<global::StabilityAI.GenerationRequestOptionalParams>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)

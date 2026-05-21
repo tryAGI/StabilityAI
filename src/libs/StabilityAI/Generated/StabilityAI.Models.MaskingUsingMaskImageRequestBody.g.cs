@@ -27,6 +27,26 @@ namespace StabilityAI
         public bool IsMaskingUsingMaskImageRequestBodyVariant1 => MaskingUsingMaskImageRequestBodyVariant1 != null;
 
         /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickMaskingUsingMaskImageRequestBodyVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1? value)
+        {
+            value = MaskingUsingMaskImageRequestBodyVariant1;
+            return IsMaskingUsingMaskImageRequestBodyVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1 PickMaskingUsingMaskImageRequestBodyVariant1() => IsMaskingUsingMaskImageRequestBodyVariant1
+            ? MaskingUsingMaskImageRequestBodyVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'MaskingUsingMaskImageRequestBodyVariant1' but the value was {ToString()}.");
+
+        /// <summary>
         /// Represents the optional parameters that can be passed to any generation request.
         /// </summary>
 #if NET6_0_OR_GREATER
@@ -42,6 +62,26 @@ namespace StabilityAI
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationOptionalParams))]
 #endif
         public bool IsGenerationOptionalParams => GenerationOptionalParams != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickGenerationOptionalParams(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::StabilityAI.GenerationRequestOptionalParams? value)
+        {
+            value = GenerationOptionalParams;
+            return IsGenerationOptionalParams;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::StabilityAI.GenerationRequestOptionalParams PickGenerationOptionalParams() => IsGenerationOptionalParams
+            ? GenerationOptionalParams!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationOptionalParams' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
@@ -63,6 +103,11 @@ namespace StabilityAI
         /// <summary>
         /// 
         /// </summary>
+        public static MaskingUsingMaskImageRequestBody FromMaskingUsingMaskImageRequestBodyVariant1(global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1? value) => new MaskingUsingMaskImageRequestBody(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator MaskingUsingMaskImageRequestBody(global::StabilityAI.GenerationRequestOptionalParams value) => new MaskingUsingMaskImageRequestBody((global::StabilityAI.GenerationRequestOptionalParams?)value);
 
         /// <summary>
@@ -77,6 +122,11 @@ namespace StabilityAI
         {
             GenerationOptionalParams = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static MaskingUsingMaskImageRequestBody FromGenerationOptionalParams(global::StabilityAI.GenerationRequestOptionalParams? value) => new MaskingUsingMaskImageRequestBody(value);
 
         /// <summary>
         /// 
@@ -118,8 +168,8 @@ namespace StabilityAI
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1?, TResult>? maskingUsingMaskImageRequestBodyVariant1 = null,
-            global::System.Func<global::StabilityAI.GenerationRequestOptionalParams?, TResult>? generationOptionalParams = null,
+            global::System.Func<global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1, TResult>? maskingUsingMaskImageRequestBodyVariant1 = null,
+            global::System.Func<global::StabilityAI.GenerationRequestOptionalParams, TResult>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +193,32 @@ namespace StabilityAI
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1?>? maskingUsingMaskImageRequestBodyVariant1 = null,
-            global::System.Action<global::StabilityAI.GenerationRequestOptionalParams?>? generationOptionalParams = null,
+            global::System.Action<global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1>? maskingUsingMaskImageRequestBodyVariant1 = null,
+
+            global::System.Action<global::StabilityAI.GenerationRequestOptionalParams>? generationOptionalParams = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsMaskingUsingMaskImageRequestBodyVariant1)
+            {
+                maskingUsingMaskImageRequestBodyVariant1?.Invoke(MaskingUsingMaskImageRequestBodyVariant1!);
+            }
+            else if (IsGenerationOptionalParams)
+            {
+                generationOptionalParams?.Invoke(GenerationOptionalParams!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1>? maskingUsingMaskImageRequestBodyVariant1 = null,
+            global::System.Action<global::StabilityAI.GenerationRequestOptionalParams>? generationOptionalParams = null,
             bool validate = true)
         {
             if (validate)
