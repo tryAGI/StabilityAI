@@ -512,18 +512,17 @@ namespace StabilityAI
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // unauthorized: API key missing or invalid
                             if ((int)__response.StatusCode == 401)
@@ -550,18 +549,17 @@ namespace StabilityAI
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // permission_denied: You lack the necessary permissions to perform this action
                             if ((int)__response.StatusCode == 403)
@@ -588,18 +586,17 @@ namespace StabilityAI
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // not_found: The requested resource was not found (e.g. specifing a model that does not exist)
                             if ((int)__response.StatusCode == 404)
@@ -626,18 +623,17 @@ namespace StabilityAI
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // server_error: Some unexpected server error occurred
                             if ((int)__response.StatusCode == 500)
@@ -664,18 +660,17 @@ namespace StabilityAI
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -709,17 +704,15 @@ namespace StabilityAI
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::StabilityAI.ApiException(
+                                    throw global::StabilityAI.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -756,17 +749,15 @@ namespace StabilityAI
                                     {
                                     }
 
-                                    throw new global::StabilityAI.ApiException(
+                                    throw global::StabilityAI.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -1264,18 +1255,17 @@ namespace StabilityAI
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // unauthorized: API key missing or invalid
                             if ((int)__response.StatusCode == 401)
@@ -1302,18 +1292,17 @@ namespace StabilityAI
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // permission_denied: You lack the necessary permissions to perform this action
                             if ((int)__response.StatusCode == 403)
@@ -1340,18 +1329,17 @@ namespace StabilityAI
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // not_found: The requested resource was not found (e.g. specifing a model that does not exist)
                             if ((int)__response.StatusCode == 404)
@@ -1378,18 +1366,17 @@ namespace StabilityAI
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // server_error: Some unexpected server error occurred
                             if ((int)__response.StatusCode == 500)
@@ -1416,18 +1403,17 @@ namespace StabilityAI
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -1457,17 +1443,15 @@ namespace StabilityAI
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::StabilityAI.ApiException(
+                                    throw global::StabilityAI.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -1500,17 +1484,15 @@ namespace StabilityAI
                                     {
                                     }
 
-                                    throw new global::StabilityAI.ApiException(
+                                    throw global::StabilityAI.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
@@ -1954,18 +1936,17 @@ namespace StabilityAI
                                     __exception_400 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_400,
-                                    ResponseObject = __value_400,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_400,
+                                    responseObject: __value_400,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // unauthorized: API key missing or invalid
                             if ((int)__response.StatusCode == 401)
@@ -1992,18 +1973,17 @@ namespace StabilityAI
                                     __exception_401 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_401 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_401,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_401,
-                                    ResponseObject = __value_401,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_401,
+                                    responseObject: __value_401,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // permission_denied: You lack the necessary permissions to perform this action
                             if ((int)__response.StatusCode == 403)
@@ -2030,18 +2010,17 @@ namespace StabilityAI
                                     __exception_403 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_403 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_403,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_403,
-                                    ResponseObject = __value_403,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_403,
+                                    responseObject: __value_403,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // not_found: The requested resource was not found (e.g. specifing a model that does not exist)
                             if ((int)__response.StatusCode == 404)
@@ -2068,18 +2047,17 @@ namespace StabilityAI
                                     __exception_404 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_404,
-                                    ResponseObject = __value_404,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_404,
+                                    responseObject: __value_404,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
                             // server_error: Some unexpected server error occurred
                             if ((int)__response.StatusCode == 500)
@@ -2106,18 +2084,17 @@ namespace StabilityAI
                                     __exception_500 = __ex;
                                 }
 
-                                throw new global::StabilityAI.ApiException<global::StabilityAI.Error>(
+
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
+                                    statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
-                                    statusCode: __response.StatusCode)
-                                {
-                                    ResponseBody = __content_500,
-                                    ResponseObject = __value_500,
-                                    ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                    responseBody: __content_500,
+                                    responseObject: __value_500,
+                                    responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                         __response.Headers,
                                         h => h.Key,
-                                        h => h.Value),
-                                };
+                                        h => h.Value));
                             }
 
                             if (__effectiveReadResponseAsString)
@@ -2151,17 +2128,15 @@ namespace StabilityAI
                                 }
                                 catch (global::System.Exception __ex)
                                 {
-                                    throw new global::StabilityAI.ApiException(
+                                    throw global::StabilityAI.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
                             else
@@ -2198,17 +2173,15 @@ namespace StabilityAI
                                     {
                                     }
 
-                                    throw new global::StabilityAI.ApiException(
+                                    throw global::StabilityAI.ApiException.Create(
+                                        statusCode: __response.StatusCode,
                                         message: __content ?? __response.ReasonPhrase ?? string.Empty,
                                         innerException: __ex,
-                                        statusCode: __response.StatusCode)
-                                    {
-                                        ResponseBody = __content,
-                                        ResponseHeaders = global::System.Linq.Enumerable.ToDictionary(
+                                        responseBody: __content,
+                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
                                             __response.Headers,
                                             h => h.Key,
-                                            h => h.Value),
-                                    };
+                                            h => h.Value));
                                 }
                             }
 
