@@ -1,14 +1,25 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+install_autosdk_cli() {
+  dotnet tool update --global autosdk.cli --prerelease >/dev/null 2>&1 || \
+    dotnet tool install --global autosdk.cli --prerelease
+}
+
+fetch_spec() {
+  curl "$@" \
+    --fail --silent --show-error --location \
+    --retry 5 --retry-delay 10 --retry-all-errors \
+    --connect-timeout 30 --max-time 300
+}
+
 # OpenAPI specs:
 # - Legacy REST v1: https://raw.githubusercontent.com/Stability-AI/rest-api-support/main/generated/spec/merged.json
 # - Stable Image REST v2beta: https://api.stability.ai/v2alpha/openapi
-
-dotnet tool install --global autosdk.cli --prerelease
+install_autosdk_cli
 rm -rf Generated
-curl --fail --silent --show-error --location https://raw.githubusercontent.com/Stability-AI/rest-api-support/main/generated/spec/merged.json -o openapi.v1.json
-curl --fail --silent --show-error --location https://api.stability.ai/v2alpha/openapi -o openapi.v2beta.json
+fetch_spec --fail --silent --show-error --location https://raw.githubusercontent.com/Stability-AI/rest-api-support/main/generated/spec/merged.json -o openapi.v1.json
+fetch_spec --fail --silent --show-error --location https://api.stability.ai/v2alpha/openapi -o openapi.v2beta.json
 
 jq -s '
   .[0] as $v1 | .[1] as $v2 |
