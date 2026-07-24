@@ -17000,6 +17000,26 @@
         "maximum": 0.5,
         "default": 0.35,
         "description": "Controls the likelihood of creating additional details not heavily conditioned by the init image."
+      },
+      "FalGenerationResponse": {
+        "type": "object",
+        "properties": {
+          "s3Url": {
+            "type": "string",
+            "nullable": true,
+            "description": "An S3 object URL in the form `s3://bucket/key` pointing to the generated asset.\nInternal callers can fetch this object from S3 to download the bytes. `null` when\nthe output was withheld (e.g. it failed content moderation — see the `finish-reason` header).",
+            "example": "s3://stabilityapi-outputs-123456789012-us-west-2/fal/engine/output-id"
+          },
+          "contentType": {
+            "type": "string",
+            "description": "The MIME type of the generated asset.",
+            "example": "image/png"
+          }
+        },
+        "required": [
+          "s3Url",
+          "contentType"
+        ]
       }
     },
     "responses": {
