@@ -208,10 +208,6 @@ namespace StabilityAI
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(contentType ?? string.Empty),
-                                name: "\"content-type\"");
-
                             var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
                             __contentImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Imagename is null
@@ -973,10 +969,6 @@ namespace StabilityAI
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(contentType ?? string.Empty),
-                                name: "\"content-type\"");
-
                             var __contentImage = new global::System.Net.Http.StreamContent(image);
                             __contentImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Imagename is null
@@ -1630,10 +1622,6 @@ namespace StabilityAI
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(contentType ?? string.Empty),
-                                name: "\"content-type\"");
-
                             var __contentImage = new global::System.Net.Http.StreamContent(image);
                             __contentImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.Imagename is null

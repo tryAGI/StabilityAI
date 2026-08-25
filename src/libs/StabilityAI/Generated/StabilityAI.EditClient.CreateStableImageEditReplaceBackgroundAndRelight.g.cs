@@ -320,34 +320,6 @@ namespace StabilityAI
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(contentType ?? string.Empty),
-                                name: "\"content-type\"");
-
-                            if (stabilityClientId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientId ?? string.Empty),
-                                    name: "\"stability-client-id\"");
-
-                            }
-                            if (stabilityClientUserId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientUserId ?? string.Empty),
-                                    name: "\"stability-client-user-id\"");
-
-                            }
-                            if (stabilityClientVersion != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientVersion ?? string.Empty),
-                                    name: "\"stability-client-version\"");
-
-                            }
                             var __contentSubjectImage = new global::System.Net.Http.ByteArrayContent(request.SubjectImage ?? global::System.Array.Empty<byte>());
                             __contentSubjectImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.SubjectImagename is null
@@ -1622,34 +1594,6 @@ namespace StabilityAI
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(contentType ?? string.Empty),
-                                name: "\"content-type\"");
-
-                            if (stabilityClientId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientId ?? string.Empty),
-                                    name: "\"stability-client-id\"");
-
-                            }
-                            if (stabilityClientUserId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientUserId ?? string.Empty),
-                                    name: "\"stability-client-user-id\"");
-
-                            }
-                            if (stabilityClientVersion != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientVersion ?? string.Empty),
-                                    name: "\"stability-client-version\"");
-
-                            }
                             var __contentSubjectImage = new global::System.Net.Http.StreamContent(subjectImage);
                             __contentSubjectImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.SubjectImagename is null
@@ -2683,34 +2627,6 @@ namespace StabilityAI
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(contentType ?? string.Empty),
-                                name: "\"content-type\"");
-
-                            if (stabilityClientId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientId ?? string.Empty),
-                                    name: "\"stability-client-id\"");
-
-                            }
-                            if (stabilityClientUserId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientUserId ?? string.Empty),
-                                    name: "\"stability-client-user-id\"");
-
-                            }
-                            if (stabilityClientVersion != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientVersion ?? string.Empty),
-                                    name: "\"stability-client-version\"");
-
-                            }
                             var __contentSubjectImage = new global::System.Net.Http.StreamContent(subjectImage);
                             __contentSubjectImage.Headers.ContentType = new global::System.Net.Http.Headers.MediaTypeHeaderValue(
                                 request.SubjectImagename is null

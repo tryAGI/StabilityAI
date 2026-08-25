@@ -325,42 +325,6 @@ namespace StabilityAI
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(contentType ?? string.Empty),
-                                name: "\"content-type\"");
-
-                            if (accept != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((accept).HasValue ? (accept).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"accept\"");
-
-                            }
-                            if (stabilityClientId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientId ?? string.Empty),
-                                    name: "\"stability-client-id\"");
-
-                            }
-                            if (stabilityClientUserId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientUserId ?? string.Empty),
-                                    name: "\"stability-client-user-id\"");
-
-                            }
-                            if (stabilityClientVersion != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientVersion ?? string.Empty),
-                                    name: "\"stability-client-version\"");
-
-                            }
-                            __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
                                 name: "\"prompt\"");
 
@@ -1338,42 +1302,6 @@ namespace StabilityAI
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(contentType ?? string.Empty),
-                                name: "\"content-type\"");
-
-                            if (accept != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((accept).HasValue ? (accept).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"accept\"");
-
-                            }
-                            if (stabilityClientId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientId ?? string.Empty),
-                                    name: "\"stability-client-id\"");
-
-                            }
-                            if (stabilityClientUserId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientUserId ?? string.Empty),
-                                    name: "\"stability-client-user-id\"");
-
-                            }
-                            if (stabilityClientVersion != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientVersion ?? string.Empty),
-                                    name: "\"stability-client-version\"");
-
-                            }
-                            __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
                                 name: "\"prompt\"");
 
@@ -2200,42 +2128,6 @@ namespace StabilityAI
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(contentType ?? string.Empty),
-                                name: "\"content-type\"");
-
-                            if (accept != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((accept).HasValue ? (accept).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"accept\"");
-
-                            }
-                            if (stabilityClientId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientId ?? string.Empty),
-                                    name: "\"stability-client-id\"");
-
-                            }
-                            if (stabilityClientUserId != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientUserId ?? string.Empty),
-                                    name: "\"stability-client-user-id\"");
-
-                            }
-                            if (stabilityClientVersion != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(stabilityClientVersion ?? string.Empty),
-                                    name: "\"stability-client-version\"");
-
-                            }
                             __httpRequestContent.Add(
                                 content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
                                 name: "\"prompt\"");
