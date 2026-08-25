@@ -231,6 +231,10 @@ namespace StabilityAI
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
 
+                __httpRequest.Headers.TryAddWithoutValidation(
+                    "Accept",
+                    "application/json");
+
             foreach (var __authorization in __authorizations)
             {
                 if (__authorization.Type == "Http" ||
@@ -256,18 +260,6 @@ namespace StabilityAI
 
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
-                            __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(contentType ?? string.Empty),
-                                name: "\"content-type\"");
-
-                            if (accept != default)
-                            {
-
-                                __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent((accept).HasValue ? (accept).GetValueOrDefault().ToValueString() : string.Empty),
-                                    name: "\"accept\"");
-
-                            }
 
                             __httpRequest.Content = __httpRequestContent;
 
