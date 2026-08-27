@@ -10,7 +10,7 @@ namespace StabilityAI
     public enum ContentModerationResponseName
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentModeration,
     }

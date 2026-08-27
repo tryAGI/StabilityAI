@@ -11,7 +11,7 @@ namespace StabilityAI
     public sealed partial class V1EnginesClient : global::StabilityAI.IV1EnginesClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.stability.ai/";
 
@@ -38,7 +38,7 @@ namespace StabilityAI
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::StabilityAI.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {

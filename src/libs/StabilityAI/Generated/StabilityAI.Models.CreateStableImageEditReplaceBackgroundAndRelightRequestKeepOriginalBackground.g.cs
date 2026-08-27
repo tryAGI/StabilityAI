@@ -12,11 +12,11 @@ namespace StabilityAI
     public enum CreateStableImageEditReplaceBackgroundAndRelightRequestKeepOriginalBackground
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         False,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         True,
     }

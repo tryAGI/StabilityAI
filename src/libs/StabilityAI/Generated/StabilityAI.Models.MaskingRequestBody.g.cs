@@ -4,7 +4,7 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     [global::System.Text.Json.Serialization.JsonPolymorphic(
         TypeDiscriminatorPropertyName = "mask_source",

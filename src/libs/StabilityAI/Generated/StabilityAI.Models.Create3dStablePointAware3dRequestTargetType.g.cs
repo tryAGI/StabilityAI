@@ -11,15 +11,15 @@ namespace StabilityAI
     public enum Create3dStablePointAware3dRequestTargetType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Face,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Vertex,
     }

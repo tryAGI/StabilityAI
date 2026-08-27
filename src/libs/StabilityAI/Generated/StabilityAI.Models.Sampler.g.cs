@@ -10,43 +10,43 @@ namespace StabilityAI
     public enum Sampler
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ddim,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ddpm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KDpmpp2m,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KDpmpp2sAncestral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KDpm2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KDpm2Ancestral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KEuler,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KEulerAncestral,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KHeun,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         KLms,
     }

@@ -5,12 +5,12 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct MaskingUsingMaskImageRequestBody : global::System.IEquatable<MaskingUsingMaskImageRequestBody>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1? MaskingUsingMaskImageRequestBodyVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace StabilityAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(MaskingUsingMaskImageRequestBodyVariant1))]
@@ -27,7 +27,7 @@ namespace StabilityAI
         public bool IsMaskingUsingMaskImageRequestBodyVariant1 => MaskingUsingMaskImageRequestBodyVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMaskingUsingMaskImageRequestBodyVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1 PickMaskingUsingMaskImageRequestBodyVariant1() => IsMaskingUsingMaskImageRequestBodyVariant1
             ? MaskingUsingMaskImageRequestBodyVariant1!
@@ -56,7 +56,7 @@ namespace StabilityAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationOptionalParams))]
@@ -64,7 +64,7 @@ namespace StabilityAI
         public bool IsGenerationOptionalParams => GenerationOptionalParams != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGenerationOptionalParams(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::StabilityAI.GenerationRequestOptionalParams PickGenerationOptionalParams() => IsGenerationOptionalParams
             ? GenerationOptionalParams!
             : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationOptionalParams' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MaskingUsingMaskImageRequestBody(global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1 value) => new MaskingUsingMaskImageRequestBody((global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1?(MaskingUsingMaskImageRequestBody @this) => @this.MaskingUsingMaskImageRequestBodyVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MaskingUsingMaskImageRequestBody(global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1? value)
         {
@@ -101,22 +101,22 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MaskingUsingMaskImageRequestBody FromMaskingUsingMaskImageRequestBodyVariant1(global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1? value) => new MaskingUsingMaskImageRequestBody(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator MaskingUsingMaskImageRequestBody(global::StabilityAI.GenerationRequestOptionalParams value) => new MaskingUsingMaskImageRequestBody((global::StabilityAI.GenerationRequestOptionalParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::StabilityAI.GenerationRequestOptionalParams?(MaskingUsingMaskImageRequestBody @this) => @this.GenerationOptionalParams;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MaskingUsingMaskImageRequestBody(global::StabilityAI.GenerationRequestOptionalParams? value)
         {
@@ -124,12 +124,12 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static MaskingUsingMaskImageRequestBody FromGenerationOptionalParams(global::StabilityAI.GenerationRequestOptionalParams? value) => new MaskingUsingMaskImageRequestBody(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public MaskingUsingMaskImageRequestBody(
             global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1? maskingUsingMaskImageRequestBodyVariant1,
@@ -141,23 +141,23 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             GenerationOptionalParams as object ??
-            MaskingUsingMaskImageRequestBodyVariant1 as object 
+            MaskingUsingMaskImageRequestBodyVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             MaskingUsingMaskImageRequestBodyVariant1?.ToString() ??
-            GenerationOptionalParams?.ToString() 
+            GenerationOptionalParams?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1, TResult>? maskingUsingMaskImageRequestBodyVariant1 = null,
@@ -190,7 +190,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1>? maskingUsingMaskImageRequestBodyVariant1 = null,
@@ -214,7 +214,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1>? maskingUsingMaskImageRequestBodyVariant1 = null,
@@ -237,7 +237,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(MaskingUsingMaskImageRequestBody other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1?>.Default.Equals(MaskingUsingMaskImageRequestBodyVariant1, other.MaskingUsingMaskImageRequestBodyVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.GenerationRequestOptionalParams?>.Default.Equals(GenerationOptionalParams, other.GenerationOptionalParams) 
+                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.GenerationRequestOptionalParams?>.Default.Equals(GenerationOptionalParams, other.GenerationOptionalParams)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(MaskingUsingMaskImageRequestBody obj1, MaskingUsingMaskImageRequestBody obj2)
         {
@@ -277,7 +277,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(MaskingUsingMaskImageRequestBody obj1, MaskingUsingMaskImageRequestBody obj2)
         {
@@ -285,7 +285,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateAudioStableAudioTextToAudioRequestOutputFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wav,
     }

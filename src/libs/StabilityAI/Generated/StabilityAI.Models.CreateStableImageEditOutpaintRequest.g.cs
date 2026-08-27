@@ -4,7 +4,7 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateStableImageEditOutpaintRequest
     {
@@ -71,7 +71,7 @@ namespace StabilityAI
         public int? Down { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("creativity")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.AllOfJsonConverter<double?, object>))]

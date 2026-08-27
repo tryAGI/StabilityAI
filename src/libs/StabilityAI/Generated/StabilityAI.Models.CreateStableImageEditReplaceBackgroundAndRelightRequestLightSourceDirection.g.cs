@@ -9,19 +9,19 @@ namespace StabilityAI
     public enum CreateStableImageEditReplaceBackgroundAndRelightRequestLightSourceDirection
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Above,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Below,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Left,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Right,
     }

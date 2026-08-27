@@ -9,11 +9,11 @@ namespace StabilityAI
     public enum MaskingAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImagePng,
     }

@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateAudioStableAudioInpaintAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioAny,
     }

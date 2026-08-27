@@ -9,7 +9,7 @@ namespace StabilityAI
     public enum GetResultsResponseStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
     }

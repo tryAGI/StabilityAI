@@ -10,7 +10,7 @@ namespace StabilityAI
     public enum FetchAudioResultResponseFinishReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

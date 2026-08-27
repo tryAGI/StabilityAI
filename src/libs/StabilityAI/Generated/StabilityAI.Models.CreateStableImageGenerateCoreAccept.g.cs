@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateStableImageGenerateCoreAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageAny,
     }

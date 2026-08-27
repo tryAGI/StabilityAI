@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateStableImageControlSketchAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageAny,
     }

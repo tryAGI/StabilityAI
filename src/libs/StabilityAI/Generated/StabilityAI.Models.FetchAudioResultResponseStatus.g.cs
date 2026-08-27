@@ -9,7 +9,7 @@ namespace StabilityAI
     public enum FetchAudioResultResponseStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
     }

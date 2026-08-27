@@ -4,16 +4,16 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum ImageToImageRequestBodyDiscriminatorInitImageMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageStrength,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StepSchedule,
     }

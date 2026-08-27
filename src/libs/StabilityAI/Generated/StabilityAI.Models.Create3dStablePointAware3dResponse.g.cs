@@ -4,7 +4,7 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Create3dStablePointAware3dResponse
     {

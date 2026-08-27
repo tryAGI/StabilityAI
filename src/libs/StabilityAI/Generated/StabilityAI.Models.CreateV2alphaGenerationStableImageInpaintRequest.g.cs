@@ -5,17 +5,17 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct CreateV2alphaGenerationStableImageInpaintRequest : global::System.IEquatable<CreateV2alphaGenerationStableImageInpaintRequest>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequestDiscriminatorMode? Mode { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::StabilityAI.InpaintingSearchModeRequestBody? Search { get; init; }
@@ -24,7 +24,7 @@ namespace StabilityAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Search))]
@@ -32,7 +32,7 @@ namespace StabilityAI
         public bool IsSearch => Search != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickSearch(
 #if NET6_0_OR_GREATER
@@ -45,14 +45,14 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::StabilityAI.InpaintingSearchModeRequestBody PickSearch() => IsSearch
             ? Search!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::StabilityAI.InpaintingMaskingModeRequestBody? Mask { get; init; }
@@ -61,7 +61,7 @@ namespace StabilityAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(Mask))]
@@ -69,7 +69,7 @@ namespace StabilityAI
         public bool IsMask => Mask != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickMask(
 #if NET6_0_OR_GREATER
@@ -82,23 +82,23 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::StabilityAI.InpaintingMaskingModeRequestBody PickMask() => IsMask
             ? Mask!
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mask' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateV2alphaGenerationStableImageInpaintRequest(global::StabilityAI.InpaintingSearchModeRequestBody value) => new CreateV2alphaGenerationStableImageInpaintRequest((global::StabilityAI.InpaintingSearchModeRequestBody?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::StabilityAI.InpaintingSearchModeRequestBody?(CreateV2alphaGenerationStableImageInpaintRequest @this) => @this.Search;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateV2alphaGenerationStableImageInpaintRequest(global::StabilityAI.InpaintingSearchModeRequestBody? value)
         {
@@ -106,22 +106,22 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateV2alphaGenerationStableImageInpaintRequest FromSearch(global::StabilityAI.InpaintingSearchModeRequestBody? value) => new CreateV2alphaGenerationStableImageInpaintRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator CreateV2alphaGenerationStableImageInpaintRequest(global::StabilityAI.InpaintingMaskingModeRequestBody value) => new CreateV2alphaGenerationStableImageInpaintRequest((global::StabilityAI.InpaintingMaskingModeRequestBody?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::StabilityAI.InpaintingMaskingModeRequestBody?(CreateV2alphaGenerationStableImageInpaintRequest @this) => @this.Mask;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateV2alphaGenerationStableImageInpaintRequest(global::StabilityAI.InpaintingMaskingModeRequestBody? value)
         {
@@ -129,12 +129,12 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static CreateV2alphaGenerationStableImageInpaintRequest FromMask(global::StabilityAI.InpaintingMaskingModeRequestBody? value) => new CreateV2alphaGenerationStableImageInpaintRequest(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public CreateV2alphaGenerationStableImageInpaintRequest(
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequestDiscriminatorMode? mode,
@@ -149,23 +149,23 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             Mask as object ??
-            Search as object 
+            Search as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             Search?.ToString() ??
-            Mask?.ToString() 
+            Mask?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -173,7 +173,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::StabilityAI.InpaintingSearchModeRequestBody, TResult>? search = null,
@@ -198,7 +198,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::StabilityAI.InpaintingSearchModeRequestBody>? search = null,
@@ -222,7 +222,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::StabilityAI.InpaintingSearchModeRequestBody>? search = null,
@@ -245,7 +245,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -266,18 +266,18 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(CreateV2alphaGenerationStableImageInpaintRequest other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::StabilityAI.InpaintingSearchModeRequestBody?>.Default.Equals(Search, other.Search) &&
-                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.InpaintingMaskingModeRequestBody?>.Default.Equals(Mask, other.Mask) 
+                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.InpaintingMaskingModeRequestBody?>.Default.Equals(Mask, other.Mask)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(CreateV2alphaGenerationStableImageInpaintRequest obj1, CreateV2alphaGenerationStableImageInpaintRequest obj2)
         {
@@ -285,7 +285,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(CreateV2alphaGenerationStableImageInpaintRequest obj1, CreateV2alphaGenerationStableImageInpaintRequest obj2)
         {
@@ -293,7 +293,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

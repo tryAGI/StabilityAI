@@ -14,7 +14,7 @@ namespace StabilityAI
     public enum InpaintingMaskingModeRequestBodyMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mask,
     }

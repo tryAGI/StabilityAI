@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateStableImageControlStyleTransferAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageAny,
     }

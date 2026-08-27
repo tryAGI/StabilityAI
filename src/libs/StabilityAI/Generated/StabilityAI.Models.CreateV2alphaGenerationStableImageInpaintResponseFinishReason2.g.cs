@@ -13,11 +13,11 @@ namespace StabilityAI
     public enum CreateV2alphaGenerationStableImageInpaintResponseFinishReason2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFiltered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

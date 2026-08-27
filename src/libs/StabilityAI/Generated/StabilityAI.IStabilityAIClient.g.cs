@@ -51,13 +51,13 @@ namespace StabilityAI
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext { get; set; }
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AudioResultsClient AudioResults { get; }
 
@@ -150,12 +150,12 @@ namespace StabilityAI
         public V1UserClient V1User { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public V2alphaGenerationClient V2alphaGeneration { get; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public x3dClient x3d { get; }
 

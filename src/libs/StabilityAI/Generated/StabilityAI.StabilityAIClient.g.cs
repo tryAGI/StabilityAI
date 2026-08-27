@@ -22,7 +22,7 @@ namespace StabilityAI
     public sealed partial class StabilityAIClient : global::StabilityAI.IStabilityAIClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.stability.ai/";
 
@@ -49,7 +49,7 @@ namespace StabilityAI
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::StabilityAI.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -59,7 +59,7 @@ namespace StabilityAI
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public AudioResultsClient AudioResults => new AudioResultsClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -196,7 +196,7 @@ namespace StabilityAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public V2alphaGenerationClient V2alphaGeneration => new V2alphaGenerationClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -205,7 +205,7 @@ namespace StabilityAI
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public x3dClient x3d => new x3dClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

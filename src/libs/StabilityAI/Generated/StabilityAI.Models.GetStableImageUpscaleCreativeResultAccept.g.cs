@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum GetStableImageUpscaleCreativeResultAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageAny,
     }

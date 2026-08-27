@@ -11,7 +11,7 @@ namespace StabilityAI
     public enum CreateAudioStableAudioTextToAudioRequestModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StableAudio3,
     }

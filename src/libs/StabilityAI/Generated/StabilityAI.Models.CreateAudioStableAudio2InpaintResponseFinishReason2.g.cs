@@ -10,7 +10,7 @@ namespace StabilityAI
     public enum CreateAudioStableAudio2InpaintResponseFinishReason2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

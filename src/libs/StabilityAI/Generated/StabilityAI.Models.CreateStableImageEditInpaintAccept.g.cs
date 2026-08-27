@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateStableImageEditInpaintAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageAny,
     }

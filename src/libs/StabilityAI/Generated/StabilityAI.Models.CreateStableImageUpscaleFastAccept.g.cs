@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateStableImageUpscaleFastAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageAny,
     }

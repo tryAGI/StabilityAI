@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum GetResultsAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnyAny,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
     }

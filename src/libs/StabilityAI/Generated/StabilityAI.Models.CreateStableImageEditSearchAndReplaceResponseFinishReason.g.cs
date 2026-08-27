@@ -13,11 +13,11 @@ namespace StabilityAI
     public enum CreateStableImageEditSearchAndReplaceResponseFinishReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFiltered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

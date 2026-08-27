@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateV2alphaGenerationStableImageInpaintAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageAny,
     }

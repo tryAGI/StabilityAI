@@ -13,11 +13,11 @@ namespace StabilityAI
     public enum CreateStableImageControlSketchResponseFinishReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFiltered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

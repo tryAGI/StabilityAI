@@ -4,20 +4,20 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum MaskingRequestBodyDiscriminatorMaskSource
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InitImageAlpha,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaskImageBlack,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         MaskImageWhite,
     }

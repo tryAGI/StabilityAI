@@ -13,11 +13,11 @@ namespace StabilityAI
     public enum GetResultsResponseFinishReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFiltered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }
