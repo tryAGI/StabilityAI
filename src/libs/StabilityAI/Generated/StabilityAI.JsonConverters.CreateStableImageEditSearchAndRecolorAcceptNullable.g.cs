@@ -20,7 +20,7 @@ namespace StabilityAI.JsonConverters
                     {
                         return global::StabilityAI.CreateStableImageEditSearchAndRecolorAcceptExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

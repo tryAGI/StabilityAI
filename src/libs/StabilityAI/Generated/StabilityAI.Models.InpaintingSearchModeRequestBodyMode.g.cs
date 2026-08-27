@@ -14,7 +14,7 @@ namespace StabilityAI
     public enum InpaintingSearchModeRequestBodyMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Search,
     }

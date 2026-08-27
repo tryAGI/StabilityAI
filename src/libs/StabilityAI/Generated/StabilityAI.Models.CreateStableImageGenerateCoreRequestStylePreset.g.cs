@@ -9,71 +9,71 @@ namespace StabilityAI
     public enum CreateStableImageGenerateCoreRequestStylePreset
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x3dModel,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AnalogFilm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Anime,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Cinematic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ComicBook,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         DigitalArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Enhance,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FantasyArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Isometric,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LineArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         LowPoly,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ModelingCompound,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         NeonPunk,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Origami,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Photographic,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PixelArt,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TileTexture,
     }

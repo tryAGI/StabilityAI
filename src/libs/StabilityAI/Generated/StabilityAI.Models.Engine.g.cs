@@ -4,12 +4,12 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class Engine
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("description")]
         [global::System.Text.Json.Serialization.JsonRequired]

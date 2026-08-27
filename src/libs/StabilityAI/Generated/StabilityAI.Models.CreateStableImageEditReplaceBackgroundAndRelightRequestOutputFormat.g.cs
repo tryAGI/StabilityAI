@@ -10,15 +10,15 @@ namespace StabilityAI
     public enum CreateStableImageEditReplaceBackgroundAndRelightRequestOutputFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
     }

@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateStableImageEditSearchAndRecolorAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageAny,
     }

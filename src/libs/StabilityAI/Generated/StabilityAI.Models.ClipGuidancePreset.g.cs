@@ -10,31 +10,31 @@ namespace StabilityAI
     public enum ClipGuidancePreset
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FastBlue,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         FastGreen,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Simple,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Slow,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Slower,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Slowest,
     }

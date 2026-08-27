@@ -4,12 +4,12 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ImageToImageRequestBodyDiscriminator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("init_image_mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.ImageToImageRequestBodyDiscriminatorInitImageModeJsonConverter))]

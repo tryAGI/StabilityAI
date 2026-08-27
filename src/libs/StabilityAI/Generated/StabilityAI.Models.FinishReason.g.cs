@@ -13,15 +13,15 @@ namespace StabilityAI
     public enum FinishReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFiltered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Error,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

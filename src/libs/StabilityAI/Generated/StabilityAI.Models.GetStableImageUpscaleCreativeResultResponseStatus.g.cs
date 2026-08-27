@@ -9,7 +9,7 @@ namespace StabilityAI
     public enum GetStableImageUpscaleCreativeResultResponseStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
     }

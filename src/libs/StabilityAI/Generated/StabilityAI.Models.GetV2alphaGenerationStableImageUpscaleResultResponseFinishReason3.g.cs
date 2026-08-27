@@ -13,11 +13,11 @@ namespace StabilityAI
     public enum GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason3
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFiltered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

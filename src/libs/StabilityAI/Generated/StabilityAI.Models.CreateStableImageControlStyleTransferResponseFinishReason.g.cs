@@ -13,11 +13,11 @@ namespace StabilityAI
     public enum CreateStableImageControlStyleTransferResponseFinishReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFiltered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

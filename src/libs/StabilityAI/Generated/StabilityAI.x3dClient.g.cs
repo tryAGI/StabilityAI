@@ -10,7 +10,7 @@ namespace StabilityAI
     public sealed partial class x3dClient : global::StabilityAI.Ix3dClient, global::System.IDisposable
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public const string DefaultBaseUrl = "https://api.stability.ai/";
 
@@ -37,7 +37,7 @@ namespace StabilityAI
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::StabilityAI.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {

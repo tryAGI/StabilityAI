@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum InitImageMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageStrength,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StepSchedule,
     }

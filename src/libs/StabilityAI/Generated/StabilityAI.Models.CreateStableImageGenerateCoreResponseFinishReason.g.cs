@@ -13,11 +13,11 @@ namespace StabilityAI
     public enum CreateStableImageGenerateCoreResponseFinishReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFiltered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

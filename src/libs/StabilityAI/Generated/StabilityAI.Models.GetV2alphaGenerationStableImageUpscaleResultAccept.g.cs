@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum GetV2alphaGenerationStableImageUpscaleResultAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageAny,
     }

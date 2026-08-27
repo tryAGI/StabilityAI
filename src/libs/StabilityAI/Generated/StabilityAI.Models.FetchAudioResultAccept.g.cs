@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum FetchAudioResultAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         AudioAny,
     }

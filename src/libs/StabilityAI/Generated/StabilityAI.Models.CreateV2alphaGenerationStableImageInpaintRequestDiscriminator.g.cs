@@ -4,12 +4,12 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateV2alphaGenerationStableImageInpaintRequestDiscriminator
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("mode")]
         [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageInpaintRequestDiscriminatorModeJsonConverter))]

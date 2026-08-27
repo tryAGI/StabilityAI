@@ -15,15 +15,15 @@ namespace StabilityAI
     public enum Create3dStableFast3dRequestTextureResolution
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x1024,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x2048,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         x512,
     }

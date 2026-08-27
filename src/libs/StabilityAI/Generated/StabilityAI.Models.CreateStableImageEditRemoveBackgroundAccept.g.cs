@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateStableImageEditRemoveBackgroundAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageAny,
     }

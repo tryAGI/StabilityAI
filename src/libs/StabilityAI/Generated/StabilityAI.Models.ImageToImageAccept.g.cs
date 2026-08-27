@@ -9,11 +9,11 @@ namespace StabilityAI
     public enum ImageToImageAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImagePng,
     }

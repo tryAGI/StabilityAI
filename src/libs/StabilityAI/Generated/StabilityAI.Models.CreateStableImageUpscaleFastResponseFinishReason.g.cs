@@ -13,11 +13,11 @@ namespace StabilityAI
     public enum CreateStableImageUpscaleFastResponseFinishReason
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ContentFiltered,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Success,
     }

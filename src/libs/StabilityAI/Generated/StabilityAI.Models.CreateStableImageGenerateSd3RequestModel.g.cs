@@ -16,15 +16,15 @@ namespace StabilityAI
     public enum CreateStableImageGenerateSd3RequestModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sd35Large,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sd35LargeTurbo,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Sd35Medium,
     }

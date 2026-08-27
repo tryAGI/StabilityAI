@@ -12,11 +12,11 @@ namespace StabilityAI
     public enum CreateStableImageGenerateSd3RequestMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageToImage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         TextToImage,
     }

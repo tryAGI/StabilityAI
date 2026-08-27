@@ -10,15 +10,15 @@ namespace StabilityAI
     public enum CreateV2alphaGenerationStableImageUpscaleRequestOutputFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Jpeg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
     }

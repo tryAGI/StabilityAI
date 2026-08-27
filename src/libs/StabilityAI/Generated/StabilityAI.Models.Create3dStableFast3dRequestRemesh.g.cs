@@ -16,15 +16,15 @@ namespace StabilityAI
     public enum Create3dStableFast3dRequestRemesh
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Quad,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Triangle,
     }

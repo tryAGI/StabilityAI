@@ -10,27 +10,27 @@ namespace StabilityAI
     public enum EngineType
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Audio,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Classification,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Picture,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Storage,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Text,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Video,
     }

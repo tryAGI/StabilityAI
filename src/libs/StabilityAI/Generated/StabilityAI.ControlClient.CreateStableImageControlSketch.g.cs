@@ -309,7 +309,7 @@ namespace StabilityAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
 
                 __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
@@ -1297,7 +1297,7 @@ namespace StabilityAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
 
                 __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
@@ -2134,7 +2134,7 @@ namespace StabilityAI
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
 
                 __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());

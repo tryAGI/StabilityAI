@@ -4,16 +4,16 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum CreateV2alphaGenerationStableImageInpaintRequestDiscriminatorMode
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mask,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Search,
     }

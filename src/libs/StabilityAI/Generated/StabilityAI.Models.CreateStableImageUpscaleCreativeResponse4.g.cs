@@ -4,7 +4,7 @@
 namespace StabilityAI
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class CreateStableImageUpscaleCreativeResponse4
     {

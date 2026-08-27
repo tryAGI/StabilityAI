@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateStableImageEditRemoveBackgroundRequestOutputFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Png,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Webp,
     }

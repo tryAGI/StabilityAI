@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateStableImageGenerateUltraAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageAny,
     }

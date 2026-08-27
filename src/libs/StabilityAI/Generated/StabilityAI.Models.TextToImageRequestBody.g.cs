@@ -10,7 +10,7 @@ namespace StabilityAI
     public readonly partial struct TextToImageRequestBody : global::System.IEquatable<TextToImageRequestBody>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::StabilityAI.TextToImageRequestBodyVariant1? TextToImageRequestBodyVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace StabilityAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(TextToImageRequestBodyVariant1))]
@@ -27,7 +27,7 @@ namespace StabilityAI
         public bool IsTextToImageRequestBodyVariant1 => TextToImageRequestBodyVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickTextToImageRequestBodyVariant1(
 #if NET6_0_OR_GREATER
@@ -40,7 +40,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::StabilityAI.TextToImageRequestBodyVariant1 PickTextToImageRequestBodyVariant1() => IsTextToImageRequestBodyVariant1
             ? TextToImageRequestBodyVariant1!
@@ -56,7 +56,7 @@ namespace StabilityAI
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(GenerationOptionalParams))]
@@ -64,7 +64,7 @@ namespace StabilityAI
         public bool IsGenerationOptionalParams => GenerationOptionalParams != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickGenerationOptionalParams(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::StabilityAI.GenerationRequestOptionalParams PickGenerationOptionalParams() => IsGenerationOptionalParams
             ? GenerationOptionalParams!
             : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationOptionalParams' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator TextToImageRequestBody(global::StabilityAI.TextToImageRequestBodyVariant1 value) => new TextToImageRequestBody((global::StabilityAI.TextToImageRequestBodyVariant1?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::StabilityAI.TextToImageRequestBodyVariant1?(TextToImageRequestBody @this) => @this.TextToImageRequestBodyVariant1;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TextToImageRequestBody(global::StabilityAI.TextToImageRequestBodyVariant1? value)
         {
@@ -101,22 +101,22 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static TextToImageRequestBody FromTextToImageRequestBodyVariant1(global::StabilityAI.TextToImageRequestBodyVariant1? value) => new TextToImageRequestBody(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator TextToImageRequestBody(global::StabilityAI.GenerationRequestOptionalParams value) => new TextToImageRequestBody((global::StabilityAI.GenerationRequestOptionalParams?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::StabilityAI.GenerationRequestOptionalParams?(TextToImageRequestBody @this) => @this.GenerationOptionalParams;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TextToImageRequestBody(global::StabilityAI.GenerationRequestOptionalParams? value)
         {
@@ -124,12 +124,12 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static TextToImageRequestBody FromGenerationOptionalParams(global::StabilityAI.GenerationRequestOptionalParams? value) => new TextToImageRequestBody(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TextToImageRequestBody(
             global::StabilityAI.TextToImageRequestBodyVariant1? textToImageRequestBodyVariant1,
@@ -141,23 +141,23 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             GenerationOptionalParams as object ??
-            TextToImageRequestBodyVariant1 as object 
+            TextToImageRequestBodyVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             TextToImageRequestBodyVariant1?.ToString() ??
-            GenerationOptionalParams?.ToString() 
+            GenerationOptionalParams?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -165,7 +165,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::StabilityAI.TextToImageRequestBodyVariant1, TResult>? textToImageRequestBodyVariant1 = null,
@@ -190,7 +190,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::StabilityAI.TextToImageRequestBodyVariant1>? textToImageRequestBodyVariant1 = null,
@@ -214,7 +214,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::StabilityAI.TextToImageRequestBodyVariant1>? textToImageRequestBodyVariant1 = null,
@@ -237,7 +237,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -258,18 +258,18 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(TextToImageRequestBody other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::StabilityAI.TextToImageRequestBodyVariant1?>.Default.Equals(TextToImageRequestBodyVariant1, other.TextToImageRequestBodyVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.GenerationRequestOptionalParams?>.Default.Equals(GenerationOptionalParams, other.GenerationOptionalParams) 
+                global::System.Collections.Generic.EqualityComparer<global::StabilityAI.GenerationRequestOptionalParams?>.Default.Equals(GenerationOptionalParams, other.GenerationOptionalParams)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(TextToImageRequestBody obj1, TextToImageRequestBody obj2)
         {
@@ -277,7 +277,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(TextToImageRequestBody obj1, TextToImageRequestBody obj2)
         {
@@ -285,7 +285,7 @@ namespace StabilityAI
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

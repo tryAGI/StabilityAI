@@ -9,7 +9,7 @@ namespace StabilityAI
     public enum GetV2alphaGenerationStableImageUpscaleResultResponseStatus
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         InProgress,
     }

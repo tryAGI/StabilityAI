@@ -10,11 +10,11 @@ namespace StabilityAI
     public enum CreateStableImageGenerateSd3Accept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImageAny,
     }

@@ -15,15 +15,15 @@ namespace StabilityAI
     public enum Create3dStablePointAware3dRequestRemesh
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         None,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Quad,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Triangle,
     }

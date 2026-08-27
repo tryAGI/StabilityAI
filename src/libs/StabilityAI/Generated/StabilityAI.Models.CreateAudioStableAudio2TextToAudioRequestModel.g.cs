@@ -12,11 +12,11 @@ namespace StabilityAI
     public enum CreateAudioStableAudio2TextToAudioRequestModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StableAudio2,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         StableAudio25,
     }

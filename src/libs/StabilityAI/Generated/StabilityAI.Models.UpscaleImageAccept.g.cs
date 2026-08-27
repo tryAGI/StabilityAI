@@ -9,11 +9,11 @@ namespace StabilityAI
     public enum UpscaleImageAccept
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ApplicationJson,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         ImagePng,
     }
