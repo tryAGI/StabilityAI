@@ -15,7 +15,7 @@ jobs:
     name: Publish
     uses: tryAGI/workflows/.github/workflows/generated-sdk-publish.yml@main
     with:
-      project-path: src/libs/StabilityAI/StabilityAI.csproj --rid linux-x64
+      project-path: src/libs/StabilityAI/StabilityAI.csproj
       dotnet-version: 10.0.x
       enable-caching: false
       additional-test-arguments: '--logger GitHubActions'
