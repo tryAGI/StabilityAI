@@ -1,0 +1,344 @@
+
+#nullable enable
+
+#pragma warning disable CS0618 // Type or member is obsolete
+#pragma warning disable CS3016 // Arrays as attribute arguments is not CLS-compliant
+
+namespace StabilityAI
+{
+    /// <summary>
+    ///
+    /// </summary>
+    [global::System.Text.Json.Serialization.JsonSourceGenerationOptions(
+        DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+        Converters = new global::System.Type[]
+        {
+        })]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.Dictionary<string, object>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Error))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ClipGuidancePreset), TypeInfoPropertyName = "ClipGuidancePreset2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Sampler), TypeInfoPropertyName = "Sampler2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.TextPrompt))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(float))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::StabilityAI.TextPrompt>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.InitImageMode), TypeInfoPropertyName = "InitImageMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GenerationRequestOptionalParams))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.UpscaleImageRequestBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageToImageRequestBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageToImageRequestBodyDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageToImageRequestBodyDiscriminatorInitImageMode), TypeInfoPropertyName = "ImageToImageRequestBodyDiscriminatorInitImageMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageToImageUsingImageStrengthRequestBody), TypeInfoPropertyName = "ImageToImageUsingImageStrengthRequestBody2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageToImageUsingImageStrengthRequestBodyVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageToImageUsingStepScheduleRequestBody), TypeInfoPropertyName = "ImageToImageUsingStepScheduleRequestBody2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageToImageUsingStepScheduleRequestBodyVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.MaskingRequestBody))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.MaskingRequestBodyDiscriminator))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.MaskingRequestBodyDiscriminatorMaskSource), TypeInfoPropertyName = "MaskingRequestBodyDiscriminatorMaskSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.MaskingUsingMaskImageRequestBody), TypeInfoPropertyName = "MaskingUsingMaskImageRequestBody2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.MaskingUsingMaskImageRequestBodyVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.MaskingUsingInitImageAlphaRequestBody), TypeInfoPropertyName = "MaskingUsingInitImageAlphaRequestBody2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.MaskingUsingInitImageAlphaRequestBodyVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.TextToImageRequestBody), TypeInfoPropertyName = "TextToImageRequestBody2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.TextToImageRequestBodyVariant1))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Image))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageFinishReason), TypeInfoPropertyName = "ImageFinishReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.TextToImageAccept), TypeInfoPropertyName = "TextToImageAccept2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageToImageAccept), TypeInfoPropertyName = "ImageToImageAccept2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.UpscaleImageAccept), TypeInfoPropertyName = "UpscaleImageAccept2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.MaskingAccept), TypeInfoPropertyName = "MaskingAccept2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<global::StabilityAI.Image>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ClipGuidancePreset?), TypeInfoPropertyName = "NullableClipGuidancePreset2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(int?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Sampler?), TypeInfoPropertyName = "NullableSampler2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(long?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(float?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.InitImageMode?), TypeInfoPropertyName = "NullableInitImageMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageToImageRequestBodyDiscriminatorInitImageMode?), TypeInfoPropertyName = "NullableImageToImageRequestBodyDiscriminatorInitImageMode2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageToImageUsingImageStrengthRequestBody?), TypeInfoPropertyName = "NullableImageToImageUsingImageStrengthRequestBody2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageToImageUsingStepScheduleRequestBody?), TypeInfoPropertyName = "NullableImageToImageUsingStepScheduleRequestBody2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.MaskingRequestBodyDiscriminatorMaskSource?), TypeInfoPropertyName = "NullableMaskingRequestBodyDiscriminatorMaskSource2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.MaskingUsingMaskImageRequestBody?), TypeInfoPropertyName = "NullableMaskingUsingMaskImageRequestBody2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.MaskingUsingInitImageAlphaRequestBody?), TypeInfoPropertyName = "NullableMaskingUsingInitImageAlphaRequestBody2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.TextToImageRequestBody?), TypeInfoPropertyName = "NullableTextToImageRequestBody2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageFinishReason?), TypeInfoPropertyName = "NullableImageFinishReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.TextToImageAccept?), TypeInfoPropertyName = "NullableTextToImageAccept2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageToImageAccept?), TypeInfoPropertyName = "NullableImageToImageAccept2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.UpscaleImageAccept?), TypeInfoPropertyName = "NullableUpscaleImageAccept2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.MaskingAccept?), TypeInfoPropertyName = "NullableMaskingAccept2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::StabilityAI.TextPrompt>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<global::StabilityAI.Image>))]
+    internal sealed partial class V1GenerationSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+    }
+    /// <summary>
+    ///
+    /// </summary>
+    public sealed partial class V1GenerationSourceGenerationContext : global::System.Text.Json.Serialization.JsonSerializerContext
+    {
+        private static readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver Resolver = new LazyChunkResolver();
+
+
+        private static readonly global::System.Text.Json.JsonSerializerOptions DefaultOptions = CreateDefaultOptions();
+
+        /// <summary>
+        ///
+        /// </summary>
+        public static V1GenerationSourceGenerationContext Default { get; } = new(DefaultOptions);
+
+        private V1GenerationSourceGenerationContext(global::System.Text.Json.JsonSerializerOptions options)
+            : base(options)
+        {
+        }
+
+        /// <inheritdoc />
+        protected override global::System.Text.Json.JsonSerializerOptions? GeneratedSerializerOptions => DefaultOptions;
+
+        /// <inheritdoc />
+        public override global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(global::System.Type type)
+        {
+            return Resolver.GetTypeInfo(type, Options);
+        }
+
+        /// <summary>
+        /// Adds this package's converters to <paramref name="options"/>.
+        /// </summary>
+        /// <remarks>
+        /// A converter has to be on the options a chained resolver builds its JsonTypeInfo against,
+        /// and a context resolves types from every package below it. Each package contributes only
+        /// what it owns and calls down the chain for the rest, so the family's converter table is
+        /// written once rather than copied into all of them.
+        /// </remarks>
+        [global::System.ComponentModel.EditorBrowsable(global::System.ComponentModel.EditorBrowsableState.Never)]
+        public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
+        {
+            options.Converters.Add(new global::StabilityAI.JsonConverters.ImageToImageUsingImageStrengthRequestBodyJsonConverter());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.ImageToImageUsingStepScheduleRequestBodyJsonConverter());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.MaskingUsingMaskImageRequestBodyJsonConverter());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.MaskingUsingInitImageAlphaRequestBodyJsonConverter());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.TextToImageRequestBodyJsonConverter());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<double?, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.UnixTimestampJsonConverter());
+            options.Converters.Add(new LazyEnumJsonConverterFactory());
+        }
+
+        private static global::System.Text.Json.JsonSerializerOptions CreateDefaultOptions()
+        {
+            var options = new global::System.Text.Json.JsonSerializerOptions
+            {
+                DefaultIgnoreCondition = global::System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull,
+                TypeInfoResolver = Resolver,
+            };
+            AddConverters(options);
+
+            return options;
+        }
+
+
+        private sealed class LazyEnumJsonConverterFactory : global::System.Text.Json.Serialization.JsonConverterFactory
+        {
+            public override bool CanConvert(global::System.Type typeToConvert)
+            {
+                return
+                    typeToConvert == typeof(global::StabilityAI.ClipGuidancePreset)
+
+                    || typeToConvert == typeof(global::StabilityAI.ClipGuidancePreset?)
+
+                    || typeToConvert == typeof(global::StabilityAI.Sampler)
+
+                    || typeToConvert == typeof(global::StabilityAI.Sampler?)
+
+                    || typeToConvert == typeof(global::StabilityAI.InitImageMode)
+
+                    || typeToConvert == typeof(global::StabilityAI.InitImageMode?)
+
+                    || typeToConvert == typeof(global::StabilityAI.ImageToImageRequestBodyDiscriminatorInitImageMode)
+
+                    || typeToConvert == typeof(global::StabilityAI.ImageToImageRequestBodyDiscriminatorInitImageMode?)
+
+                    || typeToConvert == typeof(global::StabilityAI.MaskingRequestBodyDiscriminatorMaskSource)
+
+                    || typeToConvert == typeof(global::StabilityAI.MaskingRequestBodyDiscriminatorMaskSource?)
+
+                    || typeToConvert == typeof(global::StabilityAI.ImageFinishReason)
+
+                    || typeToConvert == typeof(global::StabilityAI.ImageFinishReason?)
+
+                    || typeToConvert == typeof(global::StabilityAI.TextToImageAccept)
+
+                    || typeToConvert == typeof(global::StabilityAI.TextToImageAccept?)
+
+                    || typeToConvert == typeof(global::StabilityAI.ImageToImageAccept)
+
+                    || typeToConvert == typeof(global::StabilityAI.ImageToImageAccept?)
+
+                    || typeToConvert == typeof(global::StabilityAI.UpscaleImageAccept)
+
+                    || typeToConvert == typeof(global::StabilityAI.UpscaleImageAccept?)
+
+                    || typeToConvert == typeof(global::StabilityAI.MaskingAccept)
+
+                    || typeToConvert == typeof(global::StabilityAI.MaskingAccept?);
+            }
+
+            public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
+                global::System.Type typeToConvert,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                if (typeToConvert == typeof(global::StabilityAI.ClipGuidancePreset))
+                {
+                    return new global::StabilityAI.JsonConverters.ClipGuidancePresetJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.ClipGuidancePreset?))
+                {
+                    return new global::StabilityAI.JsonConverters.ClipGuidancePresetNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.Sampler))
+                {
+                    return new global::StabilityAI.JsonConverters.SamplerJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.Sampler?))
+                {
+                    return new global::StabilityAI.JsonConverters.SamplerNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.InitImageMode))
+                {
+                    return new global::StabilityAI.JsonConverters.InitImageModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.InitImageMode?))
+                {
+                    return new global::StabilityAI.JsonConverters.InitImageModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.ImageToImageRequestBodyDiscriminatorInitImageMode))
+                {
+                    return new global::StabilityAI.JsonConverters.ImageToImageRequestBodyDiscriminatorInitImageModeJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.ImageToImageRequestBodyDiscriminatorInitImageMode?))
+                {
+                    return new global::StabilityAI.JsonConverters.ImageToImageRequestBodyDiscriminatorInitImageModeNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.MaskingRequestBodyDiscriminatorMaskSource))
+                {
+                    return new global::StabilityAI.JsonConverters.MaskingRequestBodyDiscriminatorMaskSourceJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.MaskingRequestBodyDiscriminatorMaskSource?))
+                {
+                    return new global::StabilityAI.JsonConverters.MaskingRequestBodyDiscriminatorMaskSourceNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.ImageFinishReason))
+                {
+                    return new global::StabilityAI.JsonConverters.ImageFinishReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.ImageFinishReason?))
+                {
+                    return new global::StabilityAI.JsonConverters.ImageFinishReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.TextToImageAccept))
+                {
+                    return new global::StabilityAI.JsonConverters.TextToImageAcceptJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.TextToImageAccept?))
+                {
+                    return new global::StabilityAI.JsonConverters.TextToImageAcceptNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.ImageToImageAccept))
+                {
+                    return new global::StabilityAI.JsonConverters.ImageToImageAcceptJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.ImageToImageAccept?))
+                {
+                    return new global::StabilityAI.JsonConverters.ImageToImageAcceptNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.UpscaleImageAccept))
+                {
+                    return new global::StabilityAI.JsonConverters.UpscaleImageAcceptJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.UpscaleImageAccept?))
+                {
+                    return new global::StabilityAI.JsonConverters.UpscaleImageAcceptNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.MaskingAccept))
+                {
+                    return new global::StabilityAI.JsonConverters.MaskingAcceptJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.MaskingAccept?))
+                {
+                    return new global::StabilityAI.JsonConverters.MaskingAcceptNullableJsonConverter();
+                }
+                throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
+            }
+        }
+
+        private sealed class LazyChunkResolver : global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver
+        {
+            private readonly object _gate = new();
+            private readonly global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[] _resolvers = new global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver?[1];
+
+            public global::System.Text.Json.Serialization.Metadata.JsonTypeInfo? GetTypeInfo(
+                global::System.Type type,
+                global::System.Text.Json.JsonSerializerOptions options)
+            {
+                for (var index = 0; index < _resolvers.Length; index++)
+                {
+                    var typeInfo = GetResolver(index).GetTypeInfo(type, options);
+                    if (typeInfo is not null)
+                    {
+                        return typeInfo;
+                    }
+                }
+
+                return null;
+            }
+
+            private global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver GetResolver(int index)
+            {
+                var resolver = global::System.Threading.Volatile.Read(ref _resolvers[index]);
+                if (resolver is not null)
+                {
+                    return resolver;
+                }
+
+                lock (_gate)
+                {
+                    return _resolvers[index] ??= CreateResolver(index);
+                }
+            }
+
+            private static global::System.Text.Json.Serialization.Metadata.IJsonTypeInfoResolver CreateResolver(int index)
+            {
+                return index switch
+                {
+                    0 => new V1GenerationSourceGenerationContextChunk0(new global::System.Text.Json.JsonSerializerOptions()),
+                    _ => throw new global::System.ArgumentOutOfRangeException(nameof(index)),
+                };
+            }
+        }
+    }
+}
