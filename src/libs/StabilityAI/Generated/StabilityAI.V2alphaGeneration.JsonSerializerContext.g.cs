@@ -19,11 +19,18 @@ namespace StabilityAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Error))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ContentModerationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ContentModerationResponseName), TypeInfoPropertyName = "ContentModerationResponseName2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageJSONResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.AllOf<double?, object>), TypeInfoPropertyName = "AllOfDoubleObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageJSONResponseFinishReason), TypeInfoPropertyName = "ImageJSONResponseFinishReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.AsyncGenerationResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.StylePreset), TypeInfoPropertyName = "StylePreset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.InpaintingSearchModeRequestBody))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.InpaintingSearchModeRequestBodyMode), TypeInfoPropertyName = "InpaintingSearchModeRequestBodyMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.InpaintingSearchModeRequestBodyOutputFormat), TypeInfoPropertyName = "InpaintingSearchModeRequestBodyOutputFormat2")]
@@ -32,53 +39,28 @@ namespace StabilityAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.InpaintingMaskingModeRequestBodyOutputFormat), TypeInfoPropertyName = "InpaintingMaskingModeRequestBodyOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestOutputFormat), TypeInfoPropertyName = "CreateV2alphaGenerationStableImageUpscaleRequestOutputFormat2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestStylePreset), TypeInfoPropertyName = "CreateV2alphaGenerationStableImageUpscaleRequestStylePreset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequest), TypeInfoPropertyName = "CreateV2alphaGenerationStableImageInpaintRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequestDiscriminator))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequestDiscriminatorMode), TypeInfoPropertyName = "CreateV2alphaGenerationStableImageInpaintRequestDiscriminatorMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultAccept), TypeInfoPropertyName = "GetV2alphaGenerationStableImageUpscaleResultAccept2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintAccept), TypeInfoPropertyName = "CreateV2alphaGenerationStableImageInpaintAccept2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason), TypeInfoPropertyName = "GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason2_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason2), TypeInfoPropertyName = "GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason3), TypeInfoPropertyName = "GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseStatus), TypeInfoPropertyName = "GetV2alphaGenerationStableImageUpscaleResultResponseStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse5))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse6))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse7))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason), TypeInfoPropertyName = "CreateV2alphaGenerationStableImageInpaintResponseFinishReason2_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason2), TypeInfoPropertyName = "CreateV2alphaGenerationStableImageInpaintResponseFinishReason22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason3), TypeInfoPropertyName = "CreateV2alphaGenerationStableImageInpaintResponseFinishReason32")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse4))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse5))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ContentModerationResponseName?), TypeInfoPropertyName = "NullableContentModerationResponseName2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.AllOf<double?, object>?), TypeInfoPropertyName = "NullableAllOfDoubleObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ImageJSONResponseFinishReason?), TypeInfoPropertyName = "NullableImageJSONResponseFinishReason2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.StylePreset?), TypeInfoPropertyName = "NullableStylePreset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.InpaintingSearchModeRequestBodyMode?), TypeInfoPropertyName = "NullableInpaintingSearchModeRequestBodyMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.InpaintingSearchModeRequestBodyOutputFormat?), TypeInfoPropertyName = "NullableInpaintingSearchModeRequestBodyOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.InpaintingMaskingModeRequestBodyMode?), TypeInfoPropertyName = "NullableInpaintingMaskingModeRequestBodyMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.InpaintingMaskingModeRequestBodyOutputFormat?), TypeInfoPropertyName = "NullableInpaintingMaskingModeRequestBodyOutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestOutputFormat?), TypeInfoPropertyName = "NullableCreateV2alphaGenerationStableImageUpscaleRequestOutputFormat2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestStylePreset?), TypeInfoPropertyName = "NullableCreateV2alphaGenerationStableImageUpscaleRequestStylePreset2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequest?), TypeInfoPropertyName = "NullableCreateV2alphaGenerationStableImageInpaintRequest2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequestDiscriminatorMode?), TypeInfoPropertyName = "NullableCreateV2alphaGenerationStableImageInpaintRequestDiscriminatorMode2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultAccept?), TypeInfoPropertyName = "NullableGetV2alphaGenerationStableImageUpscaleResultAccept2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintAccept?), TypeInfoPropertyName = "NullableCreateV2alphaGenerationStableImageInpaintAccept2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason?), TypeInfoPropertyName = "NullableGetV2alphaGenerationStableImageUpscaleResultResponseFinishReason2_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason2?), TypeInfoPropertyName = "NullableGetV2alphaGenerationStableImageUpscaleResultResponseFinishReason22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason3?), TypeInfoPropertyName = "NullableGetV2alphaGenerationStableImageUpscaleResultResponseFinishReason32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseStatus?), TypeInfoPropertyName = "NullableGetV2alphaGenerationStableImageUpscaleResultResponseStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason?), TypeInfoPropertyName = "NullableCreateV2alphaGenerationStableImageInpaintResponseFinishReason2_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason2?), TypeInfoPropertyName = "NullableCreateV2alphaGenerationStableImageInpaintResponseFinishReason22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason3?), TypeInfoPropertyName = "NullableCreateV2alphaGenerationStableImageInpaintResponseFinishReason32")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     internal sealed partial class V2alphaGenerationSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
     {
@@ -126,6 +108,10 @@ namespace StabilityAI
         {
             options.Converters.Add(new global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageInpaintRequestJsonConverter());
             options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<double?, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<double?, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<double?, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<string, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<string, object>());
             options.Converters.Add(new global::StabilityAI.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
@@ -152,6 +138,14 @@ namespace StabilityAI
 
                     || typeToConvert == typeof(global::StabilityAI.ContentModerationResponseName?)
 
+                    || typeToConvert == typeof(global::StabilityAI.ImageJSONResponseFinishReason)
+
+                    || typeToConvert == typeof(global::StabilityAI.ImageJSONResponseFinishReason?)
+
+                    || typeToConvert == typeof(global::StabilityAI.StylePreset)
+
+                    || typeToConvert == typeof(global::StabilityAI.StylePreset?)
+
                     || typeToConvert == typeof(global::StabilityAI.InpaintingSearchModeRequestBodyMode)
 
                     || typeToConvert == typeof(global::StabilityAI.InpaintingSearchModeRequestBodyMode?)
@@ -172,10 +166,6 @@ namespace StabilityAI
 
                     || typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestOutputFormat?)
 
-                    || typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestStylePreset)
-
-                    || typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestStylePreset?)
-
                     || typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequestDiscriminatorMode)
 
                     || typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequestDiscriminatorMode?)
@@ -188,33 +178,9 @@ namespace StabilityAI
 
                     || typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintAccept?)
 
-                    || typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason)
-
-                    || typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason?)
-
-                    || typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason2)
-
-                    || typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason2?)
-
-                    || typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason3)
-
-                    || typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason3?)
-
                     || typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseStatus)
 
-                    || typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseStatus?)
-
-                    || typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason)
-
-                    || typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason?)
-
-                    || typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason2)
-
-                    || typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason2?)
-
-                    || typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason3)
-
-                    || typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason3?);
+                    || typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseStatus?);
             }
 
             public override global::System.Text.Json.Serialization.JsonConverter CreateConverter(
@@ -229,6 +195,26 @@ namespace StabilityAI
                 if (typeToConvert == typeof(global::StabilityAI.ContentModerationResponseName?))
                 {
                     return new global::StabilityAI.JsonConverters.ContentModerationResponseNameNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.ImageJSONResponseFinishReason))
+                {
+                    return new global::StabilityAI.JsonConverters.ImageJSONResponseFinishReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.ImageJSONResponseFinishReason?))
+                {
+                    return new global::StabilityAI.JsonConverters.ImageJSONResponseFinishReasonNullableJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.StylePreset))
+                {
+                    return new global::StabilityAI.JsonConverters.StylePresetJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.StylePreset?))
+                {
+                    return new global::StabilityAI.JsonConverters.StylePresetNullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::StabilityAI.InpaintingSearchModeRequestBodyMode))
@@ -281,16 +267,6 @@ namespace StabilityAI
                     return new global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageUpscaleRequestOutputFormatNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestStylePreset))
-                {
-                    return new global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageUpscaleRequestStylePresetJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestStylePreset?))
-                {
-                    return new global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageUpscaleRequestStylePresetNullableJsonConverter();
-                }
-
                 if (typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequestDiscriminatorMode))
                 {
                     return new global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageInpaintRequestDiscriminatorModeJsonConverter();
@@ -321,36 +297,6 @@ namespace StabilityAI
                     return new global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageInpaintAcceptNullableJsonConverter();
                 }
 
-                if (typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason))
-                {
-                    return new global::StabilityAI.JsonConverters.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReasonJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason?))
-                {
-                    return new global::StabilityAI.JsonConverters.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReasonNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason2))
-                {
-                    return new global::StabilityAI.JsonConverters.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason2JsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason2?))
-                {
-                    return new global::StabilityAI.JsonConverters.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason2NullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason3))
-                {
-                    return new global::StabilityAI.JsonConverters.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason3JsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason3?))
-                {
-                    return new global::StabilityAI.JsonConverters.GetV2alphaGenerationStableImageUpscaleResultResponseFinishReason3NullableJsonConverter();
-                }
-
                 if (typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseStatus))
                 {
                     return new global::StabilityAI.JsonConverters.GetV2alphaGenerationStableImageUpscaleResultResponseStatusJsonConverter();
@@ -359,36 +305,6 @@ namespace StabilityAI
                 if (typeToConvert == typeof(global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponseStatus?))
                 {
                     return new global::StabilityAI.JsonConverters.GetV2alphaGenerationStableImageUpscaleResultResponseStatusNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason))
-                {
-                    return new global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageInpaintResponseFinishReasonJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason?))
-                {
-                    return new global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageInpaintResponseFinishReasonNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason2))
-                {
-                    return new global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageInpaintResponseFinishReason2JsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason2?))
-                {
-                    return new global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageInpaintResponseFinishReason2NullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason3))
-                {
-                    return new global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageInpaintResponseFinishReason3JsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponseFinishReason3?))
-                {
-                    return new global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageInpaintResponseFinishReason3NullableJsonConverter();
                 }
                 throw new global::System.NotSupportedException($"No generated enum converter is registered for '{typeToConvert}'.");
             }

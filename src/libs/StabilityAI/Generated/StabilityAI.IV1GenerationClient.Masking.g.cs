@@ -156,9 +156,8 @@ namespace StabilityAI
         /// Example: 1
         /// </param>
         /// <param name="seed">
-        /// Random noise seed (omit this option or use `0` for a random seed)<br/>
-        /// Default Value: 0<br/>
-        /// Example: 0
+        /// A specific value that is used to guide the 'randomness' of the generation. (Omit this parameter or pass `0` to use a random seed.)<br/>
+        /// Default Value: 0
         /// </param>
         /// <param name="steps">
         /// Number of diffusion steps to run<br/>
@@ -181,7 +180,7 @@ namespace StabilityAI
             global::StabilityAI.ClipGuidancePreset? clipGuidancePreset = default,
             global::StabilityAI.Sampler? sampler = default,
             int? samples = default,
-            long? seed = default,
+            double? seed = default,
             int? steps = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -248,9 +247,8 @@ namespace StabilityAI
         /// Example: 1
         /// </param>
         /// <param name="seed">
-        /// Random noise seed (omit this option or use `0` for a random seed)<br/>
-        /// Default Value: 0<br/>
-        /// Example: 0
+        /// A specific value that is used to guide the 'randomness' of the generation. (Omit this parameter or pass `0` to use a random seed.)<br/>
+        /// Default Value: 0
         /// </param>
         /// <param name="steps">
         /// Number of diffusion steps to run<br/>
@@ -297,7 +295,7 @@ namespace StabilityAI
             global::StabilityAI.ClipGuidancePreset? clipGuidancePreset = default,
             global::StabilityAI.Sampler? sampler = default,
             int? samples = default,
-            long? seed = default,
+            double? seed = default,
             int? steps = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
@@ -363,9 +361,8 @@ namespace StabilityAI
         /// Example: 1
         /// </param>
         /// <param name="seed">
-        /// Random noise seed (omit this option or use `0` for a random seed)<br/>
-        /// Default Value: 0<br/>
-        /// Example: 0
+        /// A specific value that is used to guide the 'randomness' of the generation. (Omit this parameter or pass `0` to use a random seed.)<br/>
+        /// Default Value: 0
         /// </param>
         /// <param name="steps">
         /// Number of diffusion steps to run<br/>
@@ -412,7 +409,7 @@ namespace StabilityAI
             global::StabilityAI.ClipGuidancePreset? clipGuidancePreset = default,
             global::StabilityAI.Sampler? sampler = default,
             int? samples = default,
-            long? seed = default,
+            double? seed = default,
             int? steps = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

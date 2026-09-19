@@ -83,7 +83,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageControlStyleTransferResponse> CreateStableImageControlStyleTransferAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageControlStyleTransferAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageControlStyleTransferRequest request,
@@ -172,7 +172,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageControlStyleTransferResponse>> CreateStableImageControlStyleTransferAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageControlStyleTransferAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageControlStyleTransferRequest request,
@@ -322,7 +322,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageControlStyleTransferResponse> CreateStableImageControlStyleTransferAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageControlStyleTransferAsync(
             string contentType,
             byte[] initImage,
             string initImagename,
@@ -504,7 +504,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageControlStyleTransferResponse> CreateStableImageControlStyleTransferAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageControlStyleTransferAsync(
             string contentType,
             global::System.IO.Stream initImage,
             string initImagename,
@@ -685,7 +685,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageControlStyleTransferResponse>> CreateStableImageControlStyleTransferAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageControlStyleTransferAsResponseAsync(
             string contentType,
             global::System.IO.Stream initImage,
             string initImagename,
