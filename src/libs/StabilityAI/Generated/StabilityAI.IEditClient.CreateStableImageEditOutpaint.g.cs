@@ -83,7 +83,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditOutpaintResponse> CreateStableImageEditOutpaintAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageEditOutpaintAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageEditOutpaintRequest request,
@@ -172,7 +172,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageEditOutpaintResponse>> CreateStableImageEditOutpaintAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageEditOutpaintAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageEditOutpaintRequest request,
@@ -297,7 +297,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditOutpaintResponse> CreateStableImageEditOutpaintAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageEditOutpaintAsync(
             string contentType,
             byte[] image,
             string imagename,
@@ -313,7 +313,7 @@ namespace StabilityAI
             string? prompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditOutpaintRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditOutpaintRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -455,7 +455,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditOutpaintResponse> CreateStableImageEditOutpaintAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageEditOutpaintAsync(
             string contentType,
             global::System.IO.Stream image,
             string imagename,
@@ -471,7 +471,7 @@ namespace StabilityAI
             string? prompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditOutpaintRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditOutpaintRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -612,7 +612,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageEditOutpaintResponse>> CreateStableImageEditOutpaintAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageEditOutpaintAsResponseAsync(
             string contentType,
             global::System.IO.Stream image,
             string imagename,
@@ -628,7 +628,7 @@ namespace StabilityAI
             string? prompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditOutpaintRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditOutpaintRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -414,7 +414,7 @@ namespace StabilityAI
             double? growMask = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditInpaintRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditInpaintRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -590,7 +590,7 @@ namespace StabilityAI
             double? growMask = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditInpaintRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditInpaintRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -765,7 +765,7 @@ namespace StabilityAI
             double? growMask = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditInpaintRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditInpaintRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -940,7 +940,7 @@ namespace StabilityAI
             double? growMask = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditInpaintRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditInpaintRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

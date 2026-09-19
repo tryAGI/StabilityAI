@@ -105,7 +105,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageGenerateSd3Response> CreateStableImageGenerateSd3Async(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageGenerateSd3Async(
             string contentType,
 
             global::StabilityAI.CreateStableImageGenerateSd3Request request,
@@ -216,7 +216,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageGenerateSd3Response>> CreateStableImageGenerateSd3AsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageGenerateSd3AsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageGenerateSd3Request request,
@@ -303,10 +303,7 @@ namespace StabilityAI
         /// The version of your application, used to help us communicate version-specific debugging or moderation issues to you.<br/>
         /// Example: 1.2.1
         /// </param>
-        /// <param name="prompt">
-        /// What you wish to see in the output image. A strong, descriptive prompt that clearly defines<br/>
-        /// elements, colors, and subjects will lead to better results.
-        /// </param>
+        /// <param name="prompt"></param>
         /// <param name="mode">
         /// Controls whether this is a text-to-image or image-to-image generation, which affects which parameters are required:<br/>
         /// - **text-to-image** requires only the `prompt` parameter<br/>
@@ -366,19 +363,16 @@ namespace StabilityAI
         /// <param name="stylePreset">
         /// Guides the image model towards a particular style.
         /// </param>
-        /// <param name="negativePrompt">
-        /// Keywords of what you **do not** wish to see in the output image.<br/>
-        /// This is an advanced feature.
-        /// </param>
+        /// <param name="negativePrompt"></param>
         /// <param name="cfgScale">
         /// How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to your prompt). The _Large_ and _Medium_ models use a default of `4`. The _Turbo_ and _Flash_ model uses a default of `1`.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageGenerateSd3Response> CreateStableImageGenerateSd3Async(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageGenerateSd3Async(
             string contentType,
-            string prompt,
+            global::StabilityAI.AllOf<string, object> prompt,
             global::StabilityAI.CreateStableImageGenerateSd3Accept? accept = default,
             string? stabilityClientId = default,
             string? stabilityClientUserId = default,
@@ -391,8 +385,8 @@ namespace StabilityAI
             global::StabilityAI.CreateStableImageGenerateSd3RequestModel? model = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageGenerateSd3RequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageGenerateSd3RequestStylePreset? stylePreset = default,
-            string? negativePrompt = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
+            global::StabilityAI.AllOf<string, object>? negativePrompt = default,
             double? cfgScale = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

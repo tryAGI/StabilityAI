@@ -78,7 +78,7 @@ namespace StabilityAI
         ///     else:<br/>
         ///         raise Exception(str(result.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateAudioStableAudioInpaintResponse> CreateAudioStableAudioInpaintAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateAudioStableAudioInpaintAsync(
             string contentType,
 
             global::StabilityAI.CreateAudioStableAudioInpaintRequest request,
@@ -162,7 +162,7 @@ namespace StabilityAI
         ///     else:<br/>
         ///         raise Exception(str(result.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateAudioStableAudioInpaintResponse>> CreateAudioStableAudioInpaintAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateAudioStableAudioInpaintAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateAudioStableAudioInpaintRequest request,
@@ -268,7 +268,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateAudioStableAudioInpaintResponse> CreateAudioStableAudioInpaintAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateAudioStableAudioInpaintAsync(
             string contentType,
             string prompt,
             byte[] audio,
@@ -416,7 +416,7 @@ namespace StabilityAI
         ///     else:<br/>
         ///         raise Exception(str(result.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateAudioStableAudioInpaintResponse> CreateAudioStableAudioInpaintAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateAudioStableAudioInpaintAsync(
             string contentType,
             string prompt,
             global::System.IO.Stream audio,
@@ -563,7 +563,7 @@ namespace StabilityAI
         ///     else:<br/>
         ///         raise Exception(str(result.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateAudioStableAudioInpaintResponse>> CreateAudioStableAudioInpaintAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateAudioStableAudioInpaintAsResponseAsync(
             string contentType,
             string prompt,
             global::System.IO.Stream audio,

@@ -98,8 +98,8 @@ namespace StabilityAI
         /// Guides the image model towards a particular style.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style_preset")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.CreateStableImageEditSearchAndRecolorRequestStylePresetJsonConverter))]
-        public global::StabilityAI.CreateStableImageEditSearchAndRecolorRequestStylePreset? StylePreset { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.StylePresetJsonConverter))]
+        public global::StabilityAI.StylePreset? StylePreset { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -179,7 +179,7 @@ namespace StabilityAI
             double? growMask,
             double? seed,
             global::StabilityAI.CreateStableImageEditSearchAndRecolorRequestOutputFormat? outputFormat,
-            global::StabilityAI.CreateStableImageEditSearchAndRecolorRequestStylePreset? stylePreset)
+            global::StabilityAI.StylePreset? stylePreset)
         {
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));

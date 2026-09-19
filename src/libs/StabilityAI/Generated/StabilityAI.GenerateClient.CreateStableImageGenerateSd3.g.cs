@@ -152,7 +152,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageGenerateSd3Response> CreateStableImageGenerateSd3Async(
+        public async global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageGenerateSd3Async(
             string contentType,
 
             global::StabilityAI.CreateStableImageGenerateSd3Request request,
@@ -278,7 +278,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageGenerateSd3Response>> CreateStableImageGenerateSd3AsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageGenerateSd3AsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageGenerateSd3Request request,
@@ -383,7 +383,7 @@ namespace StabilityAI
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             __httpRequestContent.Add(
-                                content: new global::System.Net.Http.StringContent(request.Prompt ?? string.Empty),
+                                content: new global::System.Net.Http.StringContent(request.Prompt.ToString() ?? string.Empty),
                                 name: "\"prompt\"");
 
                             if (request.Mode != default)
@@ -488,7 +488,7 @@ namespace StabilityAI
                             {
 
                                 __httpRequestContent.Add(
-                                    content: new global::System.Net.Http.StringContent(request.NegativePrompt ?? string.Empty),
+                                    content: new global::System.Net.Http.StringContent(request.NegativePrompt.ToString() ?? string.Empty),
                                     name: "\"negative_prompt\"");
 
                             }
@@ -703,19 +703,19 @@ namespace StabilityAI
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::StabilityAI.CreateStableImageGenerateSd3Response4? __value_400 = null;
+                                global::StabilityAI.Error? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::StabilityAI.CreateStableImageGenerateSd3Response4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::StabilityAI.CreateStableImageGenerateSd3Response4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -724,7 +724,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageGenerateSd3Response4>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -777,19 +777,19 @@ namespace StabilityAI
                             {
                                 string? __content_413 = null;
                                 global::System.Exception? __exception_413 = null;
-                                global::StabilityAI.CreateStableImageGenerateSd3Response5? __value_413 = null;
+                                global::StabilityAI.Error? __value_413 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_413 = global::StabilityAI.CreateStableImageGenerateSd3Response5.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = global::StabilityAI.Error.FromJson(__content_413, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_413 = global::StabilityAI.CreateStableImageGenerateSd3Response5.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = global::StabilityAI.Error.FromJson(__content_413, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -798,7 +798,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageGenerateSd3Response5>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
@@ -814,19 +814,19 @@ namespace StabilityAI
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::StabilityAI.CreateStableImageGenerateSd3Response6? __value_422 = null;
+                                global::StabilityAI.Error? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::StabilityAI.CreateStableImageGenerateSd3Response6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::StabilityAI.CreateStableImageGenerateSd3Response6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -835,7 +835,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageGenerateSd3Response6>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -851,19 +851,19 @@ namespace StabilityAI
                             {
                                 string? __content_429 = null;
                                 global::System.Exception? __exception_429 = null;
-                                global::StabilityAI.CreateStableImageGenerateSd3Response7? __value_429 = null;
+                                global::StabilityAI.Error? __value_429 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::StabilityAI.CreateStableImageGenerateSd3Response7.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::StabilityAI.CreateStableImageGenerateSd3Response7.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -872,7 +872,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageGenerateSd3Response7>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
@@ -888,19 +888,19 @@ namespace StabilityAI
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::StabilityAI.CreateStableImageGenerateSd3Response8? __value_500 = null;
+                                global::StabilityAI.Error? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::StabilityAI.CreateStableImageGenerateSd3Response8.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::StabilityAI.CreateStableImageGenerateSd3Response8.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -909,7 +909,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageGenerateSd3Response8>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
@@ -942,9 +942,9 @@ namespace StabilityAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::StabilityAI.CreateStableImageGenerateSd3Response.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::StabilityAI.ImageJSONResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageGenerateSd3Response>(
+                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -974,9 +974,9 @@ namespace StabilityAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::StabilityAI.CreateStableImageGenerateSd3Response.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::StabilityAI.ImageJSONResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageGenerateSd3Response>(
+                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -1093,10 +1093,7 @@ namespace StabilityAI
         /// The version of your application, used to help us communicate version-specific debugging or moderation issues to you.<br/>
         /// Example: 1.2.1
         /// </param>
-        /// <param name="prompt">
-        /// What you wish to see in the output image. A strong, descriptive prompt that clearly defines<br/>
-        /// elements, colors, and subjects will lead to better results.
-        /// </param>
+        /// <param name="prompt"></param>
         /// <param name="mode">
         /// Controls whether this is a text-to-image or image-to-image generation, which affects which parameters are required:<br/>
         /// - **text-to-image** requires only the `prompt` parameter<br/>
@@ -1156,19 +1153,16 @@ namespace StabilityAI
         /// <param name="stylePreset">
         /// Guides the image model towards a particular style.
         /// </param>
-        /// <param name="negativePrompt">
-        /// Keywords of what you **do not** wish to see in the output image.<br/>
-        /// This is an advanced feature.
-        /// </param>
+        /// <param name="negativePrompt"></param>
         /// <param name="cfgScale">
         /// How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to your prompt). The _Large_ and _Medium_ models use a default of `4`. The _Turbo_ and _Flash_ model uses a default of `1`.
         /// </param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageGenerateSd3Response> CreateStableImageGenerateSd3Async(
+        public async global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageGenerateSd3Async(
             string contentType,
-            string prompt,
+            global::StabilityAI.AllOf<string, object> prompt,
             global::StabilityAI.CreateStableImageGenerateSd3Accept? accept = default,
             string? stabilityClientId = default,
             string? stabilityClientUserId = default,
@@ -1181,8 +1175,8 @@ namespace StabilityAI
             global::StabilityAI.CreateStableImageGenerateSd3RequestModel? model = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageGenerateSd3RequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageGenerateSd3RequestStylePreset? stylePreset = default,
-            string? negativePrompt = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
+            global::StabilityAI.AllOf<string, object>? negativePrompt = default,
             double? cfgScale = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)

@@ -19,23 +19,21 @@ namespace StabilityAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Error))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.AllOf<double?, object>), TypeInfoPropertyName = "AllOfDoubleObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(object))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.AudioJSONResponse))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.AudioJSONResponseFinishReason), TypeInfoPropertyName = "AudioJSONResponseFinishReason2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultAccept), TypeInfoPropertyName = "FetchAudioResultAccept2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponseFinishReason), TypeInfoPropertyName = "FetchAudioResultResponseFinishReason2_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponseFinishReason2), TypeInfoPropertyName = "FetchAudioResultResponseFinishReason22")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponse3))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponseStatus), TypeInfoPropertyName = "FetchAudioResultResponseStatus2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponse4))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponse5))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponse6))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.AllOf<double?, object>?), TypeInfoPropertyName = "NullableAllOfDoubleObject2")]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.AudioJSONResponseFinishReason?), TypeInfoPropertyName = "NullableAudioJSONResponseFinishReason2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultAccept?), TypeInfoPropertyName = "NullableFetchAudioResultAccept2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponseFinishReason?), TypeInfoPropertyName = "NullableFetchAudioResultResponseFinishReason2_3")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponseFinishReason2?), TypeInfoPropertyName = "NullableFetchAudioResultResponseFinishReason22")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.FetchAudioResultResponseStatus?), TypeInfoPropertyName = "NullableFetchAudioResultResponseStatus2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<string>))]
     internal sealed partial class AudioResultsSourceGenerationContextChunk0 : global::System.Text.Json.Serialization.JsonSerializerContext
@@ -83,6 +81,10 @@ namespace StabilityAI
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
             options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<double?, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<double?, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<double?, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<string, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<string, object>());
             options.Converters.Add(new global::StabilityAI.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }
@@ -105,17 +107,13 @@ namespace StabilityAI
             public override bool CanConvert(global::System.Type typeToConvert)
             {
                 return
-                    typeToConvert == typeof(global::StabilityAI.FetchAudioResultAccept)
+                    typeToConvert == typeof(global::StabilityAI.AudioJSONResponseFinishReason)
+
+                    || typeToConvert == typeof(global::StabilityAI.AudioJSONResponseFinishReason?)
+
+                    || typeToConvert == typeof(global::StabilityAI.FetchAudioResultAccept)
 
                     || typeToConvert == typeof(global::StabilityAI.FetchAudioResultAccept?)
-
-                    || typeToConvert == typeof(global::StabilityAI.FetchAudioResultResponseFinishReason)
-
-                    || typeToConvert == typeof(global::StabilityAI.FetchAudioResultResponseFinishReason?)
-
-                    || typeToConvert == typeof(global::StabilityAI.FetchAudioResultResponseFinishReason2)
-
-                    || typeToConvert == typeof(global::StabilityAI.FetchAudioResultResponseFinishReason2?)
 
                     || typeToConvert == typeof(global::StabilityAI.FetchAudioResultResponseStatus)
 
@@ -126,6 +124,16 @@ namespace StabilityAI
                 global::System.Type typeToConvert,
                 global::System.Text.Json.JsonSerializerOptions options)
             {
+                if (typeToConvert == typeof(global::StabilityAI.AudioJSONResponseFinishReason))
+                {
+                    return new global::StabilityAI.JsonConverters.AudioJSONResponseFinishReasonJsonConverter();
+                }
+
+                if (typeToConvert == typeof(global::StabilityAI.AudioJSONResponseFinishReason?))
+                {
+                    return new global::StabilityAI.JsonConverters.AudioJSONResponseFinishReasonNullableJsonConverter();
+                }
+
                 if (typeToConvert == typeof(global::StabilityAI.FetchAudioResultAccept))
                 {
                     return new global::StabilityAI.JsonConverters.FetchAudioResultAcceptJsonConverter();
@@ -134,26 +142,6 @@ namespace StabilityAI
                 if (typeToConvert == typeof(global::StabilityAI.FetchAudioResultAccept?))
                 {
                     return new global::StabilityAI.JsonConverters.FetchAudioResultAcceptNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.FetchAudioResultResponseFinishReason))
-                {
-                    return new global::StabilityAI.JsonConverters.FetchAudioResultResponseFinishReasonJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.FetchAudioResultResponseFinishReason?))
-                {
-                    return new global::StabilityAI.JsonConverters.FetchAudioResultResponseFinishReasonNullableJsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.FetchAudioResultResponseFinishReason2))
-                {
-                    return new global::StabilityAI.JsonConverters.FetchAudioResultResponseFinishReason2JsonConverter();
-                }
-
-                if (typeToConvert == typeof(global::StabilityAI.FetchAudioResultResponseFinishReason2?))
-                {
-                    return new global::StabilityAI.JsonConverters.FetchAudioResultResponseFinishReason2NullableJsonConverter();
                 }
 
                 if (typeToConvert == typeof(global::StabilityAI.FetchAudioResultResponseStatus))

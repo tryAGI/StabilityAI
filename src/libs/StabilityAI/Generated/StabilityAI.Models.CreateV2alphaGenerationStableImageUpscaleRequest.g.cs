@@ -86,8 +86,8 @@ namespace StabilityAI
         /// Guides the image model towards a particular style.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style_preset")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.CreateV2alphaGenerationStableImageUpscaleRequestStylePresetJsonConverter))]
-        public global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestStylePreset? StylePreset { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.StylePresetJsonConverter))]
+        public global::StabilityAI.StylePreset? StylePreset { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -159,7 +159,7 @@ namespace StabilityAI
             global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestOutputFormat? outputFormat,
             double? seed,
             double? creativity,
-            global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestStylePreset? stylePreset)
+            global::StabilityAI.StylePreset? stylePreset)
         {
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
             this.Imagename = imagename ?? throw new global::System.ArgumentNullException(nameof(imagename));

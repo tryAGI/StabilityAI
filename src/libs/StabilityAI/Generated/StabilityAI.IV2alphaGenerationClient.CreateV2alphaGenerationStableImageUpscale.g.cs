@@ -40,7 +40,7 @@ namespace StabilityAI
         /// )<br/>
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleResponse> CreateV2alphaGenerationStableImageUpscaleAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateV2alphaGenerationStableImageUpscaleAsync(
             string contentType,
 
             global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequest request,
@@ -82,7 +82,7 @@ namespace StabilityAI
         /// )<br/>
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleResponse>> CreateV2alphaGenerationStableImageUpscaleAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateV2alphaGenerationStableImageUpscaleAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequest request,
@@ -156,7 +156,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleResponse> CreateV2alphaGenerationStableImageUpscaleAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateV2alphaGenerationStableImageUpscaleAsync(
             string contentType,
             byte[] image,
             string imagename,
@@ -165,7 +165,7 @@ namespace StabilityAI
             global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestOutputFormat? outputFormat = default,
             double? seed = default,
             double? creativity = default,
-            global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -254,7 +254,7 @@ namespace StabilityAI
         /// )<br/>
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleResponse> CreateV2alphaGenerationStableImageUpscaleAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateV2alphaGenerationStableImageUpscaleAsync(
             string contentType,
             global::System.IO.Stream image,
             string imagename,
@@ -263,7 +263,7 @@ namespace StabilityAI
             global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestOutputFormat? outputFormat = default,
             double? seed = default,
             double? creativity = default,
-            global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -351,7 +351,7 @@ namespace StabilityAI
         /// )<br/>
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleResponse>> CreateV2alphaGenerationStableImageUpscaleAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateV2alphaGenerationStableImageUpscaleAsResponseAsync(
             string contentType,
             global::System.IO.Stream image,
             string imagename,
@@ -360,7 +360,7 @@ namespace StabilityAI
             global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestOutputFormat? outputFormat = default,
             double? seed = default,
             double? creativity = default,
-            global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

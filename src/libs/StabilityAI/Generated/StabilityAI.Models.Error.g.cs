@@ -9,16 +9,17 @@ namespace StabilityAI
     public sealed partial class Error
     {
         /// <summary>
-        /// A unique identifier for this particular occurrence of the problem.<br/>
-        /// Example: 296a972f-666a-44a1-a3df-c9c28a1f56c0
+        /// A unique identifier associated with this error. Please include this in any [support tickets](https://kb.stability.ai/knowledge-base/kb-tickets/new)<br/>
+        /// you file, as it will greatly assist us in diagnosing the root cause of the problem.<br/>
+        /// Example: a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4
         /// </summary>
-        /// <example>296a972f-666a-44a1-a3df-c9c28a1f56c0</example>
+        /// <example>a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
         public required string Id { get; set; }
 
         /// <summary>
-        /// The short-name of this class of errors e.g. `bad_request`.<br/>
+        /// Short-hand name for an error, useful for discriminating between errors with the same status code.<br/>
         /// Example: bad_request
         /// </summary>
         /// <example>bad_request</example>
@@ -27,13 +28,13 @@ namespace StabilityAI
         public required string Name { get; set; }
 
         /// <summary>
-        /// A human-readable explanation specific to this occurrence of the problem.<br/>
-        /// Example: Header parameter Authorization is required, but not found
+        /// One or more error messages indicating what went wrong.<br/>
+        /// Example: [some-field: is required]
         /// </summary>
-        /// <example>Header parameter Authorization is required, but not found</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("message")]
+        /// <example>[some-field: is required]</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("errors")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Message { get; set; }
+        public required global::System.Collections.Generic.IList<string> Errors { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -45,16 +46,17 @@ namespace StabilityAI
         /// Initializes a new instance of the <see cref="Error" /> class.
         /// </summary>
         /// <param name="id">
-        /// A unique identifier for this particular occurrence of the problem.<br/>
-        /// Example: 296a972f-666a-44a1-a3df-c9c28a1f56c0
+        /// A unique identifier associated with this error. Please include this in any [support tickets](https://kb.stability.ai/knowledge-base/kb-tickets/new)<br/>
+        /// you file, as it will greatly assist us in diagnosing the root cause of the problem.<br/>
+        /// Example: a1b2c3d4e5f6a1b2c3d4e5f6a1b2c3d4
         /// </param>
         /// <param name="name">
-        /// The short-name of this class of errors e.g. `bad_request`.<br/>
+        /// Short-hand name for an error, useful for discriminating between errors with the same status code.<br/>
         /// Example: bad_request
         /// </param>
-        /// <param name="message">
-        /// A human-readable explanation specific to this occurrence of the problem.<br/>
-        /// Example: Header parameter Authorization is required, but not found
+        /// <param name="errors">
+        /// One or more error messages indicating what went wrong.<br/>
+        /// Example: [some-field: is required]
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
@@ -62,11 +64,11 @@ namespace StabilityAI
         public Error(
             string id,
             string name,
-            string message)
+            global::System.Collections.Generic.IList<string> errors)
         {
             this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
             this.Name = name ?? throw new global::System.ArgumentNullException(nameof(name));
-            this.Message = message ?? throw new global::System.ArgumentNullException(nameof(message));
+            this.Errors = errors ?? throw new global::System.ArgumentNullException(nameof(errors));
         }
 
         /// <summary>

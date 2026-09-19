@@ -19,11 +19,12 @@ namespace StabilityAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Text.Json.JsonElement?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(string))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Error))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(byte[]))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ContentModerationResponse))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ContentModerationResponseName), TypeInfoPropertyName = "ContentModerationResponseName2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.IList<string>))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStableFast3dRequest))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStableFast3dRequestTextureResolution), TypeInfoPropertyName = "Create3dStableFast3dRequestTextureResolution2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStableFast3dRequestRemesh), TypeInfoPropertyName = "Create3dStableFast3dRequestRemesh2")]
@@ -31,14 +32,6 @@ namespace StabilityAI
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStablePointAware3dRequestTextureResolution), TypeInfoPropertyName = "Create3dStablePointAware3dRequestTextureResolution2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStablePointAware3dRequestRemesh), TypeInfoPropertyName = "Create3dStablePointAware3dRequestRemesh2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStablePointAware3dRequestTargetType), TypeInfoPropertyName = "Create3dStablePointAware3dRequestTargetType2")]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStableFast3dResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStableFast3dResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStableFast3dResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStableFast3dResponse4))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStablePointAware3dResponse))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStablePointAware3dResponse2))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStablePointAware3dResponse3))]
-    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStablePointAware3dResponse4))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(double?))]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.ContentModerationResponseName?), TypeInfoPropertyName = "NullableContentModerationResponseName2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::StabilityAI.Create3dStableFast3dRequestTextureResolution?), TypeInfoPropertyName = "NullableCreate3dStableFast3dRequestTextureResolution2")]
@@ -92,6 +85,10 @@ namespace StabilityAI
         public static void AddConverters(global::System.Text.Json.JsonSerializerOptions options)
         {
             options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<double?, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<double?, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<double?, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<string, object>());
+            options.Converters.Add(new global::StabilityAI.JsonConverters.AllOfJsonConverter<string, object>());
             options.Converters.Add(new global::StabilityAI.JsonConverters.UnixTimestampJsonConverter());
             options.Converters.Add(new LazyEnumJsonConverterFactory());
         }

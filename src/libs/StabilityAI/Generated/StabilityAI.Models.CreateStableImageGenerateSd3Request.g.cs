@@ -9,12 +9,12 @@ namespace StabilityAI
     public sealed partial class CreateStableImageGenerateSd3Request
     {
         /// <summary>
-        /// What you wish to see in the output image. A strong, descriptive prompt that clearly defines<br/>
-        /// elements, colors, and subjects will lead to better results.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("prompt")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.AllOfJsonConverter<string, object>))]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Prompt { get; set; }
+        public required global::StabilityAI.AllOf<string, object> Prompt { get; set; }
 
         /// <summary>
         /// Controls whether this is a text-to-image or image-to-image generation, which affects which parameters are required:<br/>
@@ -104,15 +104,15 @@ namespace StabilityAI
         /// Guides the image model towards a particular style.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style_preset")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.CreateStableImageGenerateSd3RequestStylePresetJsonConverter))]
-        public global::StabilityAI.CreateStableImageGenerateSd3RequestStylePreset? StylePreset { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.StylePresetJsonConverter))]
+        public global::StabilityAI.StylePreset? StylePreset { get; set; }
 
         /// <summary>
-        /// Keywords of what you **do not** wish to see in the output image.<br/>
-        /// This is an advanced feature.
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("negative_prompt")]
-        public string? NegativePrompt { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.AllOfJsonConverter<string, object>))]
+        public global::StabilityAI.AllOf<string, object>? NegativePrompt { get; set; }
 
         /// <summary>
         /// How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to your prompt). The _Large_ and _Medium_ models use a default of `4`. The _Turbo_ and _Flash_ model uses a default of `1`.
@@ -129,10 +129,7 @@ namespace StabilityAI
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateStableImageGenerateSd3Request" /> class.
         /// </summary>
-        /// <param name="prompt">
-        /// What you wish to see in the output image. A strong, descriptive prompt that clearly defines<br/>
-        /// elements, colors, and subjects will lead to better results.
-        /// </param>
+        /// <param name="prompt"></param>
         /// <param name="mode">
         /// Controls whether this is a text-to-image or image-to-image generation, which affects which parameters are required:<br/>
         /// - **text-to-image** requires only the `prompt` parameter<br/>
@@ -192,10 +189,7 @@ namespace StabilityAI
         /// <param name="stylePreset">
         /// Guides the image model towards a particular style.
         /// </param>
-        /// <param name="negativePrompt">
-        /// Keywords of what you **do not** wish to see in the output image.<br/>
-        /// This is an advanced feature.
-        /// </param>
+        /// <param name="negativePrompt"></param>
         /// <param name="cfgScale">
         /// How strictly the diffusion process adheres to the prompt text (higher values keep your image closer to your prompt). The _Large_ and _Medium_ models use a default of `4`. The _Turbo_ and _Flash_ model uses a default of `1`.
         /// </param>
@@ -203,7 +197,7 @@ namespace StabilityAI
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public CreateStableImageGenerateSd3Request(
-            string prompt,
+            global::StabilityAI.AllOf<string, object> prompt,
             global::StabilityAI.CreateStableImageGenerateSd3RequestMode? mode,
             byte[]? image,
             string? imagename,
@@ -212,11 +206,11 @@ namespace StabilityAI
             global::StabilityAI.CreateStableImageGenerateSd3RequestModel? model,
             double? seed,
             global::StabilityAI.CreateStableImageGenerateSd3RequestOutputFormat? outputFormat,
-            global::StabilityAI.CreateStableImageGenerateSd3RequestStylePreset? stylePreset,
-            string? negativePrompt,
+            global::StabilityAI.StylePreset? stylePreset,
+            global::StabilityAI.AllOf<string, object>? negativePrompt,
             double? cfgScale)
         {
-            this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
+            this.Prompt = prompt;
             this.Mode = mode;
             this.Image = image;
             this.Imagename = imagename;

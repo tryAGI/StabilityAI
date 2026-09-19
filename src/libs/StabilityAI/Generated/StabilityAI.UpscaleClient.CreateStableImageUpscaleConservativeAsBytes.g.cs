@@ -599,19 +599,19 @@ namespace StabilityAI
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse4? __value_400 = null;
+                                global::StabilityAI.Error? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -620,7 +620,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse4>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -673,19 +673,19 @@ namespace StabilityAI
                             {
                                 string? __content_413 = null;
                                 global::System.Exception? __exception_413 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse5? __value_413 = null;
+                                global::StabilityAI.Error? __value_413 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_413 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse5.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = global::StabilityAI.Error.FromJson(__content_413, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_413 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse5.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = global::StabilityAI.Error.FromJson(__content_413, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -694,7 +694,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse5>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
@@ -710,19 +710,19 @@ namespace StabilityAI
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse6? __value_422 = null;
+                                global::StabilityAI.Error? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -731,7 +731,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse6>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -747,19 +747,19 @@ namespace StabilityAI
                             {
                                 string? __content_429 = null;
                                 global::System.Exception? __exception_429 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse7? __value_429 = null;
+                                global::StabilityAI.Error? __value_429 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse7.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse7.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -768,7 +768,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse7>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
@@ -784,19 +784,19 @@ namespace StabilityAI
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse8? __value_500 = null;
+                                global::StabilityAI.Error? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse8.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse8.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -805,7 +805,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse8>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
@@ -1319,19 +1319,19 @@ namespace StabilityAI
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse4? __value_400 = null;
+                                global::StabilityAI.Error? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1340,7 +1340,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse4>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -1393,19 +1393,19 @@ namespace StabilityAI
                             {
                                 string? __content_413 = null;
                                 global::System.Exception? __exception_413 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse5? __value_413 = null;
+                                global::StabilityAI.Error? __value_413 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_413 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse5.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = global::StabilityAI.Error.FromJson(__content_413, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_413 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse5.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = global::StabilityAI.Error.FromJson(__content_413, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1414,7 +1414,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse5>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
@@ -1430,19 +1430,19 @@ namespace StabilityAI
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse6? __value_422 = null;
+                                global::StabilityAI.Error? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1451,7 +1451,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse6>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -1467,19 +1467,19 @@ namespace StabilityAI
                             {
                                 string? __content_429 = null;
                                 global::System.Exception? __exception_429 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse7? __value_429 = null;
+                                global::StabilityAI.Error? __value_429 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse7.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse7.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1488,7 +1488,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse7>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
@@ -1504,19 +1504,19 @@ namespace StabilityAI
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse8? __value_500 = null;
+                                global::StabilityAI.Error? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse8.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse8.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1525,7 +1525,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse8>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
@@ -2272,19 +2272,19 @@ namespace StabilityAI
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse4? __value_400 = null;
+                                global::StabilityAI.Error? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -2293,7 +2293,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse4>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -2346,19 +2346,19 @@ namespace StabilityAI
                             {
                                 string? __content_413 = null;
                                 global::System.Exception? __exception_413 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse5? __value_413 = null;
+                                global::StabilityAI.Error? __value_413 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_413 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse5.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = global::StabilityAI.Error.FromJson(__content_413, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_413 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse5.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = global::StabilityAI.Error.FromJson(__content_413, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -2367,7 +2367,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse5>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
@@ -2383,19 +2383,19 @@ namespace StabilityAI
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse6? __value_422 = null;
+                                global::StabilityAI.Error? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -2404,7 +2404,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse6>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -2420,19 +2420,19 @@ namespace StabilityAI
                             {
                                 string? __content_429 = null;
                                 global::System.Exception? __exception_429 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse7? __value_429 = null;
+                                global::StabilityAI.Error? __value_429 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse7.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse7.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -2441,7 +2441,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse7>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
@@ -2457,19 +2457,19 @@ namespace StabilityAI
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse8? __value_500 = null;
+                                global::StabilityAI.Error? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse8.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse8.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -2478,7 +2478,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse8>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
@@ -3083,19 +3083,19 @@ namespace StabilityAI
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse4? __value_400 = null;
+                                global::StabilityAI.Error? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -3104,7 +3104,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse4>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -3157,19 +3157,19 @@ namespace StabilityAI
                             {
                                 string? __content_413 = null;
                                 global::System.Exception? __exception_413 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse5? __value_413 = null;
+                                global::StabilityAI.Error? __value_413 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_413 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse5.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = global::StabilityAI.Error.FromJson(__content_413, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_413 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse5.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = global::StabilityAI.Error.FromJson(__content_413, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -3178,7 +3178,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse5>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
@@ -3194,19 +3194,19 @@ namespace StabilityAI
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse6? __value_422 = null;
+                                global::StabilityAI.Error? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -3215,7 +3215,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse6>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -3231,19 +3231,19 @@ namespace StabilityAI
                             {
                                 string? __content_429 = null;
                                 global::System.Exception? __exception_429 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse7? __value_429 = null;
+                                global::StabilityAI.Error? __value_429 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse7.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse7.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -3252,7 +3252,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse7>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
@@ -3268,19 +3268,19 @@ namespace StabilityAI
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse8? __value_500 = null;
+                                global::StabilityAI.Error? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse8.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse8.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -3289,7 +3289,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse8>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
@@ -3865,19 +3865,19 @@ namespace StabilityAI
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse4? __value_400 = null;
+                                global::StabilityAI.Error? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -3886,7 +3886,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse4>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -3939,19 +3939,19 @@ namespace StabilityAI
                             {
                                 string? __content_413 = null;
                                 global::System.Exception? __exception_413 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse5? __value_413 = null;
+                                global::StabilityAI.Error? __value_413 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_413 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse5.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = global::StabilityAI.Error.FromJson(__content_413, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_413 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_413 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse5.FromJson(__content_413, JsonSerializerContext);
+                                        __value_413 = global::StabilityAI.Error.FromJson(__content_413, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -3960,7 +3960,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse5>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_413 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_413,
@@ -3976,19 +3976,19 @@ namespace StabilityAI
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse6? __value_422 = null;
+                                global::StabilityAI.Error? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse6.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -3997,7 +3997,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse6>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -4013,19 +4013,19 @@ namespace StabilityAI
                             {
                                 string? __content_429 = null;
                                 global::System.Exception? __exception_429 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse7? __value_429 = null;
+                                global::StabilityAI.Error? __value_429 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse7.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse7.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -4034,7 +4034,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse7>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
@@ -4050,19 +4050,19 @@ namespace StabilityAI
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::StabilityAI.CreateStableImageUpscaleConservativeResponse8? __value_500 = null;
+                                global::StabilityAI.Error? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse8.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::StabilityAI.CreateStableImageUpscaleConservativeResponse8.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -4071,7 +4071,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateStableImageUpscaleConservativeResponse8>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,

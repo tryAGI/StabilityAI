@@ -79,7 +79,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageControlStructureResponse> CreateStableImageControlStructureAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageControlStructureAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageControlStructureRequest request,
@@ -164,7 +164,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageControlStructureResponse>> CreateStableImageControlStructureAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageControlStructureAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageControlStructureRequest request,
@@ -276,7 +276,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageControlStructureResponse> CreateStableImageControlStructureAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageControlStructureAsync(
             string contentType,
             string prompt,
             byte[] image,
@@ -289,7 +289,7 @@ namespace StabilityAI
             string? negativePrompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStructureRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStructureRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -418,7 +418,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageControlStructureResponse> CreateStableImageControlStructureAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageControlStructureAsync(
             string contentType,
             string prompt,
             global::System.IO.Stream image,
@@ -431,7 +431,7 @@ namespace StabilityAI
             string? negativePrompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStructureRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStructureRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -559,7 +559,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageControlStructureResponse>> CreateStableImageControlStructureAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageControlStructureAsResponseAsync(
             string contentType,
             string prompt,
             global::System.IO.Stream image,
@@ -572,7 +572,7 @@ namespace StabilityAI
             string? negativePrompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStructureRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStructureRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

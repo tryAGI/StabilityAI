@@ -368,11 +368,11 @@ namespace StabilityAI
             string? stabilityClientUserId = default,
             string? stabilityClientVersion = default,
             string? negativePrompt = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestAspectRatio? aspectRatio = default,
+            global::StabilityAI.AspectRatio? aspectRatio = default,
             double? fidelity = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStyleRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -513,11 +513,11 @@ namespace StabilityAI
             string? stabilityClientUserId = default,
             string? stabilityClientVersion = default,
             string? negativePrompt = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestAspectRatio? aspectRatio = default,
+            global::StabilityAI.AspectRatio? aspectRatio = default,
             double? fidelity = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStyleRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -657,11 +657,11 @@ namespace StabilityAI
             string? stabilityClientUserId = default,
             string? stabilityClientVersion = default,
             string? negativePrompt = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestAspectRatio? aspectRatio = default,
+            global::StabilityAI.AspectRatio? aspectRatio = default,
             double? fidelity = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStyleRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -801,11 +801,11 @@ namespace StabilityAI
             string? stabilityClientUserId = default,
             string? stabilityClientVersion = default,
             string? negativePrompt = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestAspectRatio? aspectRatio = default,
+            global::StabilityAI.AspectRatio? aspectRatio = default,
             double? fidelity = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStyleRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

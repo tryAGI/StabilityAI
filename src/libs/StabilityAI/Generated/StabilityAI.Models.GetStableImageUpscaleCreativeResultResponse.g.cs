@@ -9,35 +9,20 @@ namespace StabilityAI
     public sealed partial class GetStableImageUpscaleCreativeResultResponse
     {
         /// <summary>
-        /// The generated image, encoded to base64.<br/>
-        /// Example: AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1...
+        /// The `id` of a generation, typically used for async generations, that can be used to check the status of the generation or retrieve the result.<br/>
+        /// Example: a6dc6c6e20acda010fe14d71f180658f2896ed9b4ec25aa99a6ff06c796987c4
         /// </summary>
-        /// <example>AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1...</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("image")]
+        /// <example>a6dc6c6e20acda010fe14d71f180658f2896ed9b4ec25aa99a6ff06c796987c4</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Image { get; set; }
+        public required string Id { get; set; }
 
         /// <summary>
-        /// The seed used as random noise for this generation.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 343940597
+        /// The status of your generation.
         /// </summary>
-        /// <example>343940597</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public double? Seed { get; set; }
-
-        /// <summary>
-        /// The reason the generation finished.<br/>
-        /// - `SUCCESS` = successful generation.<br/>
-        /// - `CONTENT_FILTERED` = successful generation, however the output violated our content moderation<br/>
-        /// policy and has been blurred as a result.<br/>
-        /// Example: SUCCESS
-        /// </summary>
-        /// <example>SUCCESS</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.GetStableImageUpscaleCreativeResultResponseFinishReasonJsonConverter))]
-        [global::System.Text.Json.Serialization.JsonRequired]
-        public required global::StabilityAI.GetStableImageUpscaleCreativeResultResponseFinishReason FinishReason { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.GetStableImageUpscaleCreativeResultResponseStatusJsonConverter))]
+        public global::StabilityAI.GetStableImageUpscaleCreativeResultResponseStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -48,33 +33,22 @@ namespace StabilityAI
         /// <summary>
         /// Initializes a new instance of the <see cref="GetStableImageUpscaleCreativeResultResponse" /> class.
         /// </summary>
-        /// <param name="image">
-        /// The generated image, encoded to base64.<br/>
-        /// Example: AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1...
+        /// <param name="id">
+        /// The `id` of a generation, typically used for async generations, that can be used to check the status of the generation or retrieve the result.<br/>
+        /// Example: a6dc6c6e20acda010fe14d71f180658f2896ed9b4ec25aa99a6ff06c796987c4
         /// </param>
-        /// <param name="finishReason">
-        /// The reason the generation finished.<br/>
-        /// - `SUCCESS` = successful generation.<br/>
-        /// - `CONTENT_FILTERED` = successful generation, however the output violated our content moderation<br/>
-        /// policy and has been blurred as a result.<br/>
-        /// Example: SUCCESS
-        /// </param>
-        /// <param name="seed">
-        /// The seed used as random noise for this generation.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 343940597
+        /// <param name="status">
+        /// The status of your generation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public GetStableImageUpscaleCreativeResultResponse(
-            string image,
-            global::StabilityAI.GetStableImageUpscaleCreativeResultResponseFinishReason finishReason,
-            double? seed)
+            string id,
+            global::StabilityAI.GetStableImageUpscaleCreativeResultResponseStatus status)
         {
-            this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));
-            this.Seed = seed;
-            this.FinishReason = finishReason;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Status = status;
         }
 
         /// <summary>

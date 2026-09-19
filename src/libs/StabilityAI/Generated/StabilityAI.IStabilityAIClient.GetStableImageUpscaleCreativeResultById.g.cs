@@ -62,7 +62,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.GetStableImageUpscaleCreativeResultResponse> GetStableImageUpscaleCreativeResultByIdAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> GetStableImageUpscaleCreativeResultByIdAsync(
             string id,
             global::StabilityAI.GetStableImageUpscaleCreativeResultAccept? accept = default,
             string? stabilityClientId = default,
@@ -128,7 +128,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.GetStableImageUpscaleCreativeResultResponse>> GetStableImageUpscaleCreativeResultByIdAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> GetStableImageUpscaleCreativeResultByIdAsResponseAsync(
             string id,
             global::StabilityAI.GetStableImageUpscaleCreativeResultAccept? accept = default,
             string? stabilityClientId = default,
