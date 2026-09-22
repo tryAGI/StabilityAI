@@ -81,7 +81,7 @@ namespace StabilityAI
         /// )<br/>
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditReplaceBackgroundAndRelightResponse> CreateStableImageEditReplaceBackgroundAndRelightAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateStableImageEditReplaceBackgroundAndRelightAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageEditReplaceBackgroundAndRelightRequest request,
@@ -167,7 +167,7 @@ namespace StabilityAI
         /// )<br/>
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageEditReplaceBackgroundAndRelightResponse>> CreateStableImageEditReplaceBackgroundAndRelightAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateStableImageEditReplaceBackgroundAndRelightAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageEditReplaceBackgroundAndRelightRequest request,
@@ -355,7 +355,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditReplaceBackgroundAndRelightResponse> CreateStableImageEditReplaceBackgroundAndRelightAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateStableImageEditReplaceBackgroundAndRelightAsync(
             string contentType,
             byte[] subjectImage,
             string subjectImagename,
@@ -576,7 +576,7 @@ namespace StabilityAI
         /// )<br/>
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditReplaceBackgroundAndRelightResponse> CreateStableImageEditReplaceBackgroundAndRelightAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateStableImageEditReplaceBackgroundAndRelightAsync(
             string contentType,
             global::System.IO.Stream subjectImage,
             string subjectImagename,
@@ -796,7 +796,7 @@ namespace StabilityAI
         /// )<br/>
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageEditReplaceBackgroundAndRelightResponse>> CreateStableImageEditReplaceBackgroundAndRelightAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateStableImageEditReplaceBackgroundAndRelightAsResponseAsync(
             string contentType,
             global::System.IO.Stream subjectImage,
             string subjectImagename,

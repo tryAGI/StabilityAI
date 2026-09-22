@@ -460,19 +460,19 @@ namespace StabilityAI
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse4? __value_400 = null;
+                                global::StabilityAI.Error? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -481,7 +481,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse4>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -534,19 +534,19 @@ namespace StabilityAI
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse5? __value_500 = null;
+                                global::StabilityAI.Error? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse5.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse5.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -555,7 +555,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse5>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
@@ -957,19 +957,19 @@ namespace StabilityAI
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse4? __value_400 = null;
+                                global::StabilityAI.Error? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse4.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -978,7 +978,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse4>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -1031,19 +1031,19 @@ namespace StabilityAI
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse5? __value_500 = null;
+                                global::StabilityAI.Error? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse5.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse5.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -1052,7 +1052,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateV2alphaGenerationStableImageInpaintResponse5>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,

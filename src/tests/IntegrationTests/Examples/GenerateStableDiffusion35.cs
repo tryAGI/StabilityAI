@@ -27,7 +27,7 @@ public partial class Tests
             });
 
         response.Image.Should().NotBeNullOrEmpty();
-        response.FinishReason.Should().Be(CreateStableImageGenerateSd3ResponseFinishReason.Success);
+        response.FinishReason.Should().Be(ImageJSONResponseFinishReason.Success);
 
         Console.WriteLine($"Seed: {response.Seed}");
         Console.WriteLine($"Base64 bytes: {response.Image.Length}");

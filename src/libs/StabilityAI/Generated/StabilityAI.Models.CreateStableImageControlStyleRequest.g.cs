@@ -66,8 +66,8 @@ namespace StabilityAI
         /// Default Value: 1:1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("aspect_ratio")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.CreateStableImageControlStyleRequestAspectRatioJsonConverter))]
-        public global::StabilityAI.CreateStableImageControlStyleRequestAspectRatio? AspectRatio { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.AspectRatioJsonConverter))]
+        public global::StabilityAI.AspectRatio? AspectRatio { get; set; }
 
         /// <summary>
         /// How closely the output image's style resembles the input image's style.<br/>
@@ -95,8 +95,8 @@ namespace StabilityAI
         /// Guides the image model towards a particular style.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style_preset")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.CreateStableImageControlStyleRequestStylePresetJsonConverter))]
-        public global::StabilityAI.CreateStableImageControlStyleRequestStylePreset? StylePreset { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.StylePresetJsonConverter))]
+        public global::StabilityAI.StylePreset? StylePreset { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -170,11 +170,11 @@ namespace StabilityAI
             byte[] image,
             string imagename,
             string? negativePrompt,
-            global::StabilityAI.CreateStableImageControlStyleRequestAspectRatio? aspectRatio,
+            global::StabilityAI.AspectRatio? aspectRatio,
             double? fidelity,
             double? seed,
             global::StabilityAI.CreateStableImageControlStyleRequestOutputFormat? outputFormat,
-            global::StabilityAI.CreateStableImageControlStyleRequestStylePreset? stylePreset)
+            global::StabilityAI.StylePreset? stylePreset)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));
             this.Image = image ?? throw new global::System.ArgumentNullException(nameof(image));

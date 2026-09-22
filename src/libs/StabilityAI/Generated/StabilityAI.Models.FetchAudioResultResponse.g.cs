@@ -9,31 +9,20 @@ namespace StabilityAI
     public sealed partial class FetchAudioResultResponse
     {
         /// <summary>
-        /// The generated audio, encoded to base64.<br/>
-        /// Example: AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1...
+        /// The `id` of a generation, typically used for async generations, that can be used to check the status of the generation or retrieve the result.<br/>
+        /// Example: a6dc6c6e20acda010fe14d71f180658f2896ed9b4ec25aa99a6ff06c796987c4
         /// </summary>
-        /// <example>AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1...</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("audio")]
+        /// <example>a6dc6c6e20acda010fe14d71f180658f2896ed9b4ec25aa99a6ff06c796987c4</example>
+        [global::System.Text.Json.Serialization.JsonPropertyName("id")]
         [global::System.Text.Json.Serialization.JsonRequired]
-        public required string Audio { get; set; }
+        public required string Id { get; set; }
 
         /// <summary>
-        /// The seed used as random noise for this generation.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 343940597
+        /// The status of your generation.
         /// </summary>
-        /// <example>343940597</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public double? Seed { get; set; }
-
-        /// <summary>
-        /// The reason the generation finished. It is always `SUCCESS` for this endpoint.<br/>
-        /// Example: SUCCESS
-        /// </summary>
-        /// <example>SUCCESS</example>
-        [global::System.Text.Json.Serialization.JsonPropertyName("finish_reason")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.FetchAudioResultResponseFinishReasonJsonConverter))]
-        public global::StabilityAI.FetchAudioResultResponseFinishReason FinishReason { get; set; }
+        [global::System.Text.Json.Serialization.JsonPropertyName("status")]
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.FetchAudioResultResponseStatusJsonConverter))]
+        public global::StabilityAI.FetchAudioResultResponseStatus Status { get; set; }
 
         /// <summary>
         /// Additional properties that are not explicitly defined in the schema
@@ -44,30 +33,22 @@ namespace StabilityAI
         /// <summary>
         /// Initializes a new instance of the <see cref="FetchAudioResultResponse" /> class.
         /// </summary>
-        /// <param name="audio">
-        /// The generated audio, encoded to base64.<br/>
-        /// Example: AAAAIGZ0eXBpc29tAAACAGlzb21pc28yYXZjMW1...
+        /// <param name="id">
+        /// The `id` of a generation, typically used for async generations, that can be used to check the status of the generation or retrieve the result.<br/>
+        /// Example: a6dc6c6e20acda010fe14d71f180658f2896ed9b4ec25aa99a6ff06c796987c4
         /// </param>
-        /// <param name="seed">
-        /// The seed used as random noise for this generation.<br/>
-        /// Default Value: 0<br/>
-        /// Example: 343940597
-        /// </param>
-        /// <param name="finishReason">
-        /// The reason the generation finished. It is always `SUCCESS` for this endpoint.<br/>
-        /// Example: SUCCESS
+        /// <param name="status">
+        /// The status of your generation.
         /// </param>
 #if NET7_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.SetsRequiredMembers]
 #endif
         public FetchAudioResultResponse(
-            string audio,
-            double? seed,
-            global::StabilityAI.FetchAudioResultResponseFinishReason finishReason)
+            string id,
+            global::StabilityAI.FetchAudioResultResponseStatus status)
         {
-            this.Audio = audio ?? throw new global::System.ArgumentNullException(nameof(audio));
-            this.Seed = seed;
-            this.FinishReason = finishReason;
+            this.Id = id ?? throw new global::System.ArgumentNullException(nameof(id));
+            this.Status = status;
         }
 
         /// <summary>

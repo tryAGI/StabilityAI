@@ -45,7 +45,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse> GetV2alphaGenerationStableImageUpscaleResultByIdAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> GetV2alphaGenerationStableImageUpscaleResultByIdAsync(
             string id,
             global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultAccept? accept = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
@@ -91,7 +91,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse>> GetV2alphaGenerationStableImageUpscaleResultByIdAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> GetV2alphaGenerationStableImageUpscaleResultByIdAsResponseAsync(
             string id,
             global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultAccept? accept = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,

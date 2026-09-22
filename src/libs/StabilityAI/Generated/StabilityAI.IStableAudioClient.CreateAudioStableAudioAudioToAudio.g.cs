@@ -79,7 +79,7 @@ namespace StabilityAI
         ///     else:<br/>
         ///         raise Exception(str(result.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateAudioStableAudioAudioToAudioResponse> CreateAudioStableAudioAudioToAudioAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateAudioStableAudioAudioToAudioAsync(
             string contentType,
 
             global::StabilityAI.CreateAudioStableAudioAudioToAudioRequest request,
@@ -164,7 +164,7 @@ namespace StabilityAI
         ///     else:<br/>
         ///         raise Exception(str(result.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateAudioStableAudioAudioToAudioResponse>> CreateAudioStableAudioAudioToAudioAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateAudioStableAudioAudioToAudioAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateAudioStableAudioAudioToAudioRequest request,
@@ -273,7 +273,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateAudioStableAudioAudioToAudioResponse> CreateAudioStableAudioAudioToAudioAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateAudioStableAudioAudioToAudioAsync(
             string contentType,
             string prompt,
             byte[] audio,
@@ -422,7 +422,7 @@ namespace StabilityAI
         ///     else:<br/>
         ///         raise Exception(str(result.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateAudioStableAudioAudioToAudioResponse> CreateAudioStableAudioAudioToAudioAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateAudioStableAudioAudioToAudioAsync(
             string contentType,
             string prompt,
             global::System.IO.Stream audio,
@@ -570,7 +570,7 @@ namespace StabilityAI
         ///     else:<br/>
         ///         raise Exception(str(result.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateAudioStableAudioAudioToAudioResponse>> CreateAudioStableAudioAudioToAudioAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateAudioStableAudioAudioToAudioAsResponseAsync(
             string contentType,
             string prompt,
             global::System.IO.Stream audio,

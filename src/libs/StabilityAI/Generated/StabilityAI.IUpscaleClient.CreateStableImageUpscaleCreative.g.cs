@@ -263,7 +263,7 @@ namespace StabilityAI
             global::StabilityAI.CreateStableImageUpscaleCreativeRequestOutputFormat? outputFormat = default,
             double? seed = default,
             double? creativity = default,
-            global::StabilityAI.CreateStableImageUpscaleCreativeRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -394,7 +394,7 @@ namespace StabilityAI
             global::StabilityAI.CreateStableImageUpscaleCreativeRequestOutputFormat? outputFormat = default,
             double? seed = default,
             double? creativity = default,
-            global::StabilityAI.CreateStableImageUpscaleCreativeRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -524,7 +524,7 @@ namespace StabilityAI
             global::StabilityAI.CreateStableImageUpscaleCreativeRequestOutputFormat? outputFormat = default,
             double? seed = default,
             double? creativity = default,
-            global::StabilityAI.CreateStableImageUpscaleCreativeRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

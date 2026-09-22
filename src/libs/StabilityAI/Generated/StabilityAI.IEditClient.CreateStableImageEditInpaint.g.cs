@@ -81,7 +81,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditInpaintResponse> CreateStableImageEditInpaintAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageEditInpaintAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageEditInpaintRequest request,
@@ -168,7 +168,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageEditInpaintResponse>> CreateStableImageEditInpaintAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageEditInpaintAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageEditInpaintRequest request,
@@ -312,7 +312,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditInpaintResponse> CreateStableImageEditInpaintAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageEditInpaintAsync(
             string contentType,
             byte[] image,
             string imagename,
@@ -327,7 +327,7 @@ namespace StabilityAI
             double? growMask = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditInpaintRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditInpaintRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -488,7 +488,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditInpaintResponse> CreateStableImageEditInpaintAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageEditInpaintAsync(
             string contentType,
             global::System.IO.Stream image,
             string imagename,
@@ -503,7 +503,7 @@ namespace StabilityAI
             double? growMask = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditInpaintRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditInpaintRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -663,7 +663,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageEditInpaintResponse>> CreateStableImageEditInpaintAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageEditInpaintAsResponseAsync(
             string contentType,
             global::System.IO.Stream image,
             string imagename,
@@ -678,7 +678,7 @@ namespace StabilityAI
             double? growMask = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditInpaintRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditInpaintRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

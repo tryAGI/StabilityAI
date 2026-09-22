@@ -32,8 +32,8 @@ namespace StabilityAI
         /// Default Value: 1:1
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("aspect_ratio")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.CreateStableImageGenerateUltraRequestAspectRatioJsonConverter))]
-        public global::StabilityAI.CreateStableImageGenerateUltraRequestAspectRatio? AspectRatio { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.AspectRatioJsonConverter))]
+        public global::StabilityAI.AspectRatio? AspectRatio { get; set; }
 
         /// <summary>
         /// A specific value that is used to guide the 'randomness' of the generation. (Omit this parameter or pass `0` to use a random seed.)<br/>
@@ -88,8 +88,8 @@ namespace StabilityAI
         /// Guides the image model towards a particular style.
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("style_preset")]
-        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.CreateStableImageGenerateUltraRequestStylePresetJsonConverter))]
-        public global::StabilityAI.CreateStableImageGenerateUltraRequestStylePreset? StylePreset { get; set; }
+        [global::System.Text.Json.Serialization.JsonConverter(typeof(global::StabilityAI.JsonConverters.StylePresetJsonConverter))]
+        public global::StabilityAI.StylePreset? StylePreset { get; set; }
 
         /// <summary>
         /// Sometimes referred to as _denoising_, this parameter controls how much influence the <br/>
@@ -174,12 +174,12 @@ namespace StabilityAI
         public CreateStableImageGenerateUltraRequest(
             string prompt,
             string? negativePrompt,
-            global::StabilityAI.CreateStableImageGenerateUltraRequestAspectRatio? aspectRatio,
+            global::StabilityAI.AspectRatio? aspectRatio,
             double? seed,
             global::StabilityAI.CreateStableImageGenerateUltraRequestOutputFormat? outputFormat,
             byte[]? image,
             string? imagename,
-            global::StabilityAI.CreateStableImageGenerateUltraRequestStylePreset? stylePreset,
+            global::StabilityAI.StylePreset? stylePreset,
             double? strength)
         {
             this.Prompt = prompt ?? throw new global::System.ArgumentNullException(nameof(prompt));

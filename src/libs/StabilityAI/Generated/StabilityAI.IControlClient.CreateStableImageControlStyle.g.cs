@@ -77,7 +77,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageControlStyleResponse> CreateStableImageControlStyleAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageControlStyleAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageControlStyleRequest request,
@@ -160,7 +160,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageControlStyleResponse>> CreateStableImageControlStyleAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageControlStyleAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageControlStyleRequest request,
@@ -275,7 +275,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageControlStyleResponse> CreateStableImageControlStyleAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageControlStyleAsync(
             string contentType,
             string prompt,
             byte[] image,
@@ -285,11 +285,11 @@ namespace StabilityAI
             string? stabilityClientUserId = default,
             string? stabilityClientVersion = default,
             string? negativePrompt = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestAspectRatio? aspectRatio = default,
+            global::StabilityAI.AspectRatio? aspectRatio = default,
             double? fidelity = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStyleRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -420,7 +420,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageControlStyleResponse> CreateStableImageControlStyleAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageControlStyleAsync(
             string contentType,
             string prompt,
             global::System.IO.Stream image,
@@ -430,11 +430,11 @@ namespace StabilityAI
             string? stabilityClientUserId = default,
             string? stabilityClientVersion = default,
             string? negativePrompt = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestAspectRatio? aspectRatio = default,
+            global::StabilityAI.AspectRatio? aspectRatio = default,
             double? fidelity = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStyleRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -564,7 +564,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageControlStyleResponse>> CreateStableImageControlStyleAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageControlStyleAsResponseAsync(
             string contentType,
             string prompt,
             global::System.IO.Stream image,
@@ -574,11 +574,11 @@ namespace StabilityAI
             string? stabilityClientUserId = default,
             string? stabilityClientVersion = default,
             string? negativePrompt = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestAspectRatio? aspectRatio = default,
+            global::StabilityAI.AspectRatio? aspectRatio = default,
             double? fidelity = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStyleRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStyleRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }
