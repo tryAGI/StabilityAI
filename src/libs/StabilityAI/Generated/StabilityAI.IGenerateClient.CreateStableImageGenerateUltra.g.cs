@@ -78,7 +78,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageGenerateUltraResponse> CreateStableImageGenerateUltraAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageGenerateUltraAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageGenerateUltraRequest request,
@@ -162,7 +162,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageGenerateUltraResponse>> CreateStableImageGenerateUltraAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageGenerateUltraAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageGenerateUltraRequest request,
@@ -284,7 +284,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageGenerateUltraResponse> CreateStableImageGenerateUltraAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageGenerateUltraAsync(
             string contentType,
             string prompt,
             global::StabilityAI.CreateStableImageGenerateUltraAccept? accept = default,
@@ -292,12 +292,12 @@ namespace StabilityAI
             string? stabilityClientUserId = default,
             string? stabilityClientVersion = default,
             string? negativePrompt = default,
-            global::StabilityAI.CreateStableImageGenerateUltraRequestAspectRatio? aspectRatio = default,
+            global::StabilityAI.AspectRatio? aspectRatio = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageGenerateUltraRequestOutputFormat? outputFormat = default,
             byte[]? image = default,
             string? imagename = default,
-            global::StabilityAI.CreateStableImageGenerateUltraRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             double? strength = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

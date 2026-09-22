@@ -84,7 +84,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse> GetV2alphaGenerationStableImageUpscaleResultByIdAsync(
+        public async global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> GetV2alphaGenerationStableImageUpscaleResultByIdAsync(
             string id,
             global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultAccept? accept = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
@@ -140,7 +140,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse>> GetV2alphaGenerationStableImageUpscaleResultByIdAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> GetV2alphaGenerationStableImageUpscaleResultByIdAsResponseAsync(
             string id,
             global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultAccept? accept = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
@@ -414,19 +414,19 @@ namespace StabilityAI
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse5? __value_400 = null;
+                                global::StabilityAI.Error? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse5.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse5.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -435,7 +435,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse5>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -488,19 +488,19 @@ namespace StabilityAI
                             {
                                 string? __content_404 = null;
                                 global::System.Exception? __exception_404 = null;
-                                global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse6? __value_404 = null;
+                                global::StabilityAI.Error? __value_404 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_404 = global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse6.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = global::StabilityAI.Error.FromJson(__content_404, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_404 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_404 = global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse6.FromJson(__content_404, JsonSerializerContext);
+                                        __value_404 = global::StabilityAI.Error.FromJson(__content_404, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -509,7 +509,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse6>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_404 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_404,
@@ -525,19 +525,19 @@ namespace StabilityAI
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse7? __value_500 = null;
+                                global::StabilityAI.Error? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse7.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse7.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -546,7 +546,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse7>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
@@ -579,9 +579,9 @@ namespace StabilityAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::StabilityAI.ImageJSONResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse>(
+                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -611,9 +611,9 @@ namespace StabilityAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::StabilityAI.ImageJSONResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.GetV2alphaGenerationStableImageUpscaleResultResponse>(
+                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,

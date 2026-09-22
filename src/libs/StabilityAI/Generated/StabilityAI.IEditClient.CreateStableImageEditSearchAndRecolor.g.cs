@@ -80,7 +80,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditSearchAndRecolorResponse> CreateStableImageEditSearchAndRecolorAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageEditSearchAndRecolorAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageEditSearchAndRecolorRequest request,
@@ -166,7 +166,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageEditSearchAndRecolorResponse>> CreateStableImageEditSearchAndRecolorAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageEditSearchAndRecolorAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageEditSearchAndRecolorRequest request,
@@ -285,7 +285,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditSearchAndRecolorResponse> CreateStableImageEditSearchAndRecolorAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageEditSearchAndRecolorAsync(
             string contentType,
             byte[] image,
             string imagename,
@@ -299,7 +299,7 @@ namespace StabilityAI
             double? growMask = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditSearchAndRecolorRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditSearchAndRecolorRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -435,7 +435,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditSearchAndRecolorResponse> CreateStableImageEditSearchAndRecolorAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageEditSearchAndRecolorAsync(
             string contentType,
             global::System.IO.Stream image,
             string imagename,
@@ -449,7 +449,7 @@ namespace StabilityAI
             double? growMask = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditSearchAndRecolorRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditSearchAndRecolorRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -584,7 +584,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageEditSearchAndRecolorResponse>> CreateStableImageEditSearchAndRecolorAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageEditSearchAndRecolorAsResponseAsync(
             string contentType,
             global::System.IO.Stream image,
             string imagename,
@@ -598,7 +598,7 @@ namespace StabilityAI
             double? growMask = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageEditSearchAndRecolorRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageEditSearchAndRecolorRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

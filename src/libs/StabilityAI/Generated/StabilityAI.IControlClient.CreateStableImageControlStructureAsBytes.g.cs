@@ -374,7 +374,7 @@ namespace StabilityAI
             string? negativePrompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStructureRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStructureRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -516,7 +516,7 @@ namespace StabilityAI
             string? negativePrompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStructureRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStructureRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -657,7 +657,7 @@ namespace StabilityAI
             string? negativePrompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStructureRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStructureRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -798,7 +798,7 @@ namespace StabilityAI
             string? negativePrompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlStructureRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlStructureRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

@@ -378,7 +378,7 @@ namespace StabilityAI
             string? negativePrompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlSketchRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlSketchRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
 
@@ -521,7 +521,7 @@ namespace StabilityAI
             string? negativePrompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlSketchRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlSketchRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -663,7 +663,7 @@ namespace StabilityAI
             string? negativePrompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlSketchRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlSketchRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
         /// <summary>
@@ -805,7 +805,7 @@ namespace StabilityAI
             string? negativePrompt = default,
             double? seed = default,
             global::StabilityAI.CreateStableImageControlSketchRequestOutputFormat? outputFormat = default,
-            global::StabilityAI.CreateStableImageControlSketchRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
     }

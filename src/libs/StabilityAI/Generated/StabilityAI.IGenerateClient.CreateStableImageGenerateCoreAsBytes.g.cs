@@ -327,10 +327,10 @@ namespace StabilityAI
             string? stabilityClientId = default,
             string? stabilityClientUserId = default,
             string? stabilityClientVersion = default,
-            global::StabilityAI.CreateStableImageGenerateCoreRequestAspectRatio? aspectRatio = default,
+            global::StabilityAI.AspectRatio? aspectRatio = default,
             string? negativePrompt = default,
             double? seed = default,
-            global::StabilityAI.CreateStableImageGenerateCoreRequestStylePreset? stylePreset = default,
+            global::StabilityAI.StylePreset? stylePreset = default,
             global::StabilityAI.CreateStableImageGenerateCoreRequestOutputFormat? outputFormat = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);

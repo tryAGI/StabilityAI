@@ -75,7 +75,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageUpscaleConservativeResponse> CreateStableImageUpscaleConservativeAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageUpscaleConservativeAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageUpscaleConservativeRequest request,
@@ -156,7 +156,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageUpscaleConservativeResponse>> CreateStableImageUpscaleConservativeAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageUpscaleConservativeAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageUpscaleConservativeRequest request,
@@ -262,7 +262,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageUpscaleConservativeResponse> CreateStableImageUpscaleConservativeAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageUpscaleConservativeAsync(
             string contentType,
             byte[] image,
             string imagename,
@@ -396,7 +396,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageUpscaleConservativeResponse> CreateStableImageUpscaleConservativeAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageUpscaleConservativeAsync(
             string contentType,
             global::System.IO.Stream image,
             string imagename,
@@ -529,7 +529,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageUpscaleConservativeResponse>> CreateStableImageUpscaleConservativeAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageUpscaleConservativeAsResponseAsync(
             string contentType,
             global::System.IO.Stream image,
             string imagename,

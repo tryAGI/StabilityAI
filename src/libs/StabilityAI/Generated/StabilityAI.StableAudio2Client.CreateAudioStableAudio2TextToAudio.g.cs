@@ -133,7 +133,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse> CreateAudioStableAudio2TextToAudioAsync(
+        public async global::System.Threading.Tasks.Task<global::StabilityAI.AudioJSONResponse> CreateAudioStableAudio2TextToAudioAsync(
             string contentType,
 
             global::StabilityAI.CreateAudioStableAudio2TextToAudioRequest request,
@@ -240,7 +240,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse>> CreateAudioStableAudio2TextToAudioAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AudioJSONResponse>> CreateAudioStableAudio2TextToAudioAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateAudioStableAudio2TextToAudioRequest request,
@@ -599,19 +599,19 @@ namespace StabilityAI
                             {
                                 string? __content_400 = null;
                                 global::System.Exception? __exception_400 = null;
-                                global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse3? __value_400 = null;
+                                global::StabilityAI.Error? __value_400 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_400 = global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse3.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_400 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_400 = global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse3.FromJson(__content_400, JsonSerializerContext);
+                                        __value_400 = global::StabilityAI.Error.FromJson(__content_400, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -620,7 +620,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse3>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_400 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_400,
@@ -673,19 +673,19 @@ namespace StabilityAI
                             {
                                 string? __content_422 = null;
                                 global::System.Exception? __exception_422 = null;
-                                global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse4? __value_422 = null;
+                                global::StabilityAI.Error? __value_422 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_422 = global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse4.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_422 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_422 = global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse4.FromJson(__content_422, JsonSerializerContext);
+                                        __value_422 = global::StabilityAI.Error.FromJson(__content_422, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -694,7 +694,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse4>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_422 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_422,
@@ -710,19 +710,19 @@ namespace StabilityAI
                             {
                                 string? __content_429 = null;
                                 global::System.Exception? __exception_429 = null;
-                                global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse5? __value_429 = null;
+                                global::StabilityAI.Error? __value_429 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_429 = global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse5.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_429 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_429 = global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse5.FromJson(__content_429, JsonSerializerContext);
+                                        __value_429 = global::StabilityAI.Error.FromJson(__content_429, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -731,7 +731,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse5>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_429 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_429,
@@ -747,19 +747,19 @@ namespace StabilityAI
                             {
                                 string? __content_500 = null;
                                 global::System.Exception? __exception_500 = null;
-                                global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse6? __value_500 = null;
+                                global::StabilityAI.Error? __value_500 = null;
                                 try
                                 {
                                     if (__effectiveReadResponseAsString)
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
-                                        __value_500 = global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse6.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                     else
                                     {
                                         __content_500 = await __response.Content.ReadAsStringAsync(__effectiveCancellationToken).ConfigureAwait(false);
 
-                                        __value_500 = global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse6.FromJson(__content_500, JsonSerializerContext);
+                                        __value_500 = global::StabilityAI.Error.FromJson(__content_500, JsonSerializerContext);
                                     }
                                 }
                                 catch (global::System.Exception __ex)
@@ -768,7 +768,7 @@ namespace StabilityAI
                                 }
 
 
-                                throw global::StabilityAI.ApiException<global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse6>.Create(
+                                throw global::StabilityAI.ApiException<global::StabilityAI.Error>.Create(
                                     statusCode: __response.StatusCode,
                                     message: __content_500 ?? __response.ReasonPhrase ?? string.Empty,
                                     innerException: __exception_500,
@@ -801,9 +801,9 @@ namespace StabilityAI
                                 {
                                     __response.EnsureSuccessStatusCode();
 
-                                    var __value = global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse.FromJson(__content, JsonSerializerContext) ??
+                                    var __value = global::StabilityAI.AudioJSONResponse.FromJson(__content, JsonSerializerContext) ??
                                         throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse>(
+                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AudioJSONResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -833,9 +833,9 @@ namespace StabilityAI
                 #endif
                                     ).ConfigureAwait(false);
 
-                                    var __value = await global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
+                                    var __value = await global::StabilityAI.AudioJSONResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
                                         throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse>(
+                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AudioJSONResponse>(
                                         statusCode: __response.StatusCode,
                                         headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
                                         requestUri: __response.RequestMessage?.RequestUri,
@@ -972,7 +972,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        public async global::System.Threading.Tasks.Task<global::StabilityAI.CreateAudioStableAudio2TextToAudioResponse> CreateAudioStableAudio2TextToAudioAsync(
+        public async global::System.Threading.Tasks.Task<global::StabilityAI.AudioJSONResponse> CreateAudioStableAudio2TextToAudioAsync(
             string contentType,
             string prompt,
             global::StabilityAI.CreateAudioStableAudio2TextToAudioAccept? accept = default,

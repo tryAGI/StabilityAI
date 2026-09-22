@@ -108,13 +108,11 @@ namespace StabilityAI
         public int? Samples { get; set; }
 
         /// <summary>
-        /// Random noise seed (omit this option or use `0` for a random seed)<br/>
-        /// Default Value: 0<br/>
-        /// Example: 0
+        /// A specific value that is used to guide the 'randomness' of the generation. (Omit this parameter or pass `0` to use a random seed.)<br/>
+        /// Default Value: 0
         /// </summary>
-        /// <example>0</example>
         [global::System.Text.Json.Serialization.JsonPropertyName("seed")]
-        public long? Seed { get; set; }
+        public double? Seed { get; set; }
 
         /// <summary>
         /// Number of diffusion steps to run<br/>
@@ -187,9 +185,8 @@ namespace StabilityAI
         /// Example: 1
         /// </param>
         /// <param name="seed">
-        /// Random noise seed (omit this option or use `0` for a random seed)<br/>
-        /// Default Value: 0<br/>
-        /// Example: 0
+        /// A specific value that is used to guide the 'randomness' of the generation. (Omit this parameter or pass `0` to use a random seed.)<br/>
+        /// Default Value: 0
         /// </param>
         /// <param name="steps">
         /// Number of diffusion steps to run<br/>
@@ -209,7 +206,7 @@ namespace StabilityAI
             global::StabilityAI.ClipGuidancePreset? clipGuidancePreset,
             global::StabilityAI.Sampler? sampler,
             int? samples,
-            long? seed,
+            double? seed,
             int? steps)
         {
             this.InitImage = initImage ?? throw new global::System.ArgumentNullException(nameof(initImage));

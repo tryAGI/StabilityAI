@@ -76,7 +76,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditEraseResponse> CreateStableImageEditEraseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageEditEraseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageEditEraseRequest request,
@@ -158,7 +158,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageEditEraseResponse>> CreateStableImageEditEraseAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageEditEraseAsResponseAsync(
             string contentType,
 
             global::StabilityAI.CreateStableImageEditEraseRequest request,
@@ -283,7 +283,7 @@ namespace StabilityAI
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditEraseResponse> CreateStableImageEditEraseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageEditEraseAsync(
             string contentType,
             byte[] image,
             string imagename,
@@ -436,7 +436,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageEditEraseResponse> CreateStableImageEditEraseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateStableImageEditEraseAsync(
             string contentType,
             global::System.IO.Stream image,
             string imagename,
@@ -588,7 +588,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageEditEraseResponse>> CreateStableImageEditEraseAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateStableImageEditEraseAsResponseAsync(
             string contentType,
             global::System.IO.Stream image,
             string imagename,

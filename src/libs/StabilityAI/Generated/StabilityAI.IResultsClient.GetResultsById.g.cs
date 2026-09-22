@@ -62,7 +62,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.GetResultsResponse> GetResultsByIdAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> GetResultsByIdAsync(
             string id,
             global::StabilityAI.GetResultsAccept? accept = default,
             string? stabilityClientId = default,
@@ -128,7 +128,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(response.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.GetResultsResponse>> GetResultsByIdAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> GetResultsByIdAsResponseAsync(
             string id,
             global::StabilityAI.GetResultsAccept? accept = default,
             string? stabilityClientId = default,
