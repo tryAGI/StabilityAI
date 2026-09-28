@@ -59,13 +59,13 @@ namespace StabilityAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::StabilityAI.InpaintingSearchModeRequestBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::StabilityAI.InpaintingSearchModeRequestBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::StabilityAI.InpaintingSearchModeRequestBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Search!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickSearch(), typeInfo);
             }
             else if (value.IsMask)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::StabilityAI.InpaintingMaskingModeRequestBody), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::StabilityAI.InpaintingMaskingModeRequestBody?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::StabilityAI.InpaintingMaskingModeRequestBody).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.Mask!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickMask(), typeInfo);
             }
         }
     }

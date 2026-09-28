@@ -229,7 +229,7 @@ namespace StabilityAI
                 PrepareGetV2alphaGenerationStableImageUpscaleResultByIdRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    id: id!,
+                    id: id,
                     accept: accept);
 
                 return __httpRequest;
@@ -252,7 +252,7 @@ namespace StabilityAI
                                 pathTemplate: "$\"/v2alpha/generation/stable-image/upscale/result/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: null,
                                 clientOptions: Options,
@@ -286,7 +286,7 @@ namespace StabilityAI
                                 pathTemplate: "$\"/v2alpha/generation/stable-image/upscale/result/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: null,
                                 exception: __exception,
                                 clientOptions: Options,
@@ -327,7 +327,7 @@ namespace StabilityAI
                                 pathTemplate: "$\"/v2alpha/generation/stable-image/upscale/result/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -375,7 +375,7 @@ namespace StabilityAI
                                 pathTemplate: "$\"/v2alpha/generation/stable-image/upscale/result/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,
@@ -397,7 +397,7 @@ namespace StabilityAI
                                 pathTemplate: "$\"/v2alpha/generation/stable-image/upscale/result/{id}\"",
                                 httpMethod: "GET",
                                 baseUri: BaseUri,
-                                request: __httpRequest!,
+                                request: __httpRequest ?? throw new global::System.InvalidOperationException("The HTTP request was not created before invoking a request hook."),
                                 response: __response,
                                 exception: null,
                                 clientOptions: Options,

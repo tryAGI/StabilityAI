@@ -70,7 +70,7 @@ namespace StabilityAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::StabilityAI.TextToImageRequestBodyVariant1), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::StabilityAI.TextToImageRequestBodyVariant1?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::StabilityAI.TextToImageRequestBodyVariant1).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.TextToImageRequestBodyVariant1!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickTextToImageRequestBodyVariant1(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -88,7 +88,7 @@ namespace StabilityAI.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::StabilityAI.GenerationRequestOptionalParams), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::StabilityAI.GenerationRequestOptionalParams?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::StabilityAI.GenerationRequestOptionalParams).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.GenerationOptionalParams!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickGenerationOptionalParams(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");

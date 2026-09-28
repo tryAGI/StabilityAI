@@ -42,8 +42,8 @@ namespace StabilityAI
         /// <summary>
         ///
         /// </summary>
-        public global::StabilityAI.TextToImageRequestBodyVariant1 PickTextToImageRequestBodyVariant1() => IsTextToImageRequestBodyVariant1
-            ? TextToImageRequestBodyVariant1!
+        public global::StabilityAI.TextToImageRequestBodyVariant1 PickTextToImageRequestBodyVariant1() => TextToImageRequestBodyVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'TextToImageRequestBodyVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace StabilityAI
         /// <summary>
         ///
         /// </summary>
-        public global::StabilityAI.GenerationRequestOptionalParams PickGenerationOptionalParams() => IsGenerationOptionalParams
-            ? GenerationOptionalParams!
+        public global::StabilityAI.GenerationRequestOptionalParams PickGenerationOptionalParams() => GenerationOptionalParams is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'GenerationOptionalParams' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace StabilityAI
                 Validate();
             }
 
-            if (IsTextToImageRequestBodyVariant1 && textToImageRequestBodyVariant1 != null)
+            if (TextToImageRequestBodyVariant1 is { } __value0 && textToImageRequestBodyVariant1 != null)
             {
-                return textToImageRequestBodyVariant1(TextToImageRequestBodyVariant1!);
+                return textToImageRequestBodyVariant1(__value0);
             }
-            else if (IsGenerationOptionalParams && generationOptionalParams != null)
+            else if (GenerationOptionalParams is { } __value1 && generationOptionalParams != null)
             {
-                return generationOptionalParams(GenerationOptionalParams!);
+                return generationOptionalParams(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace StabilityAI
                 Validate();
             }
 
-            if (IsTextToImageRequestBodyVariant1)
+            if (TextToImageRequestBodyVariant1 is { } __value0)
             {
-                textToImageRequestBodyVariant1?.Invoke(TextToImageRequestBodyVariant1!);
+                textToImageRequestBodyVariant1?.Invoke(__value0);
             }
-            else if (IsGenerationOptionalParams)
+            else if (GenerationOptionalParams is { } __value1)
             {
-                generationOptionalParams?.Invoke(GenerationOptionalParams!);
+                generationOptionalParams?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace StabilityAI
                 Validate();
             }
 
-            if (IsTextToImageRequestBodyVariant1)
+            if (TextToImageRequestBodyVariant1 is { } __value0)
             {
-                textToImageRequestBodyVariant1?.Invoke(TextToImageRequestBodyVariant1!);
+                textToImageRequestBodyVariant1?.Invoke(__value0);
             }
-            else if (IsGenerationOptionalParams)
+            else if (GenerationOptionalParams is { } __value1)
             {
-                generationOptionalParams?.Invoke(GenerationOptionalParams!);
+                generationOptionalParams?.Invoke(__value1);
             }
         }
 
