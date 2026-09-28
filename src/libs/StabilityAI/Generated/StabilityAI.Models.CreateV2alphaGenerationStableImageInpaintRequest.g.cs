@@ -47,8 +47,8 @@ namespace StabilityAI
         /// <summary>
         ///
         /// </summary>
-        public global::StabilityAI.InpaintingSearchModeRequestBody PickSearch() => IsSearch
-            ? Search!
+        public global::StabilityAI.InpaintingSearchModeRequestBody PickSearch() => Search is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Search' but the value was {ToString()}.");
 
         /// <summary>
@@ -84,8 +84,8 @@ namespace StabilityAI
         /// <summary>
         ///
         /// </summary>
-        public global::StabilityAI.InpaintingMaskingModeRequestBody PickMask() => IsMask
-            ? Mask!
+        public global::StabilityAI.InpaintingMaskingModeRequestBody PickMask() => Mask is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Mask' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -185,13 +185,13 @@ namespace StabilityAI
                 Validate();
             }
 
-            if (IsSearch && search != null)
+            if (Search is { } __value0 && search != null)
             {
-                return search(Search!);
+                return search(__value0);
             }
-            else if (IsMask && mask != null)
+            else if (Mask is { } __value1 && mask != null)
             {
-                return mask(Mask!);
+                return mask(__value1);
             }
 
             return default(TResult);
@@ -211,13 +211,13 @@ namespace StabilityAI
                 Validate();
             }
 
-            if (IsSearch)
+            if (Search is { } __value0)
             {
-                search?.Invoke(Search!);
+                search?.Invoke(__value0);
             }
-            else if (IsMask)
+            else if (Mask is { } __value1)
             {
-                mask?.Invoke(Mask!);
+                mask?.Invoke(__value1);
             }
         }
 
@@ -234,13 +234,13 @@ namespace StabilityAI
                 Validate();
             }
 
-            if (IsSearch)
+            if (Search is { } __value0)
             {
-                search?.Invoke(Search!);
+                search?.Invoke(__value0);
             }
-            else if (IsMask)
+            else if (Mask is { } __value1)
             {
-                mask?.Invoke(Mask!);
+                mask?.Invoke(__value1);
             }
         }
 
