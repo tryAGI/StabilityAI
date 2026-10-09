@@ -5,7 +5,7 @@ namespace StabilityAI
 {
     /// <summary>
     /// The model to use for generation.<br/>
-    /// - `stable-audio-3` requires 26 credits per generation<br/>
+    /// - `stable-audio-3` requires 8 credits per generation<br/>
     /// Default Value: stable-audio-3
     /// </summary>
     public enum CreateAudioStableAudioAudioToAudioRequestModel

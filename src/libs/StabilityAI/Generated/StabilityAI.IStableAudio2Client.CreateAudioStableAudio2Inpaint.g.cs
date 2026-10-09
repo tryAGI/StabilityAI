@@ -34,7 +34,7 @@ namespace StabilityAI
         /// &gt; **Note:** for more details about these parameters please see the request schema below.<br/>
         /// ### Credits<br/>
         /// **Stable Audio 2.5**<br/>
-        /// Flat rate of 20 credits per successful generation.<br/>
+        /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">
@@ -121,7 +121,7 @@ namespace StabilityAI
         /// &gt; **Note:** for more details about these parameters please see the request schema below.<br/>
         /// ### Credits<br/>
         /// **Stable Audio 2.5**<br/>
-        /// Flat rate of 20 credits per successful generation.<br/>
+        /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">
@@ -208,7 +208,7 @@ namespace StabilityAI
         /// &gt; **Note:** for more details about these parameters please see the request schema below.<br/>
         /// ### Credits<br/>
         /// **Stable Audio 2.5**<br/>
-        /// Flat rate of 20 credits per successful generation.<br/>
+        /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">
@@ -328,7 +328,7 @@ namespace StabilityAI
         /// &gt; **Note:** for more details about these parameters please see the request schema below.<br/>
         /// ### Credits<br/>
         /// **Stable Audio 2.5**<br/>
-        /// Flat rate of 20 credits per successful generation.<br/>
+        /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">
@@ -467,7 +467,7 @@ namespace StabilityAI
         /// &gt; **Note:** for more details about these parameters please see the request schema below.<br/>
         /// ### Credits<br/>
         /// **Stable Audio 2.5**<br/>
-        /// Flat rate of 20 credits per successful generation.<br/>
+        /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">

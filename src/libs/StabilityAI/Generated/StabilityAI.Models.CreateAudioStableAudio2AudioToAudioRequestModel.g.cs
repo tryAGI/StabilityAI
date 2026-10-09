@@ -5,7 +5,7 @@ namespace StabilityAI
 {
     /// <summary>
     /// The model to use for generation.<br/>
-    /// - `stable-audio-2.5` requires 20 credits per generation<br/>
+    /// - `stable-audio-2.5` requires 8 credits per generation<br/>
     /// - `stable-audio-2` requires 20 credits per generation<br/>
     /// Default Value: stable-audio-2
     /// </summary>

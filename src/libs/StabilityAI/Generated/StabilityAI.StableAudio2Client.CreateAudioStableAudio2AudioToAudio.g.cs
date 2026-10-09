@@ -92,7 +92,7 @@ namespace StabilityAI
         /// - 50 steps = 20 credits [default]<br/>
         /// - 100 steps = 23 credits<br/>
         /// **Stable Audio 2.5**<br/>
-        /// Requests made using the Stable Audio 2.5 model have a flat rate of 20 credits per successful result.<br/>
+        /// Requests made using the Stable Audio 2.5 model have a flat rate of 8 credits per successful result.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">
@@ -206,7 +206,7 @@ namespace StabilityAI
         /// - 50 steps = 20 credits [default]<br/>
         /// - 100 steps = 23 credits<br/>
         /// **Stable Audio 2.5**<br/>
-        /// Requests made using the Stable Audio 2.5 model have a flat rate of 20 credits per successful result.<br/>
+        /// Requests made using the Stable Audio 2.5 model have a flat rate of 8 credits per successful result.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">
@@ -976,7 +976,7 @@ namespace StabilityAI
         /// - 50 steps = 20 credits [default]<br/>
         /// - 100 steps = 23 credits<br/>
         /// **Stable Audio 2.5**<br/>
-        /// Requests made using the Stable Audio 2.5 model have a flat rate of 20 credits per successful result.<br/>
+        /// Requests made using the Stable Audio 2.5 model have a flat rate of 8 credits per successful result.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">
@@ -1026,7 +1026,7 @@ namespace StabilityAI
         /// </param>
         /// <param name="model">
         /// The model to use for generation.<br/>
-        /// - `stable-audio-2.5` requires 20 credits per generation<br/>
+        /// - `stable-audio-2.5` requires 8 credits per generation<br/>
         /// - `stable-audio-2` requires 20 credits per generation<br/>
         /// Default Value: stable-audio-2
         /// </param>
@@ -1148,7 +1148,7 @@ namespace StabilityAI
         /// - 50 steps = 20 credits [default]<br/>
         /// - 100 steps = 23 credits<br/>
         /// **Stable Audio 2.5**<br/>
-        /// Requests made using the Stable Audio 2.5 model have a flat rate of 20 credits per successful result.<br/>
+        /// Requests made using the Stable Audio 2.5 model have a flat rate of 8 credits per successful result.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">
@@ -1198,7 +1198,7 @@ namespace StabilityAI
         /// </param>
         /// <param name="model">
         /// The model to use for generation.<br/>
-        /// - `stable-audio-2.5` requires 20 credits per generation<br/>
+        /// - `stable-audio-2.5` requires 8 credits per generation<br/>
         /// - `stable-audio-2` requires 20 credits per generation<br/>
         /// Default Value: stable-audio-2
         /// </param>
@@ -1991,7 +1991,7 @@ namespace StabilityAI
         /// - 50 steps = 20 credits [default]<br/>
         /// - 100 steps = 23 credits<br/>
         /// **Stable Audio 2.5**<br/>
-        /// Requests made using the Stable Audio 2.5 model have a flat rate of 20 credits per successful result.<br/>
+        /// Requests made using the Stable Audio 2.5 model have a flat rate of 8 credits per successful result.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">
@@ -2041,7 +2041,7 @@ namespace StabilityAI
         /// </param>
         /// <param name="model">
         /// The model to use for generation.<br/>
-        /// - `stable-audio-2.5` requires 20 credits per generation<br/>
+        /// - `stable-audio-2.5` requires 8 credits per generation<br/>
         /// - `stable-audio-2` requires 20 credits per generation<br/>
         /// Default Value: stable-audio-2
         /// </param>
