@@ -63,7 +63,7 @@ namespace StabilityAI
         /// Poll `GET /v2beta/audio/results/{id}` to retrieve the result.<br/>
         /// ### Credits<br/>
         /// **Stable Audio 3.0**<br/>
-        /// Flat rate of 26 credits per successful generation.<br/>
+        /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">
@@ -157,7 +157,7 @@ namespace StabilityAI
         /// Poll `GET /v2beta/audio/results/{id}` to retrieve the result.<br/>
         /// ### Credits<br/>
         /// **Stable Audio 3.0**<br/>
-        /// Flat rate of 26 credits per successful generation.<br/>
+        /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">
@@ -857,7 +857,7 @@ namespace StabilityAI
         /// Poll `GET /v2beta/audio/results/{id}` to retrieve the result.<br/>
         /// ### Credits<br/>
         /// **Stable Audio 3.0**<br/>
-        /// Flat rate of 26 credits per successful generation.<br/>
+        /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
         /// <param name="contentType">
@@ -888,7 +888,7 @@ namespace StabilityAI
         /// </param>
         /// <param name="model">
         /// The model to use for generation.<br/>
-        /// - `stable-audio-3` requires 26 credits per generation<br/>
+        /// - `stable-audio-3` requires 8 credits per generation<br/>
         /// Default Value: stable-audio-3
         /// </param>
         /// <param name="duration">
