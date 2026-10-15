@@ -50,7 +50,7 @@
     },
     {
       "name": "Stable Audio 2",
-      "description": "Tools to generate music and sound from text or audio, or transform existing audio clips into new compositions. Our different services include:\n\n**Stable Audio 2.5**: Fast, Best-Quality, Long-Form Music & Audio Generation\n\nOur most advanced audio generation model, capable of generating up to 3-minute, 44.1 kHz stereo compositions. Stable Audio 2.5 supports text-to-audio, audio-to-audio, and audio-inpaint workflows - allowing creators to upload a sound and transform it into new instruments, styles, or genres using natural language prompts. Ideal for music production, cinematic sound design, and remixing.\n\n**Stable Audio 2.0**: High-Quality Audio Generation\n\nBuilt for text-to-audio and audio-to-audio generation, also capable of generating up to 3-minute, 44.1 kHz stereo. Stable Audio 2.0 is great for ideation, music demos, and ambient soundscapes. It's optimized for creative professionals seeking detailed and extended outputs from simple prompts.\n\nStable Audio models were exclusively trained on licensed data from the [AudioSparx](https://www.audiosparx.com/) music library, honoring opt-out requests and ensuring fair compensation for creators. Additionally, Stable Audio 2.5 was pre-trained on licensed data from [Freesound](https://freesound.org/). Read more about the model capabilities [here](https://stability.ai/news/stable-audio-2-0).",
+      "description": "Tools to generate music and sound from text or audio, or transform existing audio clips into new compositions. For our most advanced audio model, see Stable Audio 3.0. Our different services include:\n\n**Stable Audio 2.5**: Fast, Long-Form Music & Audio Generation\n\nGenerates up to 3-minute, 44.1 kHz stereo compositions. Stable Audio 2.5 supports text-to-audio, audio-to-audio, and audio-inpaint workflows - allowing creators to upload a sound and transform it into new instruments, styles, or genres using natural language prompts. Ideal for music production, cinematic sound design, and remixing.\n\n**Stable Audio 2.0**: High-Quality Audio Generation\n\nBuilt for text-to-audio and audio-to-audio generation, also capable of generating up to 3-minute, 44.1 kHz stereo. Stable Audio 2.0 is great for ideation, music demos, and ambient soundscapes. It's optimized for creative professionals seeking detailed and extended outputs from simple prompts.\n\nStable Audio models were exclusively trained on licensed data from the [AudioSparx](https://www.audiosparx.com/) music library, honoring opt-out requests and ensuring fair compensation for creators. Additionally, Stable Audio 2.5 was pre-trained on licensed data from [Freesound](https://freesound.org/). Read more about the model capabilities [here](https://stability.ai/news/stable-audio-2-0).",
       "x-displayName": "Stable Audio 2.5"
     },
     {
@@ -800,19 +800,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst formData = {\n  image: fs.createReadStream(\"./kitten-in-space.png\"),\n  prompt: \"cute fluffy white kitten floating in space, pastel colors\",\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2alpha/generation/stable-image/upscale`,\n  axios.toFormData(formData, new FormData()),\n  {\n    validateStatus: undefined,\n    headers: { Authorization: `Bearer sk-MYAPIKEY` },\n  },\n);\n\nconsole.log(\"Generation ID:\", response.data.id);"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2alpha/generation/stable-image/upscale\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -F image=@\"./kitten-in-rainforest.png\" \\\n  -F prompt=\"cute fluffy white kitten sitting in a rainforest, pastel colors\" \\\n  -F output_format=webp \\\n  -o \"./output.json\""
           }
         ],
-        "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          }
-        ],
+        "parameters": [],
         "requestBody": {
           "content": {
             "multipart/form-data": {
@@ -905,7 +898,7 @@
             "source": "import axios from \"axios\";\nimport fs from \"node:fs\";\n\nconst generationID = \"e52772ac75b...\";\n\nconst response = await axios.request({\n  url: `https://api.stability.ai/v2alpha/generation/stable-image/upscale/result/${generationID}`,\n  method: \"GET\",\n  validateStatus: undefined,\n  responseType: \"arraybuffer\",\n  headers: {\n    accept: \"image/*\", // Use 'application/json' to receive base64 encoded JSON\n    authorization: `Bearer sk-MYAPIKEY`,\n  },\n});\n\nif (response.status === 202) {\n  console.log(\"Generation is still running, try again in 10 seconds.\");\n} else if (response.status === 200) {\n  console.log(\"Generation is complete!\");\n  fs.writeFileSync(\"upscaled.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`Response ${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "generation_id=\"e52772ac75b...\"\nurl=\"https://api.stability.ai/v2alpha/generation/stable-image/upscale/result/$generation_id\"\nhttp_status=$(curl -sS -f -o \"./upscaled.webp\" -w '%{http_code}' -H \"authorization: sk-MYAPIKEY\" -H 'accept: image/*' \"$url\")\n\ncase $http_status in\n    202)\n        echo \"Still processing. Retrying in 10 seconds...\"\n        ;;\n    200)\n        echo \"Download complete!\"\n        ;;\n    4*|5*)\n        mv \"./upscaled.webp\" \"./error.json\"\n        echo \"Error: Check ./error.json for details.\"\n        exit 1\n        ;;\nesac"
           }
@@ -918,9 +911,6 @@
             "required": true,
             "name": "id",
             "in": "path"
-          },
-          {
-            "$ref": "#/components/parameters/Authorization"
           },
           {
             "schema": {
@@ -1079,18 +1069,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst formData = {\n  image: fs.createReadStream(\"./husky-in-a-field.png\"),\n  prompt: \"golden retriever standing in a field\",\n  mode: \"search\",\n  search_prompt: \"dog\",\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2alpha/generation/stable-image/inpaint`,\n  axios.toFormData(formData, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { Authorization: `Bearer sk-MYAPIKEY`, accept: \"image/*\" },\n  },\n);\n\nif(response.status === 200) {\n  fs.writeFileSync(\"./golden-retriever-in-a-field.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2alpha/generation/stable-image/inpaint\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F image=@\"./husky-in-a-field.png\" \\\n  -F prompt=\"golden retriever in a field\" \\\n  -F mode=\"search\" \\\n  -F search_prompt=\"dog\" \\\n  -F output_format=\"webp\" \\\n  -o \"./golden-retriever-in-a-field.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "schema": {
               "type": "string",
@@ -1151,7 +1135,7 @@
           "3D"
         ],
         "summary": "Stable Fast 3D",
-        "description": "Stable Fast 3D generates high-quality 3D assets from a single 2D input image.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`.\n\nThe body of the request should include:\n- `image`\n\nThe body may optionally include:\n- `texture_resolution`\n- `foreground_ratio`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe output is a binary blob that includes a glTF asset, including JSON, buffers, and images.\nSee the [GLB File Format Specification](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#glb-file-format-specification) for more details.\n\n### Credits\nFlat rate of 10 credits per successful generation. You will not be charged for failed generations.",
+        "description": "Stable Fast 3D generates high-quality 3D assets from a single 2D input image.\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`.\n\nThe body of the request should include:\n- `image`\n\nThe body may optionally include:\n- `texture_resolution`\n- `foreground_ratio`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe output is a binary blob that includes a glTF asset, including JSON, buffers, and images.\nSee the [GLB File Format Specification](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#glb-file-format-specification) for more details.\n\n### Credits\nFlat rate of 10 credits per successful generation. You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -1164,18 +1148,12 @@
             "source": "import axios from \"axios\";\nimport FormData from \"form-data\";\nimport fs from \"node:fs\";\n\nconst payload = {\n    image: fs.createReadStream(\"./cat-statue.png\"),\n};\n\nconst response = await axios.postForm(\n    `https://api.stability.ai/v2beta/3d/stable-fast-3d`,\n    axios.toFormData(payload, new FormData()),\n    {\n        validateStatus: undefined,\n        responseType: \"arraybuffer\",\n        headers: {\n            Authorization: `Bearer sk-MYAPIKEY`,\n        },\n    },\n);\n\nif (response.status === 200) {\n    fs.writeFileSync(\"./3d-cat-statue.glb\", Buffer.from(response.data));\n} else {\n    throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/3d/stable-fast-3d\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -F image=@\"./cat-statue.png\" \\\n  -o \"./3d-cat-statue.glb\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/StabilityClientID"
           },
@@ -1268,7 +1246,7 @@
           "3D"
         ],
         "summary": "Stable Point Aware 3D",
-        "description": "Stable Point Aware 3D (SPAR3D) can make real-time edits and create the complete structure\nof a 3D object from a single image in a few seconds. SPAR3D combines the strengths of\npoint-cloud diffusion (probabilistic) and mesh regression (deterministic) to have improved\ndetails on the unseen back regions in the input image.\n\nCompared to our previous model [Stable Fast 3D](#tag/3D/paths/~1v2beta~13d~1stable-fast-3d/post), this new\none allows editing of backside information using the point cloud representation and also\nleverages a larger Diffusion model to generally improve the depth and backside\npredictions.\n\nRead more about the model capabilities [here](https://bit.ly/4h7cpgF).\n\nThis API is currently in\npreview. Please don’t hesitate to [contact us](https://stability.ai/contact) with any questions.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`.\n\nThe body of the request should include:\n- `image`\n\nThe body may optionally include:\n- `texture_resolution`\n- `foreground_ratio`\n- `remesh`\n- `target_type`\n- `target_count`\n- `guidance_scale`\n- `seed`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe output is a binary blob that includes a glTF asset, including JSON, buffers, and images.\nSee the [GLB File Format Specification](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#glb-file-format-specification) for more details.\n\n### Credits\nFlat rate of 4 credits per successful generation. You will not be charged for failed generations.",
+        "description": "Stable Point Aware 3D (SPAR3D) can make real-time edits and create the complete structure\nof a 3D object from a single image in a few seconds. SPAR3D combines the strengths of\npoint-cloud diffusion (probabilistic) and mesh regression (deterministic) to have improved\ndetails on the unseen back regions in the input image.\n\nCompared to our previous model [Stable Fast 3D](#tag/3D/paths/~1v2beta~13d~1stable-fast-3d/post), this new\none allows editing of backside information using the point cloud representation and also\nleverages a larger Diffusion model to generally improve the depth and backside\npredictions.\n\nRead more about the model capabilities [here](https://bit.ly/4h7cpgF).\n\nThis API is currently in\npreview. Please don’t hesitate to [contact us](https://stability.ai/contact) with any questions.\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`.\n\nThe body of the request should include:\n- `image`\n\nThe body may optionally include:\n- `texture_resolution`\n- `foreground_ratio`\n- `remesh`\n- `target_type`\n- `target_count`\n- `guidance_scale`\n- `seed`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe output is a binary blob that includes a glTF asset, including JSON, buffers, and images.\nSee the [GLB File Format Specification](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#glb-file-format-specification) for more details.\n\n### Credits\nFlat rate of 4 credits per successful generation. You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -1281,18 +1259,12 @@
             "source": "import axios from \"axios\";\nimport FormData from \"form-data\";\nimport fs from \"node:fs\";\n\nconst payload = {\n    image: fs.createReadStream(\"./cat-statue.png\"),\n};\n\nconst response = await axios.postForm(\n    `https://api.stability.ai/v2beta/3d/stable-point-aware-3d`,\n    axios.toFormData(payload, new FormData()),\n    {\n        validateStatus: undefined,\n        responseType: \"arraybuffer\",\n        headers: {\n            Authorization: `Bearer sk-MYAPIKEY`,\n        },\n    },\n);\n\nif (response.status === 200) {\n    fs.writeFileSync(\"./3d-cat-statue.glb\", Buffer.from(response.data));\n} else {\n    throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/3d/stable-point-aware-3d\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -F image=@\"./cat-statue.png\" \\\n  -o \"./3d-cat-statue.glb\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/StabilityClientID"
           },
@@ -1418,7 +1390,7 @@
             "source": "import axios from \"axios\";\nimport fs from \"node:fs\";\n\nconst generationID = \"e52772ac75b...\";\n\nconst response = await axios.request({\n  url: `https://api.stability.ai/v2beta/results/${generationID}`,\n  method: \"GET\",\n  validateStatus: undefined,\n  responseType: \"arraybuffer\",\n  headers: {\n    Authorization: `Bearer sk-MYAPIKEY`,\n    Accept: \"image/*\", // Use 'application/json' to receive base64 encoded JSON\n  },\n});\n\nif (response.status === 202) {\n  console.log(\"Generation is still running, try again in 10 seconds.\");\n} else if (response.status === 200) {\n  console.log(\"Generation is complete!\");\n  fs.writeFileSync(\"result.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`Response ${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "generation_id=\"e52772ac75b...\"\nurl=\"https://api.stability.ai/v2beta/results/$generation_id\"\nhttp_status=$(curl -sS -f -o \"./result.webp\" -w '%{http_code}' -H \"authorization: sk-MYAPIKEY\" -H 'accept: image/*' \"$url\")\n\ncase $http_status in\n    202)\n        echo \"Still processing. Retrying in 10 seconds...\"\n        ;;\n    200)\n        echo \"Download complete!\"\n        ;;\n    4*|5*)\n        mv \"./result.webp\" \"./error.json\"\n        echo \"Error: Check ./error.json for details.\"\n        exit 1\n        ;;\nesac"
           }
@@ -1431,9 +1403,6 @@
             "required": true,
             "name": "id",
             "in": "path"
-          },
-          {
-            "$ref": "#/components/parameters/Authorization"
           },
           {
             "$ref": "#/components/parameters/AcceptResult"
@@ -1587,18 +1556,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  prompt:\n    \"A song in the 3/4 time signature that features cheerful acoustic guitar, live recorded drums, and rhythmic claps, The mood is happy and up-lifting.\",\n  output_format: \"mp3\",\n  duration: 20,\n  model: \"stable-audio-2.5\",\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/audio/stable-audio-2/text-to-audio`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: {\n      Authorization: `Bearer sk-MYAPIKEY`,\n      Accept: \"audio/*\",\n    },\n  }\n);\n\nif (response.status === 200) {\n  fs.writeFileSync(\"./output.mp3\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/audio/stable-audio-2/text-to-audio\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: audio/*\" \\\n  -F prompt=\"A song in the 3/4 time signature that features cheerful acoustic guitar, live recorded drums, and rhythmic claps, The mood is happy and up-lifting.\" \\\n  -F output_format=\"mp3\" \\\n  -F duration=\"20\" \\\n  -F model=\"stable-audio-2.5\" \\\n  -o \"./uk-bass.mp3\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptAudio"
           },
@@ -1710,18 +1673,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  prompt:\n    \"A song in the 3/4 time signature that features cheerful acoustic guitar, live recorded drums, and rhythmic claps, The mood is happy and up-lifting.\",\n  output_format: \"mp3\",\n  duration: 20,\n  audio: fs.createReadStream(\"./uk-bass-base.mp3\"),\n  model: \"stable-audio-2.5\",\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/audio/stable-audio-2/audio-to-audio`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: {\n      Authorization: `Bearer sk-MYAPIKEY`,\n      Accept: \"audio/*\",\n    },\n  }\n);\n\nif (response.status === 200) {\n  fs.writeFileSync(\"./output.mp3\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/audio/stable-audio-2/audio-to-audio\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: audio/*\" \\\n  -F prompt=\"A song in the 3/4 time signature that features cheerful acoustic guitar, live recorded drums, and rhythmic claps, The mood is happy and up-lifting.\" \\\n  -F output_format=\"mp3\" \\\n  -F duration=\"20\" \\\n  -F model=\"stable-audio-2.5\" \\\n  -F audio=@\"./uk-bass-base.mp3\" \\\n  -o \"./output.mp3\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptAudio"
           },
@@ -1847,18 +1804,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  prompt:\n    \"A song in the 3/4 time signature that features cheerful acoustic guitar, live recorded drums, and rhythmic claps, The mood is happy and up-lifting.\",\n  output_format: \"mp3\",\n  duration: 20,\n  audio: fs.createReadStream(\"./uk-bass-base.mp3\"),\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/audio/stable-audio-2/inpaint`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: {\n      Authorization: `Bearer sk-MYAPIKEY`,\n      Accept: \"audio/*\",\n    },\n  }\n);\n\nif (response.status === 200) {\n  fs.writeFileSync(\"./output.mp3\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/audio/stable-audio-2/inpaint\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: audio/*\" \\\n  -F prompt=\"A song in the 3/4 time signature that features cheerful acoustic guitar, live recorded drums, and rhythmic claps, The mood is happy and up-lifting.\" \\\n  -F output_format=\"mp3\" \\\n  -F duration=\"20\" \\\n  -F audio=@\"./uk-bass-base.mp3\" \\\n  -o \"./output.mp3\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptAudio"
           },
@@ -1975,19 +1926,13 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  prompt: \"A cinematic orchestral piece with sweeping strings and dramatic brass.\",\n  output_format: \"mp3\",\n  duration: 30,\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/audio/stable-audio/text-to-audio`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    headers: { Authorization: `Bearer sk-MYAPIKEY`, Accept: \"audio/*\" },\n  }\n);\n\nif (response.status !== 202) {\n  throw new Error(`${response.status}: ${JSON.stringify(response.data)}`);\n}\n\nconst { id: generationID } = response.data;\n\nwhile (true) {\n  const result = await axios.request({\n    url: `https://api.stability.ai/v2beta/audio/results/${generationID}`,\n    method: \"GET\",\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { Authorization: `Bearer sk-MYAPIKEY`, Accept: \"audio/*\" },\n  });\n\n  if (result.status === 202) {\n    console.log(\"Generation in-progress, retrying in 10 seconds...\");\n    await new Promise((resolve) => setTimeout(resolve, 10_000));\n  } else if (result.status === 200) {\n    fs.writeFileSync(\"./output.mp3\", Buffer.from(result.data));\n    break;\n  } else {\n    throw new Error(`${result.status}: ${result.data.toString()}`);\n  }\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "generation_id=$(curl -sS -f \"https://api.stability.ai/v2beta/audio/stable-audio/text-to-audio\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: audio/*\" \\\n  -F prompt=\"A cinematic orchestral piece with sweeping strings and dramatic brass.\" \\\n  -F output_format=\"mp3\" \\\n  -F duration=\"30\" \\\n  | jq -r '.id')\n\nwhile true; do\n  http_status=$(curl -sS -f \\\n    -o \"./output.mp3\" \\\n    -w '%{http_code}' \\\n    -H \"authorization: Bearer sk-MYAPIKEY\" \\\n    -H \"accept: audio/*\" \\\n    \"https://api.stability.ai/v2beta/audio/results/${generation_id}\")\n\n  case $http_status in\n    202) echo \"Still processing. Retrying in 10 seconds...\"; sleep 10 ;;\n    200) echo \"Download complete!\"; break ;;\n    *) echo \"Error: $http_status\"; exit 1 ;;\n  esac\ndone"
           }
         ],
         "x-launchDarklyEnableFlag": "allow-access-stable-audio-3-api",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptAudio"
           },
@@ -2107,19 +2052,13 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  prompt: \"Add a lush reverb and layer in warm ambient pads.\",\n  output_format: \"mp3\",\n  duration: 30,\n  strength: 0.5,\n  audio: fs.createReadStream(\"./input.mp3\"),\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/audio/stable-audio/audio-to-audio`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    headers: { Authorization: `Bearer sk-MYAPIKEY`, Accept: \"audio/*\" },\n  }\n);\n\nif (response.status !== 202) {\n  throw new Error(`${response.status}: ${JSON.stringify(response.data)}`);\n}\n\nconst { id: generationID } = response.data;\n\nwhile (true) {\n  const result = await axios.request({\n    url: `https://api.stability.ai/v2beta/audio/results/${generationID}`,\n    method: \"GET\",\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { Authorization: `Bearer sk-MYAPIKEY`, Accept: \"audio/*\" },\n  });\n\n  if (result.status === 202) {\n    console.log(\"Generation in-progress, retrying in 10 seconds...\");\n    await new Promise((resolve) => setTimeout(resolve, 10_000));\n  } else if (result.status === 200) {\n    fs.writeFileSync(\"./output.mp3\", Buffer.from(result.data));\n    break;\n  } else {\n    throw new Error(`${result.status}: ${result.data.toString()}`);\n  }\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "generation_id=$(curl -sS -f \"https://api.stability.ai/v2beta/audio/stable-audio/audio-to-audio\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: audio/*\" \\\n  -F prompt=\"Add a lush reverb and layer in warm ambient pads.\" \\\n  -F output_format=\"mp3\" \\\n  -F duration=\"30\" \\\n  -F strength=\"0.5\" \\\n  -F audio=@\"./input.mp3\" \\\n  | jq -r '.id')\n\nwhile true; do\n  http_status=$(curl -sS -f \\\n    -o \"./output.mp3\" \\\n    -w '%{http_code}' \\\n    -H \"authorization: Bearer sk-MYAPIKEY\" \\\n    -H \"accept: audio/*\" \\\n    \"https://api.stability.ai/v2beta/audio/results/${generation_id}\")\n\n  case $http_status in\n    202) echo \"Still processing. Retrying in 10 seconds...\"; sleep 10 ;;\n    200) echo \"Download complete!\"; break ;;\n    *) echo \"Error: $http_status\"; exit 1 ;;\n  esac\ndone"
           }
         ],
         "x-launchDarklyEnableFlag": "allow-access-stable-audio-3-api",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptAudio"
           },
@@ -2253,19 +2192,13 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  prompt: \"Replace the middle section with flowing piano and soft strings.\",\n  output_format: \"mp3\",\n  duration: 30,\n  mask_start: 10,\n  mask_end: 20,\n  audio: fs.createReadStream(\"./input.mp3\"),\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/audio/stable-audio/inpaint`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    headers: { Authorization: `Bearer sk-MYAPIKEY`, Accept: \"audio/*\" },\n  }\n);\n\nif (response.status !== 202) {\n  throw new Error(`${response.status}: ${JSON.stringify(response.data)}`);\n}\n\nconst { id: generationID } = response.data;\n\nwhile (true) {\n  const result = await axios.request({\n    url: `https://api.stability.ai/v2beta/audio/results/${generationID}`,\n    method: \"GET\",\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { Authorization: `Bearer sk-MYAPIKEY`, Accept: \"audio/*\" },\n  });\n\n  if (result.status === 202) {\n    console.log(\"Generation in-progress, retrying in 10 seconds...\");\n    await new Promise((resolve) => setTimeout(resolve, 10_000));\n  } else if (result.status === 200) {\n    fs.writeFileSync(\"./output.mp3\", Buffer.from(result.data));\n    break;\n  } else {\n    throw new Error(`${result.status}: ${result.data.toString()}`);\n  }\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "generation_id=$(curl -sS -f \"https://api.stability.ai/v2beta/audio/stable-audio/inpaint\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: audio/*\" \\\n  -F prompt=\"Replace the middle section with flowing piano and soft strings.\" \\\n  -F output_format=\"mp3\" \\\n  -F duration=\"30\" \\\n  -F mask_start=\"10\" \\\n  -F mask_end=\"20\" \\\n  -F audio=@\"./input.mp3\" \\\n  | jq -r '.id')\n\nwhile true; do\n  http_status=$(curl -sS -f \\\n    -o \"./output.mp3\" \\\n    -w '%{http_code}' \\\n    -H \"authorization: Bearer sk-MYAPIKEY\" \\\n    -H \"accept: audio/*\" \\\n    \"https://api.stability.ai/v2beta/audio/results/${generation_id}\")\n\n  case $http_status in\n    202) echo \"Still processing. Retrying in 10 seconds...\"; sleep 10 ;;\n    200) echo \"Download complete!\"; break ;;\n    *) echo \"Error: $http_status\"; exit 1 ;;\n  esac\ndone"
           }
         ],
         "x-launchDarklyEnableFlag": "allow-access-stable-audio-3-api",
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptAudio"
           },
@@ -2406,7 +2339,7 @@
             "source": "import axios from \"axios\";\nimport fs from \"node:fs\";\n\nconst generationID = \"e52772ac75b...\";\n\nconst response = await axios.request({\n  url: `https://api.stability.ai/v2beta/audio/results/${generationID}`,\n  method: \"GET\",\n  validateStatus: undefined,\n  responseType: \"arraybuffer\",\n  headers: {\n    Authorization: `Bearer sk-MYAPIKEY`,\n    Accept: \"audio/*\",\n  },\n});\n\nif (response.status === 202) {\n  console.log(\"Generation is still in-progress.\");\n} else if (response.status === 200) {\n  fs.writeFileSync(\"./output.mp3\", Buffer.from(response.data));\n  console.log(\"Download complete!\");\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "generation_id=\"e52772ac75b...\"\nhttp_status=$(curl -sS -f \\\n  -o \"./output.mp3\" \\\n  -w '%{http_code}' \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: audio/*\" \\\n  \"https://api.stability.ai/v2beta/audio/results/${generation_id}\")\n\ncase $http_status in\n  202) echo \"Still processing. Retrying in 10 seconds...\" ;;\n  200) echo \"Download complete!\" ;;\n  *) echo \"Error: $http_status\"; exit 1 ;;\nesac"
           }
@@ -2420,9 +2353,6 @@
             "required": true,
             "name": "id",
             "in": "path"
-          },
-          {
-            "$ref": "#/components/parameters/Authorization"
           },
           {
             "$ref": "#/components/parameters/AcceptAudio"
@@ -2485,7 +2415,7 @@
           "Upscale"
         ],
         "summary": "Conservative",
-        "description": "Takes images between 64x64 and 1 megapixel and upscales them all the way to 4K resolution. Put more generally, it can upscale images ~20-40x times while preserving all aspects. Conservative Upscale minimizes alterations to the image and should not be used to reimagine an image.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)\n\n### How to use\n\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request must include:\n- `image`\n- `prompt`\n\nOptionally, the body of the request may also include:\n- `negative_prompt`\n- `seed`\n- `output_format`\n- `creativity`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 4 megapixels.\n\n### Credits\nFlat rate of 40 credits per successful generation.  You will not be charged for failed generations.",
+        "description": "Takes images between 64x64 and 1 megapixel and upscales them all the way to 4K resolution. Put more generally, it can upscale images ~20-40x times while preserving all aspects. Conservative Upscale minimizes alterations to the image and should not be used to reimagine an image.\n\n### How to use\n\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request must include:\n- `image`\n- `prompt`\n\nOptionally, the body of the request may also include:\n- `negative_prompt`\n- `seed`\n- `output_format`\n- `creativity`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 4 megapixels.\n\n### Credits\nFlat rate of 40 credits per successful generation.  You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -2498,18 +2428,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  image: fs.createReadStream(\"./low-res-flower.jpg\"),\n  prompt: \"a flower\",\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/upscale/conservative`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`, \n      Accept: \"image/*\" \n    },\n  },\n);\n\nif(response.status === 200) {\n  fs.writeFileSync(\"./flower.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/upscale/conservative\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F image=@\"./low-res-flower.jpg\" \\\n  -F prompt=\"a flower\" \\\n  -F output_format=\"webp\" \\\n  -o \"./flower.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -2597,7 +2521,7 @@
           "Upscale"
         ],
         "summary": "Creative Upscale (async)",
-        "description": "Takes images between 64x64 and 1 megapixel and upscales them all the way to **4K** resolution.  Put more\ngenerally, it can upscale images ~20-40x times while preserving, and often enhancing, quality.\nCreative Upscale **works best on highly degraded images and is not for photos of 1mp or above** as it performs\nheavy reimagining (controlled by creativity scale).\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=QXxi9tfI425t)\n\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`.\n\nThe body of the request should include:\n- `image`\n- `prompt`\n\nThe body may optionally include:\n- `seed`\n- `negative_prompt`\n- `output_format`\n- `creativity`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Results\nAfter invoking this endpoint with the required parameters, use the `id` in the response to poll for results at the\n[results/{id} endpoint](#tag/Results/paths/~1v2beta~1results~1%7Bid%7D/get).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.\n\n### Credits\nFlat rate of 60 credits per successful generation.  You will not be charged for failed generations.",
+        "description": "Takes images between 64x64 and 1 megapixel and upscales them all the way to **4K** resolution.  Put more\ngenerally, it can upscale images ~20-40x times while preserving, and often enhancing, quality.\nCreative Upscale **works best on highly degraded images and is not for photos of 1mp or above** as it performs\nheavy reimagining (controlled by creativity scale).\n\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`.\n\nThe body of the request should include:\n- `image`\n- `prompt`\n\nThe body may optionally include:\n- `seed`\n- `negative_prompt`\n- `output_format`\n- `creativity`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Results\nAfter invoking this endpoint with the required parameters, use the `id` in the response to poll for results at the\n[results/{id} endpoint](#tag/Results/paths/~1v2beta~1results~1%7Bid%7D/get).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.\n\n### Credits\nFlat rate of 60 credits per successful generation.  You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -2610,18 +2534,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  image: fs.createReadStream(\"./kitten-in-space.png\"),\n  prompt: \"cute fluffy white kitten floating in space, pastel colors\",\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/upscale/creative`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`\n    },\n  },\n);\n\nconsole.log(\"Generation ID:\", response.data.id);"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/upscale/creative\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -F image=@\"./kitten-in-rainforest.png\" \\\n  -F prompt=\"cute fluffy white kitten sitting in a rainforest, pastel colors\" \\\n  -F output_format=webp \\\n  -o \"./output.json\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/StabilityClientID"
           },
@@ -2739,7 +2657,7 @@
             "source": "import axios from \"axios\";\nimport fs from \"node:fs\";\n\nconst generationID = \"e52772ac75b...\";\n\nconst response = await axios.request({\n  url: `https://api.stability.ai/v2beta/stable-image/upscale/creative/result/${generationID}`,\n  method: \"GET\",\n  validateStatus: undefined,\n  responseType: \"arraybuffer\",\n  headers: {\n    Authorization: `Bearer sk-MYAPIKEY`,\n    Accept: \"image/*\", // Use 'application/json' to receive base64 encoded JSON\n  },\n});\n\nif (response.status === 202) {\n  console.log(\"Generation is still running, try again in 10 seconds.\");\n} else if (response.status === 200) {\n  console.log(\"Generation is complete!\");\n  fs.writeFileSync(\"upscaled.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`Response ${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "generation_id=\"e52772ac75b...\"\nurl=\"https://api.stability.ai/v2beta/stable-image/upscale/creative/result/$generation_id\"\nhttp_status=$(curl -sS -f -o \"./upscaled.webp\" -w '%{http_code}' -H \"authorization: sk-MYAPIKEY\" -H 'accept: image/*' \"$url\")\n\ncase $http_status in\n    202)\n        echo \"Still processing. Retrying in 10 seconds...\"\n        ;;\n    200)\n        echo \"Download complete!\"\n        ;;\n    4*|5*)\n        mv \"./upscaled.webp\" \"./error.json\"\n        echo \"Error: Check ./error.json for details.\"\n        exit 1\n        ;;\nesac"
           }
@@ -2752,9 +2670,6 @@
             "required": true,
             "name": "id",
             "in": "path"
-          },
-          {
-            "$ref": "#/components/parameters/Authorization"
           },
           {
             "$ref": "#/components/parameters/AcceptImage"
@@ -2895,7 +2810,7 @@
           "Upscale"
         ],
         "summary": "Fast",
-        "description": "Our Fast Upscaler service enhances image resolution by 4x using predictive and generative AI. This lightweight and fast service (processing in ~1 second) is ideal for enhancing the quality of compressed images, making it suitable for social media posts and other applications.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)\n\n### How to use\n\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request must include:\n- `image`\n\nOptionally, the body of the request may also include:\n- `output_format`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image is 4 times that of the input image with a maximum size of 16 megapixels.\n\n### Credits\nFlat rate of 2 credit per successful generation. You will not be charged for failed generations.",
+        "description": "Our Fast Upscaler service enhances image resolution by 4x using predictive and generative AI. This lightweight and fast service (processing in ~1 second) is ideal for enhancing the quality of compressed images, making it suitable for social media posts and other applications.\n\n### How to use\n\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request must include:\n- `image`\n\nOptionally, the body of the request may also include:\n- `output_format`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image is 4 times that of the input image with a maximum size of 16 megapixels.\n\n### Credits\nFlat rate of 2 credit per successful generation. You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -2908,18 +2823,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  image: fs.createReadStream(\"./low-res-flower.jpg\"),\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/upscale/fast`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`, \n      Accept: \"image/*\" \n    },\n  },\n);\n\nif(response.status === 200) {\n  fs.writeFileSync(\"./flower.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/upscale/fast\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F image=@\"./low-res-flower.jpg\" \\\n  -F output_format=\"webp\" \\\n  -o \"./flower.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -2994,7 +2903,7 @@
           "Edit"
         ],
         "summary": "Erase",
-        "description": "The Erase service removes unwanted objects, such as blemishes on portraits or items on desks, using image masks.\n\nThe mask is provided in one of two ways:\n  1. Explicitly passing in a separate image via the `mask` parameter\n  2. Derived from the alpha channel of the `image` parameter.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)\n\n### How to use\n\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request must include:\n- `image`\n\nOptionally, the body of the request may also include:\n- `mask`\n- `seed`\n- `output_format`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 4 megapixels.\n\n### Credits\nFlat rate of 5 credits per successful generation.  You will not be charged for failed generations.",
+        "description": "The Erase service removes unwanted objects, such as blemishes on portraits or items on desks, using image masks.\n\nThe mask is provided in one of two ways:\n  1. Explicitly passing in a separate image via the `mask` parameter\n  2. Derived from the alpha channel of the `image` parameter.\n\n### How to use\n\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request must include:\n- `image`\n\nOptionally, the body of the request may also include:\n- `mask`\n- `seed`\n- `output_format`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 4 megapixels.\n\n### Credits\nFlat rate of 5 credits per successful generation.  You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -3007,18 +2916,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  image: fs.createReadStream(\"./kangaroo-on-the-beach.png\"),\n  mask: fs.createReadStream(\"./mask-of-kangaroo.png\"),\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/edit/erase`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`, \n      Accept: \"image/*\" \n    },\n  },\n);\n\nif(response.status === 200) {\n  fs.writeFileSync(\"./just-the-beach.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/edit/erase\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F image=@\"./kangaroo-on-the-beach.png\" \\\n  -F mask=@\"./mask-of-kangaroo.png\" \\\n  -F output_format=\"webp\" \\\n  -o \"./just-the-beach.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -3185,7 +3088,7 @@
           "Edit"
         ],
         "summary": "Inpaint",
-        "description": "Intelligently modify images by filling in or replacing specified areas with new content based\non the content of a \"mask\" image.\n\nThe \"mask\" is provided in one of two ways:\n  1. Explicitly passing in a separate image via the `mask` parameter\n  2. Derived from the alpha channel of the `image` parameter.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)\n\n### How to use\n\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request must include:\n- `image`\n- `prompt`\n\nOptionally, the body of the request may also include:\n- `mask`\n- `negative_prompt`\n- `seed`\n- `output_format`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 4 megapixels.\n\n### Credits\nFlat rate of 5 credits per successful generation.  You will not be charged for failed generations.",
+        "description": "Intelligently modify images by filling in or replacing specified areas with new content based\non the content of a \"mask\" image.\n\nThe \"mask\" is provided in one of two ways:\n  1. Explicitly passing in a separate image via the `mask` parameter\n  2. Derived from the alpha channel of the `image` parameter.\n\n### How to use\n\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request must include:\n- `image`\n- `prompt`\n\nOptionally, the body of the request may also include:\n- `mask`\n- `negative_prompt`\n- `seed`\n- `output_format`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 4 megapixels.\n\n### Credits\nFlat rate of 5 credits per successful generation.  You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -3198,18 +3101,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  image: fs.createReadStream(\"./dog-wearing-vr-goggles.png\"),\n  mask: fs.createReadStream(\"./mask.png\"),\n  prompt: \"dog wearing black glasses\",\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/edit/inpaint`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`, \n      Accept: \"image/*\" \n    },\n  },\n);\n\nif(response.status === 200) {\n  fs.writeFileSync(\"./dog-wearing-black-glasses.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/edit/inpaint\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F image=@\"./dog-wearing-vr-goggles.png\" \\\n  -F mask=@\"./mask.png\" \\\n  -F prompt=\"golden retriever in a field\" \\\n  -F output_format=\"webp\" \\\n  -o \"./dog-wearing-black-glasses.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -3310,7 +3207,7 @@
           "Edit"
         ],
         "summary": "Outpaint",
-        "description": "The Outpaint service inserts additional content in an image to fill in the space in any direction.\nCompared to other automated or manual attempts to expand the content in an image, the Outpaint service\nshould minimize artifacts and signs that the original image has been edited.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=bZ2yK7VQSgLw)\n\n### How to use\n\nPlease invoke this endpoint with a POST request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request must include:\n- `image`\n\nAlong with _at least one_ outpaint direction:\n- `left`\n- `right`\n- `up`\n- `down`\n\n> **Note:** for best quality use outpaint direction values smaller or equal to your source image dimensions.\n\nEach of these parameters should be set to a number between 0 and 2000, representing the number of pixels to outpaint in that direction.\n\nOptionally, the body of the request may also include:\n- `prompt`\n- `seed`\n- `output_format`\n- `creativity`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Credits\nFlat rate of 4 credits per successful generation.  You will not be charged for failed generations.",
+        "description": "The Outpaint service inserts additional content in an image to fill in the space in any direction.\nCompared to other automated or manual attempts to expand the content in an image, the Outpaint service\nshould minimize artifacts and signs that the original image has been edited.\n\n### How to use\n\nPlease invoke this endpoint with a POST request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request must include:\n- `image`\n\nAlong with _at least one_ outpaint direction:\n- `left`\n- `right`\n- `up`\n- `down`\n\n> **Note:** for best quality use outpaint direction values smaller or equal to your source image dimensions.\n\nEach of these parameters should be set to a number between 0 and 2000, representing the number of pixels to outpaint in that direction.\n\nOptionally, the body of the request may also include:\n- `prompt`\n- `seed`\n- `output_format`\n- `creativity`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Credits\nFlat rate of 4 credits per successful generation.  You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -3323,18 +3220,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  image: fs.createReadStream(\"./husky-in-a-field.png\"),\n  left: 200,\n  down: 200,\n  output_format: \"webp\",\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/edit/outpaint`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`, \n      Accept: \"image/*\" \n    },\n  },\n);\n\nif(response.status === 200) {\n  fs.writeFileSync(\"./husky-in-a-huge-field.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/edit/outpaint\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F image=@\"./husky-in-a-field.png\" \\\n  -F left=200 \\\n  -F bottom=200 \\\n  -F output_format=\"webp\" \\\n  -o \"./husky-in-a-huge-field.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -3539,7 +3430,7 @@
           "Edit"
         ],
         "summary": "Search and Replace",
-        "description": "The Search and Replace service is a specific version of inpainting that does not require a mask.\nInstead, users can leverage a `search_prompt` to identify an object in simple language to be replaced.\nThe service will automatically segment the object and replace it with the object requested in the prompt.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=0lDpGa2jAmAs)\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `image`\n- `prompt`\n- `search_prompt`\n\nThe body may optionally include:\n- `seed`\n- `negative_prompt`\n- `output_format`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 4 megapixels.\n\n### Credits\nFlat rate of 5 credits per successful generation.  You will not be charged for failed generations.",
+        "description": "The Search and Replace service is a specific version of inpainting that does not require a mask.\nInstead, users can leverage a `search_prompt` to identify an object in simple language to be replaced.\nThe service will automatically segment the object and replace it with the object requested in the prompt.\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `image`\n- `prompt`\n- `search_prompt`\n\nThe body may optionally include:\n- `seed`\n- `negative_prompt`\n- `output_format`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 4 megapixels.\n\n### Credits\nFlat rate of 5 credits per successful generation.  You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -3552,18 +3443,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  image: fs.createReadStream(\"./husky-in-a-field.png\"),\n  prompt: \"golden retriever standing in a field\",\n  search_prompt: \"dog\",\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/edit/search-and-replace`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`, \n      Accept: \"image/*\"\n    },\n  },\n);\n\nif(response.status === 200) {\n  fs.writeFileSync(\"./golden-retriever-in-a-field.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/edit/search-and-replace\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F image=@\"./husky-in-a-field.png\" \\\n  -F prompt=\"golden retriever in a field\" \\\n  -F search_prompt=\"dog\" \\\n  -F output_format=\"webp\" \\\n  -o \"./golden-retriever-in-a-field.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -3743,7 +3628,7 @@
           "Edit"
         ],
         "summary": "Search and Recolor",
-        "description": "The Search and Recolor service provides the ability to change the color of a specific object in an image using a prompt.\nThis service is a specific version of inpainting that does not require a mask. The Search and Recolor\nservice will automatically segment the object and recolor it using the colors requested in the prompt.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `image`\n- `prompt`\n- `select_prompt`\n\nThe body may optionally include:\n- `grow_mask`\n- `seed`\n- `negative_prompt`\n- `output_format`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will match the resolution of the input image.\n\n### Credits\nFlat rate of 5 credits per successful generation.  You will not be charged for failed generations.",
+        "description": "The Search and Recolor service provides the ability to change the color of a specific object in an image using a prompt.\nThis service is a specific version of inpainting that does not require a mask. The Search and Recolor\nservice will automatically segment the object and recolor it using the colors requested in the prompt.\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `image`\n- `prompt`\n- `select_prompt`\n\nThe body may optionally include:\n- `grow_mask`\n- `seed`\n- `negative_prompt`\n- `output_format`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will match the resolution of the input image.\n\n### Credits\nFlat rate of 5 credits per successful generation.  You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -3756,18 +3641,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  image: fs.createReadStream(\"./red-car.png\"),\n  prompt: \"a yellow car\",\n  select_prompt: \"car\",\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/edit/search-and-recolor`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`, \n      Accept: \"image/*\"\n    },\n  },\n);\n\nif(response.status === 200) {\n  fs.writeFileSync(\"./yellow-car.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/edit/search-and-recolor\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F image=@\"./red-car.png\" \\\n  -F prompt=\"a yellow car\" \\\n  -F select_prompt=\"car\" \\\n  -F output_format=\"webp\" \\\n  -o \"./yellow-car.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -3947,7 +3826,7 @@
           "Edit"
         ],
         "summary": "Remove Background",
-        "description": "The Remove Background service accurately segments the foreground from an image and implements \nand removes the background.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=VHofb3LAVmqi)\n\n\n### How to use\n\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n  \nThe body of the request must include:\n- `image`\n\nOptionally, the body of the request may also include:\n- `output_format`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Credits\nFlat rate of 5 credits per successful generation.  You will not be charged for failed generations.",
+        "description": "The Remove Background service accurately segments the foreground from an image and implements \nand removes the background.\n\n### How to use\n\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n  \nThe body of the request must include:\n- `image`\n\nOptionally, the body of the request may also include:\n- `output_format`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Credits\nFlat rate of 5 credits per successful generation.  You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -3960,18 +3839,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  image: fs.createReadStream(\"./husky-in-a-field.png\"),\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/edit/remove-background`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`, \n      Accept: \"image/*\" \n    },\n  },\n);\n\nif(response.status === 200) {\n  fs.writeFileSync(\"./husky.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/edit/remove-background\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F image=@\"./husky-in-a-field.png\" \\\n  -F output_format=\"webp\" \\\n  -o \"./husky.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -4101,7 +3974,7 @@
           "Edit"
         ],
         "summary": "Replace Background and Relight (async)",
-        "description": "The Replace Background and Relight edit service lets users swap backgrounds with\nAI-generated or uploaded images while adjusting lighting to match the subject. This\nnew API provides a streamlined image editing solution and can serve e-commerce, real\nestate, photography, and creative projects.\n\nSome of the things you can do include:\n  - Background Replacement: Remove existing background and add new ones.\n  - AI Background Generation: Create new backgrounds using AI generated images based on prompts.\n  - Relighting: Adjust lighting in images that are under or overexposed.\n  - Flexible Inputs: Use your own background image or generate one.\n  - Lighting Adjustments: Modify light reference, direction, and strength.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`.\n\nThe body of the request should include:\n- `subject_image`\n- `background_prompt` and/or `background_reference`\n\nThe body may optionally include:\n- `light_reference` or `light_source_direction`\n- `light_source_strength` (requires `light_reference` or `light_source_direction`)\n- `foreground_prompt`\n- `negative_prompt`\n- `preserve_original_subject`\n- `original_background_depth`\n- `keep_original_background`\n- `light_source_strength`\n- `seed`\n- `output_format`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Results\nAfter invoking this endpoint with the required parameters, use the `id` in the response to poll for results at the\n[results/{id} endpoint](#tag/Results/paths/~1v2beta~1results~1%7Bid%7D/get).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.\n\n### Credits\nFlat rate of 8 credits per successful generation. You will not be charged for failed generations.",
+        "description": "The Replace Background and Relight edit service lets users swap backgrounds with\nAI-generated or uploaded images while adjusting lighting to match the subject. This\nnew API provides a streamlined image editing solution and can serve e-commerce, real\nestate, photography, and creative projects.\n\nSome of the things you can do include:\n  - Background Replacement: Remove existing background and add new ones.\n  - AI Background Generation: Create new backgrounds using AI generated images based on prompts.\n  - Relighting: Adjust lighting in images that are under or overexposed.\n  - Flexible Inputs: Use your own background image or generate one.\n  - Lighting Adjustments: Modify light reference, direction, and strength.\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`.\n\nThe body of the request should include:\n- `subject_image`\n- `background_prompt` and/or `background_reference`\n\nThe body may optionally include:\n- `light_reference` or `light_source_direction`\n- `light_source_strength` (requires `light_reference` or `light_source_direction`)\n- `foreground_prompt`\n- `negative_prompt`\n- `preserve_original_subject`\n- `original_background_depth`\n- `keep_original_background`\n- `light_source_strength`\n- `seed`\n- `output_format`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Results\nAfter invoking this endpoint with the required parameters, use the `id` in the response to poll for results at the\n[results/{id} endpoint](#tag/Results/paths/~1v2beta~1results~1%7Bid%7D/get).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.\n\n### Credits\nFlat rate of 8 credits per successful generation. You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -4114,18 +3987,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  subject_image: fs.createReadStream(\"./husky-in-a-field.png\"),\n  background_prompt: \"cinematic lighting\",\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/edit/replace-background-and-relight`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`, \n    },\n  },\n);\n\nconsole.log(\"Generation ID:\", response.data.id);"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/edit/replace-background-and-relight\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F subject_image=@\"./husky-in-a-field.png\" \\\n  -F background_prompt=\"cinematic lighting\" \\\n  -F output_format=\"webp\" \\\n  -o \"./output.json\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/StabilityClientID"
           },
@@ -4272,7 +4139,7 @@
           "Generate"
         ],
         "summary": "Stable Image Ultra",
-        "description": "Our most advanced text to image generation service, Stable Image Ultra creates the highest quality images\nwith unprecedented prompt understanding. Ultra excels in typography, complex compositions, dynamic lighting,\nvibrant hues, and overall cohesion and structure of an art piece. Made from the most advanced models,\nincluding Stable Diffusion 3.5, Ultra offers the best of the Stable Diffusion ecosystem.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=yXhs626oZdr1)\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`.  The accept header should be set to one of the following:\n- `image/*` to receive the image in the format specified by the `output_format` parameter.\n- `application/json` to receive the image in the format specified by the `output_format` parameter, but encoded to base64 in a JSON response.\n\nThe only required parameter is the `prompt` field, which should contain the text prompt for the image generation.\n\nThe body of the request should include:\n- `prompt` - text to generate the image from\n\nThe body may optionally include:\n- `image` - the image to use as the starting point for the generation\n- `strength` - controls how much influence the `image` parameter has on the output image\n- `aspect_ratio` - the aspect ratio of the output image\n- `negative_prompt` - keywords of what you **do not** wish to see in the output image\n- `seed` - the randomness seed to use for the generation\n- `output_format` - the format of the output image\n\n> **Note:** for the full list of optional parameters, please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 1 megapixel. The default resolution is 1024x1024.\n\n### Credits\nThe Ultra service uses 8 credits per successful result. You will not be charged for failed results.",
+        "description": "Our most advanced text to image generation service, Stable Image Ultra creates the highest quality images\nwith unprecedented prompt understanding. Ultra excels in typography, complex compositions, dynamic lighting,\nvibrant hues, and overall cohesion and structure of an art piece. Made from the most advanced models,\nincluding Stable Diffusion 3.5, Ultra offers the best of the Stable Diffusion ecosystem.\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`.  The accept header should be set to one of the following:\n- `image/*` to receive the image in the format specified by the `output_format` parameter.\n- `application/json` to receive the image in the format specified by the `output_format` parameter, but encoded to base64 in a JSON response.\n\nThe only required parameter is the `prompt` field, which should contain the text prompt for the image generation.\n\nThe body of the request should include:\n- `prompt` - text to generate the image from\n\nThe body may optionally include:\n- `image` - the image to use as the starting point for the generation\n- `strength` - controls how much influence the `image` parameter has on the output image\n- `aspect_ratio` - the aspect ratio of the output image\n- `negative_prompt` - keywords of what you **do not** wish to see in the output image\n- `seed` - the randomness seed to use for the generation\n- `output_format` - the format of the output image\n\n> **Note:** for the full list of optional parameters, please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 1 megapixel. The default resolution is 1024x1024.\n\n### Credits\nThe Ultra service uses 8 credits per successful result. You will not be charged for failed results.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -4285,18 +4152,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  prompt: \"Lighthouse on a cliff overlooking the ocean\",\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/generate/ultra`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`, \n      Accept: \"image/*\" \n    },\n  },\n);\n\nif(response.status === 200) {\n  fs.writeFileSync(\"./lighthouse.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/generate/ultra\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F prompt=\"Lighthouse on a cliff overlooking the ocean\" \\\n  -F output_format=\"webp\" \\\n  -o \"./lighthouse.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -4470,7 +4331,7 @@
           "Generate"
         ],
         "summary": "Stable Image Core",
-        "description": "Our primary service for text-to-image generation, Stable Image Core represents the best quality achievable at high\nspeed. No prompt engineering is required! Try asking for a style, a scene, or a character, and see what you get.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=yXhs626oZdr1)\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `prompt`\n\nThe body may optionally include:\n- `aspect_ratio`\n- `negative_prompt`\n- `seed`\n- `style_preset`\n- `output_format`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 1.5 megapixels.\n\n### Credits\nFlat rate of 3 credits per successful generation.  You will not be charged for failed generations.",
+        "description": "Our primary service for text-to-image generation, Stable Image Core represents the best quality achievable at high\nspeed. No prompt engineering is required! Try asking for a style, a scene, or a character, and see what you get.\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `prompt`\n\nThe body may optionally include:\n- `aspect_ratio`\n- `negative_prompt`\n- `seed`\n- `style_preset`\n- `output_format`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 1.5 megapixels.\n\n### Credits\nFlat rate of 3 credits per successful generation.  You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -4483,18 +4344,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  prompt: \"Lighthouse on a cliff overlooking the ocean\",\n  output_format: \"webp\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/generate/core`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`, \n      Accept: \"image/*\" \n    },\n  },\n);\n\nif(response.status === 200) {\n  fs.writeFileSync(\"./lighthouse.webp\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/generate/core\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F prompt=\"Lighthouse on a cliff overlooking the ocean\" \\\n  -F output_format=\"webp\" \\\n  -o \"./lighthouse.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -4575,7 +4430,7 @@
           "Generate"
         ],
         "summary": "Stable Diffusion 3.5",
-        "description": "Generate using Stable Diffusion 3.5 models, Stability AI latest base model:\n\n- **Stable Diffusion 3.5 Large**: At 8 billion parameters, with superior quality and\n  prompt adherence, this base model is the most powerful in the Stable Diffusion\n  family. This model is ideal for professional use cases at 1 megapixel resolution.\n\n- **Stable Diffusion 3.5 Large Turbo**: A distilled version of Stable Diffusion 3.5 Large.\n  SD3.5 Large Turbo generates high-quality images with exceptional prompt adherence\n  in just 4 steps, making it considerably faster than Stable Diffusion 3.5 Large.\n\n- **Stable Diffusion 3.5 Medium**: With 2.5 billion parameters, the model delivers an\n  optimal balance between prompt accuracy and image quality, making it an efficient\n  choice for fast high-performance image generation.\n\n- **Stable Diffusion 3.5 Flash**: A distilled version of Stable Diffusion 3.5 Medium. \n  SD3.5 Flash generates high-quality images with a 4 step process instead of 40, making \n  it faster than Stable Diffusion 3.5 Medium.\n\nRead more about the model capabilities [here](https://stability.ai/news/introducing-stable-diffusion-3-5).\n\nAs of April 17, 2025, we have deprecated the Stable Diffusion 3.0 APIs and will be automatically\nre-routing calls to Stable Diffusion 3.0 models to Stable Diffusion 3.5 APIs at no extra cost.\nYou can read more in the [release notes](/docs/release-notes#api-deprecation-notice).\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/SD3_API.ipynb)\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`.  The accept header should be set to one of the following:\n- `image/*` to receive the image in the format specified by the `output_format` parameter.\n- `application/json` to receive the image encoded as base64 in a JSON response.\n\n#### **Generating with a prompt**\nCommonly referred to as **text-to-image**, this mode generates an image from text alone. While the only required\nparameter is the `prompt`, it also supports an `aspect_ratio` parameter which can be used to control the\naspect ratio of the generated image.\n\n#### **Generating with a prompt *and* an image**\nCommonly referred to as **image-to-image**, this mode also generates an image from text but uses an existing image as the\nstarting point. The required parameters are:\n- `prompt` - text to generate the image from\n- `image` - the image to use as the starting point for the generation\n- `strength` - controls how much influence the `image` parameter has on the output image\n- `mode` - must be set to `image-to-image`\n\n> **Note:** maximum request size is 10MiB.\n\n#### **Optional Parameters:**\nBoth modes support the following optional parameters:\n- `model` - the model to use (SD 3.5 Large, SD 3.5 Large Turbo, SD 3.5 Medium, SD 3.5 Flash)\n- `output_format` - the format of the output image\n- `seed` - the randomness seed to use for the generation\n- `negative_prompt` - keywords of what you **do not** wish to see in the output image\n- `cfg_scale` - controls how strictly the diffusion process adheres to the prompt text\n- `style_preset` - guides the image model towards a particular style\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 1MP. The default resolution is 1024x1024.\n\n### Credits\n- **SD 3.5 Large**: Flat rate of 6.5 credits per successful generation.\n- **SD 3.5 Large Turbo**: Flat rate of 4 credits per successful generation.\n- **SD 3.5 Medium**: Flat rate of 3.5 credits per successful generation.\n- **SD 3.5 Flash**: Flat rate of 2.5 credits per successful generation.\n\nAs always, you will not be charged for failed generations.",
+        "description": "Generate using Stable Diffusion 3.5 models, Stability AI latest base model:\n\n- **Stable Diffusion 3.5 Large**: At 8 billion parameters, with superior quality and\n  prompt adherence, this base model is the most powerful in the Stable Diffusion\n  family. This model is ideal for professional use cases at 1 megapixel resolution.\n\n- **Stable Diffusion 3.5 Large Turbo**: A distilled version of Stable Diffusion 3.5 Large.\n  SD3.5 Large Turbo generates high-quality images with exceptional prompt adherence\n  in just 4 steps, making it considerably faster than Stable Diffusion 3.5 Large.\n\n- **Stable Diffusion 3.5 Medium**: With 2.5 billion parameters, the model delivers an\n  optimal balance between prompt accuracy and image quality, making it an efficient\n  choice for fast high-performance image generation.\n\n- **Stable Diffusion 3.5 Flash**: A distilled version of Stable Diffusion 3.5 Medium. \n  SD3.5 Flash generates high-quality images with a 4 step process instead of 40, making \n  it faster than Stable Diffusion 3.5 Medium.\n\nRead more about the model capabilities [here](https://stability.ai/news/introducing-stable-diffusion-3-5).\n\nAs of April 17, 2025, we have deprecated the Stable Diffusion 3.0 APIs and will be automatically\nre-routing calls to Stable Diffusion 3.0 models to Stable Diffusion 3.5 APIs at no extra cost.\nYou can read more in the [release notes](/docs/release-notes#api-deprecation-notice).\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`.  The accept header should be set to one of the following:\n- `image/*` to receive the image in the format specified by the `output_format` parameter.\n- `application/json` to receive the image encoded as base64 in a JSON response.\n\n#### **Generating with a prompt**\nCommonly referred to as **text-to-image**, this mode generates an image from text alone. While the only required\nparameter is the `prompt`, it also supports an `aspect_ratio` parameter which can be used to control the\naspect ratio of the generated image.\n\n#### **Generating with a prompt *and* an image**\nCommonly referred to as **image-to-image**, this mode also generates an image from text but uses an existing image as the\nstarting point. The required parameters are:\n- `prompt` - text to generate the image from\n- `image` - the image to use as the starting point for the generation\n- `strength` - controls how much influence the `image` parameter has on the output image\n- `mode` - must be set to `image-to-image`\n\n> **Note:** maximum request size is 10MiB.\n\n#### **Optional Parameters:**\nBoth modes support the following optional parameters:\n- `model` - the model to use (SD 3.5 Large, SD 3.5 Large Turbo, SD 3.5 Medium, SD 3.5 Flash)\n- `output_format` - the format of the output image\n- `seed` - the randomness seed to use for the generation\n- `negative_prompt` - keywords of what you **do not** wish to see in the output image\n- `cfg_scale` - controls how strictly the diffusion process adheres to the prompt text\n- `style_preset` - guides the image model towards a particular style\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 1MP. The default resolution is 1024x1024.\n\n### Credits\n- **SD 3.5 Large**: Flat rate of 6.5 credits per successful generation.\n- **SD 3.5 Large Turbo**: Flat rate of 4 credits per successful generation.\n- **SD 3.5 Medium**: Flat rate of 3.5 credits per successful generation.\n- **SD 3.5 Flash**: Flat rate of 2.5 credits per successful generation.\n\nAs always, you will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -4588,18 +4443,12 @@
             "source": "import fs from \"node:fs\";\nimport axios from \"axios\";\nimport FormData from \"form-data\";\n\nconst payload = {\n  prompt: \"Lighthouse on a cliff overlooking the ocean\",\n  output_format: \"jpeg\"\n};\n\nconst response = await axios.postForm(\n  `https://api.stability.ai/v2beta/stable-image/generate/sd3`,\n  axios.toFormData(payload, new FormData()),\n  {\n    validateStatus: undefined,\n    responseType: \"arraybuffer\",\n    headers: { \n      Authorization: `Bearer sk-MYAPIKEY`, \n      Accept: \"image/*\" \n    },\n  },\n);\n\nif(response.status === 200) {\n  fs.writeFileSync(\"./lighthouse.jpeg\", Buffer.from(response.data));\n} else {\n  throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/generate/sd3\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F prompt=\"Lighthouse on a cliff overlooking the ocean\" \\\n  -F output_format=\"jpeg\" \\\n  -o \"./lighthouse.jpeg\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -4747,7 +4596,7 @@
           "Control"
         ],
         "summary": "Sketch",
-        "description": "This service offers an ideal solution for design projects that require brainstorming and\nfrequent iterations. It upgrades rough hand-drawn sketches to refined outputs with precise\ncontrol. For non-sketch images, it allows detailed manipulation of the final appearance by\nleveraging the contour lines and edges within the image.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=ZKIAqHzJzzUo)\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `image`\n- `prompt`\n\nThe body may optionally include:\n- `control_strength`\n- `negative_prompt`\n- `seed`\n- `output_format`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will match that of the input image.\n\n### Credits\nFlat rate of 5 credits per successful generation. You will not be charged for failed generations.",
+        "description": "This service offers an ideal solution for design projects that require brainstorming and\nfrequent iterations. It upgrades rough hand-drawn sketches to refined outputs with precise\ncontrol. For non-sketch images, it allows detailed manipulation of the final appearance by\nleveraging the contour lines and edges within the image.\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `image`\n- `prompt`\n\nThe body may optionally include:\n- `control_strength`\n- `negative_prompt`\n- `seed`\n- `output_format`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will match that of the input image.\n\n### Credits\nFlat rate of 5 credits per successful generation. You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -4760,18 +4609,12 @@
             "source": "import axios from \"axios\";\nimport FormData from \"form-data\";\nimport fs from \"node:fs\";\n\nconst payload = {\n    image: fs.createReadStream(\"./sketch.png\"),\n    prompt: \"a medieval castle on a hill\",\n    control_strength: 0.6,\n    output_format: \"webp\",\n};\n\nconst response = await axios.postForm(\n    `https://api.stability.ai/v2beta/stable-image/control/sketch`,\n    axios.toFormData(payload, new FormData()),\n    {\n        validateStatus: undefined,\n        responseType: \"arraybuffer\",\n        headers: {\n            Authorization: `Bearer sk-MYAPIKEY`,\n            Accept: \"image/*\"\n        },\n    },\n);\n\nif (response.status === 200) {\n    fs.writeFileSync(\"./castle.webp\", Buffer.from(response.data));\n} else {\n    throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/control/sketch\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F image=@\"./sketch.png\" \\\n  -F prompt=\"a medieval castle on a hill\" \\\n  -F control_strength=0.7 \\\n  -F output_format=\"webp\" \\\n  -o \"./castle.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -4866,7 +4709,7 @@
           "Control"
         ],
         "summary": "Structure",
-        "description": "This service excels in generating images by maintaining the structure of an input image,\nmaking it especially valuable for advanced content creation scenarios such as recreating\nscenes or rendering characters from models.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=59RaZazXz0AU)\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `image`\n- `prompt`\n\nThe body may optionally include:\n- `control_strength`\n- `negative_prompt`\n- `seed`\n- `output_format`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will match that of the input image.\n\n### Credits\nFlat rate of 5 credits per successful generation. You will not be charged for failed generations.",
+        "description": "This service excels in generating images by maintaining the structure of an input image,\nmaking it especially valuable for advanced content creation scenarios such as recreating\nscenes or rendering characters from models.\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `image`\n- `prompt`\n\nThe body may optionally include:\n- `control_strength`\n- `negative_prompt`\n- `seed`\n- `output_format`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will match that of the input image.\n\n### Credits\nFlat rate of 5 credits per successful generation. You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -4879,18 +4722,12 @@
             "source": "import axios from \"axios\";\nimport FormData from \"form-data\";\nimport fs from \"node:fs\";\n\nconst payload = {\n    image: fs.createReadStream(\"./cat-statue.png\"),\n    prompt: \"a well manicured shrub in an english garden\",\n    control_strength: 0.6,\n    output_format: \"webp\",\n};\n\nconst response = await axios.postForm(\n    `https://api.stability.ai/v2beta/stable-image/control/structure`,\n    axios.toFormData(payload, new FormData()),\n    {\n        validateStatus: undefined,\n        responseType: \"arraybuffer\",\n        headers: {\n            Authorization: `Bearer sk-MYAPIKEY`,\n            Accept: \"image/*\"\n        },\n    },\n);\n\nif (response.status === 200) {\n    fs.writeFileSync(\"./shrub-in-a-garden.webp\", Buffer.from(response.data));\n} else {\n    throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/control/structure\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F image=@\"./cat-statue.png\" \\\n  -F prompt=\"a well manicured shrub in an english garden\" \\\n  -F control_strength=0.7 \\\n  -F output_format=\"webp\" \\\n  -o \"./shrub-in-a-garden.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -4985,7 +4822,7 @@
           "Control"
         ],
         "summary": "Style Guide",
-        "description": "This service extracts stylistic elements from an input image (control image) and uses it to guide the creation of an output image based on the prompt. The result is a new image in the same style as the control image.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=y0WKjG72RvTE)\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `image`\n- `prompt`\n\nThe body may optionally include:\n- `negative_prompt`\n- `aspect_ratio`\n- `fidelity`\n- `seed`\n- `output_format`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 1MP. The default resolution is 1024x1024.\n\n### Credits\nFlat rate of 5 credits per successful generation. You will not be charged for failed generations.",
+        "description": "This service extracts stylistic elements from an input image (control image) and uses it to guide the creation of an output image based on the prompt. The result is a new image in the same style as the control image.\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `image`\n- `prompt`\n\nThe body may optionally include:\n- `negative_prompt`\n- `aspect_ratio`\n- `fidelity`\n- `seed`\n- `output_format`\n- `style_preset`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 1MP. The default resolution is 1024x1024.\n\n### Credits\nFlat rate of 5 credits per successful generation. You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -4998,18 +4835,12 @@
             "source": "import axios from \"axios\";\nimport FormData from \"form-data\";\nimport fs from \"node:fs\";\n\nconst payload = {\n    image: fs.createReadStream(\"./cinematic-portrait.png\"),\n    prompt: \"a majestic portrait of a chicken\",\n    output_format: \"webp\",\n};\n\nconst response = await axios.postForm(\n    `https://api.stability.ai/v2beta/stable-image/control/style`,\n    axios.toFormData(payload, new FormData()),\n    {\n        validateStatus: undefined,\n        responseType: \"arraybuffer\",\n        headers: {\n            Authorization: `Bearer sk-MYAPIKEY`,\n            Accept: \"image/*\"\n        },\n    },\n);\n\nif (response.status === 200) {\n    fs.writeFileSync(\"./chicken-portrait.webp\", Buffer.from(response.data));\n} else {\n    throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/control/style\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F image=@\"./cinematic-portrait.png\" \\\n  -F prompt=\"a majestic portrait of a chicken\" \\\n  -F output_format=\"webp\" \\\n  -o \"./chicken-portrait.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -5107,7 +4938,7 @@
           "Control"
         ],
         "summary": "Style Transfer",
-        "description": "Style Transfer applies visual characteristics from reference style images to target images.\nWhile Style Guide extracts stylistic elements from an input image (control image) and uses it\nto guide the creation of an output image based on the prompt, Style Transfer specifically\ntransforms existing content while preserving the original composition.\nThis tool helps create consistent content across multiple assets.\n\n### Try it out\nGrab your [API key](https://platform.stability.ai/account/keys) and head over to\n[![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=YCrxdv5LzqJ9)\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `init_image`\n- `style_image`\n\nThe body may optionally include:\n- `prompt`\n- `negative_prompt`\n- `style_strength`\n- `composition_fidelity`\n- `change_strength`\n- `seed`\n- `output_format`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 1MP, with the same aspect ratio as the `init_image`.\n\n### Credits\nFlat rate of 8 credits per successful generation. You will not be charged for failed generations.",
+        "description": "Style Transfer applies visual characteristics from reference style images to target images.\nWhile Style Guide extracts stylistic elements from an input image (control image) and uses it\nto guide the creation of an output image based on the prompt, Style Transfer specifically\ntransforms existing content while preserving the original composition.\nThis tool helps create consistent content across multiple assets.\n\n### How to use\nPlease invoke this endpoint with a `POST` request.\n\nThe headers of the request must include an API key in the `authorization` field. The body of the request must be\n`multipart/form-data`, and the `accept` header should be set to one of the following:\n  - `image/*` to receive the image in the format specified by the `output_format` parameter.\n  - `application/json` to receive the image encoded as base64 in a JSON response.\n\nThe body of the request should include:\n- `init_image`\n- `style_image`\n\nThe body may optionally include:\n- `prompt`\n- `negative_prompt`\n- `style_strength`\n- `composition_fidelity`\n- `change_strength`\n- `seed`\n- `output_format`\n\n> **Note:** for more details about these parameters please see the request schema below.\n\n### Output\nThe resolution of the generated image will be 1MP, with the same aspect ratio as the `init_image`.\n\n### Credits\nFlat rate of 8 credits per successful generation. You will not be charged for failed generations.",
         "x-codeSamples": [
           {
             "lang": "python",
@@ -5120,18 +4951,12 @@
             "source": "import axios from \"axios\";\nimport FormData from \"form-data\";\nimport fs from \"node:fs\";\n\nconst payload = {\n    init_image: fs.createReadStream(\"./chicken-portrait.png\"),\n    style_image: fs.createReadStream(\"./glowbot.png\"),\n    output_format: \"webp\",\n};\n\nconst response = await axios.postForm(\n    `https://api.stability.ai/v2beta/stable-image/control/style-transfer`,\n    axios.toFormData(payload, new FormData()),\n    {\n        validateStatus: undefined,\n        responseType: \"arraybuffer\",\n        headers: {\n            Authorization: `Bearer sk-MYAPIKEY`,\n            Accept: \"image/*\"\n        },\n    },\n);\n\nif (response.status === 200) {\n    fs.writeFileSync(\"./glow-chicken.webp\", Buffer.from(response.data));\n} else {\n    throw new Error(`${response.status}: ${response.data.toString()}`);\n}"
           },
           {
-            "lang": "terminal",
+            "lang": "bash",
             "label": "cURL",
             "source": "curl -f -sS \"https://api.stability.ai/v2beta/stable-image/control/style-transfer\" \\\n  -H \"authorization: Bearer sk-MYAPIKEY\" \\\n  -H \"accept: image/*\" \\\n  -F init_image=@\"./chicken-portrait.png\" \\\n  -F style_image=@\"./glowbot.png\" \\\n  -F output_format=\"webp\" \\\n  -o \"./glow-chicken.webp\""
           }
         ],
         "parameters": [
-          {
-            "$ref": "#/components/parameters/Authorization"
-          },
-          {
-            "$ref": "#/components/parameters/FormDataContentType"
-          },
           {
             "$ref": "#/components/parameters/AcceptImage"
           },
@@ -6885,27 +6710,6 @@
           "type": "string"
         }
       },
-      "Authorization": {
-        "schema": {
-          "type": "string",
-          "description": "Your [Stability API key](https://platform.stability.ai/account/keys), used to authenticate your requests. Although you may have multiple keys in your account, you should use the same key for all requests to this API.",
-          "minLength": 1
-        },
-        "required": true,
-        "name": "authorization",
-        "in": "header"
-      },
-      "FormDataContentType": {
-        "schema": {
-          "type": "string",
-          "minLength": 1,
-          "description": "The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.",
-          "example": "multipart/form-data"
-        },
-        "required": true,
-        "name": "content-type",
-        "in": "header"
-      },
       "AcceptImage": {
         "schema": {
           "type": "string",
@@ -7039,10 +6843,9 @@
     },
     "securitySchemes": {
       "STABILITY_API_KEY": {
-        "type": "apiKey",
-        "name": "authorization",
-        "in": "header",
-        "description": "Use your [Stability API key](https://platform.stability.ai/account/keys) to authentication requests to this App."
+        "type": "http",
+        "scheme": "bearer",
+        "description": "Your [Stability API key](https://platform.stability.ai/account/keys), sent as a bearer token in the `Authorization` header."
       }
     }
   },

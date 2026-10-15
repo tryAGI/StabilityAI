@@ -11,9 +11,6 @@ namespace StabilityAI
         /// to guide the creation of an output image based on the prompt, Style Transfer specifically<br/>
         /// transforms existing content while preserving the original composition.<br/>
         /// This tool helps create consistent content across multiple assets.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=YCrxdv5LzqJ9)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -37,10 +34,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -84,7 +77,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<byte[]> CreateStableImageControlStyleTransferAsBytesAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageControlStyleTransferRequest request,
             global::StabilityAI.CreateStableImageControlStyleTransferAccept? accept = default,
@@ -100,9 +92,6 @@ namespace StabilityAI
         /// to guide the creation of an output image based on the prompt, Style Transfer specifically<br/>
         /// transforms existing content while preserving the original composition.<br/>
         /// This tool helps create consistent content across multiple assets.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=YCrxdv5LzqJ9)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -126,10 +115,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -173,7 +158,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStableImageControlStyleTransferAsBytesAsStreamAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageControlStyleTransferRequest request,
             global::StabilityAI.CreateStableImageControlStyleTransferAccept? accept = default,
@@ -189,9 +173,6 @@ namespace StabilityAI
         /// to guide the creation of an output image based on the prompt, Style Transfer specifically<br/>
         /// transforms existing content while preserving the original composition.<br/>
         /// This tool helps create consistent content across multiple assets.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=YCrxdv5LzqJ9)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -215,10 +196,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -262,7 +239,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateStableImageControlStyleTransferAsBytesAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageControlStyleTransferRequest request,
             global::StabilityAI.CreateStableImageControlStyleTransferAccept? accept = default,
@@ -278,9 +254,6 @@ namespace StabilityAI
         /// to guide the creation of an output image based on the prompt, Style Transfer specifically<br/>
         /// transforms existing content while preserving the original composition.<br/>
         /// This tool helps create consistent content across multiple assets.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=YCrxdv5LzqJ9)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -304,10 +277,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -412,7 +381,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<byte[]> CreateStableImageControlStyleTransferAsBytesAsync(
-            string contentType,
             byte[] initImage,
             string initImagename,
             byte[] styleImage,
@@ -438,9 +406,6 @@ namespace StabilityAI
         /// to guide the creation of an output image based on the prompt, Style Transfer specifically<br/>
         /// transforms existing content while preserving the original composition.<br/>
         /// This tool helps create consistent content across multiple assets.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=YCrxdv5LzqJ9)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -464,10 +429,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -594,7 +555,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<byte[]> CreateStableImageControlStyleTransferAsBytesAsync(
-            string contentType,
             global::System.IO.Stream initImage,
             string initImagename,
             global::System.IO.Stream styleImage,
@@ -619,9 +579,6 @@ namespace StabilityAI
         /// to guide the creation of an output image based on the prompt, Style Transfer specifically<br/>
         /// transforms existing content while preserving the original composition.<br/>
         /// This tool helps create consistent content across multiple assets.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=YCrxdv5LzqJ9)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -645,10 +602,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -775,7 +728,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStableImageControlStyleTransferAsBytesAsStreamAsync(
-            string contentType,
             global::System.IO.Stream initImage,
             string initImagename,
             global::System.IO.Stream styleImage,
@@ -800,9 +752,6 @@ namespace StabilityAI
         /// to guide the creation of an output image based on the prompt, Style Transfer specifically<br/>
         /// transforms existing content while preserving the original composition.<br/>
         /// This tool helps create consistent content across multiple assets.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=YCrxdv5LzqJ9)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -826,10 +775,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -956,7 +901,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateStableImageControlStyleTransferAsBytesAsResponseAsync(
-            string contentType,
             global::System.IO.Stream initImage,
             string initImagename,
             global::System.IO.Stream styleImage,

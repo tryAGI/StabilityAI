@@ -27,13 +27,11 @@ namespace StabilityAI
             };
         partial void PrepareCreateV2alphaGenerationStableImageInpaintAsBytesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string contentType,
             ref global::StabilityAI.CreateV2alphaGenerationStableImageInpaintAccept? accept,
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequest request);
         partial void PrepareCreateV2alphaGenerationStableImageInpaintAsBytesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string contentType,
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintAccept? accept,
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequest request);
         partial void ProcessCreateV2alphaGenerationStableImageInpaintAsBytesResponse(
@@ -66,10 +64,6 @@ namespace StabilityAI
         /// - Requests with `mode` set to `search` cost 4 cents.<br/>
         /// - Requests with `mode` set to `mask` cost 3 cents.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to get the image bytes directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -102,7 +96,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<byte[]> CreateV2alphaGenerationStableImageInpaintAsBytesAsync(
-            string contentType,
 
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequest request,
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintAccept? accept = default,
@@ -110,7 +103,6 @@ namespace StabilityAI
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateV2alphaGenerationStableImageInpaintAsBytesAsResponseAsync(
-                contentType: contentType,
 
                 request: request,
                 accept: accept,
@@ -141,10 +133,6 @@ namespace StabilityAI
         /// - Requests with `mode` set to `search` cost 4 cents.<br/>
         /// - Requests with `mode` set to `mask` cost 3 cents.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to get the image bytes directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -177,7 +165,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateV2alphaGenerationStableImageInpaintAsBytesAsStreamAsync(
-            string contentType,
 
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequest request,
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintAccept? accept = default,
@@ -188,7 +175,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateV2alphaGenerationStableImageInpaintAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 request: request);
 
@@ -252,7 +238,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -274,7 +259,6 @@ namespace StabilityAI
                 PrepareCreateV2alphaGenerationStableImageInpaintAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     request: request);
 
@@ -638,10 +622,6 @@ namespace StabilityAI
         /// - Requests with `mode` set to `search` cost 4 cents.<br/>
         /// - Requests with `mode` set to `mask` cost 3 cents.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to get the image bytes directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -674,7 +654,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateV2alphaGenerationStableImageInpaintAsBytesAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequest request,
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintAccept? accept = default,
@@ -685,7 +664,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateV2alphaGenerationStableImageInpaintAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 request: request);
 
@@ -749,7 +727,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -771,7 +748,6 @@ namespace StabilityAI
                 PrepareCreateV2alphaGenerationStableImageInpaintAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     request: request);
 
@@ -1172,10 +1148,6 @@ namespace StabilityAI
         /// - Requests with `mode` set to `search` cost 4 cents.<br/>
         /// - Requests with `mode` set to `mask` cost 3 cents.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to get the image bytes directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -1184,7 +1156,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateV2alphaGenerationStableImageInpaintAsBytesAsync(
-            string contentType,
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintAccept? accept = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
@@ -1194,7 +1165,6 @@ namespace StabilityAI
             };
 
             return await CreateV2alphaGenerationStableImageInpaintAsBytesAsync(
-                contentType: contentType,
                 accept: accept,
                 request: __request,
                 requestOptions: requestOptions,

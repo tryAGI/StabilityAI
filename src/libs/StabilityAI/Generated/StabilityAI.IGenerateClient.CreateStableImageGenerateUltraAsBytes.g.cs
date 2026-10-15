@@ -10,8 +10,6 @@ namespace StabilityAI
         /// with unprecedented prompt understanding. Ultra excels in typography, complex compositions, dynamic lighting,<br/>
         /// vibrant hues, and overall cohesion and structure of an art piece. Made from the most advanced models,<br/>
         /// including Stable Diffusion 3.5, Ultra offers the best of the Stable Diffusion ecosystem.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=yXhs626oZdr1)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -34,10 +32,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// The Ultra service uses 8 credits per successful result. You will not be charged for failed results.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -79,7 +73,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<byte[]> CreateStableImageGenerateUltraAsBytesAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageGenerateUltraRequest request,
             global::StabilityAI.CreateStableImageGenerateUltraAccept? accept = default,
@@ -94,8 +87,6 @@ namespace StabilityAI
         /// with unprecedented prompt understanding. Ultra excels in typography, complex compositions, dynamic lighting,<br/>
         /// vibrant hues, and overall cohesion and structure of an art piece. Made from the most advanced models,<br/>
         /// including Stable Diffusion 3.5, Ultra offers the best of the Stable Diffusion ecosystem.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=yXhs626oZdr1)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -118,10 +109,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// The Ultra service uses 8 credits per successful result. You will not be charged for failed results.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -163,7 +150,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStableImageGenerateUltraAsBytesAsStreamAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageGenerateUltraRequest request,
             global::StabilityAI.CreateStableImageGenerateUltraAccept? accept = default,
@@ -178,8 +164,6 @@ namespace StabilityAI
         /// with unprecedented prompt understanding. Ultra excels in typography, complex compositions, dynamic lighting,<br/>
         /// vibrant hues, and overall cohesion and structure of an art piece. Made from the most advanced models,<br/>
         /// including Stable Diffusion 3.5, Ultra offers the best of the Stable Diffusion ecosystem.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=yXhs626oZdr1)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -202,10 +186,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// The Ultra service uses 8 credits per successful result. You will not be charged for failed results.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -247,7 +227,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateStableImageGenerateUltraAsBytesAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageGenerateUltraRequest request,
             global::StabilityAI.CreateStableImageGenerateUltraAccept? accept = default,
@@ -262,8 +241,6 @@ namespace StabilityAI
         /// with unprecedented prompt understanding. Ultra excels in typography, complex compositions, dynamic lighting,<br/>
         /// vibrant hues, and overall cohesion and structure of an art piece. Made from the most advanced models,<br/>
         /// including Stable Diffusion 3.5, Ultra offers the best of the Stable Diffusion ecosystem.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=yXhs626oZdr1)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -286,10 +263,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// The Ultra service uses 8 credits per successful result. You will not be charged for failed results.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -369,7 +342,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<byte[]> CreateStableImageGenerateUltraAsBytesAsync(
-            string contentType,
             string prompt,
             global::StabilityAI.CreateStableImageGenerateUltraAccept? accept = default,
             string? stabilityClientId = default,

@@ -27,7 +27,6 @@ namespace StabilityAI
             };
         partial void PrepareCreateStableImageUpscaleConservativeAsBytesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string contentType,
             ref global::StabilityAI.CreateStableImageUpscaleConservativeAccept? accept,
             ref string? stabilityClientId,
             ref string? stabilityClientUserId,
@@ -36,7 +35,6 @@ namespace StabilityAI
         partial void PrepareCreateStableImageUpscaleConservativeAsBytesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string contentType,
             global::StabilityAI.CreateStableImageUpscaleConservativeAccept? accept,
             string? stabilityClientId,
             string? stabilityClientUserId,
@@ -54,8 +52,6 @@ namespace StabilityAI
         /// <summary>
         /// Conservative<br/>
         /// Takes images between 64x64 and 1 megapixel and upscales them all the way to 4K resolution. Put more generally, it can upscale images ~20-40x times while preserving all aspects. Conservative Upscale minimizes alterations to the image and should not be used to reimagine an image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -76,10 +72,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 40 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -123,7 +115,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<byte[]> CreateStableImageUpscaleConservativeAsBytesAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageUpscaleConservativeRequest request,
             global::StabilityAI.CreateStableImageUpscaleConservativeAccept? accept = default,
@@ -134,7 +125,6 @@ namespace StabilityAI
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateStableImageUpscaleConservativeAsBytesAsResponseAsync(
-                contentType: contentType,
 
                 request: request,
                 accept: accept,
@@ -150,8 +140,6 @@ namespace StabilityAI
         /// <summary>
         /// Conservative<br/>
         /// Takes images between 64x64 and 1 megapixel and upscales them all the way to 4K resolution. Put more generally, it can upscale images ~20-40x times while preserving all aspects. Conservative Upscale minimizes alterations to the image and should not be used to reimagine an image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -172,10 +160,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 40 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -219,7 +203,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStableImageUpscaleConservativeAsBytesAsStreamAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageUpscaleConservativeRequest request,
             global::StabilityAI.CreateStableImageUpscaleConservativeAccept? accept = default,
@@ -235,7 +218,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleConservativeAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -302,7 +284,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -410,7 +391,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleConservativeAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -870,8 +850,6 @@ namespace StabilityAI
         /// <summary>
         /// Conservative<br/>
         /// Takes images between 64x64 and 1 megapixel and upscales them all the way to 4K resolution. Put more generally, it can upscale images ~20-40x times while preserving all aspects. Conservative Upscale minimizes alterations to the image and should not be used to reimagine an image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -892,10 +870,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 40 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -939,7 +913,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateStableImageUpscaleConservativeAsBytesAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageUpscaleConservativeRequest request,
             global::StabilityAI.CreateStableImageUpscaleConservativeAccept? accept = default,
@@ -955,7 +928,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleConservativeAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -1022,7 +994,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -1130,7 +1101,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleConservativeAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -1627,8 +1597,6 @@ namespace StabilityAI
         /// <summary>
         /// Conservative<br/>
         /// Takes images between 64x64 and 1 megapixel and upscales them all the way to 4K resolution. Put more generally, it can upscale images ~20-40x times while preserving all aspects. Conservative Upscale minimizes alterations to the image and should not be used to reimagine an image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -1649,10 +1617,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 40 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -1721,7 +1685,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateStableImageUpscaleConservativeAsBytesAsync(
-            string contentType,
             byte[] image,
             string imagename,
             string prompt,
@@ -1748,7 +1711,6 @@ namespace StabilityAI
             };
 
             return await CreateStableImageUpscaleConservativeAsBytesAsync(
-                contentType: contentType,
                 accept: accept,
                 stabilityClientId: stabilityClientId,
                 stabilityClientUserId: stabilityClientUserId,
@@ -1761,8 +1723,6 @@ namespace StabilityAI
         /// <summary>
         /// Conservative<br/>
         /// Takes images between 64x64 and 1 megapixel and upscales them all the way to 4K resolution. Put more generally, it can upscale images ~20-40x times while preserving all aspects. Conservative Upscale minimizes alterations to the image and should not be used to reimagine an image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -1783,10 +1743,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 40 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -1877,7 +1833,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<byte[]> CreateStableImageUpscaleConservativeAsBytesAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -1908,7 +1863,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleConservativeAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -1975,7 +1929,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -2083,7 +2036,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleConservativeAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -2572,8 +2524,6 @@ namespace StabilityAI
         /// <summary>
         /// Conservative<br/>
         /// Takes images between 64x64 and 1 megapixel and upscales them all the way to 4K resolution. Put more generally, it can upscale images ~20-40x times while preserving all aspects. Conservative Upscale minimizes alterations to the image and should not be used to reimagine an image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -2594,10 +2544,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 40 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -2688,7 +2634,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStableImageUpscaleConservativeAsBytesAsStreamAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -2719,7 +2664,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleConservativeAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -2786,7 +2730,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -2894,7 +2837,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleConservativeAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -3354,8 +3296,6 @@ namespace StabilityAI
         /// <summary>
         /// Conservative<br/>
         /// Takes images between 64x64 and 1 megapixel and upscales them all the way to 4K resolution. Put more generally, it can upscale images ~20-40x times while preserving all aspects. Conservative Upscale minimizes alterations to the image and should not be used to reimagine an image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -3376,10 +3316,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 40 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -3470,7 +3406,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateStableImageUpscaleConservativeAsBytesAsResponseAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -3501,7 +3436,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleConservativeAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -3568,7 +3502,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -3676,7 +3609,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleConservativeAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,

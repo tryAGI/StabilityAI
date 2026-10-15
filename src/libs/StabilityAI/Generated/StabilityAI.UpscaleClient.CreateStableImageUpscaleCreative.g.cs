@@ -27,7 +27,6 @@ namespace StabilityAI
             };
         partial void PrepareCreateStableImageUpscaleCreativeArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string contentType,
             ref string? stabilityClientId,
             ref string? stabilityClientUserId,
             ref string? stabilityClientVersion,
@@ -35,7 +34,6 @@ namespace StabilityAI
         partial void PrepareCreateStableImageUpscaleCreativeRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string contentType,
             string? stabilityClientId,
             string? stabilityClientUserId,
             string? stabilityClientVersion,
@@ -55,8 +53,6 @@ namespace StabilityAI
         /// generally, it can upscale images ~20-40x times while preserving, and often enhancing, quality.<br/>
         /// Creative Upscale **works best on highly degraded images and is not for photos of 1mp or above** as it performs<br/>
         /// heavy reimagining (controlled by creativity scale).<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=QXxi9tfI425t)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -77,10 +73,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 60 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -116,7 +108,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageUpscaleCreativeResponse> CreateStableImageUpscaleCreativeAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageUpscaleCreativeRequest request,
             string? stabilityClientId = default,
@@ -126,7 +117,6 @@ namespace StabilityAI
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateStableImageUpscaleCreativeAsResponseAsync(
-                contentType: contentType,
 
                 request: request,
                 stabilityClientId: stabilityClientId,
@@ -144,8 +134,6 @@ namespace StabilityAI
         /// generally, it can upscale images ~20-40x times while preserving, and often enhancing, quality.<br/>
         /// Creative Upscale **works best on highly degraded images and is not for photos of 1mp or above** as it performs<br/>
         /// heavy reimagining (controlled by creativity scale).<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=QXxi9tfI425t)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -166,10 +154,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 60 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -205,7 +189,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageUpscaleCreativeResponse>> CreateStableImageUpscaleCreativeAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageUpscaleCreativeRequest request,
             string? stabilityClientId = default,
@@ -220,7 +203,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleCreativeArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
                 stabilityClientVersion: ref stabilityClientVersion,
@@ -282,7 +264,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (stabilityClientId != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("stability-client-id", stabilityClientId.ToString());
@@ -394,7 +375,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleCreativeRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
                     stabilityClientVersion: stabilityClientVersion,
@@ -901,8 +881,6 @@ namespace StabilityAI
         /// generally, it can upscale images ~20-40x times while preserving, and often enhancing, quality.<br/>
         /// Creative Upscale **works best on highly degraded images and is not for photos of 1mp or above** as it performs<br/>
         /// heavy reimagining (controlled by creativity scale).<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=QXxi9tfI425t)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -923,10 +901,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 60 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -993,7 +967,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageUpscaleCreativeResponse> CreateStableImageUpscaleCreativeAsync(
-            string contentType,
             byte[] image,
             string imagename,
             string prompt,
@@ -1021,7 +994,6 @@ namespace StabilityAI
             };
 
             return await CreateStableImageUpscaleCreativeAsync(
-                contentType: contentType,
                 stabilityClientId: stabilityClientId,
                 stabilityClientUserId: stabilityClientUserId,
                 stabilityClientVersion: stabilityClientVersion,
@@ -1036,8 +1008,6 @@ namespace StabilityAI
         /// generally, it can upscale images ~20-40x times while preserving, and often enhancing, quality.<br/>
         /// Creative Upscale **works best on highly degraded images and is not for photos of 1mp or above** as it performs<br/>
         /// heavy reimagining (controlled by creativity scale).<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=QXxi9tfI425t)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -1058,10 +1028,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 60 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -1146,7 +1112,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.CreateStableImageUpscaleCreativeResponse> CreateStableImageUpscaleCreativeAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -1178,7 +1143,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleCreativeArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
                 stabilityClientVersion: ref stabilityClientVersion,
@@ -1240,7 +1204,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (stabilityClientId != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("stability-client-id", stabilityClientId.ToString());
@@ -1352,7 +1315,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleCreativeRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
                     stabilityClientVersion: stabilityClientVersion,
@@ -1851,8 +1813,6 @@ namespace StabilityAI
         /// generally, it can upscale images ~20-40x times while preserving, and often enhancing, quality.<br/>
         /// Creative Upscale **works best on highly degraded images and is not for photos of 1mp or above** as it performs<br/>
         /// heavy reimagining (controlled by creativity scale).<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=QXxi9tfI425t)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -1873,10 +1833,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 60 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -1961,7 +1917,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.CreateStableImageUpscaleCreativeResponse>> CreateStableImageUpscaleCreativeAsResponseAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -1993,7 +1948,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleCreativeArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
                 stabilityClientVersion: ref stabilityClientVersion,
@@ -2055,7 +2009,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (stabilityClientId != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("stability-client-id", stabilityClientId.ToString());
@@ -2167,7 +2120,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleCreativeRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
                     stabilityClientVersion: stabilityClientVersion,

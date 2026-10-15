@@ -17,8 +17,6 @@ namespace StabilityAI
         /// Read more about the model capabilities [here](https://bit.ly/4h7cpgF).<br/>
         /// This API is currently in<br/>
         /// preview. Please don’t hesitate to [contact us](https://stability.ai/contact) with any questions.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -40,10 +38,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 4 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -79,7 +73,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<byte[]> Create3dStablePointAware3dAsync(
-            string contentType,
 
             global::StabilityAI.Create3dStablePointAware3dRequest request,
             string? stabilityClientId = default,
@@ -100,8 +93,6 @@ namespace StabilityAI
         /// Read more about the model capabilities [here](https://bit.ly/4h7cpgF).<br/>
         /// This API is currently in<br/>
         /// preview. Please don’t hesitate to [contact us](https://stability.ai/contact) with any questions.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -123,10 +114,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 4 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -162,7 +149,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> Create3dStablePointAware3dAsStreamAsync(
-            string contentType,
 
             global::StabilityAI.Create3dStablePointAware3dRequest request,
             string? stabilityClientId = default,
@@ -183,8 +169,6 @@ namespace StabilityAI
         /// Read more about the model capabilities [here](https://bit.ly/4h7cpgF).<br/>
         /// This API is currently in<br/>
         /// preview. Please don’t hesitate to [contact us](https://stability.ai/contact) with any questions.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -206,10 +190,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 4 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -245,7 +225,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> Create3dStablePointAware3dAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.Create3dStablePointAware3dRequest request,
             string? stabilityClientId = default,
@@ -266,8 +245,6 @@ namespace StabilityAI
         /// Read more about the model capabilities [here](https://bit.ly/4h7cpgF).<br/>
         /// This API is currently in<br/>
         /// preview. Please don’t hesitate to [contact us](https://stability.ai/contact) with any questions.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -289,10 +266,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 4 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -378,7 +351,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<byte[]> Create3dStablePointAware3dAsync(
-            string contentType,
             byte[] image,
             string imagename,
             string? stabilityClientId = default,
@@ -407,8 +379,6 @@ namespace StabilityAI
         /// Read more about the model capabilities [here](https://bit.ly/4h7cpgF).<br/>
         /// This API is currently in<br/>
         /// preview. Please don’t hesitate to [contact us](https://stability.ai/contact) with any questions.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -430,10 +400,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 4 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -537,7 +503,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<byte[]> Create3dStablePointAware3dAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string? stabilityClientId = default,
@@ -565,8 +530,6 @@ namespace StabilityAI
         /// Read more about the model capabilities [here](https://bit.ly/4h7cpgF).<br/>
         /// This API is currently in<br/>
         /// preview. Please don’t hesitate to [contact us](https://stability.ai/contact) with any questions.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -588,10 +551,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 4 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -695,7 +654,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> Create3dStablePointAware3dAsStreamAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string? stabilityClientId = default,
@@ -723,8 +681,6 @@ namespace StabilityAI
         /// Read more about the model capabilities [here](https://bit.ly/4h7cpgF).<br/>
         /// This API is currently in<br/>
         /// preview. Please don’t hesitate to [contact us](https://stability.ai/contact) with any questions.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -746,10 +702,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 4 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -853,7 +805,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> Create3dStablePointAware3dAsResponseAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string? stabilityClientId = default,

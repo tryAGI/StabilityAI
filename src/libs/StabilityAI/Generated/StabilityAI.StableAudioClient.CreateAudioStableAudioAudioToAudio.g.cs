@@ -27,7 +27,6 @@ namespace StabilityAI
             };
         partial void PrepareCreateAudioStableAudioAudioToAudioArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string contentType,
             ref global::StabilityAI.CreateAudioStableAudioAudioToAudioAccept? accept,
             ref string? stabilityClientId,
             ref string? stabilityClientUserId,
@@ -36,7 +35,6 @@ namespace StabilityAI
         partial void PrepareCreateAudioStableAudioAudioToAudioRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string contentType,
             global::StabilityAI.CreateAudioStableAudioAudioToAudioAccept? accept,
             string? stabilityClientId,
             string? stabilityClientUserId,
@@ -71,10 +69,6 @@ namespace StabilityAI
         /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
         /// Default Value: audio/*
@@ -127,7 +121,6 @@ namespace StabilityAI
         ///         raise Exception(str(result.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateAudioStableAudioAudioToAudioAsync(
-            string contentType,
 
             global::StabilityAI.CreateAudioStableAudioAudioToAudioRequest request,
             global::StabilityAI.CreateAudioStableAudioAudioToAudioAccept? accept = default,
@@ -138,7 +131,6 @@ namespace StabilityAI
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateAudioStableAudioAudioToAudioAsResponseAsync(
-                contentType: contentType,
 
                 request: request,
                 accept: accept,
@@ -171,10 +163,6 @@ namespace StabilityAI
         /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
         /// Default Value: audio/*
@@ -227,7 +215,6 @@ namespace StabilityAI
         ///         raise Exception(str(result.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateAudioStableAudioAudioToAudioAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateAudioStableAudioAudioToAudioRequest request,
             global::StabilityAI.CreateAudioStableAudioAudioToAudioAccept? accept = default,
@@ -243,7 +230,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateAudioStableAudioAudioToAudioArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -306,7 +292,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -437,7 +422,6 @@ namespace StabilityAI
                 PrepareCreateAudioStableAudioAudioToAudioRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -922,10 +906,6 @@ namespace StabilityAI
         /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
         /// Default Value: audio/*
@@ -1002,7 +982,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateAudioStableAudioAudioToAudioAsync(
-            string contentType,
             string prompt,
             byte[] audio,
             string audioname,
@@ -1035,7 +1014,6 @@ namespace StabilityAI
             };
 
             return await CreateAudioStableAudioAudioToAudioAsync(
-                contentType: contentType,
                 accept: accept,
                 stabilityClientId: stabilityClientId,
                 stabilityClientUserId: stabilityClientUserId,
@@ -1065,10 +1043,6 @@ namespace StabilityAI
         /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
         /// Default Value: audio/*
@@ -1176,7 +1150,6 @@ namespace StabilityAI
         ///         raise Exception(str(result.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateAudioStableAudioAudioToAudioAsync(
-            string contentType,
             string prompt,
             global::System.IO.Stream audio,
             string audioname,
@@ -1213,7 +1186,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateAudioStableAudioAudioToAudioArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -1276,7 +1248,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -1407,7 +1378,6 @@ namespace StabilityAI
                 PrepareCreateAudioStableAudioAudioToAudioRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -1884,10 +1854,6 @@ namespace StabilityAI
         /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
         /// Default Value: audio/*
@@ -1995,7 +1961,6 @@ namespace StabilityAI
         ///         raise Exception(str(result.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateAudioStableAudioAudioToAudioAsResponseAsync(
-            string contentType,
             string prompt,
             global::System.IO.Stream audio,
             string audioname,
@@ -2032,7 +1997,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateAudioStableAudioAudioToAudioArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -2095,7 +2059,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -2226,7 +2189,6 @@ namespace StabilityAI
                 PrepareCreateAudioStableAudioAudioToAudioRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,

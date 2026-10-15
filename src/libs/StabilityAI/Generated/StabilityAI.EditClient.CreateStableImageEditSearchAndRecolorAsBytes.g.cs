@@ -27,7 +27,6 @@ namespace StabilityAI
             };
         partial void PrepareCreateStableImageEditSearchAndRecolorAsBytesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string contentType,
             ref global::StabilityAI.CreateStableImageEditSearchAndRecolorAccept? accept,
             ref string? stabilityClientId,
             ref string? stabilityClientUserId,
@@ -36,7 +35,6 @@ namespace StabilityAI
         partial void PrepareCreateStableImageEditSearchAndRecolorAsBytesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string contentType,
             global::StabilityAI.CreateStableImageEditSearchAndRecolorAccept? accept,
             string? stabilityClientId,
             string? stabilityClientUserId,
@@ -56,8 +54,6 @@ namespace StabilityAI
         /// The Search and Recolor service provides the ability to change the color of a specific object in an image using a prompt.<br/>
         /// This service is a specific version of inpainting that does not require a mask. The Search and Recolor<br/>
         /// service will automatically segment the object and recolor it using the colors requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -80,10 +76,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -128,7 +120,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<byte[]> CreateStableImageEditSearchAndRecolorAsBytesAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageEditSearchAndRecolorRequest request,
             global::StabilityAI.CreateStableImageEditSearchAndRecolorAccept? accept = default,
@@ -139,7 +130,6 @@ namespace StabilityAI
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateStableImageEditSearchAndRecolorAsBytesAsResponseAsync(
-                contentType: contentType,
 
                 request: request,
                 accept: accept,
@@ -157,8 +147,6 @@ namespace StabilityAI
         /// The Search and Recolor service provides the ability to change the color of a specific object in an image using a prompt.<br/>
         /// This service is a specific version of inpainting that does not require a mask. The Search and Recolor<br/>
         /// service will automatically segment the object and recolor it using the colors requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -181,10 +169,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -229,7 +213,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStableImageEditSearchAndRecolorAsBytesAsStreamAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageEditSearchAndRecolorRequest request,
             global::StabilityAI.CreateStableImageEditSearchAndRecolorAccept? accept = default,
@@ -245,7 +228,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageEditSearchAndRecolorAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -312,7 +294,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -432,7 +413,6 @@ namespace StabilityAI
                 PrepareCreateStableImageEditSearchAndRecolorAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -894,8 +874,6 @@ namespace StabilityAI
         /// The Search and Recolor service provides the ability to change the color of a specific object in an image using a prompt.<br/>
         /// This service is a specific version of inpainting that does not require a mask. The Search and Recolor<br/>
         /// service will automatically segment the object and recolor it using the colors requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -918,10 +896,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -966,7 +940,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateStableImageEditSearchAndRecolorAsBytesAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageEditSearchAndRecolorRequest request,
             global::StabilityAI.CreateStableImageEditSearchAndRecolorAccept? accept = default,
@@ -982,7 +955,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageEditSearchAndRecolorAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -1049,7 +1021,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -1169,7 +1140,6 @@ namespace StabilityAI
                 PrepareCreateStableImageEditSearchAndRecolorAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -1668,8 +1638,6 @@ namespace StabilityAI
         /// The Search and Recolor service provides the ability to change the color of a specific object in an image using a prompt.<br/>
         /// This service is a specific version of inpainting that does not require a mask. The Search and Recolor<br/>
         /// service will automatically segment the object and recolor it using the colors requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -1692,10 +1660,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -1773,7 +1737,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateStableImageEditSearchAndRecolorAsBytesAsync(
-            string contentType,
             byte[] image,
             string imagename,
             string prompt,
@@ -1804,7 +1767,6 @@ namespace StabilityAI
             };
 
             return await CreateStableImageEditSearchAndRecolorAsBytesAsync(
-                contentType: contentType,
                 accept: accept,
                 stabilityClientId: stabilityClientId,
                 stabilityClientUserId: stabilityClientUserId,
@@ -1819,8 +1781,6 @@ namespace StabilityAI
         /// The Search and Recolor service provides the ability to change the color of a specific object in an image using a prompt.<br/>
         /// This service is a specific version of inpainting that does not require a mask. The Search and Recolor<br/>
         /// service will automatically segment the object and recolor it using the colors requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -1843,10 +1803,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -1947,7 +1903,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<byte[]> CreateStableImageEditSearchAndRecolorAsBytesAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -1982,7 +1937,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageEditSearchAndRecolorAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -2049,7 +2003,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -2169,7 +2122,6 @@ namespace StabilityAI
                 PrepareCreateStableImageEditSearchAndRecolorAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -2660,8 +2612,6 @@ namespace StabilityAI
         /// The Search and Recolor service provides the ability to change the color of a specific object in an image using a prompt.<br/>
         /// This service is a specific version of inpainting that does not require a mask. The Search and Recolor<br/>
         /// service will automatically segment the object and recolor it using the colors requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -2684,10 +2634,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -2788,7 +2734,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStableImageEditSearchAndRecolorAsBytesAsStreamAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -2823,7 +2768,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageEditSearchAndRecolorAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -2890,7 +2834,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -3010,7 +2953,6 @@ namespace StabilityAI
                 PrepareCreateStableImageEditSearchAndRecolorAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -3472,8 +3414,6 @@ namespace StabilityAI
         /// The Search and Recolor service provides the ability to change the color of a specific object in an image using a prompt.<br/>
         /// This service is a specific version of inpainting that does not require a mask. The Search and Recolor<br/>
         /// service will automatically segment the object and recolor it using the colors requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -3496,10 +3436,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -3600,7 +3536,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateStableImageEditSearchAndRecolorAsBytesAsResponseAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -3635,7 +3570,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageEditSearchAndRecolorAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -3702,7 +3636,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -3822,7 +3755,6 @@ namespace StabilityAI
                 PrepareCreateStableImageEditSearchAndRecolorAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,

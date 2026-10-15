@@ -27,12 +27,10 @@ namespace StabilityAI
             };
         partial void PrepareCreateV2alphaGenerationStableImageUpscaleArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string contentType,
             global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequest request);
         partial void PrepareCreateV2alphaGenerationStableImageUpscaleRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string contentType,
             global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequest request);
         partial void ProcessCreateV2alphaGenerationStableImageUpscaleResponse(
             global::System.Net.Http.HttpClient httpClient,
@@ -54,10 +52,6 @@ namespace StabilityAI
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -80,14 +74,12 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateV2alphaGenerationStableImageUpscaleAsync(
-            string contentType,
 
             global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequest request,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateV2alphaGenerationStableImageUpscaleAsResponseAsync(
-                contentType: contentType,
 
                 request: request,
                 requestOptions: requestOptions,
@@ -107,10 +99,6 @@ namespace StabilityAI
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -133,7 +121,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateV2alphaGenerationStableImageUpscaleAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequest request,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
@@ -145,7 +132,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateV2alphaGenerationStableImageUpscaleArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 request: request);
 
 
@@ -203,9 +189,6 @@ namespace StabilityAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
-
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             var __contentImage = new global::System.Net.Http.ByteArrayContent(request.Image ?? global::System.Array.Empty<byte>());
@@ -304,7 +287,6 @@ namespace StabilityAI
                 PrepareCreateV2alphaGenerationStableImageUpscaleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     request: request);
 
                 return __httpRequest;
@@ -702,10 +684,6 @@ namespace StabilityAI
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="image">
         /// The image you wish to upscale.<br/>
         /// Supported Formats:<br/>
@@ -760,7 +738,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateV2alphaGenerationStableImageUpscaleAsync(
-            string contentType,
             byte[] image,
             string imagename,
             string prompt,
@@ -785,7 +762,6 @@ namespace StabilityAI
             };
 
             return await CreateV2alphaGenerationStableImageUpscaleAsync(
-                contentType: contentType,
                 request: __request,
                 requestOptions: requestOptions,
                 cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -802,10 +778,6 @@ namespace StabilityAI
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="image">
         /// The image you wish to upscale.<br/>
         /// Supported Formats:<br/>
@@ -877,7 +849,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateV2alphaGenerationStableImageUpscaleAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -906,7 +877,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateV2alphaGenerationStableImageUpscaleArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 request: request);
 
 
@@ -964,9 +934,6 @@ namespace StabilityAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
-
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             var __contentImage = new global::System.Net.Http.StreamContent(image);
@@ -1065,7 +1032,6 @@ namespace StabilityAI
                 PrepareCreateV2alphaGenerationStableImageUpscaleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     request: request);
 
                 return __httpRequest;
@@ -1455,10 +1421,6 @@ namespace StabilityAI
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="image">
         /// The image you wish to upscale.<br/>
         /// Supported Formats:<br/>
@@ -1530,7 +1492,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateV2alphaGenerationStableImageUpscaleAsResponseAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -1559,7 +1520,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateV2alphaGenerationStableImageUpscaleArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 request: request);
 
 
@@ -1617,9 +1577,6 @@ namespace StabilityAI
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
                 }
             }
-
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
-
 
                             var __httpRequestContent = new global::System.Net.Http.MultipartFormDataContent();
                             var __contentImage = new global::System.Net.Http.StreamContent(image);
@@ -1718,7 +1675,6 @@ namespace StabilityAI
                 PrepareCreateV2alphaGenerationStableImageUpscaleRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     request: request);
 
                 return __httpRequest;

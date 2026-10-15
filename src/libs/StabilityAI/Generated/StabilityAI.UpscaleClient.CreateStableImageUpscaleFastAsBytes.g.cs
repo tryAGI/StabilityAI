@@ -27,7 +27,6 @@ namespace StabilityAI
             };
         partial void PrepareCreateStableImageUpscaleFastAsBytesArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string contentType,
             ref global::StabilityAI.CreateStableImageUpscaleFastAccept? accept,
             ref string? stabilityClientId,
             ref string? stabilityClientUserId,
@@ -36,7 +35,6 @@ namespace StabilityAI
         partial void PrepareCreateStableImageUpscaleFastAsBytesRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string contentType,
             global::StabilityAI.CreateStableImageUpscaleFastAccept? accept,
             string? stabilityClientId,
             string? stabilityClientUserId,
@@ -54,8 +52,6 @@ namespace StabilityAI
         /// <summary>
         /// Fast<br/>
         /// Our Fast Upscaler service enhances image resolution by 4x using predictive and generative AI. This lightweight and fast service (processing in ~1 second) is ideal for enhancing the quality of compressed images, making it suitable for social media posts and other applications.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -72,10 +68,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 2 credit per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -118,7 +110,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<byte[]> CreateStableImageUpscaleFastAsBytesAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageUpscaleFastRequest request,
             global::StabilityAI.CreateStableImageUpscaleFastAccept? accept = default,
@@ -129,7 +120,6 @@ namespace StabilityAI
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await CreateStableImageUpscaleFastAsBytesAsResponseAsync(
-                contentType: contentType,
 
                 request: request,
                 accept: accept,
@@ -145,8 +135,6 @@ namespace StabilityAI
         /// <summary>
         /// Fast<br/>
         /// Our Fast Upscaler service enhances image resolution by 4x using predictive and generative AI. This lightweight and fast service (processing in ~1 second) is ideal for enhancing the quality of compressed images, making it suitable for social media posts and other applications.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -163,10 +151,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 2 credit per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -209,7 +193,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStableImageUpscaleFastAsBytesAsStreamAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageUpscaleFastRequest request,
             global::StabilityAI.CreateStableImageUpscaleFastAccept? accept = default,
@@ -225,7 +208,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleFastAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -292,7 +274,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -372,7 +353,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleFastAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -832,8 +812,6 @@ namespace StabilityAI
         /// <summary>
         /// Fast<br/>
         /// Our Fast Upscaler service enhances image resolution by 4x using predictive and generative AI. This lightweight and fast service (processing in ~1 second) is ideal for enhancing the quality of compressed images, making it suitable for social media posts and other applications.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -850,10 +828,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 2 credit per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -896,7 +870,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateStableImageUpscaleFastAsBytesAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageUpscaleFastRequest request,
             global::StabilityAI.CreateStableImageUpscaleFastAccept? accept = default,
@@ -912,7 +885,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleFastAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -979,7 +951,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -1059,7 +1030,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleFastAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -1556,8 +1526,6 @@ namespace StabilityAI
         /// <summary>
         /// Fast<br/>
         /// Our Fast Upscaler service enhances image resolution by 4x using predictive and generative AI. This lightweight and fast service (processing in ~1 second) is ideal for enhancing the quality of compressed images, making it suitable for social media posts and other applications.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -1574,10 +1542,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 2 credit per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -1626,7 +1590,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> CreateStableImageUpscaleFastAsBytesAsync(
-            string contentType,
             byte[] image,
             string imagename,
             global::StabilityAI.CreateStableImageUpscaleFastAccept? accept = default,
@@ -1645,7 +1608,6 @@ namespace StabilityAI
             };
 
             return await CreateStableImageUpscaleFastAsBytesAsync(
-                contentType: contentType,
                 accept: accept,
                 stabilityClientId: stabilityClientId,
                 stabilityClientUserId: stabilityClientUserId,
@@ -1658,8 +1620,6 @@ namespace StabilityAI
         /// <summary>
         /// Fast<br/>
         /// Our Fast Upscaler service enhances image resolution by 4x using predictive and generative AI. This lightweight and fast service (processing in ~1 second) is ideal for enhancing the quality of compressed images, making it suitable for social media posts and other applications.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -1676,10 +1636,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 2 credit per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -1749,7 +1705,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<byte[]> CreateStableImageUpscaleFastAsBytesAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             global::StabilityAI.CreateStableImageUpscaleFastAccept? accept = default,
@@ -1772,7 +1727,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleFastAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -1839,7 +1793,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -1919,7 +1872,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleFastAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -2408,8 +2360,6 @@ namespace StabilityAI
         /// <summary>
         /// Fast<br/>
         /// Our Fast Upscaler service enhances image resolution by 4x using predictive and generative AI. This lightweight and fast service (processing in ~1 second) is ideal for enhancing the quality of compressed images, making it suitable for social media posts and other applications.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -2426,10 +2376,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 2 credit per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -2499,7 +2445,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStableImageUpscaleFastAsBytesAsStreamAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             global::StabilityAI.CreateStableImageUpscaleFastAccept? accept = default,
@@ -2522,7 +2467,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleFastAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -2589,7 +2533,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -2669,7 +2612,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleFastAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
@@ -3129,8 +3071,6 @@ namespace StabilityAI
         /// <summary>
         /// Fast<br/>
         /// Our Fast Upscaler service enhances image resolution by 4x using predictive and generative AI. This lightweight and fast service (processing in ~1 second) is ideal for enhancing the quality of compressed images, making it suitable for social media posts and other applications.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=t1Q4w2uvvza0)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -3147,10 +3087,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 2 credit per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -3220,7 +3156,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateStableImageUpscaleFastAsBytesAsResponseAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             global::StabilityAI.CreateStableImageUpscaleFastAccept? accept = default,
@@ -3243,7 +3178,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreateStableImageUpscaleFastAsBytesArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 accept: ref accept,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
@@ -3310,7 +3244,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (accept != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("accept", accept?.ToValueString() ?? string.Empty);
@@ -3390,7 +3323,6 @@ namespace StabilityAI
                 PrepareCreateStableImageUpscaleFastAsBytesRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     accept: accept,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,

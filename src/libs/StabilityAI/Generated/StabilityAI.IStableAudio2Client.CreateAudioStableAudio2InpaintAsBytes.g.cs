@@ -37,10 +37,6 @@ namespace StabilityAI
         /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
         /// Default Value: audio/*
@@ -82,7 +78,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<byte[]> CreateAudioStableAudio2InpaintAsBytesAsync(
-            string contentType,
 
             global::StabilityAI.CreateAudioStableAudio2InpaintRequest request,
             global::StabilityAI.CreateAudioStableAudio2InpaintAccept? accept = default,
@@ -124,10 +119,6 @@ namespace StabilityAI
         /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
         /// Default Value: audio/*
@@ -169,7 +160,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateAudioStableAudio2InpaintAsBytesAsStreamAsync(
-            string contentType,
 
             global::StabilityAI.CreateAudioStableAudio2InpaintRequest request,
             global::StabilityAI.CreateAudioStableAudio2InpaintAccept? accept = default,
@@ -211,10 +201,6 @@ namespace StabilityAI
         /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
         /// Default Value: audio/*
@@ -256,7 +242,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateAudioStableAudio2InpaintAsBytesAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateAudioStableAudio2InpaintRequest request,
             global::StabilityAI.CreateAudioStableAudio2InpaintAccept? accept = default,
@@ -298,10 +283,6 @@ namespace StabilityAI
         /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
         /// Default Value: audio/*
@@ -368,7 +349,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<byte[]> CreateAudioStableAudio2InpaintAsBytesAsync(
-            string contentType,
             string prompt,
             byte[] audio,
             string audioname,
@@ -418,10 +398,6 @@ namespace StabilityAI
         /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
         /// Default Value: audio/*
@@ -508,7 +484,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<byte[]> CreateAudioStableAudio2InpaintAsBytesAsync(
-            string contentType,
             string prompt,
             global::System.IO.Stream audio,
             string audioname,
@@ -557,10 +532,6 @@ namespace StabilityAI
         /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
         /// Default Value: audio/*
@@ -647,7 +618,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateAudioStableAudio2InpaintAsBytesAsStreamAsync(
-            string contentType,
             string prompt,
             global::System.IO.Stream audio,
             string audioname,
@@ -696,10 +666,6 @@ namespace StabilityAI
         /// Flat rate of 8 credits per successful generation.<br/>
         /// As always, you will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
         /// Default Value: audio/*
@@ -786,7 +752,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateAudioStableAudio2InpaintAsBytesAsResponseAsync(
-            string contentType,
             string prompt,
             global::System.IO.Stream audio,
             string audioname,

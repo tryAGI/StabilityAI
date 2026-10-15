@@ -25,10 +25,6 @@ namespace StabilityAI
         /// - Requests with `mode` set to `search` cost 4 cents.<br/>
         /// - Requests with `mode` set to `mask` cost 3 cents.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to get the image bytes directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -61,7 +57,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateV2alphaGenerationStableImageInpaintAsync(
-            string contentType,
 
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequest request,
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintAccept? accept = default,
@@ -88,10 +83,6 @@ namespace StabilityAI
         /// - Requests with `mode` set to `search` cost 4 cents.<br/>
         /// - Requests with `mode` set to `mask` cost 3 cents.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to get the image bytes directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -124,7 +115,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.ImageJSONResponse>> CreateV2alphaGenerationStableImageInpaintAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintRequest request,
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintAccept? accept = default,
@@ -151,10 +141,6 @@ namespace StabilityAI
         /// - Requests with `mode` set to `search` cost 4 cents.<br/>
         /// - Requests with `mode` set to `mask` cost 3 cents.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to get the image bytes directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -163,7 +149,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::StabilityAI.ImageJSONResponse> CreateV2alphaGenerationStableImageInpaintAsync(
-            string contentType,
             global::StabilityAI.CreateV2alphaGenerationStableImageInpaintAccept? accept = default,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
             global::System.Threading.CancellationToken cancellationToken = default);
