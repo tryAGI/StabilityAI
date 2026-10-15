@@ -27,7 +27,6 @@ namespace StabilityAI
             };
         partial void PrepareCreate3dStableFast3dArguments(
             global::System.Net.Http.HttpClient httpClient,
-            ref string contentType,
             ref string? stabilityClientId,
             ref string? stabilityClientUserId,
             ref string? stabilityClientVersion,
@@ -35,7 +34,6 @@ namespace StabilityAI
         partial void PrepareCreate3dStableFast3dRequest(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpRequestMessage httpRequestMessage,
-            string contentType,
             string? stabilityClientId,
             string? stabilityClientUserId,
             string? stabilityClientVersion,
@@ -52,8 +50,6 @@ namespace StabilityAI
         /// <summary>
         /// Stable Fast 3D<br/>
         /// Stable Fast 3D generates high-quality 3D assets from a single 2D input image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -70,10 +66,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 10 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -109,7 +101,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<byte[]> Create3dStableFast3dAsync(
-            string contentType,
 
             global::StabilityAI.Create3dStableFast3dRequest request,
             string? stabilityClientId = default,
@@ -119,7 +110,6 @@ namespace StabilityAI
             global::System.Threading.CancellationToken cancellationToken = default)
         {
             var __response = await Create3dStableFast3dAsResponseAsync(
-                contentType: contentType,
 
                 request: request,
                 stabilityClientId: stabilityClientId,
@@ -134,8 +124,6 @@ namespace StabilityAI
         /// <summary>
         /// Stable Fast 3D<br/>
         /// Stable Fast 3D generates high-quality 3D assets from a single 2D input image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -152,10 +140,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 10 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -191,7 +175,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::System.IO.Stream> Create3dStableFast3dAsStreamAsync(
-            string contentType,
 
             global::StabilityAI.Create3dStableFast3dRequest request,
             string? stabilityClientId = default,
@@ -206,7 +189,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreate3dStableFast3dArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
                 stabilityClientVersion: ref stabilityClientVersion,
@@ -268,7 +250,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (stabilityClientId != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("stability-client-id", stabilityClientId.ToString());
@@ -368,7 +349,6 @@ namespace StabilityAI
                 PrepareCreate3dStableFast3dRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
                     stabilityClientVersion: stabilityClientVersion,
@@ -790,8 +770,6 @@ namespace StabilityAI
         /// <summary>
         /// Stable Fast 3D<br/>
         /// Stable Fast 3D generates high-quality 3D assets from a single 2D input image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -808,10 +786,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 10 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -847,7 +821,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> Create3dStableFast3dAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.Create3dStableFast3dRequest request,
             string? stabilityClientId = default,
@@ -862,7 +835,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreate3dStableFast3dArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
                 stabilityClientVersion: ref stabilityClientVersion,
@@ -924,7 +896,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (stabilityClientId != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("stability-client-id", stabilityClientId.ToString());
@@ -1024,7 +995,6 @@ namespace StabilityAI
                 PrepareCreate3dStableFast3dRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
                     stabilityClientVersion: stabilityClientVersion,
@@ -1483,8 +1453,6 @@ namespace StabilityAI
         /// <summary>
         /// Stable Fast 3D<br/>
         /// Stable Fast 3D generates high-quality 3D assets from a single 2D input image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -1501,10 +1469,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 10 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -1578,7 +1542,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         public async global::System.Threading.Tasks.Task<byte[]> Create3dStableFast3dAsync(
-            string contentType,
             byte[] image,
             string imagename,
             string? stabilityClientId = default,
@@ -1602,7 +1565,6 @@ namespace StabilityAI
             };
 
             return await Create3dStableFast3dAsync(
-                contentType: contentType,
                 stabilityClientId: stabilityClientId,
                 stabilityClientUserId: stabilityClientUserId,
                 stabilityClientVersion: stabilityClientVersion,
@@ -1614,8 +1576,6 @@ namespace StabilityAI
         /// <summary>
         /// Stable Fast 3D<br/>
         /// Stable Fast 3D generates high-quality 3D assets from a single 2D input image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -1632,10 +1592,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 10 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -1727,7 +1683,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<byte[]> Create3dStableFast3dAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string? stabilityClientId = default,
@@ -1755,7 +1710,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreate3dStableFast3dArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
                 stabilityClientVersion: ref stabilityClientVersion,
@@ -1817,7 +1771,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (stabilityClientId != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("stability-client-id", stabilityClientId.ToString());
@@ -1917,7 +1870,6 @@ namespace StabilityAI
                 PrepareCreate3dStableFast3dRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
                     stabilityClientVersion: stabilityClientVersion,
@@ -2368,8 +2320,6 @@ namespace StabilityAI
         /// <summary>
         /// Stable Fast 3D<br/>
         /// Stable Fast 3D generates high-quality 3D assets from a single 2D input image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -2386,10 +2336,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 10 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -2481,7 +2427,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::System.IO.Stream> Create3dStableFast3dAsStreamAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string? stabilityClientId = default,
@@ -2509,7 +2454,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreate3dStableFast3dArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
                 stabilityClientVersion: ref stabilityClientVersion,
@@ -2571,7 +2515,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (stabilityClientId != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("stability-client-id", stabilityClientId.ToString());
@@ -2671,7 +2614,6 @@ namespace StabilityAI
                 PrepareCreate3dStableFast3dRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
                     stabilityClientVersion: stabilityClientVersion,
@@ -3093,8 +3035,6 @@ namespace StabilityAI
         /// <summary>
         /// Stable Fast 3D<br/>
         /// Stable Fast 3D generates high-quality 3D assets from a single 2D input image.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_3D_API.ipynb)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -3111,10 +3051,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 10 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -3206,7 +3142,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> Create3dStableFast3dAsResponseAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string? stabilityClientId = default,
@@ -3234,7 +3169,6 @@ namespace StabilityAI
                 client: HttpClient);
             PrepareCreate3dStableFast3dArguments(
                 httpClient: HttpClient,
-                contentType: ref contentType,
                 stabilityClientId: ref stabilityClientId,
                 stabilityClientUserId: ref stabilityClientUserId,
                 stabilityClientVersion: ref stabilityClientVersion,
@@ -3296,7 +3230,6 @@ namespace StabilityAI
                 }
             }
 
-                __httpRequest.Headers.TryAddWithoutValidation("content-type", contentType.ToString());
             if (stabilityClientId != default)
             {
                 __httpRequest.Headers.TryAddWithoutValidation("stability-client-id", stabilityClientId.ToString());
@@ -3396,7 +3329,6 @@ namespace StabilityAI
                 PrepareCreate3dStableFast3dRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    contentType: contentType,
                     stabilityClientId: stabilityClientId,
                     stabilityClientUserId: stabilityClientUserId,
                     stabilityClientVersion: stabilityClientVersion,

@@ -15,10 +15,6 @@ namespace StabilityAI
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -41,7 +37,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateV2alphaGenerationStableImageUpscaleAsync(
-            string contentType,
 
             global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequest request,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
@@ -57,10 +52,6 @@ namespace StabilityAI
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
@@ -83,7 +74,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateV2alphaGenerationStableImageUpscaleAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateV2alphaGenerationStableImageUpscaleRequest request,
             global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
@@ -99,10 +89,6 @@ namespace StabilityAI
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="image">
         /// The image you wish to upscale.<br/>
         /// Supported Formats:<br/>
@@ -157,7 +143,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateV2alphaGenerationStableImageUpscaleAsync(
-            string contentType,
             byte[] image,
             string imagename,
             string prompt,
@@ -180,10 +165,6 @@ namespace StabilityAI
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="image">
         /// The image you wish to upscale.<br/>
         /// Supported Formats:<br/>
@@ -255,7 +236,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateV2alphaGenerationStableImageUpscaleAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -277,10 +257,6 @@ namespace StabilityAI
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="image">
         /// The image you wish to upscale.<br/>
         /// Supported Formats:<br/>
@@ -352,7 +328,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateV2alphaGenerationStableImageUpscaleAsResponseAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,

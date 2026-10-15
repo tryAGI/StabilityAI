@@ -114,9 +114,9 @@ namespace StabilityAI
         public StableAudioClient StableAudio { get; }
 
         /// <summary>
-        /// Stable Audio 2.5. Tools to generate music and sound from text or audio, or transform existing audio clips into new compositions. Our different services include:<br/>
-        /// **Stable Audio 2.5**: Fast, Best-Quality, Long-Form Music &amp; Audio Generation<br/>
-        /// Our most advanced audio generation model, capable of generating up to 3-minute, 44.1 kHz stereo compositions. Stable Audio 2.5 supports text-to-audio, audio-to-audio, and audio-inpaint workflows - allowing creators to upload a sound and transform it into new instruments, styles, or genres using natural language prompts. Ideal for music production, cinematic sound design, and remixing.<br/>
+        /// Stable Audio 2.5. Tools to generate music and sound from text or audio, or transform existing audio clips into new compositions. For our most advanced audio model, see Stable Audio 3.0. Our different services include:<br/>
+        /// **Stable Audio 2.5**: Fast, Long-Form Music &amp; Audio Generation<br/>
+        /// Generates up to 3-minute, 44.1 kHz stereo compositions. Stable Audio 2.5 supports text-to-audio, audio-to-audio, and audio-inpaint workflows - allowing creators to upload a sound and transform it into new instruments, styles, or genres using natural language prompts. Ideal for music production, cinematic sound design, and remixing.<br/>
         /// **Stable Audio 2.0**: High-Quality Audio Generation<br/>
         /// Built for text-to-audio and audio-to-audio generation, also capable of generating up to 3-minute, 44.1 kHz stereo. Stable Audio 2.0 is great for ideation, music demos, and ambient soundscapes. It's optimized for creative professionals seeking detailed and extended outputs from simple prompts.<br/>
         /// Stable Audio models were exclusively trained on licensed data from the [AudioSparx](https://www.audiosparx.com/) music library, honoring opt-out requests and ensuring fair compensation for creators. Additionally, Stable Audio 2.5 was pre-trained on licensed data from [Freesound](https://freesound.org/). Read more about the model capabilities [here](https://stability.ai/news/stable-audio-2-0).

@@ -9,8 +9,6 @@ namespace StabilityAI
         /// The Search and Replace service is a specific version of inpainting that does not require a mask.<br/>
         /// Instead, users can leverage a `search_prompt` to identify an object in simple language to be replaced.<br/>
         /// The service will automatically segment the object and replace it with the object requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=0lDpGa2jAmAs)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -32,10 +30,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -80,7 +74,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<byte[]> CreateStableImageEditSearchAndReplaceAsBytesAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageEditSearchAndReplaceRequest request,
             global::StabilityAI.CreateStableImageEditSearchAndReplaceAccept? accept = default,
@@ -94,8 +87,6 @@ namespace StabilityAI
         /// The Search and Replace service is a specific version of inpainting that does not require a mask.<br/>
         /// Instead, users can leverage a `search_prompt` to identify an object in simple language to be replaced.<br/>
         /// The service will automatically segment the object and replace it with the object requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=0lDpGa2jAmAs)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -117,10 +108,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -165,7 +152,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStableImageEditSearchAndReplaceAsBytesAsStreamAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageEditSearchAndReplaceRequest request,
             global::StabilityAI.CreateStableImageEditSearchAndReplaceAccept? accept = default,
@@ -179,8 +165,6 @@ namespace StabilityAI
         /// The Search and Replace service is a specific version of inpainting that does not require a mask.<br/>
         /// Instead, users can leverage a `search_prompt` to identify an object in simple language to be replaced.<br/>
         /// The service will automatically segment the object and replace it with the object requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=0lDpGa2jAmAs)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -202,10 +186,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -250,7 +230,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateStableImageEditSearchAndReplaceAsBytesAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageEditSearchAndReplaceRequest request,
             global::StabilityAI.CreateStableImageEditSearchAndReplaceAccept? accept = default,
@@ -264,8 +243,6 @@ namespace StabilityAI
         /// The Search and Replace service is a specific version of inpainting that does not require a mask.<br/>
         /// Instead, users can leverage a `search_prompt` to identify an object in simple language to be replaced.<br/>
         /// The service will automatically segment the object and replace it with the object requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=0lDpGa2jAmAs)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -287,10 +264,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -368,7 +341,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<byte[]> CreateStableImageEditSearchAndReplaceAsBytesAsync(
-            string contentType,
             byte[] image,
             string imagename,
             string prompt,
@@ -390,8 +362,6 @@ namespace StabilityAI
         /// The Search and Replace service is a specific version of inpainting that does not require a mask.<br/>
         /// Instead, users can leverage a `search_prompt` to identify an object in simple language to be replaced.<br/>
         /// The service will automatically segment the object and replace it with the object requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=0lDpGa2jAmAs)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -413,10 +383,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -517,7 +483,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<byte[]> CreateStableImageEditSearchAndReplaceAsBytesAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -538,8 +503,6 @@ namespace StabilityAI
         /// The Search and Replace service is a specific version of inpainting that does not require a mask.<br/>
         /// Instead, users can leverage a `search_prompt` to identify an object in simple language to be replaced.<br/>
         /// The service will automatically segment the object and replace it with the object requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=0lDpGa2jAmAs)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -561,10 +524,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -665,7 +624,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::System.IO.Stream> CreateStableImageEditSearchAndReplaceAsBytesAsStreamAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,
@@ -686,8 +644,6 @@ namespace StabilityAI
         /// The Search and Replace service is a specific version of inpainting that does not require a mask.<br/>
         /// Instead, users can leverage a `search_prompt` to identify an object in simple language to be replaced.<br/>
         /// The service will automatically segment the object and replace it with the object requested in the prompt.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=0lDpGa2jAmAs)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -709,10 +665,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 5 credits per successful generation.  You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="accept">
         /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
         /// Default Value: image/*
@@ -813,7 +765,6 @@ namespace StabilityAI
         ///     raise Exception(str(response.json()))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<byte[]>> CreateStableImageEditSearchAndReplaceAsBytesAsResponseAsync(
-            string contentType,
             global::System.IO.Stream image,
             string imagename,
             string prompt,

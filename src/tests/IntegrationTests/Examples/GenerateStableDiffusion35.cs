@@ -16,7 +16,6 @@ public partial class Tests
         using var client = GetAuthenticatedClient();
 
         var response = await client.Generate.CreateStableImageGenerateSd3Async(
-            contentType: "multipart/form-data",
             accept: CreateStableImageGenerateSd3Accept.ApplicationJson,
             request: new CreateStableImageGenerateSd3Request
             {

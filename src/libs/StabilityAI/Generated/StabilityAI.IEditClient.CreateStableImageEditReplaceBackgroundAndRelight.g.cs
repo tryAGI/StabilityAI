@@ -16,8 +16,6 @@ namespace StabilityAI
         ///   - Relighting: Adjust lighting in images that are under or overexposed.<br/>
         ///   - Flexible Inputs: Use your own background image or generate one.<br/>
         ///   - Lighting Adjustments: Modify light reference, direction, and strength.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -43,10 +41,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -82,7 +76,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateStableImageEditReplaceBackgroundAndRelightAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageEditReplaceBackgroundAndRelightRequest request,
             string? stabilityClientId = default,
@@ -102,8 +95,6 @@ namespace StabilityAI
         ///   - Relighting: Adjust lighting in images that are under or overexposed.<br/>
         ///   - Flexible Inputs: Use your own background image or generate one.<br/>
         ///   - Lighting Adjustments: Modify light reference, direction, and strength.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -129,10 +120,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -168,7 +155,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateStableImageEditReplaceBackgroundAndRelightAsResponseAsync(
-            string contentType,
 
             global::StabilityAI.CreateStableImageEditReplaceBackgroundAndRelightRequest request,
             string? stabilityClientId = default,
@@ -188,8 +174,6 @@ namespace StabilityAI
         ///   - Relighting: Adjust lighting in images that are under or overexposed.<br/>
         ///   - Flexible Inputs: Use your own background image or generate one.<br/>
         ///   - Lighting Adjustments: Modify light reference, direction, and strength.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -215,10 +199,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -356,7 +336,6 @@ namespace StabilityAI
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::System.InvalidOperationException"></exception>
         global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateStableImageEditReplaceBackgroundAndRelightAsync(
-            string contentType,
             byte[] subjectImage,
             string subjectImagename,
             string? stabilityClientId = default,
@@ -391,8 +370,6 @@ namespace StabilityAI
         ///   - Relighting: Adjust lighting in images that are under or overexposed.<br/>
         ///   - Flexible Inputs: Use your own background image or generate one.<br/>
         ///   - Lighting Adjustments: Modify light reference, direction, and strength.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -418,10 +395,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -577,7 +550,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AsyncGenerationResponse> CreateStableImageEditReplaceBackgroundAndRelightAsync(
-            string contentType,
             global::System.IO.Stream subjectImage,
             string subjectImagename,
             string? stabilityClientId = default,
@@ -611,8 +583,6 @@ namespace StabilityAI
         ///   - Relighting: Adjust lighting in images that are under or overexposed.<br/>
         ///   - Flexible Inputs: Use your own background image or generate one.<br/>
         ///   - Lighting Adjustments: Modify light reference, direction, and strength.<br/>
-        /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Image_API_Public.ipynb#scrollTo=mtgSh4Stj3l)<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -638,10 +608,6 @@ namespace StabilityAI
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
-        /// <param name="contentType">
-        /// The content type of the request body. Do not manually specify this header; your HTTP client library will automatically include the appropriate boundary parameter.<br/>
-        /// Example: multipart/form-data
-        /// </param>
         /// <param name="stabilityClientId">
         /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
         /// Example: my-awesome-app
@@ -797,7 +763,6 @@ namespace StabilityAI
         /// print("Generation ID:", response.json().get('id'))
         /// </remarks>
         global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AsyncGenerationResponse>> CreateStableImageEditReplaceBackgroundAndRelightAsResponseAsync(
-            string contentType,
             global::System.IO.Stream subjectImage,
             string subjectImagename,
             string? stabilityClientId = default,
