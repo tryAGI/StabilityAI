@@ -22,7 +22,7 @@ namespace StabilityAI
         /// Read more about the model capabilities [here](https://stability.ai/news/introducing-stable-diffusion-3-5).<br/>
         /// As of April 17, 2025, we have deprecated the Stable Diffusion 3.0 APIs and will be automatically<br/>
         /// re-routing calls to Stable Diffusion 3.0 models to Stable Diffusion 3.5 APIs at no extra cost.<br/>
-        /// You can read more in the [release notes](/docs/release-notes#api-deprecation-notice).<br/>
+        /// You can read more in the [release notes](https://docs.stability.ai/release-notes).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -126,7 +126,7 @@ namespace StabilityAI
         /// Read more about the model capabilities [here](https://stability.ai/news/introducing-stable-diffusion-3-5).<br/>
         /// As of April 17, 2025, we have deprecated the Stable Diffusion 3.0 APIs and will be automatically<br/>
         /// re-routing calls to Stable Diffusion 3.0 models to Stable Diffusion 3.5 APIs at no extra cost.<br/>
-        /// You can read more in the [release notes](/docs/release-notes#api-deprecation-notice).<br/>
+        /// You can read more in the [release notes](https://docs.stability.ai/release-notes).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -230,7 +230,7 @@ namespace StabilityAI
         /// Read more about the model capabilities [here](https://stability.ai/news/introducing-stable-diffusion-3-5).<br/>
         /// As of April 17, 2025, we have deprecated the Stable Diffusion 3.0 APIs and will be automatically<br/>
         /// re-routing calls to Stable Diffusion 3.0 models to Stable Diffusion 3.5 APIs at no extra cost.<br/>
-        /// You can read more in the [release notes](/docs/release-notes#api-deprecation-notice).<br/>
+        /// You can read more in the [release notes](https://docs.stability.ai/release-notes).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>

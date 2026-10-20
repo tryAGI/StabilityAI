@@ -56,9 +56,8 @@ namespace StabilityAI
         /// [Audio to Audio Guide](https://www.stableaudio.com/user-guide/audio-to-audio) to maximize creative control.<br/>
         /// Read more about the model capabilities [here](https://stability.ai/news-updates).<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb)<br/>
-        /// or try Stable Audio for free at [stableaudio.com](https://stableaudio.com).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// This endpoint is asynchronous — it returns a generation `id` immediately (HTTP 202).<br/>
         /// Poll `GET /v2beta/audio/results/{id}` to retrieve the result.<br/>
         /// &gt; **Note:**<br/>
@@ -150,9 +149,8 @@ namespace StabilityAI
         /// [Audio to Audio Guide](https://www.stableaudio.com/user-guide/audio-to-audio) to maximize creative control.<br/>
         /// Read more about the model capabilities [here](https://stability.ai/news-updates).<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb)<br/>
-        /// or try Stable Audio for free at [stableaudio.com](https://stableaudio.com).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// This endpoint is asynchronous — it returns a generation `id` immediately (HTTP 202).<br/>
         /// Poll `GET /v2beta/audio/results/{id}` to retrieve the result.<br/>
         /// &gt; **Note:**<br/>
@@ -893,9 +891,8 @@ namespace StabilityAI
         /// [Audio to Audio Guide](https://www.stableaudio.com/user-guide/audio-to-audio) to maximize creative control.<br/>
         /// Read more about the model capabilities [here](https://stability.ai/news-updates).<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb)<br/>
-        /// or try Stable Audio for free at [stableaudio.com](https://stableaudio.com).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// This endpoint is asynchronous — it returns a generation `id` immediately (HTTP 202).<br/>
         /// Poll `GET /v2beta/audio/results/{id}` to retrieve the result.<br/>
         /// &gt; **Note:**<br/>
@@ -1030,9 +1027,8 @@ namespace StabilityAI
         /// [Audio to Audio Guide](https://www.stableaudio.com/user-guide/audio-to-audio) to maximize creative control.<br/>
         /// Read more about the model capabilities [here](https://stability.ai/news-updates).<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb)<br/>
-        /// or try Stable Audio for free at [stableaudio.com](https://stableaudio.com).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// This endpoint is asynchronous — it returns a generation `id` immediately (HTTP 202).<br/>
         /// Poll `GET /v2beta/audio/results/{id}` to retrieve the result.<br/>
         /// &gt; **Note:**<br/>
@@ -1841,9 +1837,8 @@ namespace StabilityAI
         /// [Audio to Audio Guide](https://www.stableaudio.com/user-guide/audio-to-audio) to maximize creative control.<br/>
         /// Read more about the model capabilities [here](https://stability.ai/news-updates).<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb)<br/>
-        /// or try Stable Audio for free at [stableaudio.com](https://stableaudio.com).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// This endpoint is asynchronous — it returns a generation `id` immediately (HTTP 202).<br/>
         /// Poll `GET /v2beta/audio/results/{id}` to retrieve the result.<br/>
         /// &gt; **Note:**<br/>

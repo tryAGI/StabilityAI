@@ -37,7 +37,7 @@ namespace StabilityAI
         /// &gt; **Note:** for more details about these parameters please see the request schema below.<br/>
         /// ### Results<br/>
         /// After invoking this endpoint with the required parameters, use the `id` in the response to poll for results at the<br/>
-        /// [results/{id} endpoint](#tag/Results/paths/~1v2beta~1results~1%7Bid%7D/get).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.<br/>
+        /// [results/{id} endpoint](https://docs.stability.ai/api-reference/results/fetch-async-generation-result).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.<br/>
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
@@ -116,7 +116,7 @@ namespace StabilityAI
         /// &gt; **Note:** for more details about these parameters please see the request schema below.<br/>
         /// ### Results<br/>
         /// After invoking this endpoint with the required parameters, use the `id` in the response to poll for results at the<br/>
-        /// [results/{id} endpoint](#tag/Results/paths/~1v2beta~1results~1%7Bid%7D/get).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.<br/>
+        /// [results/{id} endpoint](https://docs.stability.ai/api-reference/results/fetch-async-generation-result).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.<br/>
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
@@ -195,7 +195,7 @@ namespace StabilityAI
         /// &gt; **Note:** for more details about these parameters please see the request schema below.<br/>
         /// ### Results<br/>
         /// After invoking this endpoint with the required parameters, use the `id` in the response to poll for results at the<br/>
-        /// [results/{id} endpoint](#tag/Results/paths/~1v2beta~1results~1%7Bid%7D/get).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.<br/>
+        /// [results/{id} endpoint](https://docs.stability.ai/api-reference/results/fetch-async-generation-result).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.<br/>
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
@@ -391,7 +391,7 @@ namespace StabilityAI
         /// &gt; **Note:** for more details about these parameters please see the request schema below.<br/>
         /// ### Results<br/>
         /// After invoking this endpoint with the required parameters, use the `id` in the response to poll for results at the<br/>
-        /// [results/{id} endpoint](#tag/Results/paths/~1v2beta~1results~1%7Bid%7D/get).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.<br/>
+        /// [results/{id} endpoint](https://docs.stability.ai/api-reference/results/fetch-async-generation-result).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.<br/>
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>
@@ -604,7 +604,7 @@ namespace StabilityAI
         /// &gt; **Note:** for more details about these parameters please see the request schema below.<br/>
         /// ### Results<br/>
         /// After invoking this endpoint with the required parameters, use the `id` in the response to poll for results at the<br/>
-        /// [results/{id} endpoint](#tag/Results/paths/~1v2beta~1results~1%7Bid%7D/get).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.<br/>
+        /// [results/{id} endpoint](https://docs.stability.ai/api-reference/results/fetch-async-generation-result).  Rate-limiting or other errors may occur if you poll more than once every 10 seconds.<br/>
         /// ### Credits<br/>
         /// Flat rate of 8 credits per successful generation. You will not be charged for failed generations.
         /// </summary>

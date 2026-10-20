@@ -47,7 +47,7 @@ namespace StabilityAI
         /// generally, it can upscale images ~20-40x times while preserving, and often enhancing, quality.<br/>
         /// ### How to use<br/>
         ///   - Invoke this endpoint with the required parameters to start a generation<br/>
-        ///   - Use that `id` in the response to poll for results at the [upscale/result/{id}](#tag/v2alphageneration/paths/~1v2alpha~1generation~1stable-image~1upscale~1result~1%7Bid%7D/get) endpoint<br/>
+        ///   - Use that `id` in the response to poll for results at the [upscale/result/{id}](https://docs.stability.ai/api-reference/results/fetch-async-generation-result) endpoint<br/>
         ///     - Rate-limiting or other errors may occur if you poll more than once every 10 seconds<br/>
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
@@ -94,7 +94,7 @@ namespace StabilityAI
         /// generally, it can upscale images ~20-40x times while preserving, and often enhancing, quality.<br/>
         /// ### How to use<br/>
         ///   - Invoke this endpoint with the required parameters to start a generation<br/>
-        ///   - Use that `id` in the response to poll for results at the [upscale/result/{id}](#tag/v2alphageneration/paths/~1v2alpha~1generation~1stable-image~1upscale~1result~1%7Bid%7D/get) endpoint<br/>
+        ///   - Use that `id` in the response to poll for results at the [upscale/result/{id}](https://docs.stability.ai/api-reference/results/fetch-async-generation-result) endpoint<br/>
         ///     - Rate-limiting or other errors may occur if you poll more than once every 10 seconds<br/>
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
@@ -679,7 +679,7 @@ namespace StabilityAI
         /// generally, it can upscale images ~20-40x times while preserving, and often enhancing, quality.<br/>
         /// ### How to use<br/>
         ///   - Invoke this endpoint with the required parameters to start a generation<br/>
-        ///   - Use that `id` in the response to poll for results at the [upscale/result/{id}](#tag/v2alphageneration/paths/~1v2alpha~1generation~1stable-image~1upscale~1result~1%7Bid%7D/get) endpoint<br/>
+        ///   - Use that `id` in the response to poll for results at the [upscale/result/{id}](https://docs.stability.ai/api-reference/results/fetch-async-generation-result) endpoint<br/>
         ///     - Rate-limiting or other errors may occur if you poll more than once every 10 seconds<br/>
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
@@ -773,7 +773,7 @@ namespace StabilityAI
         /// generally, it can upscale images ~20-40x times while preserving, and often enhancing, quality.<br/>
         /// ### How to use<br/>
         ///   - Invoke this endpoint with the required parameters to start a generation<br/>
-        ///   - Use that `id` in the response to poll for results at the [upscale/result/{id}](#tag/v2alphageneration/paths/~1v2alpha~1generation~1stable-image~1upscale~1result~1%7Bid%7D/get) endpoint<br/>
+        ///   - Use that `id` in the response to poll for results at the [upscale/result/{id}](https://docs.stability.ai/api-reference/results/fetch-async-generation-result) endpoint<br/>
         ///     - Rate-limiting or other errors may occur if you poll more than once every 10 seconds<br/>
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.
@@ -1416,7 +1416,7 @@ namespace StabilityAI
         /// generally, it can upscale images ~20-40x times while preserving, and often enhancing, quality.<br/>
         /// ### How to use<br/>
         ///   - Invoke this endpoint with the required parameters to start a generation<br/>
-        ///   - Use that `id` in the response to poll for results at the [upscale/result/{id}](#tag/v2alphageneration/paths/~1v2alpha~1generation~1stable-image~1upscale~1result~1%7Bid%7D/get) endpoint<br/>
+        ///   - Use that `id` in the response to poll for results at the [upscale/result/{id}](https://docs.stability.ai/api-reference/results/fetch-async-generation-result) endpoint<br/>
         ///     - Rate-limiting or other errors may occur if you poll more than once every 10 seconds<br/>
         /// ### Price<br/>
         /// Flat rate of 25 cents per generation.

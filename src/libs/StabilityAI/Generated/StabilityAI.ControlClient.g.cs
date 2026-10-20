@@ -5,11 +5,11 @@ namespace StabilityAI
 {
     /// <summary>
     /// Tools for generating precise, controlled variations of existing images or sketches.<br/>
-    /// **[Sketch](/docs/api-reference#tag/Control/paths/~1v2beta~1stable-image~1control~1sketch/post)**<br/>
+    /// **[Sketch](https://docs.stability.ai/api-reference/control/sketch)**<br/>
     /// This service upgrades sketches to refined outputs with precise control. For non-sketch images, it allows detailed manipulation of the final appearance by leveraging the contour lines and edges within the image.<br/>
-    /// **[Structure](/docs/api-reference#tag/Control/paths/~1v2beta~1stable-image~1control~1structure/post)**<br/>
+    /// **[Structure](https://docs.stability.ai/api-reference/control/structure)**<br/>
     /// This service excels in generating images by maintaining the structure of an input image, making it especially valuable for advanced content creation scenarios such as recreating scenes or rendering characters from models.<br/>
-    /// **[Style](/docs/api-reference#tag/Control/paths/~1v2beta~1stable-image~1control~1style/post)**<br/>
+    /// **[Style](https://docs.stability.ai/api-reference/control/style-guide)**<br/>
     /// This service extracts stylistic elements from an input image (control image) and uses it to guide the creation of an output image based on the prompt. The result is a new image in the same style as the control image.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.

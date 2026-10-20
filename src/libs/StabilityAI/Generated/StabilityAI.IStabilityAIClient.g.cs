@@ -63,39 +63,39 @@ namespace StabilityAI
 
         /// <summary>
         /// Tools for generating precise, controlled variations of existing images or sketches.<br/>
-        /// **[Sketch](/docs/api-reference#tag/Control/paths/~1v2beta~1stable-image~1control~1sketch/post)**<br/>
+        /// **[Sketch](https://docs.stability.ai/api-reference/control/sketch)**<br/>
         /// This service upgrades sketches to refined outputs with precise control. For non-sketch images, it allows detailed manipulation of the final appearance by leveraging the contour lines and edges within the image.<br/>
-        /// **[Structure](/docs/api-reference#tag/Control/paths/~1v2beta~1stable-image~1control~1structure/post)**<br/>
+        /// **[Structure](https://docs.stability.ai/api-reference/control/structure)**<br/>
         /// This service excels in generating images by maintaining the structure of an input image, making it especially valuable for advanced content creation scenarios such as recreating scenes or rendering characters from models.<br/>
-        /// **[Style](/docs/api-reference#tag/Control/paths/~1v2beta~1stable-image~1control~1style/post)**<br/>
+        /// **[Style](https://docs.stability.ai/api-reference/control/style-guide)**<br/>
         /// This service extracts stylistic elements from an input image (control image) and uses it to guide the creation of an output image based on the prompt. The result is a new image in the same style as the control image.
         /// </summary>
         public ControlClient Control { get; }
 
         /// <summary>
         /// Tools for editing your own and generated images.<br/>
-        /// **[Erase](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1erase/post)**<br/>
+        /// **[Erase](https://docs.stability.ai/api-reference/edit/erase)**<br/>
         /// The Erase service removes unwanted objects, such as blemishes on portraits or items on desks, using image masks.<br/>
-        /// **[Outpaint](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1outpaint/post)**<br/>
+        /// **[Outpaint](https://docs.stability.ai/api-reference/edit/outpaint)**<br/>
         /// The outpaint service inserts additional content in an image to fill in the space in any direction, allowing you to "zoom-out" of an image.<br/>
-        /// **[Inpaint](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1inpaint/post)**<br/>
+        /// **[Inpaint](https://docs.stability.ai/api-reference/edit/inpaint)**<br/>
         /// The Inpaint service modifies images by filling in or replacing specified areas with new content based on the content of a "mask" image.<br/>
-        /// **[Search and Replace](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1search-and-replace/post)**<br/>
+        /// **[Search and Replace](https://docs.stability.ai/api-reference/edit/search-and-replace)**<br/>
         /// The Search and Replace service, similar to inpaint, allows to replace specified areas with new content, but this time with the help of a prompt instead of a mask. The service will automatically segment the object and replace it with the object requested in the prompt.<br/>
-        /// **[Search and Recolor](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1search-and-recolor/post)**<br/>
+        /// **[Search and Recolor](https://docs.stability.ai/api-reference/edit/search-and-recolor)**<br/>
         /// The Search and Recolor service is another derivative of the inpaint service and provides the ability to change the color of a specific object in an image using a prompt. The Search and Recolor service will automatically segment the object and recolor it using the colors requested in the prompt.<br/>
-        /// **[Remove Background](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1remove-background/post)**<br/>
+        /// **[Remove Background](https://docs.stability.ai/api-reference/edit/remove-background)**<br/>
         /// The Remove Background service accurately segments the foreground from an image to removes the background.
         /// </summary>
         public EditClient Edit { get; }
 
         /// <summary>
         /// Tools to generate new images from text, or create variations of existing images. Our different services include:<br/>
-        /// **[Stable Image Ultra](/docs/api-reference#tag/Generate/paths/~1v2beta~1stable-image~1generate~1ultra/post)**: Photorealistic, Large-Scale Output<br/>
+        /// **[Stable Image Ultra](https://docs.stability.ai/api-reference/generate/stable-image-ultra)**: Photorealistic, Large-Scale Output<br/>
         /// Our state of the art text to image model based on Stable Diffusion 3.5. Stable Image Ultra Produces the highest quality, photorealistic outputs perfect for professional print media and large format applications. Stable Image Ultra excels at rendering exceptional detail and realism.<br/>
-        /// **[Stable Image Core](/docs/api-reference#tag/Generate/paths/~1v2beta~1stable-image~1generate~1core/post)**: Fast and Affordable<br/>
+        /// **[Stable Image Core](https://docs.stability.ai/api-reference/generate/stable-image-core)**: Fast and Affordable<br/>
         /// Optimized for fast and aﬀordable image generation, great for rapidly iterating on concepts during ideation. Stable Image Core is the next generation model following Stable Diffusion XL.<br/>
-        /// **[Stable Diffusion 3.5 Model Suite](/docs/api-reference#tag/Generate/paths/~1v2beta~1stable-image~1generate~1sd3/post)**: Stability AI's latest base models<br/>
+        /// **[Stable Diffusion 3.5 Model Suite](https://docs.stability.ai/api-reference/generate/stable-diffusion-35)**: Stability AI's latest base models<br/>
         /// The different versions of our open models are available via API, letting you test and adjust speed and quality based on your use case. All model versions strike a balance between generation speed and output quality and are ideal for creating high-volume, high-quality digital assets like websites, newsletters, and marketing materials.
         /// </summary>
         public GenerateClient Generate { get; }
@@ -125,11 +125,11 @@ namespace StabilityAI
 
         /// <summary>
         /// Tools for increasing the size and resolution of your existing images.<br/>
-        /// **[Fast Upscaler](/docs/api-reference#tag/Upscale/paths/~1v2beta~1stable-image~1upscale~1fast/post)**<br/>
+        /// **[Fast Upscaler](https://docs.stability.ai/api-reference/upscale/fast)**<br/>
         /// This service enhances image resolution by 4x using predictive and generative AI. This lightweight and fast service (processing in ~1 second) is ideal for enhancing the quality of compressed images, making it suitable for social media posts and other applications.<br/>
-        /// **[Conservative Upscaler](/docs/api-reference#tag/Upscale/paths/~1v2beta~1stable-image~1upscale~1conservative/post)**<br/>
+        /// **[Conservative Upscaler](https://docs.stability.ai/api-reference/upscale/conservative)**<br/>
         /// This service can upscale images by 20 to 40 times up to a 4 megapixel output image with minimal alteration to the original image. The Conservative Upscaler can upscale images as small as 64x64 pixels directly to a 4 megapixel output. Use this option if you directly need a 4 megapixel output.<br/>
-        /// **[Creative Upscaler](/docs/api-reference#tag/Upscale/paths/~1v2beta~1stable-image~1upscale~1creative/post)**<br/>
+        /// **[Creative Upscaler](https://docs.stability.ai/api-reference/upscale/creative-upscale-async)**<br/>
         /// The service can upscale highly degraded images (lower than 1 megapixel) with a creative twist to provide high resolution results.
         /// </summary>
         public UpscaleClient Upscale { get; }

@@ -11,9 +11,8 @@ namespace StabilityAI
         /// [Audio to Audio Guide](https://www.stableaudio.com/user-guide/audio-to-audio) to maximize creative control.<br/>
         /// Read more about the model capabilities [here](https://stability.ai/news/stable-audio-2-0).<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb)<br/>
-        /// or try Stable Audio 2.0 for free at [stableaudio.com](https://stableaudio.com).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -105,9 +104,8 @@ namespace StabilityAI
         /// [Audio to Audio Guide](https://www.stableaudio.com/user-guide/audio-to-audio) to maximize creative control.<br/>
         /// Read more about the model capabilities [here](https://stability.ai/news/stable-audio-2-0).<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb)<br/>
-        /// or try Stable Audio 2.0 for free at [stableaudio.com](https://stableaudio.com).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -199,9 +197,8 @@ namespace StabilityAI
         /// [Audio to Audio Guide](https://www.stableaudio.com/user-guide/audio-to-audio) to maximize creative control.<br/>
         /// Read more about the model capabilities [here](https://stability.ai/news/stable-audio-2-0).<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb)<br/>
-        /// or try Stable Audio 2.0 for free at [stableaudio.com](https://stableaudio.com).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -293,9 +290,8 @@ namespace StabilityAI
         /// [Audio to Audio Guide](https://www.stableaudio.com/user-guide/audio-to-audio) to maximize creative control.<br/>
         /// Read more about the model capabilities [here](https://stability.ai/news/stable-audio-2-0).<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb)<br/>
-        /// or try Stable Audio 2.0 for free at [stableaudio.com](https://stableaudio.com).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -435,9 +431,8 @@ namespace StabilityAI
         /// [Audio to Audio Guide](https://www.stableaudio.com/user-guide/audio-to-audio) to maximize creative control.<br/>
         /// Read more about the model capabilities [here](https://stability.ai/news/stable-audio-2-0).<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb)<br/>
-        /// or try Stable Audio 2.0 for free at [stableaudio.com](https://stableaudio.com).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -597,9 +592,8 @@ namespace StabilityAI
         /// [Audio to Audio Guide](https://www.stableaudio.com/user-guide/audio-to-audio) to maximize creative control.<br/>
         /// Read more about the model capabilities [here](https://stability.ai/news/stable-audio-2-0).<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb)<br/>
-        /// or try Stable Audio 2.0 for free at [stableaudio.com](https://stableaudio.com).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -759,9 +753,8 @@ namespace StabilityAI
         /// [Audio to Audio Guide](https://www.stableaudio.com/user-guide/audio-to-audio) to maximize creative control.<br/>
         /// Read more about the model capabilities [here](https://stability.ai/news/stable-audio-2-0).<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb)<br/>
-        /// or try Stable Audio 2.0 for free at [stableaudio.com](https://stableaudio.com).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
