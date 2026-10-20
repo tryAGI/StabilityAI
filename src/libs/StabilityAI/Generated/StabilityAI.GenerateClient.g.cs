@@ -41,14 +41,14 @@ namespace StabilityAI
         /// <inheritdoc/>
         public global::StabilityAI.AutoSDKClientOptions Options { get; }
 
-        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::StabilityAI.GenerateSourceGenerationContext.Default);
+        internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext>? JsonSerializerContextProvider { get; set; }
 
         /// <summary>
         ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
-            get => JsonSerializerContextProvider.Value;
+            get => JsonSerializerContextProvider?.Value ?? global::StabilityAI.GenerateSourceGenerationContext.Default;
             set => JsonSerializerContextProvider = new(() => value);
         }
 
