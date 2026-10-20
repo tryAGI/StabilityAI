@@ -5,17 +5,17 @@ namespace StabilityAI
 {
     /// <summary>
     /// Tools for editing your own and generated images.<br/>
-    /// **[Erase](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1erase/post)**<br/>
+    /// **[Erase](https://docs.stability.ai/api-reference/edit/erase)**<br/>
     /// The Erase service removes unwanted objects, such as blemishes on portraits or items on desks, using image masks.<br/>
-    /// **[Outpaint](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1outpaint/post)**<br/>
+    /// **[Outpaint](https://docs.stability.ai/api-reference/edit/outpaint)**<br/>
     /// The outpaint service inserts additional content in an image to fill in the space in any direction, allowing you to "zoom-out" of an image.<br/>
-    /// **[Inpaint](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1inpaint/post)**<br/>
+    /// **[Inpaint](https://docs.stability.ai/api-reference/edit/inpaint)**<br/>
     /// The Inpaint service modifies images by filling in or replacing specified areas with new content based on the content of a "mask" image.<br/>
-    /// **[Search and Replace](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1search-and-replace/post)**<br/>
+    /// **[Search and Replace](https://docs.stability.ai/api-reference/edit/search-and-replace)**<br/>
     /// The Search and Replace service, similar to inpaint, allows to replace specified areas with new content, but this time with the help of a prompt instead of a mask. The service will automatically segment the object and replace it with the object requested in the prompt.<br/>
-    /// **[Search and Recolor](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1search-and-recolor/post)**<br/>
+    /// **[Search and Recolor](https://docs.stability.ai/api-reference/edit/search-and-recolor)**<br/>
     /// The Search and Recolor service is another derivative of the inpaint service and provides the ability to change the color of a specific object in an image using a prompt. The Search and Recolor service will automatically segment the object and recolor it using the colors requested in the prompt.<br/>
-    /// **[Remove Background](/docs/api-reference#tag/Edit/paths/~1v2beta~1stable-image~1edit~1remove-background/post)**<br/>
+    /// **[Remove Background](https://docs.stability.ai/api-reference/edit/remove-background)**<br/>
     /// The Remove Background service accurately segments the foreground from an image to removes the background.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.

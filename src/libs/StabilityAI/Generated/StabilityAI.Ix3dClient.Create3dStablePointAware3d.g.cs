@@ -10,7 +10,7 @@ namespace StabilityAI
         /// of a 3D object from a single image in a few seconds. SPAR3D combines the strengths of<br/>
         /// point-cloud diffusion (probabilistic) and mesh regression (deterministic) to have improved<br/>
         /// details on the unseen back regions in the input image.<br/>
-        /// Compared to our previous model [Stable Fast 3D](#tag/3D/paths/~1v2beta~13d~1stable-fast-3d/post), this new<br/>
+        /// Compared to our previous model [Stable Fast 3D](https://docs.stability.ai/api-reference/3d/stable-fast-3d), this new<br/>
         /// one allows editing of backside information using the point cloud representation and also<br/>
         /// leverages a larger Diffusion model to generally improve the depth and backside<br/>
         /// predictions.<br/>
@@ -86,7 +86,7 @@ namespace StabilityAI
         /// of a 3D object from a single image in a few seconds. SPAR3D combines the strengths of<br/>
         /// point-cloud diffusion (probabilistic) and mesh regression (deterministic) to have improved<br/>
         /// details on the unseen back regions in the input image.<br/>
-        /// Compared to our previous model [Stable Fast 3D](#tag/3D/paths/~1v2beta~13d~1stable-fast-3d/post), this new<br/>
+        /// Compared to our previous model [Stable Fast 3D](https://docs.stability.ai/api-reference/3d/stable-fast-3d), this new<br/>
         /// one allows editing of backside information using the point cloud representation and also<br/>
         /// leverages a larger Diffusion model to generally improve the depth and backside<br/>
         /// predictions.<br/>
@@ -162,7 +162,7 @@ namespace StabilityAI
         /// of a 3D object from a single image in a few seconds. SPAR3D combines the strengths of<br/>
         /// point-cloud diffusion (probabilistic) and mesh regression (deterministic) to have improved<br/>
         /// details on the unseen back regions in the input image.<br/>
-        /// Compared to our previous model [Stable Fast 3D](#tag/3D/paths/~1v2beta~13d~1stable-fast-3d/post), this new<br/>
+        /// Compared to our previous model [Stable Fast 3D](https://docs.stability.ai/api-reference/3d/stable-fast-3d), this new<br/>
         /// one allows editing of backside information using the point cloud representation and also<br/>
         /// leverages a larger Diffusion model to generally improve the depth and backside<br/>
         /// predictions.<br/>
@@ -238,7 +238,7 @@ namespace StabilityAI
         /// of a 3D object from a single image in a few seconds. SPAR3D combines the strengths of<br/>
         /// point-cloud diffusion (probabilistic) and mesh regression (deterministic) to have improved<br/>
         /// details on the unseen back regions in the input image.<br/>
-        /// Compared to our previous model [Stable Fast 3D](#tag/3D/paths/~1v2beta~13d~1stable-fast-3d/post), this new<br/>
+        /// Compared to our previous model [Stable Fast 3D](https://docs.stability.ai/api-reference/3d/stable-fast-3d), this new<br/>
         /// one allows editing of backside information using the point cloud representation and also<br/>
         /// leverages a larger Diffusion model to generally improve the depth and backside<br/>
         /// predictions.<br/>
@@ -372,7 +372,7 @@ namespace StabilityAI
         /// of a 3D object from a single image in a few seconds. SPAR3D combines the strengths of<br/>
         /// point-cloud diffusion (probabilistic) and mesh regression (deterministic) to have improved<br/>
         /// details on the unseen back regions in the input image.<br/>
-        /// Compared to our previous model [Stable Fast 3D](#tag/3D/paths/~1v2beta~13d~1stable-fast-3d/post), this new<br/>
+        /// Compared to our previous model [Stable Fast 3D](https://docs.stability.ai/api-reference/3d/stable-fast-3d), this new<br/>
         /// one allows editing of backside information using the point cloud representation and also<br/>
         /// leverages a larger Diffusion model to generally improve the depth and backside<br/>
         /// predictions.<br/>
@@ -523,7 +523,7 @@ namespace StabilityAI
         /// of a 3D object from a single image in a few seconds. SPAR3D combines the strengths of<br/>
         /// point-cloud diffusion (probabilistic) and mesh regression (deterministic) to have improved<br/>
         /// details on the unseen back regions in the input image.<br/>
-        /// Compared to our previous model [Stable Fast 3D](#tag/3D/paths/~1v2beta~13d~1stable-fast-3d/post), this new<br/>
+        /// Compared to our previous model [Stable Fast 3D](https://docs.stability.ai/api-reference/3d/stable-fast-3d), this new<br/>
         /// one allows editing of backside information using the point cloud representation and also<br/>
         /// leverages a larger Diffusion model to generally improve the depth and backside<br/>
         /// predictions.<br/>
@@ -674,7 +674,7 @@ namespace StabilityAI
         /// of a 3D object from a single image in a few seconds. SPAR3D combines the strengths of<br/>
         /// point-cloud diffusion (probabilistic) and mesh regression (deterministic) to have improved<br/>
         /// details on the unseen back regions in the input image.<br/>
-        /// Compared to our previous model [Stable Fast 3D](#tag/3D/paths/~1v2beta~13d~1stable-fast-3d/post), this new<br/>
+        /// Compared to our previous model [Stable Fast 3D](https://docs.stability.ai/api-reference/3d/stable-fast-3d), this new<br/>
         /// one allows editing of backside information using the point cloud representation and also<br/>
         /// leverages a larger Diffusion model to generally improve the depth and backside<br/>
         /// predictions.<br/>

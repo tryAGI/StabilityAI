@@ -9,8 +9,8 @@ namespace StabilityAI
         /// Stable Audio 2.5 transforms existing audio samples into new high-quality compositions up to three minutes<br/>
         /// long at 44.1kHz stereo using text instructions.<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -91,8 +91,8 @@ namespace StabilityAI
         /// Stable Audio 2.5 transforms existing audio samples into new high-quality compositions up to three minutes<br/>
         /// long at 44.1kHz stereo using text instructions.<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -173,8 +173,8 @@ namespace StabilityAI
         /// Stable Audio 2.5 transforms existing audio samples into new high-quality compositions up to three minutes<br/>
         /// long at 44.1kHz stereo using text instructions.<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -288,8 +288,8 @@ namespace StabilityAI
         /// Stable Audio 2.5 transforms existing audio samples into new high-quality compositions up to three minutes<br/>
         /// long at 44.1kHz stereo using text instructions.<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
@@ -422,8 +422,8 @@ namespace StabilityAI
         /// Stable Audio 2.5 transforms existing audio samples into new high-quality compositions up to three minutes<br/>
         /// long at 44.1kHz stereo using text instructions.<br/>
         /// ### Try it out<br/>
-        /// Grab your [API key](https://platform.stability.ai/account/keys) and head over to<br/>
-        /// [![Open Google Colab](https://platform.stability.ai/svg/google-colab.svg)](https://colab.research.google.com/github/stability-ai/stability-sdk/blob/main/nbs/Stable_Audio_API.ipynb).<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
         /// ### How to use<br/>
         /// Please invoke this endpoint with a `POST` request.<br/>
         /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>

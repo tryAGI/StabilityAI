@@ -5,11 +5,11 @@ namespace StabilityAI
 {
     /// <summary>
     /// Tools to generate new images from text, or create variations of existing images. Our different services include:<br/>
-    /// **[Stable Image Ultra](/docs/api-reference#tag/Generate/paths/~1v2beta~1stable-image~1generate~1ultra/post)**: Photorealistic, Large-Scale Output<br/>
+    /// **[Stable Image Ultra](https://docs.stability.ai/api-reference/generate/stable-image-ultra)**: Photorealistic, Large-Scale Output<br/>
     /// Our state of the art text to image model based on Stable Diffusion 3.5. Stable Image Ultra Produces the highest quality, photorealistic outputs perfect for professional print media and large format applications. Stable Image Ultra excels at rendering exceptional detail and realism.<br/>
-    /// **[Stable Image Core](/docs/api-reference#tag/Generate/paths/~1v2beta~1stable-image~1generate~1core/post)**: Fast and Affordable<br/>
+    /// **[Stable Image Core](https://docs.stability.ai/api-reference/generate/stable-image-core)**: Fast and Affordable<br/>
     /// Optimized for fast and aﬀordable image generation, great for rapidly iterating on concepts during ideation. Stable Image Core is the next generation model following Stable Diffusion XL.<br/>
-    /// **[Stable Diffusion 3.5 Model Suite](/docs/api-reference#tag/Generate/paths/~1v2beta~1stable-image~1generate~1sd3/post)**: Stability AI's latest base models<br/>
+    /// **[Stable Diffusion 3.5 Model Suite](https://docs.stability.ai/api-reference/generate/stable-diffusion-35)**: Stability AI's latest base models<br/>
     /// The different versions of our open models are available via API, letting you test and adjust speed and quality based on your use case. All model versions strike a balance between generation speed and output quality and are ideal for creating high-volume, high-quality digital assets like websites, newsletters, and marketing materials.<br/>
     /// If no httpClient is provided, a new one will be created.<br/>
     /// If no baseUri is provided, the default baseUri from OpenAPI spec will be used.
