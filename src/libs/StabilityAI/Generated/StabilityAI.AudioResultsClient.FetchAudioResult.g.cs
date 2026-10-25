@@ -6,6 +6,38 @@ namespace StabilityAI
     public partial class AudioResultsClient
     {
 
+        /// <summary>
+        /// A successful outcome selected by the actual HTTP status and media type.
+        /// Dispose this result after consuming its binary body to release the HTTP response.
+        /// </summary>
+        public sealed class FetchAudioResultResult : global::StabilityAI.AutoSDKHttpResponse, global::System.IDisposable
+        {
+            internal FetchAudioResultResult(
+                global::System.Net.HttpStatusCode statusCode,
+                global::System.Collections.Generic.Dictionary<string, global::System.Collections.Generic.IEnumerable<string>> headers,
+                global::System.Uri? requestUri,
+                global::System.IO.Stream? body0 = default,
+                global::StabilityAI.AudioJSONResponse? body1 = default,
+                global::StabilityAI.FetchAudioResultResponse? body2 = default)
+                : base(statusCode, headers, requestUri)
+            {
+                Body200Variant0 = body0;
+                Body200Variant1 = body1;
+                Body202 = body2;
+            }
+            /// <summary>Gets the body for HTTP 200; null for other outcomes.</summary>
+            public global::System.IO.Stream? Body200Variant0 { get; }
+            /// <summary>Gets the body for HTTP 200; null for other outcomes.</summary>
+            public global::StabilityAI.AudioJSONResponse? Body200Variant1 { get; }
+            /// <summary>Gets the body for HTTP 202; null for other outcomes.</summary>
+            public global::StabilityAI.FetchAudioResultResponse? Body202 { get; }
+            /// <summary>Releases the binary response stream, if present.</summary>
+            public void Dispose()
+            {
+                Body200Variant0?.Dispose();
+            }
+        }
+
 
         private static readonly global::StabilityAI.EndPointSecurityRequirement s_FetchAudioResultSecurityRequirement0 =
             new global::StabilityAI.EndPointSecurityRequirement
@@ -47,7 +79,7 @@ namespace StabilityAI
         partial void ProcessFetchAudioResultResponseContent(
             global::System.Net.Http.HttpClient httpClient,
             global::System.Net.Http.HttpResponseMessage httpResponseMessage,
-            ref string content);
+            ref byte[] content);
 
         /// <summary>
         /// Fetch Audio Result<br/>
@@ -94,7 +126,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(result.json()))
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::StabilityAI.AudioJSONResponse> FetchAudioResultAsync(
+        public async global::System.Threading.Tasks.Task<global::StabilityAI.AudioResultsClient.FetchAudioResultResult> FetchAudioResultAsync(
             string id,
             global::StabilityAI.FetchAudioResultAccept? accept = default,
             string? stabilityClientId = default,
@@ -160,7 +192,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(result.json()))
         /// </remarks>
-        public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AudioJSONResponse>> FetchAudioResultAsResponseAsync(
+        public async global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AudioResultsClient.FetchAudioResultResult>> FetchAudioResultAsResponseAsync(
             string id,
             global::StabilityAI.FetchAudioResultAccept? accept = default,
             string? stabilityClientId = default,
@@ -217,10 +249,6 @@ namespace StabilityAI
                 __httpRequest.Version = global::System.Net.HttpVersion.Version11;
                 __httpRequest.VersionPolicy = global::System.Net.Http.HttpVersionPolicy.RequestVersionOrHigher;
 #endif
-
-                __httpRequest.Headers.TryAddWithoutValidation(
-                    "Accept",
-                    "application/json");
 
             foreach (var __authorization in __authorizations)
             {
@@ -308,7 +336,7 @@ namespace StabilityAI
                     {
                         __response = await HttpClient.SendAsync(
                 request: __httpRequest,
-                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseContentRead,
+                completionOption: global::System.Net.Http.HttpCompletionOption.ResponseHeadersRead,
                 cancellationToken: __effectiveCancellationToken).ConfigureAwait(false);
                     }
                     catch (global::System.Net.Http.HttpRequestException __exception)
@@ -397,7 +425,7 @@ namespace StabilityAI
                     throw new global::System.InvalidOperationException("No response received.");
                 }
 
-                using (__response)
+                try
                 {
 
                 ProcessResponse(
@@ -562,94 +590,97 @@ namespace StabilityAI
                                         h => h.Value));
                             }
 
-                            if (__effectiveReadResponseAsString)
+                            if (!__response.IsSuccessStatusCode)
+                            {
+                                var __errorContent = await __response.Content.ReadAsStringAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+                                throw global::StabilityAI.ApiException.Create(
+                                    statusCode: __response.StatusCode,
+                                    message: __errorContent,
+                                    innerException: null,
+                                    responseBody: __errorContent,
+                                    responseHeaders: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response));
+                            }
+                            var __mediaType = __response.Content.Headers.ContentType?.MediaType;
+
+                            if (((int)__response.StatusCode == 200) && (global::System.String.Equals(__mediaType, "audio/mpeg", global::System.StringComparison.OrdinalIgnoreCase) || global::System.String.Equals(__mediaType, "audio/wav", global::System.StringComparison.OrdinalIgnoreCase)))
+                            {
+                                var __stream = await __response.Content.ReadAsStreamAsync(
+                #if NET5_0_OR_GREATER
+                                    __effectiveCancellationToken
+                #endif
+                                ).ConfigureAwait(false);
+                                var __body = new global::StabilityAI.ResponseStream(__response, __stream);
+                                var __result = new global::StabilityAI.AudioResultsClient.FetchAudioResultResult(
+                                    statusCode: __response.StatusCode,
+                                    headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                    requestUri: __response.RequestMessage?.RequestUri,
+                                    body0: __body);
+                                return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AudioResultsClient.FetchAudioResultResult>(
+                                    statusCode: __result.StatusCode,
+                                    headers: __result.Headers,
+                                    requestUri: __result.RequestUri,
+                                    body: __result);
+                            }
+
+                            if (((int)__response.StatusCode == 200) && (global::System.String.Equals(__mediaType, "application/json; type=audio/mpeg", global::System.StringComparison.OrdinalIgnoreCase) || global::System.String.Equals(__mediaType, "application/json; type=audio/mpeg", global::System.StringComparison.OrdinalIgnoreCase)))
                             {
                                 var __content = await __response.Content.ReadAsStringAsync(
                 #if NET5_0_OR_GREATER
                                     __effectiveCancellationToken
                 #endif
                                 ).ConfigureAwait(false);
-
-                                ProcessResponseContent(
-                                    client: HttpClient,
-                                    response: __response,
-                                    content: ref __content);
-                                ProcessFetchAudioResultResponseContent(
-                                    httpClient: HttpClient,
-                                    httpResponseMessage: __response,
-                                    content: ref __content);
-
-                                try
-                                {
-                                    __response.EnsureSuccessStatusCode();
-
-                                    var __value = global::StabilityAI.AudioJSONResponse.FromJson(__content, JsonSerializerContext) ??
-                                        throw new global::System.InvalidOperationException($"Response deserialization failed for \"{__content}\" ");
-                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AudioJSONResponse>(
-                                        statusCode: __response.StatusCode,
-                                        headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    throw global::StabilityAI.ApiException.Create(
-                                        statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                                        innerException: __ex,
-                                        responseBody: __content,
-                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                            __response.Headers,
-                                            h => h.Key,
-                                            h => h.Value));
-                                }
+                                var __body = global::StabilityAI.AudioJSONResponse.FromJson(__content, JsonSerializerContext) ?? throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                var __result = new global::StabilityAI.AudioResultsClient.FetchAudioResultResult(
+                                    statusCode: __response.StatusCode,
+                                    headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                    requestUri: __response.RequestMessage?.RequestUri,
+                                    body1: __body);
+                                __response.Dispose();
+                                return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AudioResultsClient.FetchAudioResultResult>(
+                                    statusCode: __result.StatusCode,
+                                    headers: __result.Headers,
+                                    requestUri: __result.RequestUri,
+                                    body: __result);
                             }
-                            else
+
+                            if (((int)__response.StatusCode == 202) && (global::System.String.Equals(__mediaType, "application/json", global::System.StringComparison.OrdinalIgnoreCase)))
                             {
-                                try
-                                {
-                                    __response.EnsureSuccessStatusCode();
-                                    using var __content = await __response.Content.ReadAsStreamAsync(
+                                var __content = await __response.Content.ReadAsStringAsync(
                 #if NET5_0_OR_GREATER
-                                        __effectiveCancellationToken
+                                    __effectiveCancellationToken
                 #endif
-                                    ).ConfigureAwait(false);
-
-                                    var __value = await global::StabilityAI.AudioJSONResponse.FromJsonStreamAsync(__content, JsonSerializerContext).ConfigureAwait(false) ??
-                                        throw new global::System.InvalidOperationException("Response deserialization failed.");
-                                    return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AudioJSONResponse>(
-                                        statusCode: __response.StatusCode,
-                                        headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
-                                        requestUri: __response.RequestMessage?.RequestUri,
-                                        body: __value);
-                                }
-                                catch (global::System.Exception __ex)
-                                {
-                                    string? __content = null;
-                                    try
-                                    {
-                                        __content = await __response.Content.ReadAsStringAsync(
-                #if NET5_0_OR_GREATER
-                                            __effectiveCancellationToken
-                #endif
-                                        ).ConfigureAwait(false);
-                                    }
-                                    catch (global::System.Exception)
-                                    {
-                                    }
-
-                                    throw global::StabilityAI.ApiException.Create(
-                                        statusCode: __response.StatusCode,
-                                        message: __content ?? __response.ReasonPhrase ?? string.Empty,
-                                        innerException: __ex,
-                                        responseBody: __content,
-                                        responseHeaders: global::System.Linq.Enumerable.ToDictionary(
-                                            __response.Headers,
-                                            h => h.Key,
-                                            h => h.Value));
-                                }
+                                ).ConfigureAwait(false);
+                                var __body = global::StabilityAI.FetchAudioResultResponse.FromJson(__content, JsonSerializerContext) ?? throw new global::System.InvalidOperationException("Response deserialization failed.");
+                                var __result = new global::StabilityAI.AudioResultsClient.FetchAudioResultResult(
+                                    statusCode: __response.StatusCode,
+                                    headers: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response),
+                                    requestUri: __response.RequestMessage?.RequestUri,
+                                    body2: __body);
+                                __response.Dispose();
+                                return new global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AudioResultsClient.FetchAudioResultResult>(
+                                    statusCode: __result.StatusCode,
+                                    headers: __result.Headers,
+                                    requestUri: __result.RequestUri,
+                                    body: __result);
                             }
 
+                            throw global::StabilityAI.ApiException.Create(
+                                statusCode: __response.StatusCode,
+                                message: "The successful HTTP status and Content-Type do not match a declared response contract.",
+                                innerException: null,
+                                responseBody: null,
+                                responseHeaders: global::StabilityAI.AutoSDKHttpResponse.CreateHeaders(__response));
+
+
+                }
+                catch
+                {
+                    __response.Dispose();
+                    throw;
                 }
             }
             finally
