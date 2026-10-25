@@ -49,7 +49,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(result.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AudioJSONResponse> FetchAudioResultAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AudioResultsClient.FetchAudioResultResult> FetchAudioResultAsync(
             string id,
             global::StabilityAI.FetchAudioResultAccept? accept = default,
             string? stabilityClientId = default,
@@ -102,7 +102,7 @@ namespace StabilityAI
         /// else:<br/>
         ///     raise Exception(str(result.json()))
         /// </remarks>
-        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AudioJSONResponse>> FetchAudioResultAsResponseAsync(
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::StabilityAI.AudioResultsClient.FetchAudioResultResult>> FetchAudioResultAsResponseAsync(
             string id,
             global::StabilityAI.FetchAudioResultAccept? accept = default,
             string? stabilityClientId = default,
