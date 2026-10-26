@@ -231,6 +231,93 @@ namespace StabilityAI
         /// Example: 1.2.1
         /// </param>
         /// <param name="request"></param>
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::StabilityAI.ApiException"></exception>
+        /// <remarks>
+        /// import requests<br/>
+        /// response = requests.post(<br/>
+        ///     f"https://api.stability.ai/v2beta/audio/stable-audio-2/text-to-audio",<br/>
+        ///     headers={"authorization": f"Bearer sk-MYAPIKEY", "accept": "audio/*"},<br/>
+        ///     files={"none": ""},<br/>
+        ///     data={<br/>
+        ///         "prompt": "A song in the 3/4 time signature that features cheerful acoustic guitar, live recorded drums, and rhythmic claps, The mood is happy and up-lifting.",<br/>
+        ///         "output_format": "mp3",<br/>
+        ///         "duration": 20,<br/>
+        ///         "model": "stable-audio-2.5",<br/>
+        ///     },<br/>
+        /// )<br/>
+        /// if response.status_code == 200:<br/>
+        ///     with open("./output.mp3", "wb") as file:<br/>
+        ///         file.write(response.content)<br/>
+        /// else:<br/>
+        ///     raise Exception(str(response.json()))
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::System.IO.Stream>> CreateAudioStableAudio2TextToAudioAsBytesAsStreamAsResponseAsync(
+
+            global::StabilityAI.CreateAudioStableAudio2TextToAudioRequest request,
+            global::StabilityAI.CreateAudioStableAudio2TextToAudioAccept? accept = default,
+            string? stabilityClientId = default,
+            string? stabilityClientUserId = default,
+            string? stabilityClientVersion = default,
+            global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Text-to-Audio<br/>
+        /// Stable Audio generates high-quality music and sound effects up to three minutes long at<br/>
+        /// 44.1kHz stereo from text descriptions. Learn how to craft effective prompts in our<br/>
+        /// [Prompt Guide](https://www.stableaudio.com/user-guide/text-to-audio) to get the best results<br/>
+        /// from your generations.<br/>
+        /// ### Try it out<br/>
+        /// Click **Try it** to test this endpoint with your API key, or try Stable Audio 2.0 for free at<br/>
+        /// [stableaudio.com](https://stableaudio.com).<br/>
+        /// ### How to use<br/>
+        /// Please invoke this endpoint with a `POST` request.<br/>
+        /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
+        /// `multipart/form-data`. The `accept` header should be set to one of the following:<br/>
+        /// - `audio/*` to receive the audio in the format specified by the `output_format` parameter.<br/>
+        /// - `application/json` to receive the audio encoded as base64 in a JSON response.<br/>
+        /// The body of the request should include:<br/>
+        /// - `prompt` - text to generate the audio from. Check our<br/>
+        /// [prompt guide](https://www.stableaudio.com/user-guide/text-to-audio) for tips<br/>
+        /// #### **Optional Parameters:**<br/>
+        /// The body may optionally include:<br/>
+        /// - `output_format` - the format of the output audio<br/>
+        /// - `seed` - the randomness seed to use for the generation<br/>
+        /// - `steps` - the number of sampling steps<br/>
+        /// - `duration` - the number of seconds of the generated audio<br/>
+        /// - `cfg_scale` - controls how strictly the diffusion process adheres to the prompt text (only for `stable-audio-2`)<br/>
+        /// - `model` - the model to use [`stable-audio-2`, `stable-audio-2.5`]<br/>
+        /// &gt; **Note:** for more details about these parameters please see the request schema below.<br/>
+        /// ### Credits<br/>
+        /// **Stable Audio 2.0**<br/>
+        /// By default, 20 credits per successful generation. The number of credits is determined<br/>
+        /// by the following formula: `credits = 17 + 0.06 * steps`.<br/>
+        /// Examples:<br/>
+        /// - 50 steps = 20 credits [default]<br/>
+        /// - 100 steps = 23 credits<br/>
+        /// **Stable Audio 2.5**<br/>
+        /// Requests made using the Stable Audio 2.5 model have a flat rate of 8 credits per successful result.<br/>
+        /// As always, you will not be charged for failed generations.
+        /// </summary>
+        /// <param name="accept">
+        /// Specify `audio/*` to receive the bytes of the audio directly. Otherwise specify `application/json` to receive the audio as base64 encoded JSON.<br/>
+        /// Default Value: audio/*
+        /// </param>
+        /// <param name="stabilityClientId">
+        /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
+        /// Example: my-awesome-app
+        /// </param>
+        /// <param name="stabilityClientUserId">
+        /// A unique identifier for your end user. Used to help us communicate user-specific debugging or moderation issues to you. Feel free to obfuscate this value to protect user privacy.<br/>
+        /// Example: DiscordUser#9999
+        /// </param>
+        /// <param name="stabilityClientVersion">
+        /// The version of your application, used to help us communicate version-specific debugging or moderation issues to you.<br/>
+        /// Example: 1.2.1
+        /// </param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::StabilityAI.ApiException"></exception>

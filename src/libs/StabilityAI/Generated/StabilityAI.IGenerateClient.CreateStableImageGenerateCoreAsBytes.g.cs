@@ -191,6 +191,80 @@ namespace StabilityAI
         /// Example: 1.2.1
         /// </param>
         /// <param name="request"></param>
+        /// <returns>The response metadata and an unbuffered body stream. The caller must dispose Body to release the HTTP response.</returns>
+        /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
+        /// <param name="cancellationToken">The token to cancel the operation with</param>
+        /// <exception cref="global::StabilityAI.ApiException"></exception>
+        /// <remarks>
+        /// import requests<br/>
+        /// response = requests.post(<br/>
+        ///     f"https://api.stability.ai/v2beta/stable-image/generate/core",<br/>
+        ///     headers={<br/>
+        ///         "authorization": f"Bearer sk-MYAPIKEY",<br/>
+        ///         "accept": "image/*"<br/>
+        ///     },<br/>
+        ///     files={"none": ''},<br/>
+        ///     data={<br/>
+        ///         "prompt": "Lighthouse on a cliff overlooking the ocean",<br/>
+        ///         "output_format": "webp",<br/>
+        ///     },<br/>
+        /// )<br/>
+        /// if response.status_code == 200:<br/>
+        ///     with open("./lighthouse.webp", 'wb') as file:<br/>
+        ///         file.write(response.content)<br/>
+        /// else:<br/>
+        ///     raise Exception(str(response.json()))
+        /// </remarks>
+        global::System.Threading.Tasks.Task<global::StabilityAI.AutoSDKHttpResponse<global::System.IO.Stream>> CreateStableImageGenerateCoreAsBytesAsStreamAsResponseAsync(
+
+            global::StabilityAI.CreateStableImageGenerateCoreRequest request,
+            global::StabilityAI.CreateStableImageGenerateCoreAccept? accept = default,
+            string? stabilityClientId = default,
+            string? stabilityClientUserId = default,
+            string? stabilityClientVersion = default,
+            global::StabilityAI.AutoSDKRequestOptions? requestOptions = default,
+            global::System.Threading.CancellationToken cancellationToken = default);
+        /// <summary>
+        /// Stable Image Core<br/>
+        /// Our primary service for text-to-image generation, Stable Image Core represents the best quality achievable at high<br/>
+        /// speed. No prompt engineering is required! Try asking for a style, a scene, or a character, and see what you get.<br/>
+        /// ### How to use<br/>
+        /// Please invoke this endpoint with a `POST` request.<br/>
+        /// The headers of the request must include an API key in the `authorization` field. The body of the request must be<br/>
+        /// `multipart/form-data`, and the `accept` header should be set to one of the following:<br/>
+        ///   - `image/*` to receive the image in the format specified by the `output_format` parameter.<br/>
+        ///   - `application/json` to receive the image encoded as base64 in a JSON response.<br/>
+        /// The body of the request should include:<br/>
+        /// - `prompt`<br/>
+        /// The body may optionally include:<br/>
+        /// - `aspect_ratio`<br/>
+        /// - `negative_prompt`<br/>
+        /// - `seed`<br/>
+        /// - `style_preset`<br/>
+        /// - `output_format`<br/>
+        /// &gt; **Note:** for more details about these parameters please see the request schema below.<br/>
+        /// ### Output<br/>
+        /// The resolution of the generated image will be 1.5 megapixels.<br/>
+        /// ### Credits<br/>
+        /// Flat rate of 3 credits per successful generation.  You will not be charged for failed generations.
+        /// </summary>
+        /// <param name="accept">
+        /// Specify `image/*` to receive the bytes of the image directly. Otherwise specify `application/json` to receive the image as base64 encoded JSON.<br/>
+        /// Default Value: image/*
+        /// </param>
+        /// <param name="stabilityClientId">
+        /// The name of your application, used to help us communicate app-specific debugging or moderation issues to you.<br/>
+        /// Example: my-awesome-app
+        /// </param>
+        /// <param name="stabilityClientUserId">
+        /// A unique identifier for your end user. Used to help us communicate user-specific debugging or moderation issues to you. Feel free to obfuscate this value to protect user privacy.<br/>
+        /// Example: DiscordUser#9999
+        /// </param>
+        /// <param name="stabilityClientVersion">
+        /// The version of your application, used to help us communicate version-specific debugging or moderation issues to you.<br/>
+        /// Example: 1.2.1
+        /// </param>
+        /// <param name="request"></param>
         /// <param name="requestOptions">Per-request overrides such as headers, query parameters, timeout, retries, and response buffering.</param>
         /// <param name="cancellationToken">The token to cancel the operation with</param>
         /// <exception cref="global::StabilityAI.ApiException"></exception>
